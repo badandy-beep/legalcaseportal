@@ -1,0 +1,199 @@
+'use client'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { CheckCircle, Edit, Send, AlertCircle, User, Baby, Users, Heart, Building2, Stethoscope, FileHeart, Brain, Upload, FileSignature } from 'lucide-react'
+
+const sections = [
+  { key: 'phase1', label: 'Account Setup', icon: User, phase: 1 },
+  { key: 'phase2', label: 'Child Information', icon: Baby, phase: 2 },
+  { key: 'phase3', label: 'Parents/Guardians', icon: Users, phase: 3 },
+  { key: 'phase4', label: 'Pregnancy & Prenatal', icon: Heart, phase: 4 },
+  { key: 'phase5', label: 'Labor & Delivery', icon: Building2, phase: 5 },
+  { key: 'phase6', label: 'Pediatric Care', icon: Stethoscope, phase: 6 },
+  { key: 'phase7', label: 'Diagnoses', icon: FileHeart, phase: 7 },
+  { key: 'phase8', label: 'Autism Assessment', icon: Brain, phase: 8 },
+  { key: 'phase9', label: 'Documents', icon: Upload, phase: 9 },
+  { key: 'phase10', label: 'Legal Agreements', icon: FileSignature, phase: 10 },
+]
+
+export default function Phase11Page() {
+  const router = useRouter()
+  const [loading, setLoading] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [data, setData] = useState<Record<string, any>>({})
+  const [completedSections, setCompletedSections] = useState<string[]>([])
+
+  useEffect(() => {
+    // Load all saved data from localStorage
+    const loadedData: Record<string, any> = {}
+    const completed: string[] = []
+    
+    sections.forEach(section => {
+      const key = `intake_${section.key}`
+      const saved = localStorage.getItem(key)
+      if (saved) {
+        loadedData[section.key] = JSON.parse(saved)
+        completed.push(section.key)
+      }
+    })
+    
+    setData(loadedData)
+    setCompletedSections(completed)
+  }, [])
+
+  const handleSubmit = async () => {
+    setLoading(true)
+    
+    try {
+      // In production, this would:
+      // 1. Create the client and case in Supabase
+      // 2. Upload documents to Supabase Storage
+      // 3. Send confirmation email via Resend
+      // 4. Generate case number
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      // Clear localStorage
+      sections.forEach(section => {
+        localStorage.removeItem(`intake_${section.key}`)
+      })
+      
+      router.push('/intake/complete')
+    } catch (error) {
+      console.error('Submit error:', error)
+      setLoading(false)
+    }
+  }
+
+  const allSectionsComplete = sections.slice(0, 10).every(s => completedSections.includes(s.key))
+
+  return (
+    <div className="card">
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold text-navy-900 mb-2">Review & Submit</h1>
+        <p className="text-gray-600">Review your information before submitting your case evaluation.</p>
+      </div>
+
+      {/* Section Summary */}
+      <div className="space-y-3 mb-8">
+        {sections.map(section => {
+          const isComplete = completedSections.includes(section.key)
+          const Icon = section.icon
+          
+          return (
+            <div key={section.key} className={`flex items-center justify-between p-4 rounded-lg border-2 ${isComplete ? 'border-teal-200 bg-teal-50' : 'border-gray-200 bg-gray-50'}`}>
+              <div className="flex items-center gap-3">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isComplete ? 'bg-teal-600 text-white' : 'bg-gray-300 text-gray-600'}`}>
+                  {isComplete ? <CheckCircle className="w-5 h-5" /> : <Icon className="w-4 h-4" />}
+                </div>
+                <div>
+                  <span className={`font-medium ${isComplete ? 'text-teal-800' : 'text-gray-600'}`}>{section.label}</span>
+                  {isComplete && data[section.key] && (
+                    <p className="text-xs text-teal-600">
+                      {section.key === 'phase1' && data.phase1?.fullName && `${data.phase1.fullName}`}
+                      {section.key === 'phase2' && data.phase2?.[0]?.fullName && `${data.phase2[0].fullName}`}
+                      {section.key === 'phase7' && data.phase7?.diagnoses && `${Object.values(data.phase7.diagnoses).filter(Boolean).length} diagnoses selected`}
+                      {section.key === 'phase9' && `${Object.values(data.phase9 || {}).flat().length} documents uploaded`}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <button
+                onClick={() => router.push(`/intake/phase-${section.phase}`)}
+                className="text-teal-600 hover:text-teal-700 flex items-center gap-1 text-sm"
+              >
+                <Edit className="w-4 h-4" />
+                Edit
+              </button>
+            </div>
+          )
+        })}
+      </div>
+
+      {/* Data Summary Preview */}
+      {data.phase1 && (
+        <div className="bg-gray-50 rounded-lg p-4 mb-6">
+          <h3 className="font-semibold text-navy-900 mb-3">Case Summary</h3>
+          <div className="grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <span className="text-gray-500">Client:</span>
+              <p className="font-medium">{data.phase1.fullName}</p>
+            </div>
+            <div>
+              <span className="text-gray-500">Email:</span>
+              <p className="font-medium">{data.phase1.email}</p>
+            </div>
+            {data.phase2?.[0] && (
+              <>
+                <div>
+                  <span className="text-gray-500">Child:</span>
+                  <p className="font-medium">{data.phase2[0].fullName}</p>
+                </div>
+                <div>
+                  <span className="text-gray-500">Child DOB:</span>
+                  <p className="font-medium">{data.phase2[0].dateOfBirth}</p>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Important Notice */}
+      <div className="bg-navy-50 border border-navy-200 rounded-lg p-4 mb-6">
+        <h3 className="font-semibold text-navy-900 mb-2">What Happens Next</h3>
+        <ul className="text-sm text-navy-700 space-y-2">
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+            Your case will be assigned a unique case number
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+            You'll receive a confirmation email with login details
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+            Our team will review your case within 48 hours
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+            If eligible, you'll be connected with specialized legal counsel
+          </li>
+        </ul>
+      </div>
+
+      {!allSectionsComplete && (
+        <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+          <AlertCircle className="w-5 h-5 text-coral-600 flex-shrink-0 mt-0.5" />
+          <div>
+            <p className="font-medium text-coral-800">Incomplete Sections</p>
+            <p className="text-sm text-coral-700">Please complete all sections before submitting.</p>
+          </div>
+        </div>
+      )}
+
+      <button
+        onClick={handleSubmit}
+        disabled={loading || !allSectionsComplete}
+        className="w-full bg-coral-600 hover:bg-coral-700 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
+      >
+        {loading ? (
+          <>
+            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            Submitting Your Case...
+          </>
+        ) : (
+          <>
+            <Send className="w-5 h-5" />
+            Submit Case Evaluation
+          </>
+        )}
+      </button>
+
+      <p className="text-xs text-gray-500 text-center mt-4">
+        By submitting, you confirm all information is accurate and agree to the terms of service.
+      </p>
+    </div>
+  )
+}

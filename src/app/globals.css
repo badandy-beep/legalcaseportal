@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --navy: 29 53 87;
+    --teal: 42 157 143;
+    --coral: 230 57 70;
+    --gold: 244 162 97;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-coral-600 hover:bg-coral-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all duration-200;
+  }
+  
+  .input-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+  
+  .input-error {
+    @apply text-sm text-coral-600 mt-1;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6;
+  }
+  
+  .section-heading {
+    @apply text-2xl font-bold text-navy-900 mb-4;
+  }
+  
+  .progress-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-teal-500 transition-all duration-500 ease-out;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Form validation states */
+.input-valid {
+  @apply border-green-500 focus:ring-green-500 focus:border-green-500;
+}
+
+.input-invalid {
+  @apply border-coral-500 focus:ring-coral-500 focus:border-coral-500;
+}
+
+/* Checkbox styling */
+.checkbox-custom {
+  @apply w-5 h-5 text-teal-600 bg-white border-gray-300 rounded focus:ring-teal-500;
+}
+
+/* Radio styling */
+.radio-custom {
+  @apply w-5 h-5 text-teal-600 bg-white border-gray-300 focus:ring-teal-500;
+}
