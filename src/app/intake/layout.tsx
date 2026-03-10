@@ -35,8 +35,8 @@ export default function IntakeLayout({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div>
-              <div className="font-bold text-white tracking-wide">ALPHA LAW GROUP</div>
-              <div className="text-alg-gold text-xs">Justice for Autism Initiative</div>
+              <div className="font-extrabold text-white tracking-widest">ALPHA LAW GROUP</div>
+              <div className="text-alg-gold text-xs font-medium">Justice for Autism Initiative</div>
             </div>
             <div className="text-right">
               <div className="text-white/50 text-xs italic">Powered by LegalCasePortal™</div>

@@ -6,8 +6,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="bg-alg-navy text-white py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-6">This Fight Is Personal To Us.</h1>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <h1 className="text-4xl font-bold tracking-tight mb-6">This Fight Is Personal To Us.</h1>
+          <p className="text-lg text-white/95 mb-8 max-w-2xl mx-auto leading-relaxed">
             Alex Kompothecras grew up with two siblings — Bronson and Sarah Alice — severely
             affected by autism. His father Dr. Gary spent 19 years fighting in Tallahassee for
             families like yours. Now Alex has built a legal practice with one mission: getting
@@ -19,7 +19,7 @@ export default function HomePage() {
           >
             Start My Claim &rarr;
           </Link>
-          <p className="mt-4 text-white/60 text-sm">
+          <p className="mt-4 text-white/80 text-sm">
             Free consultation. No fees unless we win. Reviewed within 24 hours.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function HomePage() {
       {/* Mission Section */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-alg-navy mb-8 text-center">Why We Do This</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-8 text-center">Why We Do This</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Pull quote card */}
             <div className="bg-alg-navy text-white p-8 rounded-xl">
@@ -75,8 +75,8 @@ export default function HomePage() {
           <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-2">
             JUSTICE FOR AUTISM ADVISORY BOARD
           </p>
-          <h2 className="text-white text-3xl font-bold mb-3">At the Front Lines of the Movement</h2>
-          <p className="text-white/60 text-sm">
+          <h2 className="text-white text-3xl font-bold tracking-tight mb-3">At the Front Lines of the Movement</h2>
+          <p className="text-white/80 text-sm">
             The Autism Justice Foundation at the CHD &ldquo;Moment of Truth&rdquo; Conference &mdash; JW Marriott, Austin, Texas | November 7&ndash;9, 2025
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
             <img src="/ajf-group.jpg" alt="The Autism Justice Foundation Team" className="w-full h-56 object-cover object-top" />
             <div className="p-4">
               <p className="text-alg-gold font-semibold text-sm mb-1">The Autism Justice Foundation Team</p>
-              <p className="text-white/70 text-xs leading-relaxed">
+              <p className="text-white/90 text-xs leading-relaxed">
                 Left to right: Chase Engelbrecht (Alpha Law Group), Alex Kompothecras (Managing Attorney, Alpha Law Group), Nick Holscher (McCullough Foundation), Dr. Gary Kompothecras (Autism Justice Foundation), Dan Fluette (documentary filmmaker), and Beth Kompothecras.
               </p>
             </div>
@@ -99,7 +99,7 @@ export default function HomePage() {
             <img src="/ajf-weldon-bigtree.jpg" alt="Dr. David Weldon & Del Bigtree" className="w-full h-56 object-cover object-top" />
             <div className="p-4">
               <p className="text-alg-gold font-semibold text-sm mb-1">Dr. David Weldon &amp; Del Bigtree</p>
-              <p className="text-white/70 text-xs leading-relaxed">
+              <p className="text-white/90 text-xs leading-relaxed">
                 Dr. David Weldon &mdash; President Trump&rsquo;s nominee for CDC Director &mdash; with Del Bigtree, producer of the landmark VAXXED documentary series. Interviewed by Dan Fluette at the Vaccine Veritas table.
               </p>
             </div>
@@ -110,14 +110,14 @@ export default function HomePage() {
             <img src="/ajf-mary-holland.jpg" alt="With Mary Holland & Dr. Gary" className="w-full h-56 object-cover object-top" />
             <div className="p-4">
               <p className="text-alg-gold font-semibold text-sm mb-1">With Mary Holland &amp; Dr. Gary</p>
-              <p className="text-white/70 text-xs leading-relaxed">
+              <p className="text-white/90 text-xs leading-relaxed">
                 Dan Fluette with Mary Holland, President of Children&rsquo;s Health Defense, and Dr. Gary Kompothecras &mdash; coordinating national strategy for autism justice and vaccine accountability.
               </p>
             </div>
           </div>
         </div>
 
-        <p className="text-white/40 text-xs text-center mt-8 max-w-2xl mx-auto">
+        <p className="text-white/60 text-xs text-center mt-8 max-w-2xl mx-auto">
           The Justice for Autism Advisory Board includes the nation&rsquo;s foremost voices in vaccine safety, medical freedom, and children&rsquo;s health advocacy.
         </p>
       </section>
@@ -125,14 +125,14 @@ export default function HomePage() {
       {/* Bottom CTA Strip */}
       <section className="bg-alg-navy text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold mb-6">Ready to be heard?</h2>
+          <h2 className="text-2xl font-bold tracking-tight mb-6">Ready to be heard?</h2>
           <Link
             href="/intake/phase-1"
             className="inline-block bg-alg-gold text-alg-navy font-bold text-lg px-8 py-4 rounded-lg hover:bg-alg-gold-light transition"
           >
             Begin Your Free Intake &rarr;
           </Link>
-          <p className="mt-4 text-white/60 text-sm">
+          <p className="mt-4 text-white/80 text-sm">
             (941) 304-1500 | alphainjurylaw.com
           </p>
         </div>

@@ -8,8 +8,8 @@
   :root {
     --alg-navy: #0a1628;
     --alg-navy-rgb: 10 22 40;
-    --alg-gold: #c9a84c;
-    --alg-gold-rgb: 201 168 76;
+    --alg-gold: #d4a843;
+    --alg-gold-rgb: 212 168 67;
     --alg-gold-light: #e8c97a;
     --alg-gold-light-rgb: 232 201 122;
     --alg-white: #ffffff;
@@ -21,6 +21,9 @@
 
   body {
     @apply font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
 

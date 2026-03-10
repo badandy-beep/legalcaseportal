@@ -42,7 +42,7 @@ export default function PublicLayout({
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-white hover:text-alg-gold transition px-3 py-2 text-sm"
+                    className="text-white hover:text-alg-gold transition px-3 py-2 text-sm font-medium"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export default function PublicLayout({
                 className={
                   link.isCta
                     ? 'block mt-2 bg-alg-gold text-alg-navy font-bold px-4 py-2 rounded text-center'
-                    : 'block text-white hover:text-alg-gold transition py-2 text-sm'
+                    : 'block text-white hover:text-alg-gold transition py-2 text-sm font-medium'
                 }
               >
                 {link.label}

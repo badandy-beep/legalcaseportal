@@ -6,13 +6,13 @@ export default function OurStoryPage() {
       <div className="max-w-3xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-alg-navy mb-2">Our Story</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Story</h1>
           <p className="text-lg text-gray-500">A Family Mission Two Decades in the Making</p>
         </div>
 
         {/* Section 1 — The Family */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-alg-navy mb-4">The Family</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Family</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               Dr. Gary and Beth Kompothecras raised six children in Sarasota. Two of them —
@@ -36,7 +36,7 @@ export default function OurStoryPage() {
 
         {/* Section 2 — The Son */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-alg-navy mb-4">The Son</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Son</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               Alex Kompothecras, 28, grew up watching his father wage this battle. He pursued law,
@@ -58,7 +58,7 @@ export default function OurStoryPage() {
 
         {/* Section 3 — Justice in Action */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-alg-navy mb-4">
+          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">
             Justice in Action: The Francisco Diaz-Burgos Case
           </h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -79,7 +79,7 @@ export default function OurStoryPage() {
 
         {/* Section 4 — The Foundation */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-alg-navy mb-4">The Foundation</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Foundation</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               The Autism Justice Foundation, founded September 2025, is a 501(c)(4) nonprofit. It

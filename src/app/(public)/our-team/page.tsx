@@ -39,7 +39,7 @@ export default function OurTeamPage() {
       <div className="max-w-4xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-alg-navy mb-2">Our Team</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Team</h1>
           <p className="text-lg text-gray-500">The people behind the mission</p>
         </div>
 
