@@ -117,12 +117,6 @@ export default function ResourcesPage() {
               link="https://havenofrcma.org"
             />
             <ResourceCard
-              icon={<IconBox bg="bg-blue-400" text="AS" />}
-              name="Autism Speaks"
-              description="Autism Speaks is one of the largest autism advocacy organizations in the United States, funding research, providing resources, and advocating for policies that support individuals with autism spectrum disorder and their families. Their online resource guide covers diagnosis, treatment options, financial assistance, and legal rights."
-              link="https://www.autismspeaks.org"
-            />
-            <ResourceCard
               icon={<IconBox bg="bg-green-600" text="TACA" />}
               name="TACA (Talk About Curing Autism)"
               description="TACA provides education, support, and hope to families affected by autism. Their peer mentorship network connects newly diagnosed families with experienced autism parents, and their resource library covers biomedical treatments, IEP guidance, and financial assistance programs."

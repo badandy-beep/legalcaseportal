@@ -22,11 +22,16 @@ export default function PublicLayout({
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <>
+    <div id="top">
       {/* Sticky Navigation */}
-      <nav className="sticky top-0 z-50 bg-alg-navy">
+      <nav className="sticky top-0 z-50 bg-alg-navy" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
+            {/* Logo / Back to Top */}
+            <a href="#top" className="text-white font-extrabold tracking-widest text-sm hover:text-alg-gold transition hidden md:block">
+              ALPHA LAW GROUP
+            </a>
+
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map((link) =>
@@ -96,6 +101,6 @@ export default function PublicLayout({
           &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
         </p>
       </footer>
-    </>
+    </div>
   )
 }

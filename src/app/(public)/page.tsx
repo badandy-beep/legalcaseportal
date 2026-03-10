@@ -133,7 +133,7 @@ export default function HomePage() {
             Begin Your Free Intake &rarr;
           </Link>
           <p className="mt-4 text-white/80 text-sm">
-            (941) 304-1500 | alphainjurylaw.com
+            <a href="tel:9413041500" className="hover:text-alg-gold transition">(941) 304-1500</a> | alphainjurylaw.com
           </p>
         </div>
       </section>
