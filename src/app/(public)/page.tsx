@@ -68,6 +68,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Advisory Board Photo Grid */}
+      <section className="bg-alg-navy py-16 px-4">
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-2">
+            JUSTICE FOR AUTISM ADVISORY BOARD
+          </p>
+          <h2 className="text-white text-3xl font-bold mb-3">At the Front Lines of the Movement</h2>
+          <p className="text-white/60 text-sm">
+            The Autism Justice Foundation at the CHD &ldquo;Moment of Truth&rdquo; Conference &mdash; JW Marriott, Austin, Texas | November 7&ndash;9, 2025
+          </p>
+        </div>
+
+        {/* Photo Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* Photo 1 */}
+          <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+            <img src="/ajf-group.jpg" alt="The Autism Justice Foundation Team" className="w-full h-56 object-cover object-top" />
+            <div className="p-4">
+              <p className="text-alg-gold font-semibold text-sm mb-1">The Autism Justice Foundation Team</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                Left to right: Chase Engelbrecht (Alpha Law Group), Alex Kompothecras (Managing Attorney, Alpha Law Group), Nick Holscher (McCullough Foundation), Dr. Gary Kompothecras (Autism Justice Foundation), Dan Fluette (documentary filmmaker), and Beth Kompothecras.
+              </p>
+            </div>
+          </div>
+
+          {/* Photo 2 */}
+          <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+            <img src="/ajf-weldon-bigtree.jpg" alt="Dr. David Weldon & Del Bigtree" className="w-full h-56 object-cover object-top" />
+            <div className="p-4">
+              <p className="text-alg-gold font-semibold text-sm mb-1">Dr. David Weldon &amp; Del Bigtree</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                Dr. David Weldon &mdash; President Trump&rsquo;s nominee for CDC Director &mdash; with Del Bigtree, producer of the landmark VAXXED documentary series. Interviewed by Dan Fluette at the Vaccine Veritas table.
+              </p>
+            </div>
+          </div>
+
+          {/* Photo 3 */}
+          <div className="bg-white/5 rounded-xl overflow-hidden border border-white/10">
+            <img src="/ajf-mary-holland.jpg" alt="With Mary Holland & Dr. Gary" className="w-full h-56 object-cover object-top" />
+            <div className="p-4">
+              <p className="text-alg-gold font-semibold text-sm mb-1">With Mary Holland &amp; Dr. Gary</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                Dan Fluette with Mary Holland, President of Children&rsquo;s Health Defense, and Dr. Gary Kompothecras &mdash; coordinating national strategy for autism justice and vaccine accountability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-white/40 text-xs text-center mt-8 max-w-2xl mx-auto">
+          The Justice for Autism Advisory Board includes the nation&rsquo;s foremost voices in vaccine safety, medical freedom, and children&rsquo;s health advocacy.
+        </p>
+      </section>
+
       {/* Bottom CTA Strip */}
       <section className="bg-alg-navy text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
