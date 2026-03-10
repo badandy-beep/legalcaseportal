@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { CheckCircle, Edit, Send, User, Baby, Users, Heart, Building2, Stethoscope, FileHeart, Brain, Upload, FileSignature } from 'lucide-react'
 
@@ -13,42 +13,116 @@ const sections = [
   { key: 'phase7', label: 'Diagnoses', icon: FileHeart, phase: 7 },
   { key: 'phase8', label: 'Autism Assessment', icon: Brain, phase: 8 },
   { key: 'phase9', label: 'Documents', icon: Upload, phase: 9 },
-  { key: 'phase10', label: 'Legal Agreements', icon: FileSignature, phase: 10 },
+  { key: 'phase10', label: 'Consents & Releases', icon: FileSignature, phase: 10 },
 ]
 
 export default function Phase11Page() {
   const router = useRouter()
+  const canvasRef = useRef<HTMLCanvasElement>(null)
   const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
   const [data, setData] = useState<Record<string, any>>({})
   const [completedSections, setCompletedSections] = useState<string[]>([])
+
+  // Signature state
+  const [isDrawing, setIsDrawing] = useState(false)
+  const [hasSignature, setHasSignature] = useState(false)
+  const [signedName, setSignedName] = useState('')
+
+  const canSign = hasSignature || signedName.trim().length > 0
 
   useEffect(() => {
     const loadedData: Record<string, any> = {}
     const completed: string[] = []
-
     sections.forEach(section => {
-      const key = `intake_${section.key}`
-      const saved = localStorage.getItem(key)
+      const saved = localStorage.getItem(`intake_${section.key}`)
       if (saved) {
         loadedData[section.key] = JSON.parse(saved)
         completed.push(section.key)
       }
     })
-
     setData(loadedData)
     setCompletedSections(completed)
   }, [])
 
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (canvas) {
+      const ctx = canvas.getContext('2d')
+      if (ctx) {
+        ctx.strokeStyle = '#0a1628'
+        ctx.lineWidth = 2
+        ctx.lineCap = 'round'
+      }
+    }
+  }, [])
+
+  const getPos = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current!
+    const rect = canvas.getBoundingClientRect()
+    const scaleX = canvas.width / rect.width
+    const scaleY = canvas.height / rect.height
+    if ('touches' in e) {
+      return {
+        x: (e.touches[0].clientX - rect.left) * scaleX,
+        y: (e.touches[0].clientY - rect.top) * scaleY,
+      }
+    }
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY,
+    }
+  }
+
+  const startDrawing = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+    setIsDrawing(true)
+    const ctx = canvasRef.current?.getContext('2d')
+    if (!ctx) return
+    const { x, y } = getPos(e)
+    ctx.beginPath()
+    ctx.moveTo(x, y)
+  }
+
+  const draw = (e: React.MouseEvent<HTMLCanvasElement> | React.TouchEvent<HTMLCanvasElement>) => {
+    if (!isDrawing) return
+    const ctx = canvasRef.current?.getContext('2d')
+    if (!ctx) return
+    const { x, y } = getPos(e)
+    ctx.lineTo(x, y)
+    ctx.stroke()
+    setHasSignature(true)
+  }
+
+  const stopDrawing = () => setIsDrawing(false)
+
+  const clearSignature = () => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    setHasSignature(false)
+  }
+
   const handleSubmit = async () => {
+    if (!canSign) return
     setLoading(true)
 
     try {
+      // Save signature data
+      const signatureData = canvasRef.current?.toDataURL()
+      localStorage.setItem('intake_phase11', JSON.stringify({
+        signedName,
+        signatureData: hasSignature ? signatureData : null,
+        signedAt: new Date().toISOString(),
+        ipAddress: 'captured-server-side',
+      }))
+
       await new Promise(resolve => setTimeout(resolve, 2000))
 
       sections.forEach(section => {
         localStorage.removeItem(`intake_${section.key}`)
       })
+      localStorage.removeItem('intake_phase11')
 
       router.push('/intake/complete')
     } catch (error) {
@@ -61,8 +135,8 @@ export default function Phase11Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-alg-navy mb-2">Review & Submit</h1>
-          <p className="text-gray-600">Review your information before submitting your case evaluation.</p>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Review &amp; Submit</h1>
+          <p className="text-gray-600">Review your information, sign, and submit your case evaluation.</p>
         </div>
 
         {/* Section Summary */}
@@ -130,7 +204,72 @@ export default function Phase11Page() {
           </div>
         )}
 
-        {/* Important Notice */}
+        {/* Digital Signature Section */}
+        <div className="border-2 border-alg-gray-border rounded-lg p-5 bg-alg-gray-light mb-6">
+          <h3 className="font-semibold text-alg-navy mb-1 flex items-center gap-2">
+            <FileSignature className="w-5 h-5 text-alg-gold" />
+            Digital Signature
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            By signing below, you confirm all information is accurate and authorize Alpha Law Group to proceed with your case evaluation.
+          </p>
+
+          {/* Signature Canvas */}
+          <div className="mb-3">
+            <label className="input-label">Sign in the box below using your mouse or finger</label>
+            <div className="relative mt-1">
+              <canvas
+                ref={canvasRef}
+                width={600}
+                height={150}
+                className="w-full border border-gray-300 rounded-lg bg-white cursor-crosshair touch-none"
+                onMouseDown={startDrawing}
+                onMouseMove={draw}
+                onMouseUp={stopDrawing}
+                onMouseLeave={stopDrawing}
+                onTouchStart={startDrawing}
+                onTouchMove={draw}
+                onTouchEnd={stopDrawing}
+              />
+              {!hasSignature && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <span className="text-gray-300 text-lg">Sign here</span>
+                </div>
+              )}
+            </div>
+            {hasSignature && (
+              <button type="button" onClick={clearSignature} className="mt-1 text-sm text-gray-500 underline hover:text-gray-700">
+                Clear Signature
+              </button>
+            )}
+          </div>
+
+          {/* Typed Name */}
+          <div className="mb-3">
+            <label className="input-label">Type your full legal name</label>
+            <input
+              type="text"
+              value={signedName}
+              onChange={(e) => setSignedName(e.target.value)}
+              className="input-field"
+              placeholder="Enter your full legal name exactly as it appears on ID"
+            />
+          </div>
+
+          {/* Timestamp */}
+          <p className="text-gray-400 text-xs">
+            Signing date: {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
+
+          {canSign && (
+            <div className="mt-3 flex items-center gap-2 text-alg-gold">
+              <CheckCircle className="w-4 h-4" />
+              <span className="text-sm font-medium">Signature ready</span>
+            </div>
+          )}
+        </div>
+
+        {/* What Happens Next */}
         <div className="bg-alg-gray-light border border-alg-gray-border rounded-lg p-4 mb-6">
           <h3 className="font-semibold text-alg-navy mb-2">What Happens Next</h3>
           <ul className="text-sm text-alg-navy space-y-2">
@@ -140,15 +279,15 @@ export default function Phase11Page() {
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
-              You'll receive a confirmation email with login details
+              You&rsquo;ll receive a confirmation email with login details
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
-              Our team will review your case within 48 hours
+              Alex&rsquo;s team will review your case within 24 hours
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
-              If eligible, you'll be connected with specialized legal counsel
+              If eligible, you&rsquo;ll be connected with specialized legal counsel
             </li>
           </ul>
         </div>
@@ -163,8 +302,8 @@ export default function Phase11Page() {
         <div className="max-w-2xl mx-auto">
           <button
             onClick={handleSubmit}
-            disabled={loading}
-            className="w-full bg-alg-gold hover:bg-alg-gold-light disabled:bg-gray-400 text-alg-navy font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
+            disabled={loading || !canSign}
+            className="w-full bg-alg-gold hover:bg-alg-gold-light disabled:bg-gray-400 disabled:cursor-not-allowed text-alg-navy font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
           >
             {loading ? (
               <>
@@ -178,6 +317,9 @@ export default function Phase11Page() {
               </>
             )}
           </button>
+          {!canSign && (
+            <p className="text-xs text-gray-400 text-center mt-2">Please sign above or type your name to submit</p>
+          )}
         </div>
       </div>
 
