@@ -24,18 +24,18 @@ export default function IntakeLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
-  
+
   // Extract current phase from pathname
   const currentPhaseMatch = pathname.match(/phase-(\d+)/)
   const currentPhase = currentPhaseMatch ? parseInt(currentPhaseMatch[1]) : 0
   const progress = currentPhase > 0 ? Math.round((currentPhase / 11) * 100) : 0
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="flex flex-col h-screen overflow-hidden bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white shadow-sm z-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-14">
             <Link href="/" className="flex items-center gap-2">
               <Shield className="w-7 h-7 text-teal-600" />
               <span className="text-lg font-bold text-navy-900">LegalCasePortal</span>
@@ -46,7 +46,7 @@ export default function IntakeLayout({
                 <span className="text-sm">Need Help?</span>
               </a>
               {currentPhase > 1 && (
-                <Link 
+                <Link
                   href={`/intake/phase-${currentPhase - 1}`}
                   className="flex items-center gap-1 text-gray-600 hover:text-navy-900"
                 >
@@ -61,8 +61,8 @@ export default function IntakeLayout({
 
       {/* Progress Bar (only show during phases) */}
       {currentPhase > 0 && (
-        <div className="bg-white border-b">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="sticky top-[52px] z-10 bg-white border-b border-gray-200 px-4 py-3 shadow-sm">
+          <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-gray-700">
                 Phase {currentPhase} of 11: {phases[currentPhase - 1]?.name}
@@ -72,20 +72,20 @@ export default function IntakeLayout({
             <div className="progress-bar">
               <div className="progress-fill" style={{ width: `${progress}%` }}></div>
             </div>
-            
+
             {/* Phase dots (desktop) */}
-            <div className="hidden md:flex justify-between mt-4">
+            <div className="hidden md:flex justify-between mt-3">
               {phases.map((phase) => (
-                <div 
+                <div
                   key={phase.number}
                   className="flex flex-col items-center"
                 >
-                  <div 
+                  <div
                     className={`w-3 h-3 rounded-full ${
-                      phase.number < currentPhase 
-                        ? 'bg-teal-600' 
-                        : phase.number === currentPhase 
-                          ? 'bg-teal-600 ring-4 ring-teal-100' 
+                      phase.number < currentPhase
+                        ? 'bg-teal-600'
+                        : phase.number === currentPhase
+                          ? 'bg-teal-600 ring-4 ring-teal-100'
                           : 'bg-gray-300'
                     }`}
                   />
@@ -101,29 +101,12 @@ export default function IntakeLayout({
         </div>
       )}
 
-      {/* Main Content */}
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {children}
-      </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 border-t mt-auto">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4 text-sm text-gray-600">
-              <span className="flex items-center gap-1">
-                <Shield className="w-4 h-4 text-teal-600" />
-                HIPAA Compliant
-              </span>
-              <span>•</span>
-              <span>256-bit SSL Encryption</span>
-            </div>
-            <div className="text-sm text-gray-500">
-              © {new Date().getFullYear()} LegalCasePortal
-            </div>
-          </div>
+      {/* Scrollable Content */}
+      <main className="flex-1 overflow-y-auto px-4 py-6 pb-24">
+        <div className="max-w-2xl mx-auto w-full">
+          {children}
         </div>
-      </footer>
+      </main>
     </div>
   )
 }

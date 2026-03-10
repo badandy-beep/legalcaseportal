@@ -40,37 +40,45 @@ export default function Phase7Page() {
   }
 
   return (
-    <div className="card">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-navy-900 mb-2">Diagnoses & Injuries</h1>
-        <p className="text-gray-600">Select all diagnoses that apply to your child.</p>
-      </div>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-3">
-          <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-            <FileHeart className="w-5 h-5 text-teal-600" /> Primary Diagnoses
-          </h2>
-          <p className="text-sm text-gray-500">Check all that apply:</p>
-          <div className="grid gap-3">
-            {DIAGNOSES.map(dx => (
-              <label key={dx.id} className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${diagnoses[dx.id] ? 'border-teal-500 bg-teal-50' : 'border-gray-200 hover:border-gray-300'}`}>
-                <input type="checkbox" checked={diagnoses[dx.id] || false} onChange={() => toggleDiagnosis(dx.id)} className="checkbox-custom mt-0.5" />
-                <div>
-                  <span className="font-medium text-gray-900">{dx.label}</span>
-                  {dx.icd && <span className="text-xs text-gray-500 ml-2">ICD: {dx.icd}</span>}
-                </div>
-              </label>
-            ))}
+    <>
+      <div className="card">
+        <div className="mb-6">
+          <h1 className="text-2xl font-bold text-navy-900 mb-2">Diagnoses & Injuries</h1>
+          <p className="text-gray-600">Select all diagnoses that apply to your child.</p>
+        </div>
+        <form id="phase-7-form" onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
+              <FileHeart className="w-5 h-5 text-teal-600" /> Primary Diagnoses
+            </h2>
+            <p className="text-sm text-gray-500">Check all that apply:</p>
+            <div className="grid gap-3">
+              {DIAGNOSES.map(dx => (
+                <label key={dx.id} className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${diagnoses[dx.id] ? 'border-teal-500 bg-teal-50' : 'border-gray-200 hover:border-gray-300'}`}>
+                  <input type="checkbox" checked={diagnoses[dx.id] || false} onChange={() => toggleDiagnosis(dx.id)} className="checkbox-custom mt-0.5" />
+                  <div>
+                    <span className="font-medium text-gray-900">{dx.label}</span>
+                    {dx.icd && <span className="text-xs text-gray-500 ml-2">ICD: {dx.icd}</span>}
+                  </div>
+                </label>
+              ))}
+            </div>
           </div>
+          <div>
+            <label className="input-label">Other Diagnoses</label>
+            <textarea value={otherDiagnoses} onChange={(e) => setOtherDiagnoses(e.target.value)} className="input-field" rows={3} placeholder="List any other diagnoses not mentioned above" />
+          </div>
+        </form>
+      </div>
+
+      {/* Sticky Footer CTA */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 z-10">
+        <div className="max-w-2xl mx-auto">
+          <button type="submit" form="phase-7-form" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2">
+            {loading ? 'Saving...' : <>Continue to Autism Assessment <ArrowRight className="w-5 h-5" /></>}
+          </button>
         </div>
-        <div>
-          <label className="input-label">Other Diagnoses</label>
-          <textarea value={otherDiagnoses} onChange={(e) => setOtherDiagnoses(e.target.value)} className="input-field" rows={3} placeholder="List any other diagnoses not mentioned above" />
-        </div>
-        <button type="submit" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2">
-          {loading ? 'Saving...' : <>Continue to Autism Assessment <ArrowRight className="w-5 h-5" /></>}
-        </button>
-      </form>
-    </div>
+      </div>
+    </>
   )
 }
