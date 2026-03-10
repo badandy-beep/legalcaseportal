@@ -180,6 +180,18 @@ export default function Phase11Page() {
           </button>
         </div>
       </div>
+
+      {/* Closing Message */}
+      <div className="text-center mt-8 p-6 bg-alg-navy rounded-xl text-white">
+        <h3 className="text-xl font-bold mb-3">What Happens Next</h3>
+        <p className="text-white/80 text-sm leading-relaxed mb-4">
+          The Kompothecras family has been fighting for families like yours for nearly two decades.
+          Alex&rsquo;s team will review your submission within 24 hours and contact you to discuss
+          next steps &mdash; at no cost to you.
+        </p>
+        <p className="text-alg-gold font-bold text-xl mb-2">(941) 304-1500</p>
+        <p className="text-white/50 text-sm">alphainjurylaw.com | justiceforautism.org</p>
+      </div>
     </>
   )
 }

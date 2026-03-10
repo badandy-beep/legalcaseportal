@@ -68,6 +68,13 @@ export default function Phase1Page() {
 
   return (
     <>
+      {/* Welcome Banner */}
+      <div className="bg-alg-navy/5 border-l-4 border-alg-gold p-4 rounded-r-lg mb-6">
+        <p className="text-sm text-gray-700 leading-relaxed">
+          You&rsquo;re in good hands. Alex and the Alpha Law Group team review every submission personally &mdash; because to them, this isn&rsquo;t just a case. It&rsquo;s family. This intake takes approximately 15 minutes.
+        </p>
+      </div>
+
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Account Setup</h1>

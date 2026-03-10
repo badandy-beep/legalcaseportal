@@ -1,7 +1,5 @@
 'use client'
 
-import { Shield, ArrowLeft, Phone } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const phases = [
@@ -33,35 +31,26 @@ export default function IntakeLayout({
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm z-50">
+      <header className="bg-alg-navy z-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-14">
-            <Link href="/" className="flex items-center gap-2">
-              <Shield className="w-7 h-7 text-alg-gold" />
-              <span className="text-lg font-bold text-alg-navy">LegalCasePortal</span>
-            </Link>
-            <div className="flex items-center gap-4">
-              <a href="tel:1-800-XXX-XXXX" className="hidden sm:flex items-center gap-2 text-gray-600 hover:text-alg-navy">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">Need Help?</span>
-              </a>
-              {currentPhase > 1 && (
-                <Link
-                  href={`/intake/phase-${currentPhase - 1}`}
-                  className="flex items-center gap-1 text-gray-600 hover:text-alg-navy"
-                >
-                  <ArrowLeft className="w-4 h-4" />
-                  <span className="text-sm">Back</span>
-                </Link>
-              )}
+          <div className="flex justify-between items-center h-16">
+            <div>
+              <div className="font-bold text-white tracking-wide">ALPHA LAW GROUP</div>
+              <div className="text-alg-gold text-xs">Justice for Autism Initiative</div>
+            </div>
+            <div className="text-right">
+              <div className="text-white/50 text-xs italic">Powered by LegalCasePortal™</div>
+              <a href="tel:9413041500" className="text-alg-gold text-xs font-semibold">(941) 304-1500</a>
             </div>
           </div>
         </div>
       </header>
+      {/* Gold accent stripe */}
+      <div className="h-[2px] bg-alg-gold" />
 
       {/* Progress Bar (only show during phases) */}
       {currentPhase > 0 && (
-        <div className="sticky top-[52px] z-10 bg-white border-b border-gray-200 px-4 py-3 shadow-sm">
+        <div className="sticky top-[66px] z-10 bg-white border-b border-gray-200 px-4 py-3 shadow-sm">
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-gray-700">
@@ -106,6 +95,19 @@ export default function IntakeLayout({
         <div className="max-w-2xl mx-auto w-full">
           {children}
         </div>
+
+        {/* Footer */}
+        <footer className="mt-16 pb-8 px-4">
+          <p className="text-sm text-gray-500 text-center">
+            Alpha Law Group, PLLC | Justice for Autism Initiative | Sarasota, Florida | (941) 304-1500
+          </p>
+          <p className="text-xs text-gray-400 text-center max-w-4xl mx-auto mt-2">
+            ATTORNEY ADVERTISING: Completion of this intake form does not create an attorney-client relationship. No legal advice is provided herein. Alpha Law Group represents clients on a contingency fee basis — no fees charged unless a recovery is obtained. VICP NOTICE: Strict filing deadlines apply. Contact an attorney immediately to protect your rights. PRIVACY: All information submitted is confidential and subject to attorney-client privilege.
+          </p>
+          <p className="text-xs text-gray-300 text-center mt-2">
+            &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
+          </p>
+        </footer>
       </main>
     </div>
   )
