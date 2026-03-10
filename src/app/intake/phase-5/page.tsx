@@ -31,21 +31,21 @@ export default function Phase5Page() {
         <p className="text-gray-600">Details about the labor and delivery.</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div><label className="input-label">Hospital Full Name <span className="text-coral-600">*</span></label>
-          <input type="text" name="hospitalName" value={formData.hospitalName} onChange={handleChange} className="input-field" required /></div>
-        <div><label className="input-label">Hospital Address <span className="text-coral-600">*</span></label>
-          <input type="text" name="hospitalAddress" value={formData.hospitalAddress} onChange={handleChange} className="input-field" required /></div>
+        <div><label className="input-label">Hospital Full Name</label>
+          <input type="text" name="hospitalName" value={formData.hospitalName} onChange={handleChange} className="input-field" /></div>
+        <div><label className="input-label">Hospital Address</label>
+          <input type="text" name="hospitalAddress" value={formData.hospitalAddress} onChange={handleChange} className="input-field" /></div>
         <label className="flex items-center gap-2"><input type="checkbox" name="isTeachingHospital" checked={formData.isTeachingHospital} onChange={handleChange} className="checkbox-custom" /><span className="text-sm">Teaching Hospital</span></label>
-        <div><label className="input-label">Delivering Physician <span className="text-coral-600">*</span></label>
-          <input type="text" name="deliveringPhysician" value={formData.deliveringPhysician} onChange={handleChange} className="input-field" required /></div>
+        <div><label className="input-label">Delivering Physician</label>
+          <input type="text" name="deliveringPhysician" value={formData.deliveringPhysician} onChange={handleChange} className="input-field" /></div>
         <div><label className="input-label">Attending OB</label>
           <input type="text" name="attendingOB" value={formData.attendingOB} onChange={handleChange} className="input-field" /></div>
         <div><label className="input-label">Anesthesiologist</label>
           <input type="text" name="anesthesiologist" value={formData.anesthesiologist} onChange={handleChange} className="input-field" /></div>
         <div><label className="input-label">Neonatologist</label>
           <input type="text" name="neonatologist" value={formData.neonatologist} onChange={handleChange} className="input-field" /></div>
-        <div><label className="input-label">L&D Complications <span className="text-coral-600">*</span></label>
-          <textarea name="complications" value={formData.complications} onChange={handleChange} className="input-field" rows={4} placeholder="Describe any complications during labor and delivery" required /></div>
+        <div><label className="input-label">L&D Complications</label>
+          <textarea name="complications" value={formData.complications} onChange={handleChange} className="input-field" rows={4} placeholder="Describe any complications during labor and delivery" /></div>
         <button type="submit" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2">
           {loading ? 'Saving...' : <>Continue to Pediatric Care <ArrowRight className="w-5 h-5" /></>}
         </button>

@@ -4,10 +4,10 @@ import { useRouter } from 'next/navigation'
 import { Upload, FileText, X, ArrowRight, CheckCircle } from 'lucide-react'
 
 const DOCUMENT_TYPES = [
-  { id: 'birthCertificate', label: 'Birth Certificate', required: true },
-  { id: 'vaccinationRecords', label: 'Vaccination Records', required: true },
+  { id: 'birthCertificate', label: 'Birth Certificate', required: false },
+  { id: 'vaccinationRecords', label: 'Vaccination Records', required: false },
   { id: 'medicalRecords', label: 'Medical Records', required: false },
-  { id: 'diagnosisReports', label: 'Diagnosis/Evaluation Reports', required: true },
+  { id: 'diagnosisReports', label: 'Diagnosis/Evaluation Reports', required: false },
   { id: 'iepRecords', label: 'IEP/School Records', required: false },
   { id: 'therapyRecords', label: 'Therapy Records', required: false },
   { id: 'hospitalRecords', label: 'Hospital/Birth Records', required: false },
@@ -87,7 +87,6 @@ export default function Phase9Page() {
             <div className="flex items-center justify-between mb-3">
               <div>
                 <span className="font-medium text-gray-900">{docType.label}</span>
-                {docType.required && <span className="text-coral-600 ml-1">*</span>}
               </div>
               <label className="btn-outline py-2 px-4 text-sm cursor-pointer">
                 <Upload className="w-4 h-4 inline mr-1" />

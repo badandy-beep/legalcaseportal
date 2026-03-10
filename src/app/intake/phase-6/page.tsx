@@ -29,8 +29,8 @@ export default function Phase6Page() {
         <p className="text-gray-600">Information about the child's pediatric care providers.</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div><label className="input-label">Pediatrician at Birth <span className="text-coral-600">*</span></label>
-          <input type="text" name="pediatricianAtBirth" value={formData.pediatricianAtBirth} onChange={handleChange} className="input-field" required placeholder="Name and practice" /></div>
+        <div><label className="input-label">Pediatrician at Birth</label>
+          <input type="text" name="pediatricianAtBirth" value={formData.pediatricianAtBirth} onChange={handleChange} className="input-field" placeholder="Name and practice" /></div>
         <div className="bg-gray-50 p-4 rounded-lg space-y-4">
           <h3 className="font-semibold text-navy-900">NICU Stay (if applicable)</h3>
           <div><label className="input-label">NICU Attending Physician</label>

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { FileSignature, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react'
+import { FileSignature, ArrowRight, CheckCircle } from 'lucide-react'
 
 export default function Phase10Page() {
   const router = useRouter()
@@ -71,12 +71,8 @@ export default function Phase10Page() {
     setHasSignature(false)
   }
 
-  const allAgreed = Object.values(agreements).every(v => v) && hasSignature && signedName.trim().length > 0
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!allAgreed) return
-    
     setLoading(true)
     const signatureData = canvasRef.current?.toDataURL()
     localStorage.setItem('intake_phase10', JSON.stringify({
@@ -107,7 +103,7 @@ export default function Phase10Page() {
           </div>
           <label className="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" checked={agreements.hipaaConsent} onChange={(e) => setAgreements(p => ({...p, hipaaConsent: e.target.checked}))} className="checkbox-custom mt-1" />
-            <span className="text-sm">I have read and agree to the HIPAA Authorization <span className="text-coral-600">*</span></span>
+            <span className="text-sm">I have read and agree to the HIPAA Authorization</span>
           </label>
         </div>
 
@@ -121,7 +117,7 @@ export default function Phase10Page() {
           </div>
           <label className="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" checked={agreements.retainerAgreement} onChange={(e) => setAgreements(p => ({...p, retainerAgreement: e.target.checked}))} className="checkbox-custom mt-1" />
-            <span className="text-sm">I understand the retainer agreement terms <span className="text-coral-600">*</span></span>
+            <span className="text-sm">I understand the retainer agreement terms</span>
           </label>
         </div>
 
@@ -130,7 +126,7 @@ export default function Phase10Page() {
           <h3 className="font-semibold text-navy-900 mb-2">Accuracy Attestation</h3>
           <label className="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" checked={agreements.accuracyAttestation} onChange={(e) => setAgreements(p => ({...p, accuracyAttestation: e.target.checked}))} className="checkbox-custom mt-1" />
-            <span className="text-sm">I attest that all information provided in this intake form is true and accurate to the best of my knowledge. I understand that providing false information may impact my case. <span className="text-coral-600">*</span></span>
+            <span className="text-sm">I attest that all information provided in this intake form is true and accurate to the best of my knowledge. I understand that providing false information may impact my case.</span>
           </label>
         </div>
 
@@ -139,7 +135,7 @@ export default function Phase10Page() {
           <h3 className="font-semibold text-navy-900 mb-2">Electronic Signature Consent</h3>
           <label className="flex items-start gap-3 cursor-pointer">
             <input type="checkbox" checked={agreements.electronicSignature} onChange={(e) => setAgreements(p => ({...p, electronicSignature: e.target.checked}))} className="checkbox-custom mt-1" />
-            <span className="text-sm">I consent to using electronic signatures pursuant to the E-SIGN Act (15 U.S.C. § 7001 et seq.) and agree that my electronic signature below has the same legal effect as a handwritten signature. <span className="text-coral-600">*</span></span>
+            <span className="text-sm">I consent to using electronic signatures pursuant to the E-SIGN Act (15 U.S.C. § 7001 et seq.) and agree that my electronic signature below has the same legal effect as a handwritten signature.</span>
           </label>
         </div>
 
@@ -151,7 +147,7 @@ export default function Phase10Page() {
           </h3>
           
           <div className="mb-4">
-            <label className="input-label">Type Your Full Legal Name <span className="text-coral-600">*</span></label>
+            <label className="input-label">Type Your Full Legal Name</label>
             <input
               type="text"
               value={signedName}
@@ -162,7 +158,7 @@ export default function Phase10Page() {
           </div>
 
           <div className="mb-2">
-            <label className="input-label">Sign Below <span className="text-coral-600">*</span></label>
+            <label className="input-label">Sign Below</label>
             <p className="text-xs text-gray-500 mb-2">Use your mouse or finger to sign</p>
           </div>
           
@@ -205,14 +201,7 @@ export default function Phase10Page() {
           <p className="mt-1">Date: {new Date().toLocaleDateString()} | Time: {new Date().toLocaleTimeString()}</p>
         </div>
 
-        {!allAgreed && (
-          <div className="bg-coral-50 border border-coral-200 rounded-lg p-3 flex items-start gap-2">
-            <AlertCircle className="w-5 h-5 text-coral-600 flex-shrink-0 mt-0.5" />
-            <span className="text-sm text-coral-700">Please agree to all terms, type your name, and provide your signature to continue.</span>
-          </div>
-        )}
-
-        <button type="submit" disabled={loading || !allAgreed} className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+        <button type="submit" disabled={loading} className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
           {loading ? 'Saving...' : <>Continue to Review & Submit <ArrowRight className="w-5 h-5" /></>}
         </button>
       </form>

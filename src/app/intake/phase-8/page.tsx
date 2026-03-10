@@ -100,8 +100,8 @@ export default function Phase8Page() {
           <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
             <Brain className="w-5 h-5 text-teal-600" /> Diagnosis Information
           </h2>
-          <div><label className="input-label">Has your child received an official ASD diagnosis? <span className="text-coral-600">*</span></label>
-            <select name="hasDiagnosis" value={formData.hasDiagnosis} onChange={handleChange} className="input-field" required>
+          <div><label className="input-label">Has your child received an official ASD diagnosis?</label>
+            <select name="hasDiagnosis" value={formData.hasDiagnosis} onChange={handleChange} className="input-field">
               <option value="">Select...</option>
               <option value="Yes">Yes - Officially diagnosed</option>
               <option value="No - Suspected">No - But ASD is suspected</option>
@@ -190,8 +190,8 @@ export default function Phase8Page() {
           </div>
           
           <div className="space-y-4 mt-4">
-            <div><label className="input-label">Did your child experience regression? <span className="text-coral-600">*</span></label>
-              <select value={regressionDetails.experienced} onChange={(e) => setRegressionDetails(p => ({...p, experienced: e.target.value}))} className="input-field" required>
+            <div><label className="input-label">Did your child experience regression?</label>
+              <select value={regressionDetails.experienced} onChange={(e) => setRegressionDetails(p => ({...p, experienced: e.target.value}))} className="input-field">
                 <option value="">Select...</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>

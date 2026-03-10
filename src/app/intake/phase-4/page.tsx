@@ -31,13 +31,13 @@ export default function Phase4Page() {
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
-          <div><label className="input-label">Maternal Age at Birth <span className="text-coral-600">*</span></label>
-            <input type="number" name="maternalAge" value={formData.maternalAge} onChange={handleChange} className="input-field" min="14" max="60" required /></div>
+          <div><label className="input-label">Maternal Age at Birth</label>
+            <input type="number" name="maternalAge" value={formData.maternalAge} onChange={handleChange} className="input-field" min="14" max="60" /></div>
           <div><label className="input-label">Gravida/Para Status</label>
             <input type="text" name="gravidaPara" value={formData.gravidaPara} onChange={handleChange} className="input-field" placeholder="e.g., G2P1" /></div>
         </div>
-        <div><label className="input-label">OB/GYN Practice Name <span className="text-coral-600">*</span></label>
-          <input type="text" name="obPracticeName" value={formData.obPracticeName} onChange={handleChange} className="input-field" required /></div>
+        <div><label className="input-label">OB/GYN Practice Name</label>
+          <input type="text" name="obPracticeName" value={formData.obPracticeName} onChange={handleChange} className="input-field" /></div>
         <div><label className="input-label">Practice Address</label>
           <input type="text" name="obPracticeAddress" value={formData.obPracticeAddress} onChange={handleChange} className="input-field" /></div>
         <div><label className="input-label">Practice Phone</label>

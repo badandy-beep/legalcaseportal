@@ -82,8 +82,6 @@ export default function Phase2Page() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [children, setChildren] = useState<ChildData[]>([{ ...emptyChild }])
-  const [errors, setErrors] = useState<Record<string, string>>({})
-
   const handleChildChange = (index: number, field: keyof ChildData, value: string) => {
     setChildren(prev => {
       const updated = [...prev]
@@ -104,30 +102,8 @@ export default function Phase2Page() {
     }
   }
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    
-    children.forEach((child, index) => {
-      if (!child.fullName.trim()) newErrors[`child${index}_fullName`] = 'Child name is required'
-      if (!child.dateOfBirth) newErrors[`child${index}_dateOfBirth`] = 'Date of birth is required'
-      if (!child.sexAtBirth) newErrors[`child${index}_sexAtBirth`] = 'Sex at birth is required'
-      if (!child.hospitalName.trim()) newErrors[`child${index}_hospitalName`] = 'Hospital name is required'
-      if (!child.birthCity.trim()) newErrors[`child${index}_birthCity`] = 'Birth city is required'
-      if (!child.birthState) newErrors[`child${index}_birthState`] = 'Birth state is required'
-      if (!child.birthWeight.trim()) newErrors[`child${index}_birthWeight`] = 'Birth weight is required'
-      if (!child.gestationalAge.trim()) newErrors[`child${index}_gestationalAge`] = 'Gestational age is required'
-      if (!child.deliveryType) newErrors[`child${index}_deliveryType`] = 'Delivery type is required'
-      if (!child.custodyStatus) newErrors[`child${index}_custodyStatus`] = 'Custody status is required'
-    })
-    
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateForm()) return
-    
     setLoading(true)
     try {
       localStorage.setItem('intake_phase2', JSON.stringify(children))
@@ -176,17 +152,15 @@ export default function Phase2Page() {
 
               <div>
                 <label className="input-label">
-                  Child's Full Legal Name <span className="text-coral-600">*</span>
-                </label>
+                  Child's Full Legal Name                </label>
                 <input
                   type="text"
                   value={child.fullName}
                   onChange={(e) => handleChildChange(index, 'fullName', e.target.value)}
-                  className={`input-field ${errors[`child${index}_fullName`] ? 'input-invalid' : ''}`}
+                  className="input-field"
                   placeholder="First Middle Last"
                   maxLength={100}
                 />
-                {errors[`child${index}_fullName`] && <p className="input-error">{errors[`child${index}_fullName`]}</p>}
               </div>
 
               <div>
@@ -204,15 +178,13 @@ export default function Phase2Page() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="input-label">
-                    Date of Birth <span className="text-coral-600">*</span>
-                  </label>
+                    Date of Birth                  </label>
                   <input
                     type="date"
                     value={child.dateOfBirth}
                     onChange={(e) => handleChildChange(index, 'dateOfBirth', e.target.value)}
-                    className={`input-field ${errors[`child${index}_dateOfBirth`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                   />
-                  {errors[`child${index}_dateOfBirth`] && <p className="input-error">{errors[`child${index}_dateOfBirth`]}</p>}
                 </div>
                 <div>
                   <label className="input-label">Time of Birth</label>
@@ -228,19 +200,17 @@ export default function Phase2Page() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="input-label">
-                    Sex Assigned at Birth <span className="text-coral-600">*</span>
-                  </label>
+                    Sex Assigned at Birth                  </label>
                   <select
                     value={child.sexAtBirth}
                     onChange={(e) => handleChildChange(index, 'sexAtBirth', e.target.value)}
-                    className={`input-field ${errors[`child${index}_sexAtBirth`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                   >
                     <option value="">Select...</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Intersex">Intersex</option>
                   </select>
-                  {errors[`child${index}_sexAtBirth`] && <p className="input-error">{errors[`child${index}_sexAtBirth`]}</p>}
                 </div>
                 <div>
                   <label className="input-label">Current Gender Identity</label>
@@ -268,49 +238,43 @@ export default function Phase2Page() {
 
               <div>
                 <label className="input-label">
-                  Hospital/Birth Facility Name <span className="text-coral-600">*</span>
-                </label>
+                  Hospital/Birth Facility Name                </label>
                 <input
                   type="text"
                   value={child.hospitalName}
                   onChange={(e) => handleChildChange(index, 'hospitalName', e.target.value)}
-                  className={`input-field ${errors[`child${index}_hospitalName`] ? 'input-invalid' : ''}`}
+                  className="input-field"
                   placeholder="Full hospital or facility name"
                   maxLength={200}
                 />
-                {errors[`child${index}_hospitalName`] && <p className="input-error">{errors[`child${index}_hospitalName`]}</p>}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="input-label">
-                    Birth City <span className="text-coral-600">*</span>
-                  </label>
+                    Birth City                  </label>
                   <input
                     type="text"
                     value={child.birthCity}
                     onChange={(e) => handleChildChange(index, 'birthCity', e.target.value)}
-                    className={`input-field ${errors[`child${index}_birthCity`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                     placeholder="City"
                     maxLength={100}
                   />
-                  {errors[`child${index}_birthCity`] && <p className="input-error">{errors[`child${index}_birthCity`]}</p>}
                 </div>
                 <div>
                   <label className="input-label">
-                    Birth State <span className="text-coral-600">*</span>
-                  </label>
+                    Birth State                  </label>
                   <select
                     value={child.birthState}
                     onChange={(e) => handleChildChange(index, 'birthState', e.target.value)}
-                    className={`input-field ${errors[`child${index}_birthState`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                   >
                     <option value="">Select...</option>
                     {US_STATES.map(state => (
                       <option key={state} value={state}>{state}</option>
                     ))}
                   </select>
-                  {errors[`child${index}_birthState`] && <p className="input-error">{errors[`child${index}_birthState`]}</p>}
                 </div>
               </div>
 
@@ -332,17 +296,15 @@ export default function Phase2Page() {
               <div className="grid grid-cols-3 gap-4">
                 <div>
                   <label className="input-label">
-                    Birth Weight <span className="text-coral-600">*</span>
-                  </label>
+                    Birth Weight                  </label>
                   <input
                     type="text"
                     value={child.birthWeight}
                     onChange={(e) => handleChildChange(index, 'birthWeight', e.target.value)}
-                    className={`input-field ${errors[`child${index}_birthWeight`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                     placeholder="e.g., 7 lbs 8 oz"
                     maxLength={20}
                   />
-                  {errors[`child${index}_birthWeight`] && <p className="input-error">{errors[`child${index}_birthWeight`]}</p>}
                 </div>
                 <div>
                   <label className="input-label">Birth Length</label>
@@ -357,35 +319,31 @@ export default function Phase2Page() {
                 </div>
                 <div>
                   <label className="input-label">
-                    Gestational Age <span className="text-coral-600">*</span>
-                  </label>
+                    Gestational Age                  </label>
                   <input
                     type="text"
                     value={child.gestationalAge}
                     onChange={(e) => handleChildChange(index, 'gestationalAge', e.target.value)}
-                    className={`input-field ${errors[`child${index}_gestationalAge`] ? 'input-invalid' : ''}`}
+                    className="input-field"
                     placeholder="e.g., 39 weeks"
                     maxLength={20}
                   />
-                  {errors[`child${index}_gestationalAge`] && <p className="input-error">{errors[`child${index}_gestationalAge`]}</p>}
                 </div>
               </div>
 
               <div>
                 <label className="input-label">
-                  Delivery Type <span className="text-coral-600">*</span>
-                </label>
+                  Delivery Type                </label>
                 <select
                   value={child.deliveryType}
                   onChange={(e) => handleChildChange(index, 'deliveryType', e.target.value)}
-                  className={`input-field ${errors[`child${index}_deliveryType`] ? 'input-invalid' : ''}`}
+                  className="input-field"
                 >
                   <option value="">Select...</option>
                   {DELIVERY_TYPES.map(type => (
                     <option key={type} value={type}>{type}</option>
                   ))}
                 </select>
-                {errors[`child${index}_deliveryType`] && <p className="input-error">{errors[`child${index}_deliveryType`]}</p>}
               </div>
 
               {/* Apgar Scores */}
@@ -463,19 +421,17 @@ export default function Phase2Page() {
 
               <div>
                 <label className="input-label">
-                  Legal Custody Status <span className="text-coral-600">*</span>
-                </label>
+                  Legal Custody Status                </label>
                 <select
                   value={child.custodyStatus}
                   onChange={(e) => handleChildChange(index, 'custodyStatus', e.target.value)}
-                  className={`input-field ${errors[`child${index}_custodyStatus`] ? 'input-invalid' : ''}`}
+                  className="input-field"
                 >
                   <option value="">Select...</option>
                   {CUSTODY_STATUS.map(status => (
                     <option key={status} value={status}>{status}</option>
                   ))}
                 </select>
-                {errors[`child${index}_custodyStatus`] && <p className="input-error">{errors[`child${index}_custodyStatus`]}</p>}
               </div>
             </div>
           </div>

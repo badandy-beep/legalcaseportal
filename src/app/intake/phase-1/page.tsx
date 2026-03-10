@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { User, Mail, Phone, MapPin, Upload, Eye, EyeOff, ArrowRight, AlertCircle } from 'lucide-react'
+import { User, Mail, Phone, MapPin, Upload, Eye, EyeOff, ArrowRight } from 'lucide-react'
 
 // US States for select dropdown
 const US_STATES = [
@@ -30,8 +30,6 @@ export default function Phase1Page() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -50,37 +48,10 @@ export default function Phase1Page() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-    // Clear error when user starts typing
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }))
-    }
-  }
-
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required'
-    if (!formData.email.trim()) newErrors.email = 'Email is required'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Invalid email format'
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required'
-    if (!formData.relationship) newErrors.relationship = 'Please select your relationship to the child'
-    if (!formData.dateOfBirth) newErrors.dateOfBirth = 'Date of birth is required'
-    if (!formData.addressStreet.trim()) newErrors.addressStreet = 'Street address is required'
-    if (!formData.addressCity.trim()) newErrors.addressCity = 'City is required'
-    if (!formData.addressState) newErrors.addressState = 'State is required'
-    if (!formData.addressZip.trim()) newErrors.addressZip = 'ZIP code is required'
-    if (!formData.password) newErrors.password = 'Password is required'
-    else if (formData.password.length < 8) newErrors.password = 'Password must be at least 8 characters'
-    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match'
-    
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    if (!validateForm()) return
     
     setLoading(true)
     
@@ -96,7 +67,6 @@ export default function Phase1Page() {
       router.push('/intake/phase-2')
     } catch (error) {
       console.error('Error:', error)
-      setErrors({ submit: 'An error occurred. Please try again.' })
     } finally {
       setLoading(false)
     }
@@ -122,55 +92,49 @@ export default function Phase1Page() {
           {/* Full Name */}
           <div>
             <label htmlFor="fullName" className="input-label">
-              Full Legal Name <span className="text-coral-600">*</span>
-            </label>
+              Full Legal Name            </label>
             <input
               type="text"
               id="fullName"
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              className={`input-field ${errors.fullName ? 'input-invalid' : ''}`}
+              className="input-field"
               placeholder="Enter your full legal name"
               maxLength={100}
             />
-            {errors.fullName && <p className="input-error">{errors.fullName}</p>}
           </div>
 
           {/* Relationship to Child */}
           <div>
             <label htmlFor="relationship" className="input-label">
-              Relationship to Child <span className="text-coral-600">*</span>
-            </label>
+              Relationship to Child            </label>
             <select
               id="relationship"
               name="relationship"
               value={formData.relationship}
               onChange={handleChange}
-              className={`input-field ${errors.relationship ? 'input-invalid' : ''}`}
+              className="input-field"
             >
               <option value="">Select relationship...</option>
               {RELATIONSHIPS.map(rel => (
                 <option key={rel} value={rel}>{rel}</option>
               ))}
             </select>
-            {errors.relationship && <p className="input-error">{errors.relationship}</p>}
           </div>
 
           {/* Date of Birth */}
           <div>
             <label htmlFor="dateOfBirth" className="input-label">
-              Your Date of Birth <span className="text-coral-600">*</span>
-            </label>
+              Your Date of Birth            </label>
             <input
               type="date"
               id="dateOfBirth"
               name="dateOfBirth"
               value={formData.dateOfBirth}
               onChange={handleChange}
-              className={`input-field ${errors.dateOfBirth ? 'input-invalid' : ''}`}
+              className="input-field"
             />
-            {errors.dateOfBirth && <p className="input-error">{errors.dateOfBirth}</p>}
             <p className="text-xs text-gray-500 mt-1">You must be 18 or older</p>
           </div>
         </div>
@@ -185,37 +149,33 @@ export default function Phase1Page() {
           {/* Email */}
           <div>
             <label htmlFor="email" className="input-label">
-              Email Address <span className="text-coral-600">*</span>
-            </label>
+              Email Address            </label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`input-field ${errors.email ? 'input-invalid' : ''}`}
+              className="input-field"
               placeholder="your.email@example.com"
               maxLength={254}
             />
-            {errors.email && <p className="input-error">{errors.email}</p>}
           </div>
 
           {/* Phone */}
           <div>
             <label htmlFor="phone" className="input-label">
-              Mobile Phone <span className="text-coral-600">*</span>
-            </label>
+              Mobile Phone            </label>
             <input
               type="tel"
               id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={`input-field ${errors.phone ? 'input-invalid' : ''}`}
+              className="input-field"
               placeholder="(555) 123-4567"
               maxLength={15}
             />
-            {errors.phone && <p className="input-error">{errors.phone}</p>}
           </div>
         </div>
 
@@ -229,72 +189,64 @@ export default function Phase1Page() {
           {/* Street */}
           <div>
             <label htmlFor="addressStreet" className="input-label">
-              Street Address <span className="text-coral-600">*</span>
-            </label>
+              Street Address            </label>
             <input
               type="text"
               id="addressStreet"
               name="addressStreet"
               value={formData.addressStreet}
               onChange={handleChange}
-              className={`input-field ${errors.addressStreet ? 'input-invalid' : ''}`}
+              className="input-field"
               placeholder="123 Main Street, Apt 4B"
               maxLength={200}
             />
-            {errors.addressStreet && <p className="input-error">{errors.addressStreet}</p>}
           </div>
 
           {/* City, State, ZIP */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="col-span-2">
               <label htmlFor="addressCity" className="input-label">
-                City <span className="text-coral-600">*</span>
-              </label>
+                City              </label>
               <input
                 type="text"
                 id="addressCity"
                 name="addressCity"
                 value={formData.addressCity}
                 onChange={handleChange}
-                className={`input-field ${errors.addressCity ? 'input-invalid' : ''}`}
+                className="input-field"
                 placeholder="City"
                 maxLength={100}
               />
-              {errors.addressCity && <p className="input-error">{errors.addressCity}</p>}
             </div>
             <div>
               <label htmlFor="addressState" className="input-label">
-                State <span className="text-coral-600">*</span>
-              </label>
+                State              </label>
               <select
                 id="addressState"
                 name="addressState"
                 value={formData.addressState}
                 onChange={handleChange}
-                className={`input-field ${errors.addressState ? 'input-invalid' : ''}`}
+                className="input-field"
               >
                 <option value="">State</option>
                 {US_STATES.map(state => (
                   <option key={state} value={state}>{state}</option>
                 ))}
               </select>
-              {errors.addressState && <p className="input-error">{errors.addressState}</p>}
             </div>
             <div>
               <label htmlFor="addressZip" className="input-label">
-                ZIP <span className="text-coral-600">*</span>
-              </label>
+                ZIP              </label>
               <input
                 type="text"
                 id="addressZip"
                 name="addressZip"
                 value={formData.addressZip}
                 onChange={handleChange}
-                className={`input-field ${errors.addressZip ? 'input-invalid' : ''}`}
+                className="input-field"
                 placeholder="12345"
                 maxLength={10}
               />
-              {errors.addressZip && <p className="input-error">{errors.addressZip}</p>}
             </div>
           </div>
         </div>
@@ -307,8 +259,7 @@ export default function Phase1Page() {
           
           <div>
             <label htmlFor="password" className="input-label">
-              Password <span className="text-coral-600">*</span>
-            </label>
+              Password            </label>
             <div className="relative">
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -316,7 +267,7 @@ export default function Phase1Page() {
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                className={`input-field pr-12 ${errors.password ? 'input-invalid' : ''}`}
+                className="input-field pr-12"
                 placeholder="Minimum 8 characters"
                 maxLength={128}
               />
@@ -328,24 +279,21 @@ export default function Phase1Page() {
                 {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
               </button>
             </div>
-            {errors.password && <p className="input-error">{errors.password}</p>}
           </div>
 
           <div>
             <label htmlFor="confirmPassword" className="input-label">
-              Confirm Password <span className="text-coral-600">*</span>
-            </label>
+              Confirm Password            </label>
             <input
               type={showPassword ? 'text' : 'password'}
               id="confirmPassword"
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className={`input-field ${errors.confirmPassword ? 'input-invalid' : ''}`}
+              className="input-field"
               placeholder="Re-enter your password"
               maxLength={128}
             />
-            {errors.confirmPassword && <p className="input-error">{errors.confirmPassword}</p>}
           </div>
         </div>
 
@@ -367,14 +315,6 @@ export default function Phase1Page() {
           />
           <p className="text-xs text-gray-500 mt-1">Used for identity verification only</p>
         </div>
-
-        {/* Submit Error */}
-        {errors.submit && (
-          <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 flex items-start gap-3">
-            <AlertCircle className="w-5 h-5 text-coral-600 flex-shrink-0 mt-0.5" />
-            <p className="text-coral-700">{errors.submit}</p>
-          </div>
-        )}
 
         {/* Submit Button */}
         <div className="pt-4">

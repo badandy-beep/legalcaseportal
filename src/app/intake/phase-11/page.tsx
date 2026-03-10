@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { CheckCircle, Edit, Send, AlertCircle, User, Baby, Users, Heart, Building2, Stethoscope, FileHeart, Brain, Upload, FileSignature } from 'lucide-react'
+import { CheckCircle, Edit, Send, User, Baby, Users, Heart, Building2, Stethoscope, FileHeart, Brain, Upload, FileSignature } from 'lucide-react'
 
 const sections = [
   { key: 'phase1', label: 'Account Setup', icon: User, phase: 1 },
@@ -65,8 +65,6 @@ export default function Phase11Page() {
       setLoading(false)
     }
   }
-
-  const allSectionsComplete = sections.slice(0, 10).every(s => completedSections.includes(s.key))
 
   return (
     <div className="card">
@@ -163,19 +161,9 @@ export default function Phase11Page() {
         </ul>
       </div>
 
-      {!allSectionsComplete && (
-        <div className="bg-coral-50 border border-coral-200 rounded-lg p-4 mb-6 flex items-start gap-3">
-          <AlertCircle className="w-5 h-5 text-coral-600 flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="font-medium text-coral-800">Incomplete Sections</p>
-            <p className="text-sm text-coral-700">Please complete all sections before submitting.</p>
-          </div>
-        </div>
-      )}
-
       <button
         onClick={handleSubmit}
-        disabled={loading || !allSectionsComplete}
+        disabled={loading}
         className="w-full bg-coral-600 hover:bg-coral-700 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
       >
         {loading ? (
