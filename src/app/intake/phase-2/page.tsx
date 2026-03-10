@@ -119,7 +119,7 @@ export default function Phase2Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Child Information</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Child Information</h1>
           <p className="text-gray-600">
             Please provide detailed information about the affected child.
           </p>
@@ -130,13 +130,13 @@ export default function Phase2Page() {
             <div key={index} className="mb-8 pb-8 border-b border-gray-200 last:border-0">
               {children.length > 1 && (
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg font-semibold text-navy-900">
+                  <h2 className="text-lg font-semibold text-alg-navy">
                     Child {index + 1} {index === 1 ? '(Twin)' : ''}
                   </h2>
                   <button
                     type="button"
                     onClick={() => removeChild(index)}
-                    className="text-coral-600 hover:text-coral-700 flex items-center gap-1 text-sm"
+                    className="text-red-600 hover:text-red-700 flex items-center gap-1 text-sm"
                   >
                     <Trash2 className="w-4 h-4" />
                     Remove
@@ -146,8 +146,8 @@ export default function Phase2Page() {
 
               {/* Basic Information */}
               <div className="space-y-4 mb-6">
-                <h3 className="text-md font-semibold text-navy-900 flex items-center gap-2">
-                  <Baby className="w-5 h-5 text-teal-600" />
+                <h3 className="text-md font-semibold text-alg-navy flex items-center gap-2">
+                  <Baby className="w-5 h-5 text-alg-gold" />
                   Basic Information
                 </h3>
 
@@ -235,8 +235,8 @@ export default function Phase2Page() {
 
               {/* Birth Information */}
               <div className="space-y-4 mb-6">
-                <h3 className="text-md font-semibold text-navy-900 flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-teal-600" />
+                <h3 className="text-md font-semibold text-alg-navy flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-alg-gold" />
                   Birth Information
                 </h3>
 
@@ -402,7 +402,7 @@ export default function Phase2Page() {
 
               {/* Current Information */}
               <div className="space-y-4">
-                <h3 className="text-md font-semibold text-navy-900">Current Information</h3>
+                <h3 className="text-md font-semibold text-alg-navy">Current Information</h3>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -453,7 +453,7 @@ export default function Phase2Page() {
             <button
               type="button"
               onClick={addChild}
-              className="mb-6 w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-600 hover:border-teal-500 hover:text-teal-600 transition-colors flex items-center justify-center gap-2"
+              className="mb-6 w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-600 hover:border-alg-gold hover:text-alg-gold transition-colors flex items-center justify-center gap-2"
             >
               <Plus className="w-5 h-5" />
               Add Twin/Multiple

@@ -28,14 +28,14 @@ export default function Phase3Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Parents/Guardians</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Parents/Guardians</h1>
           <p className="text-gray-600">Provide information about the child's parents or guardians.</p>
         </div>
 
         <form id="phase-3-form" onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <Users className="w-5 h-5 text-teal-600" /> Mother's Information
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <Users className="w-5 h-5 text-alg-gold" /> Mother's Information
             </h2>
             <div className="grid grid-cols-2 gap-4">
               <div><label className="input-label">Full Name</label><input type="text" name="motherName" value={formData.motherName} onChange={handleChange} className="input-field" /></div>
@@ -50,8 +50,8 @@ export default function Phase3Page() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <Users className="w-5 h-5 text-teal-600" /> Father's Information
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <Users className="w-5 h-5 text-alg-gold" /> Father's Information
             </h2>
             <div><label className="input-label">Full Name</label><input type="text" name="fatherName" value={formData.fatherName} onChange={handleChange} className="input-field" /></div>
             <div className="grid grid-cols-2 gap-4">

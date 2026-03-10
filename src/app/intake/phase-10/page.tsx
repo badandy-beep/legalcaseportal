@@ -89,14 +89,14 @@ export default function Phase10Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Legal Agreements</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Legal Agreements</h1>
           <p className="text-gray-600">Please review and sign the required legal documents.</p>
         </div>
 
         <form id="phase-10-form" onSubmit={handleSubmit} className="space-y-6">
           {/* HIPAA Authorization */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold text-navy-900 mb-2">HIPAA Authorization</h3>
+            <h3 className="font-semibold text-alg-navy mb-2">HIPAA Authorization</h3>
             <div className="bg-gray-50 rounded p-3 mb-3 max-h-40 overflow-y-auto text-sm text-gray-700">
               <p className="mb-2">I hereby authorize the release of my child's protected health information (PHI) to LegalCasePortal and affiliated legal counsel for the purpose of evaluating and pursuing a potential claim under the National Vaccine Injury Compensation Program (NVICP).</p>
               <p className="mb-2">This authorization includes: Medical records, vaccination records, diagnostic evaluations, therapy notes, hospital records, and any other health information relevant to evaluating the potential claim.</p>
@@ -110,7 +110,7 @@ export default function Phase10Page() {
 
           {/* Retainer Agreement */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold text-navy-900 mb-2">Retainer Agreement Understanding</h3>
+            <h3 className="font-semibold text-alg-navy mb-2">Retainer Agreement Understanding</h3>
             <div className="bg-gray-50 rounded p-3 mb-3 max-h-40 overflow-y-auto text-sm text-gray-700">
               <p className="mb-2">I understand that by completing this intake form, I am seeking legal representation for a potential NVICP claim. If my case is accepted, I will enter into a formal retainer agreement with the assigned attorney.</p>
               <p className="mb-2">I understand that attorney fees in NVICP cases are typically paid by the Vaccine Injury Compensation Trust Fund, separate from any compensation I may receive.</p>
@@ -124,7 +124,7 @@ export default function Phase10Page() {
 
           {/* Accuracy Attestation */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold text-navy-900 mb-2">Accuracy Attestation</h3>
+            <h3 className="font-semibold text-alg-navy mb-2">Accuracy Attestation</h3>
             <label className="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" checked={agreements.accuracyAttestation} onChange={(e) => setAgreements(p => ({...p, accuracyAttestation: e.target.checked}))} className="checkbox-custom mt-1" />
               <span className="text-sm">I attest that all information provided in this intake form is true and accurate to the best of my knowledge. I understand that providing false information may impact my case.</span>
@@ -133,7 +133,7 @@ export default function Phase10Page() {
 
           {/* Electronic Signature Consent */}
           <div className="border border-gray-200 rounded-lg p-4">
-            <h3 className="font-semibold text-navy-900 mb-2">Electronic Signature Consent</h3>
+            <h3 className="font-semibold text-alg-navy mb-2">Electronic Signature Consent</h3>
             <label className="flex items-start gap-3 cursor-pointer">
               <input type="checkbox" checked={agreements.electronicSignature} onChange={(e) => setAgreements(p => ({...p, electronicSignature: e.target.checked}))} className="checkbox-custom mt-1" />
               <span className="text-sm">I consent to using electronic signatures pursuant to the E-SIGN Act (15 U.S.C. § 7001 et seq.) and agree that my electronic signature below has the same legal effect as a handwritten signature.</span>
@@ -141,9 +141,9 @@ export default function Phase10Page() {
           </div>
 
           {/* Digital Signature Capture */}
-          <div className="border-2 border-navy-200 rounded-lg p-4 bg-navy-50">
-            <h3 className="font-semibold text-navy-900 mb-3 flex items-center gap-2">
-              <FileSignature className="w-5 h-5 text-teal-600" />
+          <div className="border-2 border-alg-gray-border rounded-lg p-4 bg-alg-gray-light">
+            <h3 className="font-semibold text-alg-navy mb-3 flex items-center gap-2">
+              <FileSignature className="w-5 h-5 text-alg-gold" />
               Digital Signature
             </h3>
 
@@ -184,12 +184,12 @@ export default function Phase10Page() {
               )}
             </div>
 
-            <button type="button" onClick={clearSignature} className="mt-2 text-sm text-coral-600 hover:text-coral-700">
+            <button type="button" onClick={clearSignature} className="mt-2 text-sm text-red-600 hover:text-red-700">
               Clear Signature
             </button>
 
             {hasSignature && signedName && (
-              <div className="mt-3 flex items-center gap-2 text-teal-600">
+              <div className="mt-3 flex items-center gap-2 text-alg-gold">
                 <CheckCircle className="w-4 h-4" />
                 <span className="text-sm">Signature captured</span>
               </div>

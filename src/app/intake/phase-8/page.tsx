@@ -91,15 +91,15 @@ export default function Phase8Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Autism Assessment</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Autism Assessment</h1>
           <p className="text-gray-600">Detailed information about autism diagnosis, symptoms, and regression.</p>
         </div>
 
         <form id="phase-8-form" onSubmit={handleSubmit} className="space-y-8">
           {/* Diagnosis Info */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <Brain className="w-5 h-5 text-teal-600" /> Diagnosis Information
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <Brain className="w-5 h-5 text-alg-gold" /> Diagnosis Information
             </h2>
             <div><label className="input-label">Has your child received an official ASD diagnosis?</label>
               <select name="hasDiagnosis" value={formData.hasDiagnosis} onChange={handleChange} className="input-field">
@@ -130,7 +130,7 @@ export default function Phase8Page() {
 
           {/* Developmental Milestones */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900">Developmental Milestones</h2>
+            <h2 className="text-lg font-semibold text-alg-navy">Developmental Milestones</h2>
             <p className="text-sm text-gray-500">For each milestone, indicate if it was achieved on time, delayed, never achieved, or lost.</p>
             <div className="space-y-3">
               {MILESTONES.map(m => (
@@ -151,10 +151,10 @@ export default function Phase8Page() {
 
           {/* Social Communication Symptoms */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900">Social Communication Symptoms</h2>
+            <h2 className="text-lg font-semibold text-alg-navy">Social Communication Symptoms</h2>
             <div className="grid gap-2">
               {SOCIAL_SYMPTOMS.map(s => (
-                <label key={s} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${socialSymptoms.includes(s) ? 'border-teal-500 bg-teal-50' : 'border-gray-200'}`}>
+                <label key={s} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${socialSymptoms.includes(s) ? 'border-alg-gold bg-alg-gold/10' : 'border-gray-200'}`}>
                   <input type="checkbox" checked={socialSymptoms.includes(s)} onChange={() => toggleSymptom(socialSymptoms, setSocialSymptoms, s)} className="checkbox-custom" />
                   <span className="text-sm">{s}</span>
                 </label>
@@ -164,10 +164,10 @@ export default function Phase8Page() {
 
           {/* Repetitive Behaviors */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900">Repetitive/Restricted Behaviors</h2>
+            <h2 className="text-lg font-semibold text-alg-navy">Repetitive/Restricted Behaviors</h2>
             <div className="grid gap-2">
               {REPETITIVE_BEHAVIORS.map(b => (
-                <label key={b} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${repetitiveBehaviors.includes(b) ? 'border-teal-500 bg-teal-50' : 'border-gray-200'}`}>
+                <label key={b} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${repetitiveBehaviors.includes(b) ? 'border-alg-gold bg-alg-gold/10' : 'border-gray-200'}`}>
                   <input type="checkbox" checked={repetitiveBehaviors.includes(b)} onChange={() => toggleSymptom(repetitiveBehaviors, setRepetitiveBehaviors, b)} className="checkbox-custom" />
                   <span className="text-sm">{b}</span>
                 </label>
@@ -176,14 +176,14 @@ export default function Phase8Page() {
           </div>
 
           {/* Regression */}
-          <div className="space-y-4 bg-coral-50 p-4 rounded-lg border border-coral-200">
-            <h2 className="text-lg font-semibold text-coral-800 flex items-center gap-2">
+          <div className="space-y-4 bg-red-50 p-4 rounded-lg border border-red-200">
+            <h2 className="text-lg font-semibold text-red-800 flex items-center gap-2">
               <AlertCircle className="w-5 h-5" /> Regression Indicators
             </h2>
-            <p className="text-sm text-coral-700">This section is critical for vaccine injury cases.</p>
+            <p className="text-sm text-red-700">This section is critical for vaccine injury cases.</p>
             <div className="grid gap-2">
               {REGRESSION_INDICATORS.map(r => (
-                <label key={r} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${regressionIndicators.includes(r) ? 'border-coral-500 bg-coral-100' : 'border-coral-200 bg-white'}`}>
+                <label key={r} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${regressionIndicators.includes(r) ? 'border-red-500 bg-red-100' : 'border-red-200 bg-white'}`}>
                   <input type="checkbox" checked={regressionIndicators.includes(r)} onChange={() => toggleSymptom(regressionIndicators, setRegressionIndicators, r)} className="checkbox-custom" />
                   <span className="text-sm">{r}</span>
                 </label>
@@ -214,7 +214,7 @@ export default function Phase8Page() {
 
           {/* Vaccination Connection */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900">Vaccination History & Connection</h2>
+            <h2 className="text-lg font-semibold text-alg-navy">Vaccination History & Connection</h2>
             <div><label className="input-label">Do you believe vaccines played a role?</label>
               <select value={regressionDetails.vaccinesRole} onChange={(e) => setRegressionDetails(p => ({...p, vaccinesRole: e.target.value}))} className="input-field">
                 <option value="">Select...</option>
@@ -237,7 +237,7 @@ export default function Phase8Page() {
 
           {/* Current Status */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900">Current Status</h2>
+            <h2 className="text-lg font-semibold text-alg-navy">Current Status</h2>
             <div><label className="input-label">Current Therapies</label>
               <input type="text" value={regressionDetails.currentTherapies} onChange={(e) => setRegressionDetails(p => ({...p, currentTherapies: e.target.value}))} className="input-field" placeholder="ABA, OT, Speech, etc." /></div>
             <div><label className="input-label">School/Education Status</label>

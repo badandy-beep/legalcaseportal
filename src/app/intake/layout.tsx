@@ -37,18 +37,18 @@ export default function IntakeLayout({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14">
             <Link href="/" className="flex items-center gap-2">
-              <Shield className="w-7 h-7 text-teal-600" />
-              <span className="text-lg font-bold text-navy-900">LegalCasePortal</span>
+              <Shield className="w-7 h-7 text-alg-gold" />
+              <span className="text-lg font-bold text-alg-navy">LegalCasePortal</span>
             </Link>
             <div className="flex items-center gap-4">
-              <a href="tel:1-800-XXX-XXXX" className="hidden sm:flex items-center gap-2 text-gray-600 hover:text-navy-900">
+              <a href="tel:1-800-XXX-XXXX" className="hidden sm:flex items-center gap-2 text-gray-600 hover:text-alg-navy">
                 <Phone className="w-4 h-4" />
                 <span className="text-sm">Need Help?</span>
               </a>
               {currentPhase > 1 && (
                 <Link
                   href={`/intake/phase-${currentPhase - 1}`}
-                  className="flex items-center gap-1 text-gray-600 hover:text-navy-900"
+                  className="flex items-center gap-1 text-gray-600 hover:text-alg-navy"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span className="text-sm">Back</span>
@@ -67,7 +67,7 @@ export default function IntakeLayout({
               <span className="text-sm font-medium text-gray-700">
                 Phase {currentPhase} of 11: {phases[currentPhase - 1]?.name}
               </span>
-              <span className="text-sm font-medium text-teal-600">{progress}% Complete</span>
+              <span className="text-sm font-medium text-alg-gold">{progress}% Complete</span>
             </div>
             <div className="progress-bar">
               <div className="progress-fill" style={{ width: `${progress}%` }}></div>
@@ -83,14 +83,14 @@ export default function IntakeLayout({
                   <div
                     className={`w-3 h-3 rounded-full ${
                       phase.number < currentPhase
-                        ? 'bg-teal-600'
+                        ? 'bg-alg-gold'
                         : phase.number === currentPhase
-                          ? 'bg-teal-600 ring-4 ring-teal-100'
+                          ? 'bg-alg-gold ring-4 ring-alg-gold-light/30'
                           : 'bg-gray-300'
                     }`}
                   />
                   <span className={`text-xs mt-1 ${
-                    phase.number <= currentPhase ? 'text-teal-600 font-medium' : 'text-gray-400'
+                    phase.number <= currentPhase ? 'text-alg-gold font-medium' : 'text-gray-400'
                   }`}>
                     {phase.number}
                   </span>

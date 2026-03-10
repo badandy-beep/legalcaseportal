@@ -21,7 +21,7 @@ const statusColors: Record<string, string> = {
 }
 
 const priorityColors: Record<string, string> = {
-  'Urgent': 'text-coral-600',
+  'Urgent': 'text-red-600',
   'High': 'text-orange-600',
   'Normal': 'text-gray-600',
 }
@@ -41,30 +41,30 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-navy-900 text-white">
+      <aside className="fixed left-0 top-0 h-full w-64 bg-alg-navy text-white">
         <div className="p-6">
           <div className="flex items-center gap-2 mb-8">
-            <Shield className="w-8 h-8 text-teal-400" />
+            <Shield className="w-8 h-8 text-alg-gold-light" />
             <span className="text-xl font-bold">LegalCasePortal</span>
           </div>
           <nav className="space-y-2">
-            <Link href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-navy-800 text-white">
+            <Link href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-alg-navy/90 text-white">
               <LayoutDashboard className="w-5 h-5" />
               Dashboard
             </Link>
-            <Link href="/admin/cases" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-navy-800 hover:text-white">
+            <Link href="/admin/cases" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-alg-navy/90 hover:text-white">
               <FileText className="w-5 h-5" />
               Cases
             </Link>
-            <Link href="/admin/settings" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-navy-800 hover:text-white">
+            <Link href="/admin/settings" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-alg-navy/90 hover:text-white">
               <Settings className="w-5 h-5" />
               Settings
             </Link>
           </nav>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-navy-800">
+        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-alg-navy/80">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-alg-gold rounded-full flex items-center justify-center">
               <Users className="w-5 h-5" />
             </div>
             <div>
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
       {/* Main Content */}
       <main className="ml-64 p-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-navy-900 mb-2">Dashboard</h1>
+          <h1 className="text-3xl font-bold text-alg-navy mb-2">Dashboard</h1>
           <p className="text-gray-600">Welcome back. Here's an overview of your cases.</p>
         </div>
 
@@ -93,7 +93,7 @@ export default function AdminDashboard() {
                 <TrendingUp className="w-4 h-4" /> +12%
               </span>
             </div>
-            <p className="text-3xl font-bold text-navy-900">247</p>
+            <p className="text-3xl font-bold text-alg-navy">247</p>
             <p className="text-gray-600">Total Cases</p>
           </div>
 
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
                 <Clock className="w-6 h-6 text-yellow-600" />
               </div>
             </div>
-            <p className="text-3xl font-bold text-navy-900">18</p>
+            <p className="text-3xl font-bold text-alg-navy">18</p>
             <p className="text-gray-600">Pending Review</p>
           </div>
 
@@ -113,17 +113,17 @@ export default function AdminDashboard() {
                 <CheckCircle className="w-6 h-6 text-green-600" />
               </div>
             </div>
-            <p className="text-3xl font-bold text-navy-900">156</p>
+            <p className="text-3xl font-bold text-alg-navy">156</p>
             <p className="text-gray-600">Assigned</p>
           </div>
 
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-coral-100 rounded-lg flex items-center justify-center">
-                <AlertCircle className="w-6 h-6 text-coral-600" />
+              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                <AlertCircle className="w-6 h-6 text-red-600" />
               </div>
             </div>
-            <p className="text-3xl font-bold text-navy-900">5</p>
+            <p className="text-3xl font-bold text-alg-navy">5</p>
             <p className="text-gray-600">Urgent</p>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function AdminDashboard() {
         <div className="bg-white rounded-xl shadow-sm">
           <div className="p-6 border-b border-gray-200">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-navy-900">Recent Cases</h2>
+              <h2 className="text-xl font-bold text-alg-navy">Recent Cases</h2>
               <div className="flex items-center gap-4">
                 <div className="relative">
                   <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -141,13 +141,13 @@ export default function AdminDashboard() {
                     placeholder="Search cases..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none"
+                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-alg-gold focus:border-alg-gold outline-none"
                   />
                 </div>
                 <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none"
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-alg-gold focus:border-alg-gold outline-none"
                 >
                   <option value="All">All Status</option>
                   <option value="New">New</option>
@@ -175,7 +175,7 @@ export default function AdminDashboard() {
               {filteredCases.map(caseItem => (
                 <tr key={caseItem.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4">
-                    <span className="font-mono text-sm text-teal-600">{caseItem.caseNumber}</span>
+                    <span className="font-mono text-sm text-alg-gold">{caseItem.caseNumber}</span>
                   </td>
                   <td className="px-6 py-4">
                     <span className="font-medium text-gray-900">{caseItem.clientName}</span>
@@ -197,7 +197,7 @@ export default function AdminDashboard() {
                     <span className="text-gray-600 text-sm">{caseItem.createdAt}</span>
                   </td>
                   <td className="px-6 py-4">
-                    <button className="text-teal-600 hover:text-teal-700">
+                    <button className="text-alg-gold hover:text-alg-gold">
                       <ChevronRight className="w-5 h-5" />
                     </button>
                   </td>
@@ -207,7 +207,7 @@ export default function AdminDashboard() {
           </table>
 
           <div className="p-4 border-t border-gray-200 text-center">
-            <Link href="/admin/cases" className="text-teal-600 hover:text-teal-700 font-medium">
+            <Link href="/admin/cases" className="text-alg-gold hover:text-alg-gold font-medium">
               View All Cases →
             </Link>
           </div>

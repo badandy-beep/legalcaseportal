@@ -61,7 +61,7 @@ export default function Phase11Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Review & Submit</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Review & Submit</h1>
           <p className="text-gray-600">Review your information before submitting your case evaluation.</p>
         </div>
 
@@ -72,15 +72,15 @@ export default function Phase11Page() {
             const Icon = section.icon
 
             return (
-              <div key={section.key} className={`flex items-center justify-between p-4 rounded-lg border-2 ${isComplete ? 'border-teal-200 bg-teal-50' : 'border-gray-200 bg-gray-50'}`}>
+              <div key={section.key} className={`flex items-center justify-between p-4 rounded-lg border-2 ${isComplete ? 'border-alg-gold/30 bg-alg-gold/10' : 'border-gray-200 bg-gray-50'}`}>
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isComplete ? 'bg-teal-600 text-white' : 'bg-gray-300 text-gray-600'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${isComplete ? 'bg-alg-gold text-white' : 'bg-gray-300 text-gray-600'}`}>
                     {isComplete ? <CheckCircle className="w-5 h-5" /> : <Icon className="w-4 h-4" />}
                   </div>
                   <div>
-                    <span className={`font-medium ${isComplete ? 'text-teal-800' : 'text-gray-600'}`}>{section.label}</span>
+                    <span className={`font-medium ${isComplete ? 'text-alg-navy' : 'text-gray-600'}`}>{section.label}</span>
                     {isComplete && data[section.key] && (
-                      <p className="text-xs text-teal-600">
+                      <p className="text-xs text-alg-gold">
                         {section.key === 'phase1' && data.phase1?.fullName && `${data.phase1.fullName}`}
                         {section.key === 'phase2' && data.phase2?.[0]?.fullName && `${data.phase2[0].fullName}`}
                         {section.key === 'phase7' && data.phase7?.diagnoses && `${Object.values(data.phase7.diagnoses).filter(Boolean).length} diagnoses selected`}
@@ -91,7 +91,7 @@ export default function Phase11Page() {
                 </div>
                 <button
                   onClick={() => router.push(`/intake/phase-${section.phase}`)}
-                  className="text-teal-600 hover:text-teal-700 flex items-center gap-1 text-sm"
+                  className="text-alg-gold hover:text-alg-gold flex items-center gap-1 text-sm"
                 >
                   <Edit className="w-4 h-4" />
                   Edit
@@ -104,7 +104,7 @@ export default function Phase11Page() {
         {/* Data Summary Preview */}
         {data.phase1 && (
           <div className="bg-gray-50 rounded-lg p-4 mb-6">
-            <h3 className="font-semibold text-navy-900 mb-3">Case Summary</h3>
+            <h3 className="font-semibold text-alg-navy mb-3">Case Summary</h3>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <span className="text-gray-500">Client:</span>
@@ -131,23 +131,23 @@ export default function Phase11Page() {
         )}
 
         {/* Important Notice */}
-        <div className="bg-navy-50 border border-navy-200 rounded-lg p-4 mb-6">
-          <h3 className="font-semibold text-navy-900 mb-2">What Happens Next</h3>
-          <ul className="text-sm text-navy-700 space-y-2">
+        <div className="bg-alg-gray-light border border-alg-gray-border rounded-lg p-4 mb-6">
+          <h3 className="font-semibold text-alg-navy mb-2">What Happens Next</h3>
+          <ul className="text-sm text-alg-navy space-y-2">
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+              <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
               Your case will be assigned a unique case number
             </li>
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+              <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
               You'll receive a confirmation email with login details
             </li>
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+              <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
               Our team will review your case within 48 hours
             </li>
             <li className="flex items-start gap-2">
-              <CheckCircle className="w-4 h-4 text-teal-600 mt-0.5" />
+              <CheckCircle className="w-4 h-4 text-alg-gold mt-0.5" />
               If eligible, you'll be connected with specialized legal counsel
             </li>
           </ul>
@@ -164,11 +164,11 @@ export default function Phase11Page() {
           <button
             onClick={handleSubmit}
             disabled={loading}
-            className="w-full bg-coral-600 hover:bg-coral-700 disabled:bg-gray-400 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
+            className="w-full bg-alg-gold hover:bg-alg-gold-light disabled:bg-gray-400 text-alg-navy font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 text-lg"
           >
             {loading ? (
               <>
-                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-alg-navy border-t-transparent rounded-full animate-spin" />
                 Submitting Your Case...
               </>
             ) : (

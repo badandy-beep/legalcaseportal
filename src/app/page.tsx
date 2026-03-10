@@ -9,13 +9,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <Shield className="w-8 h-8 text-teal-600" />
-              <span className="text-xl font-bold text-navy-900">LegalCasePortal</span>
+              <Shield className="w-8 h-8 text-alg-gold" />
+              <span className="text-xl font-bold text-alg-navy">LegalCasePortal</span>
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#how-it-works" className="text-gray-600 hover:text-navy-900">How It Works</a>
-              <a href="#about" className="text-gray-600 hover:text-navy-900">About</a>
-              <a href="#faq" className="text-gray-600 hover:text-navy-900">FAQ</a>
+              <a href="#how-it-works" className="text-gray-600 hover:text-alg-navy">How It Works</a>
+              <a href="#about" className="text-gray-600 hover:text-alg-navy">About</a>
+              <a href="#faq" className="text-gray-600 hover:text-alg-navy">FAQ</a>
               <Link href="/intake/start" className="btn-primary">
                 Start Evaluation
               </Link>
@@ -25,13 +25,13 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section - 61.8/38.2 Golden Ratio Split */}
-      <section className="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white">
+      <section className="bg-gradient-to-br from-alg-navy via-alg-navy/90 to-alg-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-5 gap-12 items-center">
             {/* Left Content - 61.8% */}
             <div className="lg:col-span-3">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Your Family Deserves <span className="text-teal-400">Answers</span>
+                Your Family Deserves <span className="text-alg-gold-light">Answers</span>
               </h1>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 If your child developed autism or other injuries following vaccination, you may be 
@@ -40,14 +40,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   href="/intake/start" 
-                  className="bg-coral-600 hover:bg-coral-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                  className="bg-alg-gold hover:bg-alg-gold-light text-alg-navy font-bold py-4 px-8 rounded-lg text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                 >
                   Start Your Free Case Evaluation
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a 
                   href="tel:1-800-XXX-XXXX" 
-                  className="border-2 border-white text-white hover:bg-white hover:text-navy-900 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200 flex items-center justify-center gap-2"
+                  className="border-2 border-white text-white hover:bg-white hover:text-alg-navy font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   <Phone className="w-5 h-5" />
                   Call Now
@@ -56,15 +56,15 @@ export default function HomePage() {
               {/* Trust Indicators */}
               <div className="mt-10 flex flex-wrap gap-6">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-teal-400" />
+                  <CheckCircle className="w-5 h-5 text-alg-gold-light" />
                   <span className="text-gray-300">100% Confidential</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-teal-400" />
+                  <CheckCircle className="w-5 h-5 text-alg-gold-light" />
                   <span className="text-gray-300">No Upfront Costs</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-teal-400" />
+                  <CheckCircle className="w-5 h-5 text-alg-gold-light" />
                   <span className="text-gray-300">HIPAA Compliant</span>
                 </div>
               </div>
@@ -73,30 +73,30 @@ export default function HomePage() {
             {/* Right Content - 38.2% */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-2xl p-8 shadow-2xl">
-                <h3 className="text-navy-900 text-xl font-bold mb-4">Quick Eligibility Check</h3>
+                <h3 className="text-alg-navy text-xl font-bold mb-4">Quick Eligibility Check</h3>
                 <div className="space-y-4 text-gray-700">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-teal-600 font-bold text-sm">1</span>
+                    <div className="w-6 h-6 rounded-full bg-alg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-alg-gold font-bold text-sm">1</span>
                     </div>
                     <p>Child received vaccinations per CDC schedule</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-teal-600 font-bold text-sm">2</span>
+                    <div className="w-6 h-6 rounded-full bg-alg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-alg-gold font-bold text-sm">2</span>
                     </div>
                     <p>Autism diagnosis or developmental regression</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-teal-600 font-bold text-sm">3</span>
+                    <div className="w-6 h-6 rounded-full bg-alg-gold/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-alg-gold font-bold text-sm">3</span>
                     </div>
                     <p>Symptoms appeared after vaccination</p>
                   </div>
                 </div>
                 <Link 
                   href="/intake/start"
-                  className="w-full mt-6 bg-coral-600 hover:bg-coral-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full mt-6 bg-alg-gold hover:bg-alg-gold-light text-alg-navy font-bold py-4 px-6 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   Check My Eligibility
                   <ArrowRight className="w-5 h-5" />
@@ -108,16 +108,16 @@ export default function HomePage() {
       </section>
 
       {/* NVICP Info Banner */}
-      <section className="bg-teal-600 text-white py-6">
+      <section className="bg-alg-navy text-white py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-center md:text-left">
             <div className="flex items-center gap-2">
               <Shield className="w-6 h-6" />
               <span className="font-semibold">NVICP Trust Fund: $3+ Billion Available</span>
             </div>
-            <div className="hidden md:block w-px h-6 bg-teal-400"></div>
+            <div className="hidden md:block w-px h-6 bg-alg-gold-light"></div>
             <span>Federal No-Fault Compensation Program</span>
-            <div className="hidden md:block w-px h-6 bg-teal-400"></div>
+            <div className="hidden md:block w-px h-6 bg-alg-gold-light"></div>
             <span>Attorney Fees Paid Separately by Fund</span>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function HomePage() {
       <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-alg-navy mb-4">
               How It Works
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -141,33 +141,33 @@ export default function HomePage() {
                 icon: FileText,
                 title: "Complete Intake",
                 description: "Fill out our secure intake form. Takes about 15-20 minutes.",
-                color: "bg-teal-100 text-teal-600"
+                color: "bg-alg-gold/20 text-alg-gold"
               },
               {
                 icon: Clock,
                 title: "48-Hour Review",
                 description: "Our team reviews your case details within 48 hours.",
-                color: "bg-navy-100 text-navy-600"
+                color: "bg-alg-navy/10 text-alg-navy/70"
               },
               {
                 icon: Users,
                 title: "Legal Match",
                 description: "If qualified, we connect you with specialized vaccine injury attorneys.",
-                color: "bg-gold-100 text-gold-600"
+                color: "bg-alg-gold/20 text-alg-gold"
               },
               {
                 icon: Shield,
                 title: "File Your Claim",
                 description: "Your attorney files your NVICP claim at no upfront cost to you.",
-                color: "bg-coral-100 text-coral-600"
+                color: "bg-red-100 text-red-600"
               }
             ].map((step, index) => (
               <div key={index} className="text-center">
                 <div className={`w-16 h-16 rounded-full ${step.color} flex items-center justify-center mx-auto mb-4`}>
                   <step.icon className="w-8 h-8" />
                 </div>
-                <div className="text-sm font-semibold text-teal-600 mb-2">STEP {index + 1}</div>
-                <h3 className="text-xl font-bold text-navy-900 mb-2">{step.title}</h3>
+                <div className="text-sm font-semibold text-alg-gold mb-2">STEP {index + 1}</div>
+                <h3 className="text-xl font-bold text-alg-navy mb-2">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
               </div>
             ))}
@@ -190,7 +190,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-alg-navy mb-6">
                 About Autism Justice Foundation
               </h2>
               <p className="text-lg text-gray-600 mb-6">
@@ -212,29 +212,29 @@ export default function HomePage() {
                   "Dedicated Special Masters handle all cases"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-alg-gold flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-navy-900 mb-6">Key Statistics</h3>
+              <h3 className="text-xl font-bold text-alg-navy mb-6">Key Statistics</h3>
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-teal-50 rounded-lg">
-                  <div className="text-3xl font-bold text-teal-600">1 in 31</div>
+                <div className="text-center p-4 bg-alg-gold/10 rounded-lg">
+                  <div className="text-3xl font-bold text-alg-gold">1 in 31</div>
                   <div className="text-sm text-gray-600 mt-1">Children with Autism (CDC 2025)</div>
                 </div>
-                <div className="text-center p-4 bg-navy-50 rounded-lg">
-                  <div className="text-3xl font-bold text-navy-900">382%</div>
+                <div className="text-center p-4 bg-alg-gray-light rounded-lg">
+                  <div className="text-3xl font-bold text-alg-navy">382%</div>
                   <div className="text-sm text-gray-600 mt-1">Increase Since 2000</div>
                 </div>
-                <div className="text-center p-4 bg-gold-50 rounded-lg">
-                  <div className="text-3xl font-bold text-gold-600">$3B+</div>
+                <div className="text-center p-4 bg-alg-gold/10 rounded-lg">
+                  <div className="text-3xl font-bold text-alg-gold">$3B+</div>
                   <div className="text-sm text-gray-600 mt-1">Trust Fund Available</div>
                 </div>
-                <div className="text-center p-4 bg-coral-50 rounded-lg">
-                  <div className="text-3xl font-bold text-coral-600">60%</div>
+                <div className="text-center p-4 bg-red-50 rounded-lg">
+                  <div className="text-3xl font-bold text-red-600">60%</div>
                   <div className="text-sm text-gray-600 mt-1">Cases Settled</div>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-navy-900 text-white">
+      <section className="py-16 bg-alg-navy text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Take the First Step?
@@ -255,7 +255,7 @@ export default function HomePage() {
           </p>
           <Link 
             href="/intake/start"
-            className="bg-coral-600 hover:bg-coral-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
+            className="bg-alg-gold hover:bg-alg-gold-light text-alg-navy font-bold py-4 px-10 rounded-lg text-lg transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center gap-2"
           >
             Start Your Free Case Evaluation
             <ArrowRight className="w-5 h-5" />
@@ -269,7 +269,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Shield className="w-6 h-6 text-teal-500" />
+                <Shield className="w-6 h-6 text-alg-gold" />
                 <span className="text-lg font-bold text-white">LegalCasePortal</span>
               </div>
               <p className="text-sm">

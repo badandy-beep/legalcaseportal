@@ -6,12 +6,19 @@
 
 @layer base {
   :root {
-    --navy: 29 53 87;
-    --teal: 42 157 143;
-    --coral: 230 57 70;
-    --gold: 244 162 97;
+    --alg-navy: #0a1628;
+    --alg-navy-rgb: 10 22 40;
+    --alg-gold: #c9a84c;
+    --alg-gold-rgb: 201 168 76;
+    --alg-gold-light: #e8c97a;
+    --alg-gold-light-rgb: 232 201 122;
+    --alg-white: #ffffff;
+    --alg-gray-light: #f4f6f9;
+    --alg-gray-light-rgb: 244 246 249;
+    --alg-gray-border: #dde2ea;
+    --alg-gray-border-rgb: 221 226 234;
   }
-  
+
   body {
     @apply font-sans antialiased;
   }
@@ -19,43 +26,43 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-coral-600 hover:bg-coral-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-alg-gold hover:bg-alg-gold-light text-alg-navy font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
   }
-  
+
   .btn-secondary {
-    @apply bg-navy-900 hover:bg-navy-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply bg-alg-navy hover:bg-alg-navy/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
-  
+
   .btn-outline {
-    @apply border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply border-2 border-alg-navy text-alg-navy hover:bg-alg-navy hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
-  
+
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all duration-200;
+    @apply w-full px-4 py-3 border border-alg-gray-border rounded-lg focus:ring-2 focus:ring-alg-gold focus:border-alg-gold outline-none transition-all duration-200;
   }
-  
+
   .input-label {
     @apply block text-sm font-medium text-gray-700 mb-2;
   }
-  
+
   .input-error {
-    @apply text-sm text-coral-600 mt-1;
+    @apply text-sm text-red-600 mt-1;
   }
-  
+
   .card {
     @apply bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8;
   }
-  
+
   .section-heading {
-    @apply text-2xl font-bold text-navy-900 mb-4;
+    @apply text-2xl font-bold text-alg-navy mb-4;
   }
-  
+
   .progress-bar {
     @apply h-2 bg-gray-200 rounded-full overflow-hidden;
   }
-  
+
   .progress-fill {
-    @apply h-full bg-teal-500 transition-all duration-500 ease-out;
+    @apply h-full bg-alg-gold transition-all duration-500 ease-out;
   }
 }
 
@@ -82,15 +89,15 @@
 }
 
 .input-invalid {
-  @apply border-coral-500 focus:ring-coral-500 focus:border-coral-500;
+  @apply border-red-500 focus:ring-red-500 focus:border-red-500;
 }
 
 /* Checkbox styling */
 .checkbox-custom {
-  @apply w-5 h-5 text-teal-600 bg-white border-gray-300 rounded focus:ring-teal-500;
+  @apply w-5 h-5 text-alg-gold bg-white border-gray-300 rounded focus:ring-alg-gold;
 }
 
 /* Radio styling */
 .radio-custom {
-  @apply w-5 h-5 text-teal-600 bg-white border-gray-300 focus:ring-teal-500;
+  @apply w-5 h-5 text-alg-gold bg-white border-gray-300 focus:ring-alg-gold;
 }

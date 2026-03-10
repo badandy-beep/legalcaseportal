@@ -70,7 +70,7 @@ export default function Phase1Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-navy-900 mb-2">Account Setup</h1>
+          <h1 className="text-2xl font-bold text-alg-navy mb-2">Account Setup</h1>
           <p className="text-gray-600">
             Create your secure account to begin the intake process.
           </p>
@@ -79,8 +79,8 @@ export default function Phase1Page() {
         <form id="phase-1-form" onSubmit={handleSubmit} className="space-y-6">
           {/* Personal Information */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <User className="w-5 h-5 text-teal-600" />
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <User className="w-5 h-5 text-alg-gold" />
               Personal Information
             </h2>
 
@@ -139,8 +139,8 @@ export default function Phase1Page() {
 
           {/* Contact Information */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <Mail className="w-5 h-5 text-teal-600" />
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <Mail className="w-5 h-5 text-alg-gold" />
               Contact Information
             </h2>
 
@@ -181,8 +181,8 @@ export default function Phase1Page() {
 
           {/* Address */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-teal-600" />
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-alg-gold" />
               Address
             </h2>
 
@@ -257,7 +257,7 @@ export default function Phase1Page() {
 
           {/* Password */}
           <div className="space-y-4">
-            <h2 className="text-lg font-semibold text-navy-900 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
               Create Password
             </h2>
 
