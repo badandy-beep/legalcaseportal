@@ -5,25 +5,25 @@ const partners = [
     name: "Children's Health Defense",
     mission: 'Nonprofit organization working to end childhood health epidemics by eliminating harmful exposures and holding corporations accountable.',
     link: 'https://childrenshealthdefense.org',
-    logo: <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/chd-logo.png" className="h-20 w-auto object-contain" alt="Children's Health Defense" /></div>,
+    logo: null,
   },
   {
     name: 'The HighWire with Del Bigtree',
     mission: 'Independent investigative news program covering vaccine safety, medical freedom, and health policy.',
     link: 'https://thehighwire.com',
-    logo: <div className="bg-[#0a1628] border border-[#0a1628] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/highwire-logo.png" className="h-20 w-auto object-contain" alt="The HighWire" /></div>,
+    logo: null,
   },
   {
     name: 'McCullough Foundation',
     mission: 'Advancing evidence-based medicine and defending medical freedom through scientific research and public education.',
     link: 'https://mcculloughfoundation.com',
-    logo: <div className="bg-black border border-gray-800 rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/mccullough-foundation-logo.jpg" className="h-20 w-auto object-contain" alt="McCullough Foundation" /></div>,
+    logo: null,
   },
   {
     name: 'Autism Justice Foundation',
     mission: 'Advocating for autism families through legal action, public awareness, and coalition building to secure justice and accountability.',
     link: 'https://autismjusticefoundation.org',
-    logo: <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/ajf-logo.png" className="h-20 w-auto object-contain" alt="Autism Justice Foundation" /></div>,
+    logo: null,
   },
   {
     name: 'HRSA Vaccine Injury Compensation Program',
@@ -84,9 +84,11 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {partners.map((partner) => (
             <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
-              <div className="h-16 flex items-center mb-4">
-                {partner.logo}
-              </div>
+              {partner.logo && (
+                <div className="h-16 flex items-center mb-4">
+                  {partner.logo}
+                </div>
+              )}
               <h3 className="font-semibold text-[#111827] mb-2">{partner.name}</h3>
               <p className="text-sm text-[#475569] mb-4">{partner.mission}</p>
               <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
