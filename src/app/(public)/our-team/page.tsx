@@ -38,10 +38,17 @@ export default function OurTeamPage() {
     <div className="bg-white py-16">
       <div className="max-w-4xl mx-auto px-4">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Our Team</h1>
-          <p className="text-lg text-[#475569]">The people behind the mission</p>
-        </div>
+        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Meet the Team</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+              Our Team
+            </h1>
+            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+              The attorneys, advocates, and advisors fighting for autism families nationwide.
+            </p>
+          </div>
+        </section>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

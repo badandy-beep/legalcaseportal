@@ -44,12 +44,17 @@ export default function ContactPage() {
     <div className="bg-white py-16">
       <div className="max-w-2xl mx-auto px-4">
         {/* Page Title */}
-        <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Contact Alpha Law Group</h1>
-          <p className="text-gray-700 text-lg">
-            Free consultation. No fees unless we win. We respond within 24 hours.
-          </p>
-        </div>
+        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Get In Touch</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+              Contact Alpha Law Group
+            </h1>
+            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+              Free consultation. No fees unless we win. We respond within 24 hours.
+            </p>
+          </div>
+        </section>
 
         {submitted ? (
           /* Success State */

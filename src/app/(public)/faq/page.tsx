@@ -171,13 +171,17 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-gray-900 text-white py-16 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+      <section className="bg-white border-b border-[#E2E8F0] py-14">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Know Your Rights</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
             Frequently Asked Questions
           </h1>
-          <p className="mt-4 text-lg text-gray-300">
-            Answers for autism families navigating the vaccine injury compensation system.
+          <p className="text-lg text-[#475569] max-w-2xl mx-auto mb-6">
+            Answers for autism families navigating the federal vaccine injury compensation system.
+          </p>
+          <p className="text-base font-semibold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>
+            &ldquo;Justice for Your Child. Compensation for Your Family. <span className="text-[#1E40AF]">Zero Upfront.</span>&rdquo;
           </p>
         </div>
       </section>
@@ -237,6 +241,23 @@ export default function FAQPage() {
           advice. Every family&apos;s situation is unique. Contact Alpha Law Group for a free case
           evaluation specific to your circumstances. &copy; 2026 Alpha Law Group, PLLC.
         </p>
+      </section>
+
+      <section className="bg-[#1E40AF] py-10 mt-12">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-white font-bold text-xl mb-2" style={{fontFamily:'Georgia,serif'}}>
+            Still have questions? Let us review your case — free.
+          </p>
+          <p className="text-blue-200 text-sm mb-6">No obligation. No upfront cost. Takes 3 minutes.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/intake/phase-1" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition text-sm uppercase tracking-wide">
+              Start My Claim →
+            </a>
+            <a href={`https://wa.me/?text=${encodeURIComponent('Free legal help for autism families: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[#1E40AF] transition text-sm uppercase tracking-wide">
+              Share With a Family →
+            </a>
+          </div>
+        </div>
       </section>
     </main>
   )

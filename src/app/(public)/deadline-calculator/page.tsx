@@ -34,16 +34,16 @@ export default function DeadlineCalculatorPage() {
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <section className="bg-gray-900 text-white py-12 text-center px-4">
-        <p className="text-[#1E40AF] text-xs font-bold uppercase tracking-widest mb-3">
-          FREE DEADLINE ASSESSMENT
-        </p>
-        <h1 className="text-3xl font-black tracking-tight">
-          Has Your Family&rsquo;s Window Closed?
-        </h1>
-        <p className="text-gray-300 text-sm mt-2">
-          Enter your child&rsquo;s first symptom date below. We&rsquo;ll calculate your VICP filing window instantly.
-        </p>
+      <section className="bg-white border-b border-[#E2E8F0] py-14">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Free Deadline Assessment</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+            Has Your Family&rsquo;s Window Closed?
+          </h1>
+          <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+            Enter your child&rsquo;s first symptom date below. We&rsquo;ll calculate your VICP filing window instantly.
+          </p>
+        </div>
       </section>
 
       {/* Calculator */}

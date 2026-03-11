@@ -38,6 +38,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Orange CTA Strip 1 */}
+      <div className="bg-white py-4 border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="text-sm font-semibold text-[#111827]">Attorney fees paid by the program — even in losing cases.</p>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+            See If You Qualify →
+          </a>
+        </div>
+      </div>
+
       {/* Slogan Block 1 */}
       <section className="bg-[#1E40AF] py-10">
         <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -150,6 +160,16 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
+      {/* Green CTA Strip 1 */}
+      <div className="bg-[#F0FDF4] border-t border-b border-green-100 py-4">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="text-sm font-semibold text-[#111827]">Know a family with an autistic child? They may have benefits they don&rsquo;t know about.</p>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+            Help a Family Today →
+          </a>
+        </div>
+      </div>
 
       {/* Voices & Impact Video Row */}
       <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-16">
@@ -297,6 +317,16 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Orange CTA Strip 2 */}
+      <div className="bg-white border-t border-[#E2E8F0] py-4">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="text-sm font-semibold text-[#111827]">$5.4 billion paid out. <span className="text-[#1E40AF]">Is your family&rsquo;s share waiting?</span></p>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+            Start Free Review →
+          </a>
+        </div>
+      </div>
+
       {/* Slogan Block 3 */}
       <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-10">
         <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -309,6 +339,16 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
+      {/* Green CTA Strip 2 */}
+      <div className="bg-[#F0FDF4] border-t border-b border-green-100 py-4">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+          <p className="text-sm font-semibold text-[#111827]">Refer someone you know — <span className="text-green-700">sharing this page could change a family&rsquo;s life.</span></p>
+          <a href={`https://wa.me/?text=${encodeURIComponent('This law firm helps autism families get federal compensation — free review, no cost unless they win: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+            Share With a Family →
+          </a>
+        </div>
+      </div>
 
       {/* Bottom CTA Strip */}
       <section className="bg-gray-900 text-white py-12">

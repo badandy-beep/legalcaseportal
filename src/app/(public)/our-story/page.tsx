@@ -5,10 +5,17 @@ export default function OurStoryPage() {
     <div className="bg-white py-16">
       <div className="max-w-3xl mx-auto px-4">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Our Story</h1>
-          <p className="text-lg text-gray-700">A Family Mission Two Decades in the Making</p>
-        </div>
+        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Our Foundation</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+              Our Story
+            </h1>
+            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+              A family mission two decades in the making — from personal heartbreak to national advocacy.
+            </p>
+          </div>
+        </section>
 
         {/* Section 1 — The Family */}
         <section className="mb-10">

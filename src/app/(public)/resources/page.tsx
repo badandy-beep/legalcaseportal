@@ -73,12 +73,17 @@ export default function ResourcesPage() {
     <div className="bg-white py-16">
       <div className="max-w-5xl mx-auto px-4">
         {/* Page Title */}
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold text-[#111827] mb-3">Resources &amp; Partner Network</h1>
-          <p className="text-[#475569] mb-12">
-            Organizations, legal resources, and advocacy partners supporting autism families.
-          </p>
-        </div>
+        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Partner Network</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+              Resources &amp; Partners
+            </h1>
+            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+              Organizations, legal resources, and advocacy partners supporting autism families.
+            </p>
+          </div>
+        </section>
 
         {/* Partner Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">

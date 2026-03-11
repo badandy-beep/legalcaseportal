@@ -33,15 +33,17 @@ export default function HowVicpWorksPage() {
     <div className="bg-white py-16">
       <div className="max-w-3xl mx-auto px-4">
         {/* Page Title */}
-        <div className="text-center mb-14">
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-3">
-            How the Vaccine Injury Compensation Program Works
-          </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            A federal program created to compensate families whose children suffer serious
-            vaccine-related injuries. Here&rsquo;s what you need to know.
-          </p>
-        </div>
+        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-14">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Federal Program</p>
+            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+              How the VICP Works
+            </h1>
+            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
+              A federal program created to compensate families whose children suffer serious vaccine-related injuries. Here&rsquo;s what you need to know.
+            </p>
+          </div>
+        </section>
 
         {/* Timeline Steps */}
         <div className="relative">
