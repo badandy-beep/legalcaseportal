@@ -38,6 +38,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Slogan Block 1 */}
+      <section className="bg-[#1E40AF] py-10">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-2xl md:text-3xl font-bold text-white text-center md:text-left" style={{fontFamily:'Georgia,serif'}}>
+            Federal Compensation Exists.<br />
+            <span className="text-blue-200">Your Family Deserves It.</span>
+          </p>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-white text-[#1E40AF] font-bold px-6 py-3 rounded hover:bg-blue-50 transition text-sm tracking-wide uppercase whitespace-nowrap">
+            Apply Now →
+          </a>
+        </div>
+      </section>
+
       {/* Mission Section */}
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4">
@@ -156,6 +169,21 @@ export default function HomePage() {
         <p className="text-[#475569] text-xs text-center mt-8 max-w-2xl mx-auto">
           The Justice for Autism Advisory Board includes the nation&rsquo;s foremost voices in vaccine safety, medical freedom, and children&rsquo;s health advocacy.
         </p>
+      </section>
+
+      {/* Slogan Block 2 */}
+      <section className="bg-white border-t border-b border-[#E2E8F0] py-10">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-2">Zero Cost To You</p>
+            <p className="text-2xl md:text-3xl font-bold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>
+              Justice for Your Child. Compensation for Your Family. Zero Upfront.
+            </p>
+          </div>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-[#1E40AF] text-white font-bold px-6 py-3 rounded hover:bg-[#1E3A8A] transition text-sm tracking-wide uppercase whitespace-nowrap">
+            Apply Now →
+          </a>
+        </div>
       </section>
 
       {/* Voices & Impact Video Row */}
@@ -304,6 +332,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Slogan Block 3 */}
+      <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-10">
+        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-2xl md:text-3xl font-bold text-[#111827] text-center md:text-left" style={{fontFamily:'Georgia,serif'}}>
+            They Were Injured. The System Owes Them.{' '}
+            <span className="text-[#1E40AF]">We Collect.</span>
+          </p>
+          <a href="/intake/phase-1" className="flex-shrink-0 bg-[#1E40AF] text-white font-bold px-6 py-3 rounded hover:bg-[#1E3A8A] transition text-sm tracking-wide uppercase whitespace-nowrap">
+            Apply Now →
+          </a>
+        </div>
+      </section>
+
       {/* Bottom CTA Strip */}
       <section className="bg-gray-900 text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -317,6 +358,51 @@ export default function HomePage() {
           <p className="mt-4 text-white/80 text-sm">
             <a href="tel:9413041500" className="hover:text-[#1E40AF] transition">(941) 304-1500</a> | gethelpforautism.com
           </p>
+        </div>
+      </section>
+
+      {/* Referral Section */}
+      <section className="bg-white border-t-4 border-[#1E40AF] py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          {/* Icon */}
+          <div className="w-14 h-14 rounded-full bg-[#EFF6FF] flex items-center justify-center mx-auto mb-6">
+            <svg className="w-7 h-7 text-[#1E40AF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+
+          {/* Headline */}
+          <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Spread the Word</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
+            Know a Family With an Autistic Child?
+          </h2>
+
+          {/* Body */}
+          <p className="text-lg text-[#475569] max-w-2xl mx-auto mb-4 leading-relaxed">
+            Most families don&rsquo;t know the federal government has already paid out <strong className="text-[#111827]">$5.4 billion</strong> to vaccine-injured children — and thousands of autism families may qualify right now.
+          </p>
+          <p className="text-lg text-[#475569] max-w-2xl mx-auto mb-8 leading-relaxed">
+            If you know a parent raising an autistic child, share this page with them. A 3-minute intake form could be the most important thing their family does this year. <strong className="text-[#111827]">There is no cost, no obligation, and no risk.</strong>
+          </p>
+
+          {/* Two CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/intake/phase-1"
+              className="bg-[#1E40AF] text-white font-bold px-8 py-4 rounded hover:bg-[#1E3A8A] transition text-base tracking-wide uppercase"
+            >
+              Start My Family&rsquo;s Claim →
+            </a>
+            <a
+              href={`https://wa.me/?text=${encodeURIComponent('I found a free legal resource for autism families — they may qualify for federal compensation. Takes 3 minutes: https://gethelpforautism.com')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-[#1E40AF] text-[#1E40AF] font-bold px-8 py-4 rounded hover:bg-[#EFF6FF] transition text-base tracking-wide uppercase"
+            >
+              Share With a Family
+            </a>
+          </div>
         </div>
       </section>
     </>
