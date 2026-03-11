@@ -85,41 +85,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Coalition Partners Logo Grid */}
-      <section className="bg-white border-t border-b border-[#E2E8F0] py-12">
-        <div className="max-w-5xl mx-auto px-4">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#475569] text-center mb-8">
-            Coalition &amp; Advisory Partners
-          </p>
-          <div className="flex flex-wrap justify-center items-start gap-8 md:gap-10">
-            <a href="https://childrenshealthdefense.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
-                <img src="/chd-logo.png" alt="Children's Health Defense" className="h-20 w-auto object-contain" />
-              </div>
-              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Children&rsquo;s Health Defense</span>
-            </a>
-            <a href="https://thehighwire.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
-              <div className="bg-[#0a1628] border border-[#0a1628] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
-                <img src="/highwire-logo.png" alt="The HighWire with Del Bigtree" className="h-20 w-auto object-contain" />
-              </div>
-              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">The HighWire with Del Bigtree</span>
-            </a>
-            <a href="https://mcculloughfoundation.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
-              <div className="bg-black border border-gray-800 rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
-                <img src="/mccullough-foundation-logo.jpg" alt="McCullough Foundation" className="h-20 w-auto object-contain" />
-              </div>
-              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">McCullough Foundation</span>
-            </a>
-            <a href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
-              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
-                <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-20 w-auto object-contain" />
-              </div>
-              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Advisory Board Photo Grid */}
       <section className="bg-white border-b border-[#E2E8F0] py-16 px-4">
         {/* Section Header */}
@@ -402,6 +367,24 @@ export default function HomePage() {
             >
               Share With a Family
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Coalition & Advisory Partners — text only */}
+      <section className="bg-white border-t border-[#E2E8F0] py-10">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-6">
+            Coalition &amp; Advisory Partners
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
+            <span className="text-base font-semibold text-[#111827]">Children&rsquo;s Health Defense</span>
+            <span className="text-[#E2E8F0]">|</span>
+            <span className="text-base font-semibold text-[#111827]">The HighWire with Del Bigtree</span>
+            <span className="text-[#E2E8F0]">|</span>
+            <span className="text-base font-semibold text-[#111827]">McCullough Foundation</span>
+            <span className="text-[#E2E8F0]">|</span>
+            <span className="text-base font-semibold text-[#111827]">Autism Justice Foundation</span>
           </div>
         </div>
       </section>
