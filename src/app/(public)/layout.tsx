@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Our Team', href: '/our-team' },
   { label: 'How VICP Works', href: '/how-vicp-works' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Deadline Calculator', href: '/deadline-calculator' },
   { label: 'Start My Claim', href: '/intake/phase-1', isCta: true },
   { label: 'Resources', href: '/resources' },
   { label: 'Contact', href: '/contact' },
