@@ -169,16 +169,16 @@ export default function HomePage() {
             Soundbites from the Children&rsquo;s Health Defense Conference — Austin, TX &middot; November 2025
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto place-items-center">
 
             {/* Video 1 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full mx-auto" style={{maxWidth:'320px'}}>
               <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'520px'}}>
                 <video
                   className="w-full h-full object-contain"
                   controls
                   preload="metadata"
-                  poster=""
+                  poster="/poster-moment-of-truth.jpg"
                 >
                   <source src="/video-moment-of-truth.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -193,13 +193,13 @@ export default function HomePage() {
             </div>
 
             {/* Video 2 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full mx-auto" style={{maxWidth:'320px'}}>
               <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'520px'}}>
                 <video
                   className="w-full h-full object-contain"
                   controls
                   preload="metadata"
-                  poster=""
+                  poster="/poster-fight-for-justice.jpg"
                 >
                   <source src="/video-fight-for-justice.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
