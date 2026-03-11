@@ -169,11 +169,11 @@ export default function HomePage() {
             Soundbites from the Children&rsquo;s Health Defense Conference — Austin, TX &middot; November 2025
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
             {/* Video 1 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full mx-auto" style={{maxWidth:'320px'}}>
-              <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'520px'}}>
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'480px'}}>
                 <video
                   className="w-full h-full object-contain"
                   controls
@@ -193,8 +193,8 @@ export default function HomePage() {
             </div>
 
             {/* Video 2 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow w-full mx-auto" style={{maxWidth:'320px'}}>
-              <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'520px'}}>
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'480px'}}>
                 <video
                   className="w-full h-full object-contain"
                   controls
@@ -210,6 +210,27 @@ export default function HomePage() {
                   What Happens to the Children? The Fight for True Justice
                 </p>
                 <p className="text-xs text-[#475569]">Children&rsquo;s Health Defense Conference &middot; Austin, TX &middot; November 2025</p>
+              </div>
+            </div>
+
+            {/* Video 3 */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative bg-black" style={{aspectRatio:'16/9'}}>
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster="/poster-fathers-journey.jpg"
+                >
+                  <source src="/video-fathers-journey.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-5 border-t border-[#E2E8F0]">
+                <p className="font-bold text-[#111827] text-base mb-1" style={{fontFamily:'Georgia,serif'}}>
+                  A Father&rsquo;s Heartbreaking 25-Year Journey: The Moment Everything Changed
+                </p>
+                <p className="text-xs text-[#475569]">Dr. Gary &amp; Beth Kompothecras &middot; Autism Justice Foundation</p>
               </div>
             </div>
 
