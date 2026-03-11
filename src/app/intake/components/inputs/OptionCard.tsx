@@ -1,0 +1,30 @@
+'use client'
+
+interface OptionCardProps {
+  label: string
+  selected: boolean
+  onSelect: () => void
+}
+
+export default function OptionCard({ label, selected, onSelect }: OptionCardProps) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`w-full flex items-center gap-3 py-3.5 px-4 rounded-2xl border-2 text-left transition cursor-pointer ${
+        selected
+          ? 'border-alg-gold bg-yellow-50'
+          : 'border-gray-200 bg-white'
+      }`}
+    >
+      <div
+        className={`w-[22px] h-[22px] rounded-full border-2 flex items-center justify-center shrink-0 ${
+          selected ? 'border-alg-gold' : 'border-gray-300'
+        }`}
+      >
+        {selected && <div className="w-3 h-3 rounded-full bg-alg-gold" />}
+      </div>
+      <span className="text-sm text-alg-navy">{label}</span>
+    </button>
+  )
+}

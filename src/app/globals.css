@@ -75,6 +75,16 @@
   }
 }
 
+/* Mobile-first overrides */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+input, select, textarea {
+  font-size: 16px !important;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
