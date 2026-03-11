@@ -5,19 +5,25 @@ const partners = [
     name: "Children's Health Defense",
     mission: 'Nonprofit organization working to end childhood health epidemics by eliminating harmful exposures and holding corporations accountable.',
     link: 'https://childrenshealthdefense.org',
-    logo: <img src="/chd-logo.png" className="h-12 w-auto object-contain" alt="Children's Health Defense" />,
+    logo: <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/chd-logo.png" className="h-20 w-auto object-contain" alt="Children's Health Defense" /></div>,
   },
   {
     name: 'The HighWire with Del Bigtree',
     mission: 'Independent investigative news program covering vaccine safety, medical freedom, and health policy.',
     link: 'https://thehighwire.com',
-    logo: <div className="bg-gray-900 rounded inline-flex p-2"><img src="/highwire-logo.png" className="h-8 w-auto object-contain" alt="The HighWire" /></div>,
+    logo: <div className="bg-[#0a1628] border border-[#0a1628] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/highwire-logo.png" className="h-20 w-auto object-contain" alt="The HighWire" /></div>,
   },
   {
     name: 'McCullough Foundation',
     mission: 'Advancing evidence-based medicine and defending medical freedom through scientific research and public education.',
     link: 'https://mcculloughfoundation.com',
-    logo: <div className="bg-gray-900 rounded inline-flex p-2"><img src="/mccullough-foundation-logo.jpg" className="h-10 w-auto object-contain" alt="McCullough Foundation" /></div>,
+    logo: <div className="bg-black border border-gray-800 rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/mccullough-foundation-logo.jpg" className="h-20 w-auto object-contain" alt="McCullough Foundation" /></div>,
+  },
+  {
+    name: 'Autism Justice Foundation',
+    mission: 'Advocating for autism families through legal action, public awareness, and coalition building to secure justice and accountability.',
+    link: 'https://autismjusticefoundation.org',
+    logo: <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all"><img src="/ajf-logo.png" className="h-20 w-auto object-contain" alt="Autism Justice Foundation" /></div>,
   },
   {
     name: 'HRSA Vaccine Injury Compensation Program',

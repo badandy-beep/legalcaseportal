@@ -78,29 +78,31 @@ export default function HomePage() {
           <p className="text-xs font-semibold tracking-widest uppercase text-[#475569] text-center mb-8">
             Coalition &amp; Advisory Partners
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div className="flex flex-col items-center gap-3">
-              <img src="/chd-logo.png" alt="Children's Health Defense" className="h-16 w-auto object-contain" />
-              <span className="text-xs text-[#475569]">Children&rsquo;s Health Defense</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="bg-gray-900 rounded p-3">
-                <img src="/highwire-logo.png" alt="The HighWire with Del Bigtree" className="h-10 w-auto object-contain" />
+          <div className="flex flex-wrap justify-center items-start gap-8 md:gap-10">
+            <a href="https://childrenshealthdefense.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                <img src="/chd-logo.png" alt="Children's Health Defense" className="h-20 w-auto object-contain" />
               </div>
-              <span className="text-xs text-[#475569]">The HighWire</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="bg-gray-900 rounded p-3">
-                <img src="/mccullough-foundation-logo.jpg" alt="McCullough Foundation" className="h-10 w-auto object-contain" />
+              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Children&rsquo;s Health Defense</span>
+            </a>
+            <a href="https://thehighwire.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+              <div className="bg-[#0a1628] border border-[#0a1628] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                <img src="/highwire-logo.png" alt="The HighWire with Del Bigtree" className="h-20 w-auto object-contain" />
               </div>
-              <span className="text-xs text-[#475569]">McCullough Foundation</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <div className="border border-[#E2E8F0] rounded px-6 py-3 text-center">
-                <span className="font-bold text-[#111827] text-sm">Autism Justice Foundation</span>
+              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">The HighWire with Del Bigtree</span>
+            </a>
+            <a href="https://mcculloughfoundation.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+              <div className="bg-black border border-gray-800 rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                <img src="/mccullough-foundation-logo.jpg" alt="McCullough Foundation" className="h-20 w-auto object-contain" />
               </div>
-              <span className="text-xs text-[#475569]">Founded 2025</span>
-            </div>
+              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">McCullough Foundation</span>
+            </a>
+            <a href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-5 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-20 w-auto object-contain" />
+              </div>
+              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
+            </a>
           </div>
         </div>
       </section>
