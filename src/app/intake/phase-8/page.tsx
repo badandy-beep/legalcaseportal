@@ -92,7 +92,7 @@ export default function Phase8Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Autism Assessment</h1>
-          <p className="text-gray-600">Detailed information about autism diagnosis, symptoms, and regression.</p>
+          <p className="text-gray-700">Detailed information about autism diagnosis, symptoms, and regression.</p>
         </div>
 
         <form id="phase-8-form" onSubmit={handleSubmit} className="space-y-8">
@@ -131,11 +131,11 @@ export default function Phase8Page() {
           {/* Developmental Milestones */}
           <div className="space-y-4">
             <h2 className="text-lg font-semibold text-alg-navy">Developmental Milestones</h2>
-            <p className="text-sm text-gray-500">For each milestone, indicate if it was achieved on time, delayed, never achieved, or lost.</p>
+            <p className="text-sm text-gray-700">For each milestone, indicate if it was achieved on time, delayed, never achieved, or lost.</p>
             <div className="space-y-3">
               {MILESTONES.map(m => (
                 <div key={m.id} className="grid grid-cols-3 gap-2 items-center p-3 bg-gray-50 rounded-lg">
-                  <div><span className="font-medium text-sm">{m.label}</span><p className="text-xs text-gray-500">Typical: {m.typical}</p></div>
+                  <div><span className="font-medium text-sm">{m.label}</span><p className="text-xs text-gray-700">Typical: {m.typical}</p></div>
                   <select value={milestones[m.id]?.status || ''} onChange={(e) => handleMilestone(m.id, 'status', e.target.value)} className="input-field text-sm py-2">
                     <option value="">Status...</option>
                     <option value="On time">On time</option>

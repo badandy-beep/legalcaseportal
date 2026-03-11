@@ -44,21 +44,21 @@ export default function Phase7Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Diagnoses & Injuries</h1>
-          <p className="text-gray-600">Select all diagnoses that apply to your child.</p>
+          <p className="text-gray-700">Select all diagnoses that apply to your child.</p>
         </div>
         <form id="phase-7-form" onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-alg-navy flex items-center gap-2">
               <FileHeart className="w-5 h-5 text-alg-gold" /> Primary Diagnoses
             </h2>
-            <p className="text-sm text-gray-500">Check all that apply:</p>
+            <p className="text-sm text-gray-700">Check all that apply:</p>
             <div className="grid gap-3">
               {DIAGNOSES.map(dx => (
                 <label key={dx.id} className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${diagnoses[dx.id] ? 'border-alg-gold bg-alg-gold/10' : 'border-gray-200 hover:border-gray-300'}`}>
                   <input type="checkbox" checked={diagnoses[dx.id] || false} onChange={() => toggleDiagnosis(dx.id)} className="checkbox-custom mt-0.5" />
                   <div>
                     <span className="font-medium text-gray-900">{dx.label}</span>
-                    {dx.icd && <span className="text-xs text-gray-500 ml-2">ICD: {dx.icd}</span>}
+                    {dx.icd && <span className="text-xs text-gray-700 ml-2">ICD: {dx.icd}</span>}
                   </div>
                 </label>
               ))}

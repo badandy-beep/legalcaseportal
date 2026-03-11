@@ -136,7 +136,7 @@ export default function Phase11Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Review &amp; Submit</h1>
-          <p className="text-gray-600">Review your information, sign, and submit your case evaluation.</p>
+          <p className="text-gray-700">Review your information, sign, and submit your case evaluation.</p>
         </div>
 
         {/* Section Summary */}
@@ -152,7 +152,7 @@ export default function Phase11Page() {
                     {isComplete ? <CheckCircle className="w-5 h-5" /> : <Icon className="w-4 h-4" />}
                   </div>
                   <div>
-                    <span className={`font-medium ${isComplete ? 'text-alg-navy' : 'text-gray-600'}`}>{section.label}</span>
+                    <span className={`font-medium ${isComplete ? 'text-alg-navy' : 'text-gray-700'}`}>{section.label}</span>
                     {isComplete && data[section.key] && (
                       <p className="text-xs text-alg-gold">
                         {section.key === 'phase1' && data.phase1?.fullName && `${data.phase1.fullName}`}
@@ -181,21 +181,21 @@ export default function Phase11Page() {
             <h3 className="font-semibold text-alg-navy mb-3">Case Summary</h3>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <span className="text-gray-500">Client:</span>
+                <span className="text-gray-700">Client:</span>
                 <p className="font-medium">{data.phase1.fullName}</p>
               </div>
               <div>
-                <span className="text-gray-500">Email:</span>
+                <span className="text-gray-700">Email:</span>
                 <p className="font-medium">{data.phase1.email}</p>
               </div>
               {data.phase2?.[0] && (
                 <>
                   <div>
-                    <span className="text-gray-500">Child:</span>
+                    <span className="text-gray-700">Child:</span>
                     <p className="font-medium">{data.phase2[0].fullName}</p>
                   </div>
                   <div>
-                    <span className="text-gray-500">Child DOB:</span>
+                    <span className="text-gray-700">Child DOB:</span>
                     <p className="font-medium">{data.phase2[0].dateOfBirth}</p>
                   </div>
                 </>
@@ -210,7 +210,7 @@ export default function Phase11Page() {
             <FileSignature className="w-5 h-5 text-alg-gold" />
             Digital Signature
           </h3>
-          <p className="text-sm text-gray-600 mb-4">
+          <p className="text-sm text-gray-700 mb-4">
             By signing below, you confirm all information is accurate and authorize Alpha Law Group to proceed with your case evaluation.
           </p>
 
@@ -238,7 +238,7 @@ export default function Phase11Page() {
               )}
             </div>
             {hasSignature && (
-              <button type="button" onClick={clearSignature} className="mt-1 text-sm text-gray-500 underline hover:text-gray-700">
+              <button type="button" onClick={clearSignature} className="mt-1 text-sm text-gray-600 underline hover:text-gray-800">
                 Clear Signature
               </button>
             )}
@@ -257,7 +257,7 @@ export default function Phase11Page() {
           </div>
 
           {/* Timestamp */}
-          <p className="text-gray-400 text-xs">
+          <p className="text-gray-600 text-xs">
             Signing date: {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
 
@@ -292,7 +292,7 @@ export default function Phase11Page() {
           </ul>
         </div>
 
-        <p className="text-xs text-gray-500 text-center">
+        <p className="text-xs text-gray-700 text-center">
           By submitting, you confirm all information is accurate and agree to the terms of service.
         </p>
       </div>
@@ -318,7 +318,7 @@ export default function Phase11Page() {
             )}
           </button>
           {!canSign && (
-            <p className="text-xs text-gray-400 text-center mt-2">Please sign above or type your name to submit</p>
+            <p className="text-xs text-gray-600 text-center mt-2">Please sign above or type your name to submit</p>
           )}
         </div>
       </div>

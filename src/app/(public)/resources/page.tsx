@@ -15,7 +15,7 @@ function ResourceCard({ icon, name, description, link }: { icon: React.ReactNode
         {icon}
         <h3 className="text-alg-navy font-bold text-base">{name}</h3>
       </div>
-      <p className="text-gray-600 text-sm leading-relaxed flex-1">{description}</p>
+      <p className="text-gray-700 text-sm leading-relaxed flex-1">{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer" className="self-start text-alg-gold hover:underline font-semibold text-sm">
         Visit Website &rarr;
       </a>
@@ -30,7 +30,7 @@ export default function ResourcesPage() {
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Resources</h1>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             Organizations, legal resources, and information to help autism families navigate the path to justice.
           </p>
         </div>

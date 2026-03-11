@@ -120,7 +120,7 @@ export default function Phase2Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Child Information</h1>
-          <p className="text-gray-600">
+          <p className="text-gray-700">
             Please provide detailed information about the affected child.
           </p>
         </div>
@@ -370,7 +370,7 @@ export default function Phase2Page() {
                         className="input-field"
                         placeholder="1 min"
                       />
-                      <p className="text-xs text-gray-500 mt-1">1 minute</p>
+                      <p className="text-xs text-gray-700 mt-1">1 minute</p>
                     </div>
                     <div>
                       <input
@@ -382,7 +382,7 @@ export default function Phase2Page() {
                         className="input-field"
                         placeholder="5 min"
                       />
-                      <p className="text-xs text-gray-500 mt-1">5 minutes</p>
+                      <p className="text-xs text-gray-700 mt-1">5 minutes</p>
                     </div>
                     <div>
                       <input
@@ -394,7 +394,7 @@ export default function Phase2Page() {
                         className="input-field"
                         placeholder="10 min"
                       />
-                      <p className="text-xs text-gray-500 mt-1">10 minutes</p>
+                      <p className="text-xs text-gray-700 mt-1">10 minutes</p>
                     </div>
                   </div>
                 </div>
@@ -453,7 +453,7 @@ export default function Phase2Page() {
             <button
               type="button"
               onClick={addChild}
-              className="mb-6 w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-600 hover:border-alg-gold hover:text-alg-gold transition-colors flex items-center justify-center gap-2"
+              className="mb-6 w-full py-3 border-2 border-dashed border-gray-300 rounded-lg text-gray-700 hover:border-alg-gold hover:text-alg-gold transition-colors flex items-center justify-center gap-2"
             >
               <Plus className="w-5 h-5" />
               Add Twin/Multiple

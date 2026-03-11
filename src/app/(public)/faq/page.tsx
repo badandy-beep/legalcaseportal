@@ -210,7 +210,7 @@ export default function FAQPage() {
                       </span>
                     </button>
                     {isOpen && (
-                      <div className="pb-4 text-gray-600 text-sm leading-relaxed">
+                      <div className="pb-4 text-gray-700 text-sm leading-relaxed">
                         {item.answer}
                       </div>
                     )}
@@ -232,7 +232,7 @@ export default function FAQPage() {
         </div>
 
         {/* Footer Note */}
-        <p className="mt-12 text-xs text-gray-400 text-center leading-relaxed">
+        <p className="mt-12 text-xs text-gray-600 text-center leading-relaxed">
           This FAQ is provided for general informational purposes only and does not constitute legal
           advice. Every family&apos;s situation is unique. Contact Alpha Law Group for a free case
           evaluation specific to your circumstances. &copy; 2026 Alpha Law Group, PLLC.

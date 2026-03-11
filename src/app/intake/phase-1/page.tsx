@@ -78,7 +78,7 @@ export default function Phase1Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Account Setup</h1>
-          <p className="text-gray-600">
+          <p className="text-gray-700">
             Create your secure account to begin the intake process.
           </p>
         </div>
@@ -140,7 +140,7 @@ export default function Phase1Page() {
                 onChange={handleChange}
                 className="input-field"
               />
-              <p className="text-xs text-gray-500 mt-1">You must be 18 or older</p>
+              <p className="text-xs text-gray-700 mt-1">You must be 18 or older</p>
             </div>
           </div>
 
@@ -286,7 +286,7 @@ export default function Phase1Page() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -313,7 +313,7 @@ export default function Phase1Page() {
           {/* SSN Last 4 (Optional) */}
           <div>
             <label htmlFor="ssnLast4" className="input-label">
-              Last 4 of SSN <span className="text-gray-400">(Optional)</span>
+              Last 4 of SSN <span className="text-gray-600">(Optional)</span>
             </label>
             <input
               type="text"
@@ -326,7 +326,7 @@ export default function Phase1Page() {
               maxLength={4}
               pattern="[0-9]*"
             />
-            <p className="text-xs text-gray-500 mt-1">Used for identity verification only</p>
+            <p className="text-xs text-gray-700 mt-1">Used for identity verification only</p>
           </div>
         </form>
       </div>

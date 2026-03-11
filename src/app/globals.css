@@ -24,6 +24,12 @@
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
     text-rendering: optimizeLegibility;
+    font-weight: 400;
+    color: #1a1a2e;
+  }
+
+  p, li, span {
+    color: inherit;
   }
 }
 

@@ -52,7 +52,7 @@ export default function DeadlineCalculatorPage() {
           <label className="block text-alg-navy font-semibold mb-1">
             When did your child first show symptoms after vaccination?
           </label>
-          <p className="text-gray-500 text-xs mb-4">
+          <p className="text-gray-700 text-xs mb-4">
             This should be the date of the first notable change — regression, fever, seizure, loss of speech — NOT the autism diagnosis date.
           </p>
           <input
@@ -161,7 +161,7 @@ export default function DeadlineCalculatorPage() {
         )}
 
         {/* Disclaimer */}
-        <p className="max-w-lg mx-auto mt-8 text-center text-gray-400 text-xs">
+        <p className="max-w-lg mx-auto mt-8 text-center text-gray-600 text-xs">
           This calculator provides a general estimate only and does not constitute legal advice. Filing deadlines depend on specific facts unique to your case. Contact Alpha Law Group for a free evaluation of your actual deadline.
         </p>
       </section>

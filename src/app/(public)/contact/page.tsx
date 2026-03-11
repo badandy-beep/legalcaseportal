@@ -46,7 +46,7 @@ export default function ContactPage() {
         {/* Page Title */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Contact Alpha Law Group</h1>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-700 text-lg">
             Free consultation. No fees unless we win. We respond within 24 hours.
           </p>
         </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 onChange={handleChange}
                 className="checkbox-custom mt-1"
               />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-700">
                 I agree that submitting this form does not create an attorney-client relationship
               </span>
             </label>
@@ -193,16 +193,16 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-alg-navy mb-1">Email</p>
-            <p className="text-gray-600">info@alphainjurylaw.com</p>
+            <p className="text-gray-700">info@alphainjurylaw.com</p>
           </div>
           <div>
             <p className="font-semibold text-alg-navy mb-1">Address</p>
-            <p className="text-gray-600">Sarasota County, Florida</p>
+            <p className="text-gray-700">Sarasota County, Florida</p>
           </div>
           <div>
             <p className="font-semibold text-alg-navy mb-1">Hours</p>
-            <p className="text-gray-600">Monday&ndash;Friday 9AM&ndash;6PM EST</p>
-            <p className="text-gray-600">24/7 Emergency Line: <a href="tel:9413041500" className="text-alg-gold font-semibold">(941) 304-1500</a></p>
+            <p className="text-gray-700">Monday&ndash;Friday 9AM&ndash;6PM EST</p>
+            <p className="text-gray-700">24/7 Emergency Line: <a href="tel:9413041500" className="text-alg-gold font-semibold">(941) 304-1500</a></p>
           </div>
         </div>
       </div>

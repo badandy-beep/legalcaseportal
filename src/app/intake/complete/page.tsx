@@ -15,7 +15,7 @@ export default function IntakeCompletePage() {
         <h1 className="text-3xl font-bold text-alg-navy mb-3">
           Case Submitted Successfully!
         </h1>
-        <p className="text-xl text-gray-600">
+        <p className="text-xl text-gray-700">
           Thank you for completing your case evaluation.
         </p>
       </div>
@@ -37,7 +37,7 @@ export default function IntakeCompletePage() {
             </div>
             <div>
               <p className="font-medium text-gray-900">Confirmation Email</p>
-              <p className="text-sm text-gray-600">You'll receive an email with your case details and login credentials within the next few minutes.</p>
+              <p className="text-sm text-gray-700">You'll receive an email with your case details and login credentials within the next few minutes.</p>
             </div>
           </div>
 
@@ -47,7 +47,7 @@ export default function IntakeCompletePage() {
             </div>
             <div>
               <p className="font-medium text-gray-900">Case Review (48 Hours)</p>
-              <p className="text-sm text-gray-600">Our team will carefully review your case and all submitted documentation.</p>
+              <p className="text-sm text-gray-700">Our team will carefully review your case and all submitted documentation.</p>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ export default function IntakeCompletePage() {
             </div>
             <div>
               <p className="font-medium text-gray-900">Legal Match</p>
-              <p className="text-sm text-gray-600">If your case qualifies, we'll connect you with an experienced vaccine injury attorney.</p>
+              <p className="text-sm text-gray-700">If your case qualifies, we'll connect you with an experienced vaccine injury attorney.</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export default function IntakeCompletePage() {
             </div>
             <div>
               <p className="font-medium text-gray-900">File Your Claim</p>
-              <p className="text-sm text-gray-600">Your attorney will guide you through filing your NVICP claim at no upfront cost.</p>
+              <p className="text-sm text-gray-700">Your attorney will guide you through filing your NVICP claim at no upfront cost.</p>
             </div>
           </div>
         </div>
@@ -77,11 +77,11 @@ export default function IntakeCompletePage() {
       <div className="grid sm:grid-cols-2 gap-4 mb-8">
         <div className="card">
           <Mail className="w-8 h-8 text-alg-gold mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Check your email for confirmation</p>
+          <p className="text-sm text-gray-700">Check your email for confirmation</p>
         </div>
         <div className="card">
           <FileText className="w-8 h-8 text-alg-gold mx-auto mb-2" />
-          <p className="text-sm text-gray-600">Login to upload additional documents</p>
+          <p className="text-sm text-gray-700">Login to upload additional documents</p>
         </div>
       </div>
 

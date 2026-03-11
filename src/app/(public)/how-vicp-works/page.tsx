@@ -37,7 +37,7 @@ export default function HowVicpWorksPage() {
           <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-3">
             How the Vaccine Injury Compensation Program Works
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             A federal program created to compensate families whose children suffer serious
             vaccine-related injuries. Here&rsquo;s what you need to know.
           </p>

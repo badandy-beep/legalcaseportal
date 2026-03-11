@@ -29,7 +29,7 @@ export default function Phase3Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Parents/Guardians</h1>
-          <p className="text-gray-600">Provide information about the child's parents or guardians.</p>
+          <p className="text-gray-700">Provide information about the child's parents or guardians.</p>
         </div>
 
         <form id="phase-3-form" onSubmit={handleSubmit} className="space-y-8">

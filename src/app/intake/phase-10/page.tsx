@@ -37,7 +37,7 @@ export default function Phase10Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Consents &amp; Releases</h1>
-          <p className="text-gray-600">Please review and authorize each section below to proceed.</p>
+          <p className="text-gray-700">Please review and authorize each section below to proceed.</p>
         </div>
 
         <form id="phase-10-form" onSubmit={handleSubmit} className="space-y-6">
@@ -47,7 +47,7 @@ export default function Phase10Page() {
               <ShieldCheck className="w-5 h-5 text-alg-gold" />
               HIPAA Authorization for Release of Health Information
             </h3>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            <p className="text-sm text-gray-700 mb-4 leading-relaxed">
               By checking this box, you authorize Alpha Law Group, PLLC to obtain, review, and use
               your child&rsquo;s protected health information &mdash; including medical records, vaccine
               records, and diagnostic reports &mdash; solely for the purpose of evaluating and pursuing
@@ -62,7 +62,7 @@ export default function Phase10Page() {
           {/* Section B — Medical Records */}
           <div className="border border-gray-200 rounded-lg p-5">
             <h3 className="font-semibold text-alg-navy mb-2">Medical Records Release Authorization</h3>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            <p className="text-sm text-gray-700 mb-4 leading-relaxed">
               You authorize treating physicians, hospitals, laboratories, and healthcare providers to
               release records pertaining to your child&rsquo;s care, treatment, and diagnosis to Alpha
               Law Group, PLLC and its authorized agents.
@@ -76,7 +76,7 @@ export default function Phase10Page() {
           {/* Section C — Contact Authorization */}
           <div className="border border-gray-200 rounded-lg p-5">
             <h3 className="font-semibold text-alg-navy mb-2">Authorization to Contact</h3>
-            <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+            <p className="text-sm text-gray-700 mb-4 leading-relaxed">
               You authorize Alpha Law Group, PLLC to contact you via phone, email, and text message
               regarding your case evaluation. Standard message rates may apply.
             </p>
@@ -104,7 +104,7 @@ export default function Phase10Page() {
             <summary className="cursor-pointer px-5 py-3 text-sm font-medium text-alg-navy hover:bg-gray-50 rounded-lg">
               View Full HIPAA Notice &amp; Privacy Practices
             </summary>
-            <div className="px-5 pb-5 text-xs text-gray-600 leading-relaxed space-y-3 border-t border-gray-100 pt-4">
+            <div className="px-5 pb-5 text-xs text-gray-700 leading-relaxed space-y-3 border-t border-gray-100 pt-4">
               <p><strong>Notice of Privacy Practices</strong></p>
               <p>
                 This notice describes how medical information about your child may be used and disclosed
@@ -150,7 +150,7 @@ export default function Phase10Page() {
             )}
           </button>
           {!allChecked && (
-            <p className="text-xs text-gray-400 text-center mt-2">All authorizations must be checked to continue</p>
+            <p className="text-xs text-gray-600 text-center mt-2">All authorizations must be checked to continue</p>
           )}
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function Phase6Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Pediatric Care</h1>
-          <p className="text-gray-600">Information about the child's pediatric care providers.</p>
+          <p className="text-gray-700">Information about the child's pediatric care providers.</p>
         </div>
         <form id="phase-6-form" onSubmit={handleSubmit} className="space-y-4">
           <div><label className="input-label">Pediatrician at Birth</label>

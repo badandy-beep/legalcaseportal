@@ -13,7 +13,7 @@ export default function IntakeStartPage() {
           <h1 className="text-3xl font-bold text-alg-navy mb-2">
             Free Case Evaluation
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-700">
             Begin your confidential intake. This information helps us evaluate your potential case.
           </p>
         </div>
@@ -26,21 +26,21 @@ export default function IntakeStartPage() {
               <Clock className="w-5 h-5 text-alg-gold flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">15-20 minutes to complete</p>
-                <p className="text-sm text-gray-600">You can save and continue later</p>
+                <p className="text-sm text-gray-700">You can save and continue later</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Shield className="w-5 h-5 text-alg-gold flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">100% Confidential & Secure</p>
-                <p className="text-sm text-gray-600">HIPAA compliant, encrypted data</p>
+                <p className="text-sm text-gray-700">HIPAA compliant, encrypted data</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <FileText className="w-5 h-5 text-alg-gold flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">Gather these if available</p>
-                <p className="text-sm text-gray-600">Birth certificate, vaccination records, diagnosis reports</p>
+                <p className="text-sm text-gray-700">Birth certificate, vaccination records, diagnosis reports</p>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function IntakeStartPage() {
               '10. Legal Agreements',
               '11. Review & Submit'
             ].map((phase, index) => (
-              <div key={index} className="flex items-center gap-2 text-gray-600">
+              <div key={index} className="flex items-center gap-2 text-gray-700">
                 <div className="w-2 h-2 rounded-full bg-alg-gold" />
                 {phase}
               </div>
@@ -85,15 +85,15 @@ export default function IntakeStartPage() {
       <div className="grid grid-cols-3 gap-4 text-center">
         <div className="bg-white rounded-lg p-4 shadow-sm">
           <Lock className="w-6 h-6 text-alg-gold mx-auto mb-2" />
-          <p className="text-xs text-gray-600">256-bit SSL</p>
+          <p className="text-xs text-gray-700">256-bit SSL</p>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm">
           <Shield className="w-6 h-6 text-alg-gold mx-auto mb-2" />
-          <p className="text-xs text-gray-600">HIPAA Compliant</p>
+          <p className="text-xs text-gray-700">HIPAA Compliant</p>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm">
           <CheckCircle className="w-6 h-6 text-alg-gold mx-auto mb-2" />
-          <p className="text-xs text-gray-600">No Obligation</p>
+          <p className="text-xs text-gray-700">No Obligation</p>
         </div>
       </div>
     </div>

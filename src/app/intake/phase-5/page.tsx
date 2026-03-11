@@ -29,7 +29,7 @@ export default function Phase5Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Labor & Delivery</h1>
-          <p className="text-gray-600">Details about the labor and delivery.</p>
+          <p className="text-gray-700">Details about the labor and delivery.</p>
         </div>
         <form id="phase-5-form" onSubmit={handleSubmit} className="space-y-4">
           <div><label className="input-label">Hospital Full Name</label>

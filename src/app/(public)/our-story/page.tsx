@@ -7,7 +7,7 @@ export default function OurStoryPage() {
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Story</h1>
-          <p className="text-lg text-gray-500">A Family Mission Two Decades in the Making</p>
+          <p className="text-lg text-gray-700">A Family Mission Two Decades in the Making</p>
         </div>
 
         {/* Section 1 — The Family */}

@@ -98,10 +98,10 @@ export default function IntakeLayout({
 
         {/* Footer */}
         <footer className="mt-16 pb-8 px-4">
-          <p className="text-sm text-gray-500 text-center">
+          <p className="text-sm text-gray-700 text-center">
             Alpha Law Group, PLLC | Justice for Autism Initiative | Sarasota, Florida | (941) 304-1500
           </p>
-          <p className="text-xs text-gray-400 text-center max-w-4xl mx-auto mt-2">
+          <p className="text-xs text-gray-600 text-center max-w-4xl mx-auto mt-2">
             ATTORNEY ADVERTISING: Completion of this intake form does not create an attorney-client relationship. No legal advice is provided herein. Alpha Law Group represents clients on a contingency fee basis — no fees charged unless a recovery is obtained. VICP NOTICE: Strict filing deadlines apply. Contact an attorney immediately to protect your rights. PRIVACY: All information submitted is confidential and subject to attorney-client privilege.
           </p>
           <p className="text-xs text-gray-300 text-center mt-2">

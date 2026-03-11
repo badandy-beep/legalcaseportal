@@ -68,7 +68,7 @@ export default function Phase9Page() {
       <div className="card">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-alg-navy mb-2">Document Upload</h1>
-          <p className="text-gray-600">Upload supporting documents for your case. You can add more documents later.</p>
+          <p className="text-gray-700">Upload supporting documents for your case. You can add more documents later.</p>
         </div>
 
         <div className="bg-alg-gold/10 border border-alg-gold/30 rounded-lg p-4 mb-6">
@@ -109,9 +109,9 @@ export default function Phase9Page() {
                       <div className="flex items-center gap-2">
                         <FileText className="w-4 h-4 text-alg-gold" />
                         <span className="text-sm text-gray-700 truncate max-w-xs">{file.name}</span>
-                        <span className="text-xs text-gray-500">{formatFileSize(file.size)}</span>
+                        <span className="text-xs text-gray-700">{formatFileSize(file.size)}</span>
                       </div>
-                      <button type="button" onClick={() => removeFile(docType.id, file.name)} className="text-gray-400 hover:text-red-600">
+                      <button type="button" onClick={() => removeFile(docType.id, file.name)} className="text-gray-500 hover:text-red-600">
                         <X className="w-4 h-4" />
                       </button>
                     </div>
@@ -128,7 +128,7 @@ export default function Phase9Page() {
             </div>
           ))}
 
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-gray-700 mt-4">
             Accepted formats: PDF, DOC, DOCX, JPG, PNG, GIF, MP4, MOV. Max 50MB per file.
             You can upload additional documents later through your account dashboard.
           </p>

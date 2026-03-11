@@ -40,7 +40,7 @@ export default function OurTeamPage() {
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Team</h1>
-          <p className="text-lg text-gray-500">The people behind the mission</p>
+          <p className="text-lg text-gray-700">The people behind the mission</p>
         </div>
 
         {/* Team Grid */}
@@ -62,11 +62,11 @@ export default function OurTeamPage() {
                 </div>
               )}
               <h3 className="text-lg font-bold text-alg-navy">{member.name}</h3>
-              <p className="text-sm text-gray-500 mt-0.5">{member.title}</p>
+              <p className="text-sm text-gray-600 mt-0.5">{member.title}</p>
               <span className="inline-block mt-2 bg-alg-gold text-alg-navy text-xs font-semibold px-2 py-0.5 rounded-full">
                 {member.badge}
               </span>
-              <p className="text-gray-600 text-sm leading-relaxed mt-4">{member.bio}</p>
+              <p className="text-gray-700 text-sm leading-relaxed mt-4">{member.bio}</p>
               {member.contact && (
                 <p className="mt-4 text-alg-gold font-semibold text-sm">
                   <a href={`tel:${member.contact.replace(/\D/g, '')}`}>{member.contact}</a>
