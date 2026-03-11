@@ -5,10 +5,14 @@ import Link from 'next/link'
 
 const desktopLinks = [
   { label: 'Home', href: '/' },
+  { label: 'Our Story', href: '/our-story' },
+  { label: 'Our Team', href: '/our-team' },
+  { label: 'How VICP Works', href: '/how-vicp-works' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Deadline Calculator', href: '/deadline-calculator' },
   { label: 'Start My Claim', href: '/intake/phase-1', isCta: true },
   { label: 'Resources', href: '/resources' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 const mobileLinks = [
@@ -42,13 +46,13 @@ export default function PublicLayout({
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-0.5">
               {desktopLinks.map((link) =>
                 link.isCta ? (
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="bg-alg-gold text-alg-navy font-bold px-4 py-1.5 rounded hover:bg-alg-gold-light transition ml-2"
+                    className="bg-alg-gold text-alg-navy font-bold text-xs px-3 py-1.5 rounded hover:bg-alg-gold-light transition ml-1"
                   >
                     {link.label}
                   </Link>
@@ -56,7 +60,7 @@ export default function PublicLayout({
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-white hover:text-alg-gold transition px-3 py-2 text-sm font-medium"
+                    className="text-white hover:text-alg-gold transition px-2 py-1.5 text-xs font-medium"
                   >
                     {link.label}
                   </Link>
