@@ -39,8 +39,8 @@ export default function OurTeamPage() {
       <div className="max-w-4xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Team</h1>
-          <p className="text-lg text-gray-700">The people behind the mission</p>
+          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Our Team</h1>
+          <p className="text-lg text-[#475569]">The people behind the mission</p>
         </div>
 
         {/* Team Grid */}
@@ -48,27 +48,27 @@ export default function OurTeamPage() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="bg-white border border-alg-gray-border rounded-xl p-6 shadow-sm flex flex-col items-center text-center"
+              className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm flex flex-col items-center text-center"
             >
               {member.image ? (
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full object-cover object-top mb-4 border-2 border-alg-gold"
+                  className="w-24 h-24 rounded-full object-cover object-top mb-4 border-2 border-[#1E40AF]"
                 />
               ) : (
-                <div className="w-24 h-24 rounded-full bg-alg-navy/10 border-2 border-alg-gold mb-4 flex items-center justify-center">
-                  <span className="text-alg-navy/40 text-xs">Photo</span>
+                <div className="w-24 h-24 rounded-full bg-[#EFF6FF] border-2 border-[#1E40AF] mb-4 flex items-center justify-center">
+                  <span className="text-[#475569] text-xs">Photo</span>
                 </div>
               )}
-              <h3 className="text-lg font-bold text-alg-navy">{member.name}</h3>
-              <p className="text-sm text-gray-600 mt-0.5">{member.title}</p>
-              <span className="inline-block mt-2 bg-alg-gold text-alg-navy text-xs font-semibold px-2 py-0.5 rounded-full">
+              <h3 className="text-lg font-bold text-[#111827]">{member.name}</h3>
+              <p className="text-sm text-[#475569] mt-0.5">{member.title}</p>
+              <span className="inline-block mt-2 bg-[#1E40AF] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
                 {member.badge}
               </span>
-              <p className="text-gray-700 text-sm leading-relaxed mt-4">{member.bio}</p>
+              <p className="text-[#475569] text-sm leading-relaxed mt-4">{member.bio}</p>
               {member.contact && (
-                <p className="mt-4 text-alg-gold font-semibold text-sm">
+                <p className="mt-4 text-[#1E40AF] font-semibold text-sm">
                   <a href={`tel:${member.contact.replace(/\D/g, '')}`}>{member.contact}</a>
                 </p>
               )}
@@ -76,12 +76,35 @@ export default function OurTeamPage() {
           ))}
         </div>
 
+        {/* Advisory Board Section */}
+        <h2 className="text-xl font-bold text-[#111827] mt-16 mb-8 pb-3 border-b border-[#E2E8F0]">Advisory Board</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-[#F8F9FA] border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm flex flex-col items-center text-center">
+            <img
+              src="/nicolas-hulscher.webp"
+              alt="Nicolas Hulscher, MPH"
+              className="w-full h-64 object-cover object-top"
+            />
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-[#111827]">Nicolas Hulscher, MPH</h3>
+              <p className="text-sm text-[#475569] mt-0.5">Epidemiologist &amp; Administrator, McCullough Foundation</p>
+              <span className="inline-block mt-2 bg-[#1E40AF] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
+                Advisory Board
+              </span>
+              <p className="text-[#475569] text-sm leading-relaxed mt-4">
+                A Michigan native, Nicolas earned his Bachelor of Science in Pre-Health Professional Studies from Oakland University (2020) and his Master of Public Health in Epidemiology from the University of Michigan School of Public Health (2024). He has contributed to more than 20 scientific publications advancing understanding of COVID-19 vaccine injury syndromes, SARS-CoV-2, H5N1 avian influenza, and the multifactorial determinants of autism spectrum disorder.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom CTA */}
-        <div className="text-center mt-16 pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-bold text-alg-navy mb-4">Ready to take the first step?</h3>
+        <div className="text-center mt-16 pt-8 border-t border-[#E2E8F0]">
+          <h3 className="text-xl font-bold text-[#111827] mb-4">Ready to take the first step?</h3>
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-alg-gold text-alg-navy font-bold text-lg px-8 py-4 rounded-lg hover:bg-alg-gold-light transition"
+            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
           >
             Start My Claim &rarr;
           </Link>

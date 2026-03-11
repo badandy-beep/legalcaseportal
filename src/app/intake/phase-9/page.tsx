@@ -67,13 +67,13 @@ export default function Phase9Page() {
     <>
       <div className="card">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-alg-navy mb-2">Document Upload</h1>
+          <h1 className="text-2xl font-bold text-[#111827] mb-2">Document Upload</h1>
           <p className="text-gray-700">Upload supporting documents for your case. You can add more documents later.</p>
         </div>
 
-        <div className="bg-alg-gold/10 border border-alg-gold/30 rounded-lg p-4 mb-6">
-          <h3 className="font-semibold text-alg-navy mb-2">Documents That Strengthen Your Case</h3>
-          <ul className="text-sm text-alg-gold space-y-1">
+        <div className="bg-[#1E40AF]/10 border border-[#1E40AF]/30 rounded-lg p-4 mb-6">
+          <h3 className="font-semibold text-[#111827] mb-2">Documents That Strengthen Your Case</h3>
+          <ul className="text-sm text-[#1E40AF] space-y-1">
             <li>Vaccination records with dates and lot numbers</li>
             <li>Medical records documenting symptoms after vaccination</li>
             <li>Autism diagnosis and evaluation reports</li>
@@ -107,7 +107,7 @@ export default function Phase9Page() {
                   {files[docType.id].map(file => (
                     <div key={file.name} className="flex items-center justify-between bg-gray-50 rounded p-2">
                       <div className="flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-alg-gold" />
+                        <FileText className="w-4 h-4 text-[#1E40AF]" />
                         <span className="text-sm text-gray-700 truncate max-w-xs">{file.name}</span>
                         <span className="text-xs text-gray-700">{formatFileSize(file.size)}</span>
                       </div>
@@ -120,7 +120,7 @@ export default function Phase9Page() {
               )}
 
               {files[docType.id]?.length > 0 && (
-                <div className="flex items-center gap-1 mt-2 text-alg-gold">
+                <div className="flex items-center gap-1 mt-2 text-[#1E40AF]">
                   <CheckCircle className="w-4 h-4" />
                   <span className="text-sm">{files[docType.id].length} file(s) added</span>
                 </div>

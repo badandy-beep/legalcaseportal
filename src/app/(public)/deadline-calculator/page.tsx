@@ -34,8 +34,8 @@ export default function DeadlineCalculatorPage() {
   return (
     <main className="min-h-screen">
       {/* Header */}
-      <section className="bg-alg-navy text-white py-12 text-center px-4">
-        <p className="text-alg-gold text-xs font-bold uppercase tracking-widest mb-3">
+      <section className="bg-gray-900 text-white py-12 text-center px-4">
+        <p className="text-[#1E40AF] text-xs font-bold uppercase tracking-widest mb-3">
           FREE DEADLINE ASSESSMENT
         </p>
         <h1 className="text-3xl font-black tracking-tight">
@@ -49,7 +49,7 @@ export default function DeadlineCalculatorPage() {
       {/* Calculator */}
       <section className="py-12 bg-gray-50 min-h-screen px-4">
         <div className="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8">
-          <label className="block text-alg-navy font-semibold mb-1">
+          <label className="block text-[#111827] font-semibold mb-1">
             When did your child first show symptoms after vaccination?
           </label>
           <p className="text-gray-700 text-xs mb-4">
@@ -59,11 +59,11 @@ export default function DeadlineCalculatorPage() {
             type="date"
             value={symptomDate}
             onChange={(e) => setSymptomDate(e.target.value)}
-            className="w-full border border-gray-200 rounded-lg p-3 text-alg-navy"
+            className="w-full border border-gray-200 rounded-lg p-3 text-[#111827]"
           />
           <button
             onClick={calculate}
-            className="w-full mt-4 bg-alg-gold text-alg-navy font-bold py-3 rounded-lg hover:opacity-90 transition cursor-pointer"
+            className="w-full mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg hover:opacity-90 transition cursor-pointer"
           >
             Calculate My Deadline
           </button>
@@ -84,12 +84,12 @@ export default function DeadlineCalculatorPage() {
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-alg-gold text-alg-navy font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Start My Free Case Evaluation &rarr;
             </Link>
             <div className="text-center mt-3">
-              <Link href="/faq" className="text-alg-navy text-sm hover:underline">
+              <Link href="/faq" className="text-[#111827] text-sm hover:underline">
                 Have questions first? Read our FAQ &rarr;
               </Link>
             </div>
@@ -109,12 +109,12 @@ export default function DeadlineCalculatorPage() {
             <p className="text-yellow-700 text-sm mt-2 font-semibold">
               Do not wait. Contact Alpha Law Group today.
             </p>
-            <p className="text-2xl font-black text-alg-navy mt-4 text-center">
+            <p className="text-2xl font-black text-[#111827] mt-4 text-center">
               <a href="tel:9413041500">(941) 304-1500</a>
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-alg-gold text-alg-navy font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Start My Intake Now — Time Is Critical &rarr;
             </Link>
@@ -150,11 +150,11 @@ export default function DeadlineCalculatorPage() {
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-alg-gold text-alg-navy font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Document My Case Now — It&rsquo;s Free &rarr;
             </Link>
-            <p className="text-alg-navy font-semibold mt-3 text-center">
+            <p className="text-[#111827] font-semibold mt-3 text-center">
               <a href="tel:9413041500">(941) 304-1500</a> &middot; Free Consultation
             </p>
           </div>

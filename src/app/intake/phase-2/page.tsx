@@ -94,7 +94,7 @@ export default function Phase2Page() {
           type="date"
           value={vaccineDate}
           onChange={(e) => setVaccineDate(e.target.value)}
-          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-alg-navy focus:border-alg-gold transition"
+          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] focus:border-[#1E40AF] transition"
           style={{ fontSize: '16px' }}
         />
       </QuestionScreen>

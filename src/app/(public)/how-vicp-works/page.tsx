@@ -34,7 +34,7 @@ export default function HowVicpWorksPage() {
       <div className="max-w-3xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-14">
-          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-3">
+          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-3">
             How the Vaccine Injury Compensation Program Works
           </h1>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
@@ -46,19 +46,19 @@ export default function HowVicpWorksPage() {
         {/* Timeline Steps */}
         <div className="relative">
           {/* Gold connector line */}
-          <div className="absolute left-[23px] top-4 bottom-4 w-[2px] bg-alg-gold/30" />
+          <div className="absolute left-[23px] top-4 bottom-4 w-[2px] bg-[#1E40AF]/30" />
 
           <div className="space-y-10">
             {steps.map((step, i) => (
               <div key={step.number} className="relative flex gap-6">
                 {/* Step number circle */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-alg-gold/10 border-2 border-alg-gold flex items-center justify-center">
-                  <span className="text-alg-gold font-bold text-lg">{step.number}</span>
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[#EFF6FF] border-2 border-[#1E40AF] flex items-center justify-center">
+                  <span className="text-[#1E40AF] font-bold text-lg">{step.number}</span>
                 </div>
 
                 {/* Content */}
                 <div className="pt-1.5">
-                  <h2 className="text-xl font-bold tracking-tight text-alg-navy mb-2">{step.title}</h2>
+                  <h2 className="text-xl font-bold tracking-tight text-[#111827] mb-2">{step.title}</h2>
                   <p className="text-gray-700 leading-relaxed">{step.body}</p>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function HowVicpWorksPage() {
         </div>
 
         {/* Callout Box */}
-        <div className="bg-alg-navy text-white p-8 rounded-xl mt-16">
+        <div className="bg-gray-900 text-white p-8 rounded-xl mt-16">
           <p className="text-lg leading-relaxed mb-6">
             <span className="font-bold">Important:</span> VICP filing deadlines are strict and
             unforgiving. If you believe your child may have been injured by a vaccine, contact
@@ -77,7 +77,7 @@ export default function HowVicpWorksPage() {
           <div className="text-center">
             <Link
               href="/intake/phase-1"
-              className="inline-block bg-alg-gold text-alg-navy font-bold text-lg px-8 py-4 rounded-lg hover:bg-alg-gold-light transition"
+              className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
             >
               Get a Free Case Review &rarr;
             </Link>

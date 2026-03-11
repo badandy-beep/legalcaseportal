@@ -6,13 +6,13 @@ export default function OurStoryPage() {
       <div className="max-w-3xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Our Story</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Our Story</h1>
           <p className="text-lg text-gray-700">A Family Mission Two Decades in the Making</p>
         </div>
 
         {/* Section 1 — The Family */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Family</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Family</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               Dr. Gary and Beth Kompothecras raised six children in Sarasota. Two of them —
@@ -32,33 +32,33 @@ export default function OurStoryPage() {
           </div>
         </section>
 
-        <hr className="border-alg-gold/30 my-10" />
+        <hr className="border-[#1E40AF]/30 my-10" />
 
         {/* Section 2 — The Son */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Son</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Son</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               Alex Kompothecras, 28, grew up watching his father wage this battle. He pursued law,
               founded Alpha Law Group in Sarasota, and wove autism advocacy into the firm&rsquo;s
               DNA from day one.
             </p>
-            <blockquote className="border-l-4 border-alg-gold pl-6 my-6 italic text-alg-navy">
+            <blockquote className="border-l-4 border-[#1E40AF] pl-6 my-6 italic text-[#111827]">
               &ldquo;Watching what my parents went through — what Bronson and Sarah Alice go through
               every day — that&rsquo;s what drives everything I do in this space. I didn&rsquo;t
               choose this cause. It chose me.&rdquo;
-              <span className="block mt-2 text-sm font-semibold not-italic text-alg-gold">
+              <span className="block mt-2 text-sm font-semibold not-italic text-[#1E40AF]">
                 — Alex Kompothecras
               </span>
             </blockquote>
           </div>
         </section>
 
-        <hr className="border-alg-gold/30 my-10" />
+        <hr className="border-[#1E40AF]/30 my-10" />
 
         {/* Section 3 — Justice in Action */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">
+          <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">
             Justice in Action: The Francisco Diaz-Burgos Case
           </h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
@@ -75,11 +75,11 @@ export default function OurStoryPage() {
           </div>
         </section>
 
-        <hr className="border-alg-gold/30 my-10" />
+        <hr className="border-[#1E40AF]/30 my-10" />
 
         {/* Section 4 — The Foundation */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy mb-4">The Foundation</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Foundation</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed">
             <p>
               The Autism Justice Foundation, founded September 2025, is a 501(c)(4) nonprofit. It
@@ -95,10 +95,10 @@ export default function OurStoryPage() {
 
         {/* Bottom CTA */}
         <div className="text-center pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-bold text-alg-navy mb-4">Ready to take the first step?</h3>
+          <h3 className="text-xl font-bold text-[#111827] mb-4">Ready to take the first step?</h3>
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-alg-gold text-alg-navy font-bold text-lg px-8 py-4 rounded-lg hover:bg-alg-gold-light transition"
+            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
           >
             Start My Claim &rarr;
           </Link>

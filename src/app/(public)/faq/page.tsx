@@ -171,7 +171,7 @@ export default function FAQPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-alg-navy text-white py-16 px-4">
+      <section className="bg-gray-900 text-white py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
             Frequently Asked Questions
@@ -187,7 +187,7 @@ export default function FAQPage() {
         {sections.map((section, sIdx) => (
           <div key={section.title} className={sIdx > 0 ? 'mt-12' : ''}>
             {/* Section Eyebrow */}
-            <p className="text-xs font-bold uppercase tracking-widest text-alg-gold mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#1E40AF] mb-6">
               {section.title}
             </p>
 
@@ -202,10 +202,10 @@ export default function FAQPage() {
                       onClick={() => toggle(key)}
                       className="w-full flex items-start justify-between gap-4 py-4 text-left cursor-pointer"
                     >
-                      <span className="font-semibold text-alg-navy">
+                      <span className="font-semibold text-[#111827]">
                         {item.question}
                       </span>
-                      <span className="text-alg-gold text-xl font-bold shrink-0 mt-0.5">
+                      <span className="text-[#1E40AF] text-xl font-bold shrink-0 mt-0.5">
                         {isOpen ? '−' : '+'}
                       </span>
                     </button>
@@ -225,7 +225,7 @@ export default function FAQPage() {
         <div className="mt-12 text-center">
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-alg-gold text-alg-navy font-bold px-8 py-3 rounded hover:bg-alg-gold-light transition"
+            className="inline-block bg-[#1E40AF] text-white font-bold px-8 py-3 rounded hover:bg-[#1E3A8A] transition"
           >
             Start My Free Case Evaluation
           </Link>

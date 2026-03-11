@@ -45,7 +45,7 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto px-4">
         {/* Page Title */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Contact Alpha Law Group</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-2">Contact Alpha Law Group</h1>
           <p className="text-gray-700 text-lg">
             Free consultation. No fees unless we win. We respond within 24 hours.
           </p>
@@ -53,12 +53,12 @@ export default function ContactPage() {
 
         {submitted ? (
           /* Success State */
-          <div className="text-center bg-alg-navy rounded-xl p-10 text-white">
+          <div className="text-center bg-gray-900 rounded-xl p-10 text-white">
             <h2 className="text-2xl font-bold tracking-tight mb-4">Thank you.</h2>
             <p className="text-white/90 mb-6">
               Alex or Chase will contact you within 24 hours.
             </p>
-            <a href="tel:9413041500" className="text-alg-gold font-bold text-xl block mb-2">(941) 304-1500</a>
+            <a href="tel:9413041500" className="text-[#1E40AF] font-bold text-xl block mb-2">(941) 304-1500</a>
             <p className="text-white/60 text-sm">alphainjurylaw.com</p>
           </div>
         ) : (
@@ -178,7 +178,7 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="w-full bg-alg-gold text-alg-navy font-bold py-4 px-6 rounded-lg hover:bg-alg-gold-light transition text-lg"
+              className="w-full bg-[#1E40AF] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#1E3A8A] transition text-lg"
             >
               Send Message &mdash; We&rsquo;ll Be In Touch
             </button>
@@ -188,21 +188,21 @@ export default function ContactPage() {
         {/* Contact Info Strip */}
         <div className="mt-12 border-t border-gray-200 pt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
           <div>
-            <p className="font-semibold text-alg-navy mb-1">Phone</p>
-            <a href="tel:9413041500" className="text-alg-gold font-bold text-lg">(941) 304-1500</a>
+            <p className="font-semibold text-[#111827] mb-1">Phone</p>
+            <a href="tel:9413041500" className="text-[#1E40AF] font-bold text-lg">(941) 304-1500</a>
           </div>
           <div>
-            <p className="font-semibold text-alg-navy mb-1">Email</p>
+            <p className="font-semibold text-[#111827] mb-1">Email</p>
             <p className="text-gray-700">info@alphainjurylaw.com</p>
           </div>
           <div>
-            <p className="font-semibold text-alg-navy mb-1">Address</p>
+            <p className="font-semibold text-[#111827] mb-1">Address</p>
             <p className="text-gray-700">Sarasota County, Florida</p>
           </div>
           <div>
-            <p className="font-semibold text-alg-navy mb-1">Hours</p>
+            <p className="font-semibold text-[#111827] mb-1">Hours</p>
             <p className="text-gray-700">Monday&ndash;Friday 9AM&ndash;6PM EST</p>
-            <p className="text-gray-700">24/7 Emergency Line: <a href="tel:9413041500" className="text-alg-gold font-semibold">(941) 304-1500</a></p>
+            <p className="text-gray-700">24/7 Emergency Line: <a href="tel:9413041500" className="text-[#1E40AF] font-semibold">(941) 304-1500</a></p>
           </div>
         </div>
       </div>

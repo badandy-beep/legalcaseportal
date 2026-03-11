@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 @layer base {
   :root {
+    --primary-bg: #FFFFFF;
+    --section-bg: #F8F9FA;
+    --text-primary: #111827;
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
+    --accent: #1E40AF;
+    --accent-hover: #1E3A8A;
+    --accent-light: #EFF6FF;
     --alg-navy: #0a1628;
     --alg-navy-rgb: 10 22 40;
     --alg-gold: #d4a843;
@@ -20,12 +26,29 @@
   }
 
   body {
-    @apply font-sans;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
     text-rendering: optimizeLegibility;
     font-weight: 400;
-    color: #1a1a2e;
+    color: #111827;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #111827;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
   }
 
   p, li, span {
@@ -35,19 +58,19 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-alg-gold hover:bg-alg-gold-light text-alg-navy font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-[#1E40AF] hover:bg-[#1E3A8A] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
   }
 
   .btn-secondary {
-    @apply bg-alg-navy hover:bg-alg-navy/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
 
   .btn-outline {
-    @apply border-2 border-alg-navy text-alg-navy hover:bg-alg-navy hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply border-2 border-[#111827] text-[#111827] hover:bg-[#111827] hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border border-alg-gray-border rounded-lg focus:ring-2 focus:ring-alg-gold focus:border-alg-gold outline-none transition-all duration-200;
+    @apply w-full px-4 py-3 border border-[#E2E8F0] rounded-lg focus:ring-2 focus:ring-[#1E40AF] focus:border-[#1E40AF] outline-none transition-all duration-200;
   }
 
   .input-label {
@@ -63,7 +86,7 @@
   }
 
   .section-heading {
-    @apply text-2xl font-bold text-alg-navy mb-4;
+    @apply text-2xl font-bold text-[#111827] mb-4;
   }
 
   .progress-bar {
@@ -71,7 +94,7 @@
   }
 
   .progress-fill {
-    @apply h-full bg-alg-gold transition-all duration-500 ease-out;
+    @apply h-full bg-[#1E40AF] transition-all duration-500 ease-out;
   }
 }
 
@@ -113,10 +136,10 @@ input, select, textarea {
 
 /* Checkbox styling */
 .checkbox-custom {
-  @apply w-5 h-5 text-alg-gold bg-white border-gray-300 rounded focus:ring-alg-gold;
+  @apply w-5 h-5 text-[#1E40AF] bg-white border-gray-300 rounded focus:ring-[#1E40AF];
 }
 
 /* Radio styling */
 .radio-custom {
-  @apply w-5 h-5 text-alg-gold bg-white border-gray-300 focus:ring-alg-gold;
+  @apply w-5 h-5 text-[#1E40AF] bg-white border-gray-300 focus:ring-[#1E40AF];
 }

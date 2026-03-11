@@ -1,163 +1,125 @@
 import Link from 'next/link'
 
-function IconBox({ bg, text, textColor = 'text-white' }: { bg: string; text: string; textColor?: string }) {
-  return (
-    <div className={`${bg} rounded-lg w-12 h-12 flex-shrink-0 flex items-center justify-center`}>
-      <span className={`${textColor} text-xs font-bold`}>{text}</span>
-    </div>
-  )
-}
+const partners = [
+  {
+    name: "Children's Health Defense",
+    mission: 'Nonprofit organization working to end childhood health epidemics by eliminating harmful exposures and holding corporations accountable.',
+    link: 'https://childrenshealthdefense.org',
+    logo: <img src="/chd-logo.png" className="h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition" alt="Children's Health Defense" />,
+  },
+  {
+    name: 'The HighWire with Del Bigtree',
+    mission: 'Independent investigative news program covering vaccine safety, medical freedom, and health policy.',
+    link: 'https://thehighwire.com',
+    logo: <img src="/del-bigtree-highwire.jpg" className="h-12 w-auto object-contain rounded grayscale group-hover:grayscale-0 transition" alt="The HighWire" />,
+  },
+  {
+    name: 'McCullough Foundation',
+    mission: 'Advancing evidence-based medicine and defending medical freedom through scientific research and public education.',
+    link: 'https://mcculloughfoundation.com',
+    logo: <div className="bg-gray-900 rounded inline-flex p-2"><img src="/mccullough-foundation-logo.jpg" className="h-10 w-auto object-contain" alt="McCullough Foundation" /></div>,
+  },
+  {
+    name: 'HRSA Vaccine Injury Compensation Program',
+    mission: 'Federal program providing compensation for vaccine-related injuries — the pathway for autism families with encephalopathy claims.',
+    link: 'https://www.hrsa.gov/vaccine-compensation',
+    logo: <span className="font-bold text-[#1E40AF] text-lg">HRSA</span>,
+  },
+  {
+    name: 'Autism Science Foundation',
+    mission: 'Funding and accelerating autism research to improve diagnosis, treatment, and quality of life.',
+    link: 'https://autismsciencefoundation.org',
+    logo: <span className="font-bold text-[#111827] text-sm">Autism Science Foundation</span>,
+  },
+  {
+    name: 'SafeMinds',
+    mission: 'Research and education organization focused on the environmental causes of autism and related neurological disorders.',
+    link: 'https://safeminds.org',
+    logo: <span className="font-bold text-[#111827] text-sm">SafeMinds</span>,
+  },
+]
 
-function ResourceCard({ icon, name, description, link }: { icon: React.ReactNode; name: string; description: string; link: string }) {
-  return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm flex flex-col gap-3">
-      <div className="flex items-center gap-3">
-        {icon}
-        <h3 className="text-alg-navy font-bold text-base">{name}</h3>
-      </div>
-      <p className="text-gray-700 text-sm leading-relaxed flex-1">{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer" className="self-start text-alg-gold hover:underline font-semibold text-sm">
-        Visit Website &rarr;
-      </a>
-    </div>
-  )
-}
+const legalResources = [
+  {
+    name: 'VICP Official Program (HHS)',
+    description: 'The official U.S. government portal for the National Vaccine Injury Compensation Program. File a petition, check claim status, and review the Vaccine Injury Table.',
+    link: 'https://www.hrsa.gov/vaccine-compensation',
+  },
+  {
+    name: 'U.S. Court of Federal Claims',
+    description: 'The Vaccine Court where VICP petitions are filed and heard before Special Masters. Strict filing deadlines apply.',
+    link: 'https://www.uscfc.uscourts.gov/vaccine-program',
+  },
+  {
+    name: 'VICP Data & Statistics',
+    description: 'Monthly reports on all VICP claims filed, compensated, and dismissed. Over $5 billion paid since 1988.',
+    link: 'https://www.hrsa.gov/vaccine-compensation/data',
+  },
+  {
+    name: 'VAERS — Vaccine Adverse Event Reporting System',
+    description: 'The national early warning system for vaccine safety, co-managed by CDC and FDA. Publicly searchable database.',
+    link: 'https://vaers.hhs.gov',
+  },
+]
 
 export default function ResourcesPage() {
   return (
-    <div className="bg-gray-50 py-16">
+    <div className="bg-white py-16">
       <div className="max-w-5xl mx-auto px-4">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-alg-navy mb-2">Resources</h1>
-          <p className="text-gray-700 text-lg">
-            Organizations, legal resources, and information to help autism families navigate the path to justice.
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold text-[#111827] mb-3">Resources &amp; Partner Network</h1>
+          <p className="text-[#475569] mb-12">
+            Organizations, legal resources, and advocacy partners supporting autism families.
           </p>
         </div>
 
-        {/* SECTION 1 — Coalition Partners */}
-        <div className="bg-alg-navy/5 rounded-2xl p-8 mb-10">
-          <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-1">COALITION PARTNERS</p>
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy">Our Coalition Partners</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <ResourceCard
-              icon={<IconBox bg="bg-blue-900" text="CHD" />}
-              name="Children's Health Defense"
-              description="Founded by Robert F. Kennedy Jr., Children's Health Defense is the nation's leading nonprofit fighting to end childhood health epidemics. CHD exposes government corruption, industry wrongdoing, and scientific fraud — and funds the legal battles that hold them accountable. The Autism Justice Foundation works in direct partnership with CHD and its President, Mary Holland."
-              link="https://childrenshealthdefense.org"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-red-900" text="MCF" />}
-              name="The McCullough Foundation"
-              description="Founded by Dr. Peter McCullough — one of the most cited cardiologists in medical history — the McCullough Foundation advances truthful science and advocates for those harmed by COVID-era medical policies. Nick Holscher of the McCullough Foundation serves on the Justice for Autism Advisory Board."
-              link="https://mcculloughfoundation.org"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-orange-700" text="HW" />}
-              name="The HighWire with Del Bigtree"
-              description="Del Bigtree is the producer of VAXXED: From Cover-Up to Catastrophe — the documentary that changed the conversation on vaccine safety. His weekly broadcast, The HighWire, reaches millions with uncensored investigative health journalism. Del is a Justice for Autism Advisory Board member and spoke at the CHD 'Moment of Truth' conference in Austin, November 2025."
-              link="https://thehighwire.com"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-alg-navy" text="AJF" textColor="text-alg-gold" />}
-              name="Autism Justice Foundation"
-              description="Founded in September 2025 by Dr. Gary Kompothecras and Alex Kompothecras, the Autism Justice Foundation is a Florida-based 501(c)(4) nonprofit dedicated to advancing autism prevention, supporting affected families, and pushing for accountability in public health policy. The Foundation works alongside Children's Health Defense, the McCullough Foundation, and the Autism Society of Florida."
-              link="https://alphainjurylaw.com"
-            />
-          </div>
+        {/* Partner Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {partners.map((partner) => (
+            <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
+              <div className="h-16 flex items-center mb-4">
+                {partner.logo}
+              </div>
+              <h3 className="font-semibold text-[#111827] mb-2">{partner.name}</h3>
+              <p className="text-sm text-[#475569] mb-4">{partner.mission}</p>
+              <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
+                Visit Site &rarr;
+              </a>
+            </div>
+          ))}
         </div>
 
-        {/* SECTION 2 — VICP Resources */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-8 mb-10">
-          <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-1">VACCINE INJURY COMPENSATION</p>
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy">VICP — Vaccine Court Resources</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <ResourceCard
-              icon={<IconBox bg="bg-blue-700" text="VICP" />}
-              name="VICP Official Program (HHS)"
-              description="The official U.S. government portal for the National Vaccine Injury Compensation Program, administered by the Health Resources and Services Administration (HRSA). File a petition, check claim status, review the Vaccine Injury Table, and access compensation data. VICP has paid over $5 billion in compensation since 1988."
-              link="https://www.hrsa.gov/vaccine-compensation"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-gray-700" text="USCFC" />}
-              name="U.S. Court of Federal Claims"
-              description="The Vaccine Injury Compensation Program is adjudicated by the U.S. Court of Federal Claims in Washington, D.C. — also known as the 'Vaccine Court.' This is where VICP petitions are filed and heard before Special Masters. Strict filing deadlines apply — contact Alpha Law Group immediately to protect your rights."
-              link="https://www.uscfc.uscourts.gov/vaccine-program"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-green-700" text="DATA" />}
-              name="VICP Data & Statistics"
-              description="HHS publishes monthly reports on all VICP claims filed, compensated, and dismissed. As of 2025, over 10,000 claims have been compensated totaling more than $5 billion. Review the data by vaccine type, injury, and year to understand the scope of vaccine injury recognition in America."
-              link="https://www.hrsa.gov/vaccine-compensation/data"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-yellow-700" text="VAERS" />}
-              name="Vaccine Adverse Event Reporting System (VAERS)"
-              description="VAERS is the national early warning system for vaccine safety, co-managed by the CDC and FDA. Parents and physicians can submit reports of adverse events following vaccination. VAERS data is publicly searchable and has been central to research on vaccine-autism connections. Submitting a VAERS report is free and can support a VICP claim."
-              link="https://vaers.hhs.gov"
-            />
-          </div>
-        </div>
-
-        {/* SECTION 3 — Autism Support */}
-        <div className="bg-alg-navy/5 rounded-2xl p-8 mb-10">
-          <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-1">AUTISM SUPPORT</p>
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy">Autism Support Organizations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <ResourceCard
-              icon={<IconBox bg="bg-blue-500" text="ASF" />}
-              name="Autism Society of Florida"
-              description="The Autism Society of Florida is the state's leading advocacy organization for individuals with autism and their families. ASF advocates for law enforcement training, legislative reform, and community inclusion — and is a key partner of the Autism Justice Foundation. Alex Kompothecras works directly with ASF President Stacey Hoaglund on training programs for Florida law enforcement."
-              link="https://autismsocietyoffl.com"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-teal-600" text="THE HAVEN" />}
-              name="The Haven (Sarasota)"
-              description="The Haven is a Sarasota-based nonprofit providing support, education, and community for individuals with developmental disabilities and their families. The Haven is one of two direct beneficiaries of the Alpha Law Group Annual Autism 5K at Nathan Benderson Park."
-              link="https://havenofrcma.org"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-green-600" text="TACA" />}
-              name="TACA (Talk About Curing Autism)"
-              description="TACA provides education, support, and hope to families affected by autism. Their peer mentorship network connects newly diagnosed families with experienced autism parents, and their resource library covers biomedical treatments, IEP guidance, and financial assistance programs."
-              link="https://tacanow.org"
-            />
-          </div>
-        </div>
-
-        {/* SECTION 4 — Legal Rights */}
-        <div className="bg-white border border-gray-200 rounded-2xl p-8 mb-10">
-          <p className="text-alg-gold text-xs font-bold tracking-widest uppercase mb-1">KNOW YOUR RIGHTS</p>
-          <h2 className="text-2xl font-bold tracking-tight text-alg-navy">Legal Rights &amp; Education</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <ResourceCard
-              icon={<IconBox bg="bg-indigo-700" text="IDEA" />}
-              name="IDEA — Individuals with Disabilities Education Act"
-              description="IDEA is the federal law guaranteeing children with disabilities, including autism, the right to a free and appropriate public education (FAPE) in the least restrictive environment. If your child's school is not following their IEP or denying services, you have federally protected legal rights. Alpha Law Group can help families understand and enforce these rights."
-              link="https://sites.ed.gov/idea"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-purple-700" text="ADA" />}
-              name="ADA — Americans with Disabilities Act"
-              description="The ADA prohibits discrimination against individuals with disabilities in employment, public accommodations, transportation, and government services. Individuals with autism are protected under the ADA. If your family member has faced discrimination in the workplace, a school, or a public space, legal remedies are available."
-              link="https://www.ada.gov"
-            />
-            <ResourceCard
-              icon={<IconBox bg="bg-orange-600" text="APD" />}
-              name="Florida Agency for Persons with Disabilities (APD)"
-              description="Florida's APD oversees the delivery of services to Floridians with developmental disabilities, including autism. The agency administers the iBudget Waiver — a Medicaid waiver providing community-based services — and maintains a network of support coordinators and service providers statewide."
-              link="https://apd.myflorida.com"
-            />
+        {/* Legal Resources Section */}
+        <div className="border-t border-[#E2E8F0] pt-12">
+          <h2 className="text-2xl font-bold text-[#111827] mb-6">Legal Resources</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {legalResources.map((resource) => (
+              <div key={resource.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
+                <div className="h-16 flex items-center mb-4">
+                  <div className="w-10 h-10 rounded bg-[#EFF6FF] flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#1E40AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 className="font-semibold text-[#111827] mb-2">{resource.name}</h3>
+                <p className="text-sm text-[#475569] mb-4">{resource.description}</p>
+                <a href={resource.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
+                  Visit Site &rarr;
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-alg-navy text-white py-12 px-8 rounded-2xl text-center">
+        <div className="bg-gray-900 text-white py-12 px-8 rounded-2xl text-center mt-16">
           <h2 className="text-2xl font-bold tracking-tight mb-4">Ready to take the first step?</h2>
           <p className="text-white/80 mb-6">Free consultation. No fees unless we win.</p>
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-alg-gold text-alg-navy font-bold text-lg px-8 py-4 rounded-lg hover:bg-alg-gold-light transition"
+            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
           >
             Begin Your Free Intake &rarr;
           </Link>

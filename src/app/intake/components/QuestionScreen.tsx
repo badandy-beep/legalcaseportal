@@ -36,11 +36,11 @@ export default function QuestionScreen({
   return (
     <div className="fixed inset-0 flex flex-col bg-white">
       {/* Nav bar */}
-      <nav className="bg-alg-navy h-14 flex items-center justify-between px-4 shrink-0 border-b-2 border-alg-gold">
+      <nav className="bg-gray-900 h-14 flex items-center justify-between px-4 shrink-0 border-b-2 border-[#1E40AF]">
         <Link href="/" className="text-white font-black tracking-widest text-sm">
           ALPHA LAW GROUP
         </Link>
-        <span className="text-alg-gold text-xs font-bold">FREE &amp; CONFIDENTIAL</span>
+        <span className="text-[#1E40AF] text-xs font-bold">FREE &amp; CONFIDENTIAL</span>
       </nav>
 
       {/* Progress bar strip */}
@@ -49,7 +49,7 @@ export default function QuestionScreen({
           <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
             Phase {phase}
           </span>
-          <span className="text-xs text-alg-gold font-semibold cursor-pointer">
+          <span className="text-xs text-[#1E40AF] font-semibold cursor-pointer">
             Save &amp; Continue Later
           </span>
         </div>
@@ -66,24 +66,24 @@ export default function QuestionScreen({
 
       {/* Scrollable content */}
       <div className="flex-1 overflow-y-auto px-4 pt-6 pb-32">
-        <p className="text-xs font-bold uppercase tracking-widest text-alg-gold mb-1">
+        <p className="text-xs font-bold uppercase tracking-widest text-[#1E40AF] mb-1">
           {phaseTitle}
         </p>
-        <h1 className="text-xl font-black text-alg-navy leading-tight mb-5">
+        <h1 className="text-xl font-black text-[#111827] leading-tight mb-5">
           {question}
         </h1>
 
         {/* Expert Tip */}
         <div className="mb-5">
           <div className="flex items-center gap-3">
-            <div className="w-[38px] h-[38px] rounded-full bg-alg-navy border-2 border-alg-gold flex items-center justify-center text-lg shrink-0">
+            <div className="w-[38px] h-[38px] rounded-full bg-gray-900 border-2 border-[#1E40AF] flex items-center justify-center text-lg shrink-0">
               👨‍⚖️
             </div>
             <div>
               <p className="text-xs font-bold text-gray-500">ALEX — Alpha Law Group</p>
               <button
                 onClick={() => setTipOpen(!tipOpen)}
-                className="text-xs font-semibold text-alg-gold underline cursor-pointer"
+                className="text-xs font-semibold text-[#1E40AF] underline cursor-pointer"
               >
                 {tipOpen ? 'Hide tip ↑' : "Tap for Alex's tip on this ↓"}
               </button>
@@ -106,7 +106,7 @@ export default function QuestionScreen({
           onClick={onContinue}
           className={
             continueStyle ||
-            'w-full py-4 bg-alg-gold text-alg-navy font-black text-base rounded-2xl cursor-pointer'
+            'w-full py-4 bg-[#1E40AF] text-white font-black text-base rounded-2xl cursor-pointer'
           }
         >
           {continueLabel || 'Continue'}

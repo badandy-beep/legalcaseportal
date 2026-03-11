@@ -9,7 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Alpha Law Group Brand Colors
+        'primary-bg': '#FFFFFF',
+        'section-bg': '#F8F9FA',
+        'text-primary': '#111827',
+        'text-secondary': '#475569',
+        'border-color': '#E2E8F0',
+        'accent': '#1E40AF',
+        'accent-hover': '#1E3A8A',
+        'accent-light': '#EFF6FF',
         'alg-navy': 'rgb(var(--alg-navy-rgb) / <alpha-value>)',
         'alg-gold': {
           DEFAULT: 'rgb(var(--alg-gold-rgb) / <alpha-value>)',
@@ -22,7 +29,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
       },
       spacing: {
         'golden-sm': '0.618rem',
