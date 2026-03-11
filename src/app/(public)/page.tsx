@@ -158,32 +158,72 @@ export default function HomePage() {
 
       {/* Voices & Impact Video Row */}
       <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-16">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#111827] text-center mb-4">Voices &amp; Impact</h2>
-          <p className="text-[#475569] text-center mb-10">
-            Soundbites from the Children&rsquo;s Health Defense Conference, Austin TX — November 2025
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-semibold tracking-widest uppercase text-[#1E40AF] text-center mb-3">
+            Voices &amp; Impact
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              'Dr. Gary Kompothecras — CHD Conference 2025',
-              'Del Bigtree — CHD Conference 2025',
-              'Mary Holland — CHD Conference 2025',
-            ].map((speaker) => (
-              <div key={speaker} className="bg-white border border-[#E2E8F0] rounded-lg overflow-hidden shadow-sm">
-                <div className="aspect-video bg-[#F8F9FA] flex items-center justify-center border-b border-[#E2E8F0]">
-                  <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-[#1E40AF] flex items-center justify-center mx-auto mb-2">
-                      <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <p className="text-xs text-[#475569]">Video coming soon</p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-sm font-semibold text-[#111827]">{speaker}</p>
-                  <p className="text-xs text-[#475569] mt-1">Children&rsquo;s Health Defense &middot; Austin, TX</p>
-                </div>
+          <h2 className="text-3xl font-bold text-[#111827] text-center mb-3" style={{fontFamily:'Georgia,serif'}}>
+            The Fight for Truth &amp; Justice
+          </h2>
+          <p className="text-[#475569] text-center mb-12 max-w-2xl mx-auto">
+            Soundbites from the Children&rsquo;s Health Defense Conference — Austin, TX &middot; November 2025
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+            {/* Video 1 */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-video bg-black">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="/video-moment-of-truth.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-            ))}
+              <div className="p-5 border-t border-[#E2E8F0]">
+                <p className="font-bold text-[#111827] text-base mb-1" style={{fontFamily:'Georgia,serif'}}>
+                  The Moment of Truth: Why Everything Is Changing Now
+                </p>
+                <p className="text-xs text-[#475569]">Children&rsquo;s Health Defense Conference &middot; Austin, TX &middot; November 2025</p>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-video bg-black">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="/video-fight-for-justice.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-5 border-t border-[#E2E8F0]">
+                <p className="font-bold text-[#111827] text-base mb-1" style={{fontFamily:'Georgia,serif'}}>
+                  What Happens to the Children? The Fight for True Justice
+                </p>
+                <p className="text-xs text-[#475569]">Children&rsquo;s Health Defense Conference &middot; Austin, TX &middot; November 2025</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom CTA under videos */}
+          <div className="text-center mt-12">
+            <p className="text-[#475569] mb-4 text-base">Ready to start your family&rsquo;s claim?</p>
+            <a
+              href="/intake/phase-1"
+              className="inline-block bg-[#1E40AF] text-white font-semibold px-8 py-3 rounded hover:bg-[#1E3A8A] transition-colors"
+            >
+              Start Your Free Claim Review →
+            </a>
           </div>
         </div>
       </section>
