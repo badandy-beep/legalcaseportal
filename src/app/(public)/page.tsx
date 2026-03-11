@@ -171,10 +171,10 @@ export default function HomePage() {
             Soundbites from the Children&rsquo;s Health Defense Conference — Austin, TX &middot; November 2025
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto items-start justify-items-center">
 
             {/* Video 1 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow mx-auto w-full" style={{maxWidth:'320px'}}>
               <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'480px'}}>
                 <video
                   className="w-full h-full object-contain"
@@ -195,7 +195,7 @@ export default function HomePage() {
             </div>
 
             {/* Video 2 */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow mx-auto w-full" style={{maxWidth:'320px'}}>
               <div className="relative bg-black" style={{aspectRatio:'9/16', maxHeight:'480px'}}>
                 <video
                   className="w-full h-full object-contain"
