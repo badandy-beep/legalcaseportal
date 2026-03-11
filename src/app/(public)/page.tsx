@@ -122,6 +122,59 @@ export default function HomePage() {
         </p>
       </section>
 
+      {/* VICP Stats Section */}
+      <section className="bg-[#0a1628] py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <p className="text-alg-gold text-xs font-bold uppercase tracking-widest text-center mb-3">
+            VICP BY THE NUMBERS
+          </p>
+          <h2 className="text-white text-2xl font-bold text-center mb-2">
+            The Fund Is Solvent. Your Deadline Isn&rsquo;t.
+          </h2>
+          <p className="text-gray-400 text-sm text-center mb-10">
+            Source: HRSA/HHS &middot; Updated June 2025
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="rounded-lg bg-white/5 border border-white/10 p-6 text-center">
+              <p className="text-alg-gold text-4xl font-black">$5.4B+</p>
+              <p className="text-white text-sm mt-1">Paid to injured families</p>
+              <p className="text-gray-400 text-xs mt-1">since 1988</p>
+            </div>
+            <div className="rounded-lg bg-white/5 border border-white/10 p-6 text-center">
+              <p className="text-alg-gold text-4xl font-black">28,673</p>
+              <p className="text-white text-sm mt-1">Petitions filed</p>
+              <p className="text-gray-400 text-xs mt-1">since program began</p>
+            </div>
+            <div className="rounded-lg bg-white/5 border border-white/10 p-6 text-center">
+              <p className="text-alg-gold text-4xl font-black">12,019</p>
+              <p className="text-white text-sm mt-1">Families compensated</p>
+              <p className="text-gray-400 text-xs mt-1">48% success rate</p>
+            </div>
+            <div className="rounded-lg bg-white/5 border border-white/10 p-6 text-center">
+              <p className="text-alg-gold text-4xl font-black">$4.8B</p>
+              <p className="text-white text-sm mt-1">In trust fund today</p>
+              <p className="text-gray-400 text-xs mt-1">actively paying claims</p>
+            </div>
+          </div>
+
+          <div className="bg-red-900/40 border border-red-500/30 rounded-lg p-4 mt-8 text-center">
+            <p className="text-red-300 text-sm font-medium">
+              &#9888;&#65039;  Statute of limitations: 3 years from your child&rsquo;s FIRST symptom — not diagnosis date. Every day you wait is a day closer to losing your rights permanently.
+            </p>
+          </div>
+
+          <div className="text-center mt-4">
+            <Link
+              href="/deadline-calculator"
+              className="text-alg-gold text-sm font-semibold hover:underline inline-block"
+            >
+              &rarr; Check Your Deadline Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Bottom CTA Strip */}
       <section className="bg-alg-navy text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
