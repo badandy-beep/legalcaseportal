@@ -5,13 +5,13 @@ const partners = [
     name: "Children's Health Defense",
     mission: 'Nonprofit organization working to end childhood health epidemics by eliminating harmful exposures and holding corporations accountable.',
     link: 'https://childrenshealthdefense.org',
-    logo: <img src="/chd-logo.png" className="h-12 w-auto object-contain grayscale group-hover:grayscale-0 transition" alt="Children's Health Defense" />,
+    logo: <img src="/chd-logo.png" className="h-12 w-auto object-contain" alt="Children's Health Defense" />,
   },
   {
     name: 'The HighWire with Del Bigtree',
     mission: 'Independent investigative news program covering vaccine safety, medical freedom, and health policy.',
     link: 'https://thehighwire.com',
-    logo: <img src="/del-bigtree-highwire.jpg" className="h-12 w-auto object-contain rounded grayscale group-hover:grayscale-0 transition" alt="The HighWire" />,
+    logo: <div className="bg-gray-900 rounded inline-flex p-2"><img src="/highwire-logo.png" className="h-8 w-auto object-contain" alt="The HighWire" /></div>,
   },
   {
     name: 'McCullough Foundation',
@@ -124,7 +124,7 @@ export default function ResourcesPage() {
             Begin Your Free Intake &rarr;
           </Link>
           <p className="mt-4 text-white/60 text-sm">
-            (941) 304-1500 | alphainjurylaw.com
+            (941) 304-1500 | gethelpforautism.com
           </p>
         </div>
       </div>

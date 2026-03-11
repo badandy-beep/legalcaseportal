@@ -14,6 +14,7 @@ interface QuestionScreenProps {
   showBack: boolean
   continueLabel?: string
   continueStyle?: string
+  stepIndex?: number
 }
 
 export default function QuestionScreen({
@@ -27,20 +28,28 @@ export default function QuestionScreen({
   showBack,
   continueLabel,
   continueStyle,
+  stepIndex = 0,
 }: QuestionScreenProps) {
   const [tipOpen, setTipOpen] = useState(false)
 
   const phaseNum = parseInt(phase.split(' ')[0]) || 1
   const progressPct = Math.round((phaseNum / 11) * 100)
 
+  const isAlex = (phaseNum + stepIndex) % 2 === 0
+  const advisorName = isAlex ? 'ALEX' : 'CHASE'
+  const advisorPhoto = isAlex ? '/Alex-Kompothecras.webp' : '/Chase-Engelbrecht.webp'
+
   return (
     <div className="fixed inset-0 flex flex-col bg-white">
       {/* Nav bar */}
-      <nav className="bg-gray-900 h-14 flex items-center justify-between px-4 shrink-0 border-b-2 border-[#1E40AF]">
-        <Link href="/" className="text-white font-black tracking-widest text-sm">
-          ALPHA LAW GROUP
+      <nav className="bg-white h-14 flex items-center justify-between px-4 shrink-0 border-b border-[#E2E8F0]">
+        <Link href="/">
+          <img src="/alg-logo.png" alt="Alpha Law Group" className="h-8 w-auto" />
         </Link>
-        <span className="text-[#1E40AF] text-xs font-bold">FREE &amp; CONFIDENTIAL</span>
+        <span className="inline-flex items-center gap-1.5 bg-[#EFF6FF] text-[#1E40AF] text-xs font-bold px-3 py-1 rounded-full">
+          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+          FREE &amp; CONFIDENTIAL
+        </span>
       </nav>
 
       {/* Progress bar strip */}
@@ -76,16 +85,18 @@ export default function QuestionScreen({
         {/* Expert Tip */}
         <div className="mb-5">
           <div className="flex items-center gap-3">
-            <div className="w-[38px] h-[38px] rounded-full bg-gray-900 border-2 border-[#1E40AF] flex items-center justify-center text-lg shrink-0">
-              👨‍⚖️
-            </div>
+            <img
+              src={advisorPhoto}
+              alt={advisorName}
+              className="w-[38px] h-[38px] rounded-full border-2 border-[#1E40AF] object-cover shrink-0"
+            />
             <div>
-              <p className="text-xs font-bold text-gray-500">ALEX — Alpha Law Group</p>
+              <p className="text-xs font-bold text-gray-500">{advisorName} — Alpha Law Group</p>
               <button
                 onClick={() => setTipOpen(!tipOpen)}
                 className="text-xs font-semibold text-[#1E40AF] underline cursor-pointer"
               >
-                {tipOpen ? 'Hide tip ↑' : "Tap for Alex's tip on this ↓"}
+                {tipOpen ? 'Hide tip ↑' : `Tap for ${advisorName === 'ALEX' ? "Alex's" : "Chase's"} tip on this ↓`}
               </button>
             </div>
           </div>

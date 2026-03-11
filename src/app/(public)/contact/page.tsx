@@ -59,7 +59,7 @@ export default function ContactPage() {
               Alex or Chase will contact you within 24 hours.
             </p>
             <a href="tel:9413041500" className="text-[#1E40AF] font-bold text-xl block mb-2">(941) 304-1500</a>
-            <p className="text-white/60 text-sm">alphainjurylaw.com</p>
+            <p className="text-white/60 text-sm">gethelpforautism.com</p>
           </div>
         ) : (
           /* Contact Form */
@@ -193,7 +193,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="font-semibold text-[#111827] mb-1">Email</p>
-            <p className="text-gray-700">info@alphainjurylaw.com</p>
+            <p className="text-gray-700">info@gethelpforautism.com</p>
           </div>
           <div>
             <p className="font-semibold text-[#111827] mb-1">Address</p>

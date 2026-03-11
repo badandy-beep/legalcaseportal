@@ -6,18 +6,22 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-6">This Fight Is Personal To Us.</h1>
+          <span className="inline-block bg-[#EFF6FF] text-[#1E40AF] text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full mb-6">
+            GetHelpForAutism.com
+          </span>
+          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-6">
+            Your Child Deserves Justice.<br />We&rsquo;ll Fight to Get It.
+          </h1>
           <p className="text-lg text-[#475569] mb-8 max-w-2xl mx-auto leading-relaxed">
-            Alex Kompothecras grew up with two siblings — Bronson and Sarah Alice — severely
-            affected by autism. His father Dr. Gary spent 19 years fighting in Tallahassee for
-            families like yours. Now Alex has built a legal practice with one mission: getting
-            autism families the justice they deserve.
+            If your child was diagnosed with autism after a vaccine injury, you may be entitled
+            to compensation through the federal Vaccine Injury Compensation Program. Our
+            family-founded firm has one mission: getting autism families the justice they deserve.
           </p>
           <Link
             href="/intake/phase-1"
             className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
           >
-            Start My Claim &rarr;
+            Start My Free Case Review &rarr;
           </Link>
           <p className="mt-4 text-[#475569] text-sm">
             Free consultation. No fees unless we win. Reviewed within 24 hours.
@@ -40,8 +44,8 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-8 text-center">Why We Do This</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Pull quote card */}
-            <div className="bg-gray-900 text-white p-8 rounded-xl">
-              <p className="text-lg leading-relaxed italic mb-4">
+            <div className="bg-white border-l-4 border-[#1E40AF] p-8 rounded-xl shadow-sm">
+              <p className="text-lg leading-relaxed italic mb-4 text-[#111827]">
                 &ldquo;For years, I&rsquo;ve witnessed the irreversible damage inflicted on our
                 nation&rsquo;s children. My son and I founded the Autism Justice Foundation because
                 families deserve a voice and a path to justice.&rdquo;
@@ -75,21 +79,23 @@ export default function HomePage() {
             Coalition &amp; Advisory Partners
           </p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            <div className="flex flex-col items-center gap-3 group">
-              <img src="/chd-logo.png" alt="Children's Health Defense" className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition" />
+            <div className="flex flex-col items-center gap-3">
+              <img src="/chd-logo.png" alt="Children's Health Defense" className="h-16 w-auto object-contain" />
               <span className="text-xs text-[#475569]">Children&rsquo;s Health Defense</span>
             </div>
-            <div className="flex flex-col items-center gap-3 group">
-              <img src="/del-bigtree-highwire.jpg" alt="The HighWire with Del Bigtree" className="h-16 w-auto object-contain rounded grayscale group-hover:grayscale-0 transition" />
+            <div className="flex flex-col items-center gap-3">
+              <div className="bg-gray-900 rounded p-3">
+                <img src="/highwire-logo.png" alt="The HighWire with Del Bigtree" className="h-10 w-auto object-contain" />
+              </div>
               <span className="text-xs text-[#475569]">The HighWire</span>
             </div>
-            <div className="flex flex-col items-center gap-3 group">
-              <div className="bg-gray-900 rounded p-3 grayscale group-hover:grayscale-0 transition">
+            <div className="flex flex-col items-center gap-3">
+              <div className="bg-gray-900 rounded p-3">
                 <img src="/mccullough-foundation-logo.jpg" alt="McCullough Foundation" className="h-10 w-auto object-contain" />
               </div>
               <span className="text-xs text-[#475569]">McCullough Foundation</span>
             </div>
-            <div className="flex flex-col items-center gap-3 group">
+            <div className="flex flex-col items-center gap-3">
               <div className="border border-[#E2E8F0] rounded px-6 py-3 text-center">
                 <span className="font-bold text-[#111827] text-sm">Autism Justice Foundation</span>
               </div>
@@ -246,7 +252,7 @@ export default function HomePage() {
             Begin Your Free Intake &rarr;
           </Link>
           <p className="mt-4 text-white/80 text-sm">
-            <a href="tel:9413041500" className="hover:text-[#1E40AF] transition">(941) 304-1500</a> | alphainjurylaw.com
+            <a href="tel:9413041500" className="hover:text-[#1E40AF] transition">(941) 304-1500</a> | gethelpforautism.com
           </p>
         </div>
       </section>
