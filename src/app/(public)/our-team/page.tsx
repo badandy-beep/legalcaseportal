@@ -374,12 +374,20 @@ export default function OurTeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* David "Nino" Rodriguez */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="https://autismjusticefoundation.org/wp-content/uploads/2025/09/1384805716.jpg" alt='David "Nino" Rodriguez' className="w-full h-64 object-cover object-top" />
+              <img src="/david-nino-rodriguez-thumb.png" alt='David "Nino" Rodriguez' className="w-full h-64 object-cover object-top" />
               <div className="p-6">
                 <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>David &ldquo;Nino&rdquo; Rodriguez</h4>
-                <p className="text-[#0a1628] font-semibold text-sm mb-3">Speakers Panel &amp; Advisory Board</p>
+                <p className="text-[#0a1628] font-semibold text-sm mb-1">Advisory Board Member</p>
+                <p className="text-xs text-[#475569] italic mb-3">Former WBC/WBA Ranked Heavyweight Champion · Anti-Bullying Advocate · Host, Nino&rsquo;s Corner TV</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">36-0 · 34 KOs</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">WBC #10 / WBA #12</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">50M+ Monthly Reach</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">KO Bullying Founder</span>
+                </div>
                 <p className="text-base text-[#475569] leading-relaxed">
-                  A former undefeated heavyweight boxing contender from El Paso, Texas, David compiled a professional record of 37-2 with 35 knockouts — including 24 first-round knockouts, surpassing Mike Tyson&rsquo;s career total. His titles include the Texas, New Mexico, and NABO Heavyweight Championships. In his post-boxing career, David hosts the &lsquo;Nino&rsquo;s Corner Podcast,&rsquo; consistently ranking among the top-rated shows on Apple Podcasts with a 4.9-star rating. An anti-bullying keynote speaker, founder of the KO Bullying project, and author of &lsquo;When the Lights Go Out: From Survivor to Champion,&rsquo; David has spoken at schools nationwide. Having recently become a father, he is fully committed to the Autism Justice Foundation&rsquo;s mission — leveraging his massive platform to expose vaccine-related harms and protect children&rsquo;s neurological health.
+                  David &ldquo;Nino&rdquo; Rodriguez is a former professional heavyweight boxer, bestselling author, and media founder whose life story is one of the most documented comeback narratives in American sports. Born and raised in El Paso, Texas, Nino turned professional in 1998 and went 36&ndash;0 with 34 knockouts &mdash; 24 of them in the first round &mdash; a first-round KO ratio that surpassed every heavyweight in history, including Mike Tyson. He was ranked #10 in the world by the WBC and #12 by the WBA, widely projected to become the first Mexican Heavyweight Champion of the World. On December 30, 2011, a knife attack outside a restaurant in Scottsdale, Arizona left him with 369 stitches and a scar from ear to chin. He returned to boxing, lost, and back surgery ended his career. What followed was a period of alcohol dependency and darkness that led him, ultimately, to schools and juvenile detention facilities across the country &mdash; telling the truth about bullying, survival, and redemption to the kids who needed it most. His bestselling book, <em>When The Lights Go Out: From Survivor to Champion</em>, documents the full journey. Today, as founder and CEO of Nino&rsquo;s Corner TV, he reaches upwards of 50 million people per month across all platforms. He is a practicing Christian who credits his faith with his sobriety and his renewed sense of mission.{' '}
+                  <a href="/in-the-fight#david-nino-rodriguez-never-give-up" className="text-[#0a1628] underline hover:text-[#d4a843] font-medium">Read the full story &rarr;</a>
                 </p>
               </div>
             </div>

@@ -264,6 +264,43 @@ const articles = [
       },
     ],
   },
+  {
+    slug: 'david-nino-rodriguez-never-give-up',
+    category: 'Advisory Board',
+    date: 'March 12, 2026',
+    title: 'He Beat Mike Tyson\'s Record, Survived Having His Throat Slit, and Built a Media Empire From the Wreckage. Meet David "Nino" Rodriguez.',
+    deck: 'Before he became one of the most trusted independent voices in American media, Nino Rodriguez went 36–0 with a knockout record that rewrote heavyweight history — and then survived an attempted murder that should have ended everything.',
+    image: '/david-nino-rodriguez-main.webp',
+    imageCaption: 'David "Nino" Rodriguez at the 2012 NCLR ALMA Awards, Pasadena, California. Photo: Kevin Winter/Getty Images for NCLR.',
+    author: 'AJF Editorial Staff',
+    body: [
+      { type: 'p', text: 'There is a phrase that David "Nino" Rodriguez has used in front of thousands of school kids, in detention facilities, in gymnasiums, and on his podcast: "Never give up and always show up." It sounds simple. Coming from Nino, it lands like a fist, because the man saying it has been tested at levels that most motivational speakers have not.' },
+      { type: 'p', text: 'Born September 18, 1977 in El Paso, Texas, Nino grew up being bullied. He got into boxing at around six years old, didn\'t truly commit to it until he was thirteen or fourteen, and when he did, what followed was historic. He turned professional in 1998 and the results were immediate — 18 straight knockouts to open his career, 17 of them in the first round. By the time his record reached 36–0 with 34 knockouts, boxing historians had to acknowledge what the numbers said plainly: his 24 first-round knockouts had surpassed the legendary first-round KO record of Mike Tyson. He was ranked #10 in the world by the WBC and #12 by the WBA, listed among ESPN\'s top 25 pound-for-pound prospects, and widely believed to be on trajectory to become the first Mexican Heavyweight Champion of the World.' },
+      { type: 'youtube', videoId: 'ZPRZS0UELnk', title: 'David "Nino" Rodriguez — Full Interview' },
+      {
+        type: 'photogallery',
+        photos: [
+          { src: '/david-nino-rodriguez-main.webp', caption: 'At the 2012 NCLR ALMA Awards — Photo: Kevin Winter/Getty Images for NCLR' },
+          { src: '/david-nino-rodriguez-bullying.jpg', caption: 'David "Nino" Rodriguez — anti-bullying campaign. Courtesy of David Nino Rodriguez.' },
+          { src: '/david-nino-rodriguez-ring.jpg', caption: 'Rodriguez raises his fist in victory — a pose the ring knew well for 36 consecutive wins.' },
+          { src: '/david-nino-rodriguez-thumb.png', caption: '"Nino" Rodriguez — WBC/WBA world-ranked heavyweight, El Paso, Texas.' },
+        ],
+      },
+      { type: 'h2', text: 'The Night Everything Changed' },
+      { type: 'p', text: 'On December 30, 2011, outside a restaurant in Scottsdale, Arizona, a man with a knife nearly ended all of it. The attack left Nino with 369 stitches and a scar running the full length of his face. He fell into a coma for over a day. "They slit my throat," he later said, turning to show the scar etched along his jawline. "I saw the blood gush out of my body." He lost so much blood he doesn\'t remember being put in the ambulance. He blacked out repeatedly before waking up in a hospital bed, asking only one thing: "Did you get the guys?"' },
+      { type: 'p', text: 'The psychological toll was harder to suture than the physical wound. He forced himself back into training. He returned to the ring. He lost — twice. "I went from hero to zero," he said, "in a matter of two fights." Back surgery eventually ended his career for good. A back injury that could not be undone finished what the knife had started.' },
+      { type: 'h2', text: 'The Harder Fight' },
+      { type: 'p', text: 'What followed was a period Nino has never tried to hide. Alcohol dependency tightened its grip after his boxing identity was gone. There were moments of genuine darkness — suicidal ideation that he has spoken about publicly and directly. "I was really at that point where I was just putting a gun to my head and just trying to think of a reason." He had already lost his sister to alcoholism. The thought of his parents burying another child is what stopped him.' },
+      { type: 'p', text: 'His faith, rooted in a Catholic childhood where he served as an altar boy, became the anchor. He walked into a bar in El Paso one last time, looked at the drink in front of him, and made a decision. "I took one last drink," he said, "and I put it down. I said, \'I\'m done.\'" He publicly announced one year of sobriety on December 26, 2020. On December 28, 2024, he announced his baptism.' },
+      { type: 'h2', text: 'The Schools. The Kids. The Book.' },
+      { type: 'p', text: 'Nino discovered his post-boxing mission in an unlikely place: the same schools and detention facilities where the bullied kids he had once been sat waiting for someone to tell them the truth. He began speaking — not from a prepared corporate script, but from his own unfiltered record of being bullied as a child, becoming a bully in return, climbing to the top of the world\'s most brutal sport, surviving an attempted murder, and coming back anyway. "Some of these kids don\'t have parents," he observed. "Many come from drug-addicted or dysfunctional homes. A lot of these kids don\'t have a father figure. And that\'s what\'s really so troubling about this country."' },
+      { type: 'p', text: 'He prioritizes time with the kids after his talks — signing autographs, staying until every person who wants a moment with him gets one. His bestselling book, When The Lights Go Out: From Survivor to Champion, documents the full arc. He describes it as "a manual for anyone who is struggling." The Epoch Times called his advocacy campaign a mission — not a program, not a brand initiative, a mission.' },
+      { type: 'h2', text: 'Nino\'s Corner' },
+      { type: 'p', text: 'Today, David "Nino" Rodriguez is the founder and CEO of Nino\'s Corner TV — a subscription media platform and podcast that airs live Monday, Wednesday, and Friday, reaching upwards of 50 million people per month across all platforms, with 510,000 YouTube subscribers as of December 2025. He has appeared on national television as a boxing commentator, he runs a clothing line called Patriot Wear, and he has built one of the most loyal independent media audiences in the country — not because of a network deal or a PR firm, but because the man on screen is exactly who he says he is.' },
+      { type: 'p', text: '"I don\'t worry about it," he said when asked about his future. "I know God\'s got my back. I\'m following God, and I\'m growing organically." That is not a talking point. For Nino Rodriguez, it is a documented, hard-won truth — one purchased at considerable cost, and shared freely with anyone willing to listen.' },
+      { type: 'warning', text: 'The Autism Justice Foundation exists because every family dealing with a vaccine-injured child deserves someone in their corner who has been tested and didn\'t quit. Learn whether your family has a VICP claim — free consultation, no obligation.' },
+    ],
+  },
 ]
 
 export default function InTheFightPage() {
@@ -321,7 +358,38 @@ export default function InTheFightPage() {
 
             {/* Body */}
             <div className="space-y-5">
-              {article.body.map((block: { type: string; text: string; cite?: string }, i: number) => {
+              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[] }, i: number) => {
+                if (block.type === 'youtube' && block.videoId) {
+                  return (
+                    <div key={i} className="my-8 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-md">
+                      <div className="bg-[#0a1628] px-4 py-3">
+                        <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans">Watch: {block.title || 'Video'}</p>
+                      </div>
+                      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://www.youtube.com/embed/${block.videoId}`}
+                          title={block.title || 'Video'}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  )
+                }
+                if (block.type === 'photogallery' && block.photos) {
+                  return (
+                    <div key={i} className="my-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {block.photos.map((photo, j) => (
+                        <figure key={j} className="rounded-xl overflow-hidden border border-[#E2E8F0]">
+                          <img src={photo.src} alt={photo.caption} className="w-full object-cover" style={{ maxHeight: '320px' }} />
+                          <figcaption className="bg-[#F8F9FA] px-3 py-2 text-xs text-[#475569] font-sans italic">{photo.caption}</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  )
+                }
                 if (block.type === 'h2') {
                   return (
                     <h3
