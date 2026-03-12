@@ -89,10 +89,12 @@ export default function ResourcesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {partners.map((partner) =>
             partner.logo === 'ajf' ? (
-              <a key={partner.name} href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
-                <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
-                  <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-24 w-auto object-contain" />
-                </div>
+              <a key={partner.name} href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+                <img
+                  src="/ajf-logo.png"
+                  alt="Autism Justice Foundation"
+                  className="w-64 h-auto object-contain hover:opacity-90 transition"
+                />
                 <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
               </a>
             ) : (
