@@ -21,24 +21,24 @@ export default function OurStoryPage() {
         <section className="mb-10">
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Family</h2>
           <div className="text-gray-700 leading-relaxed">
-            <div className="mb-6 overflow-hidden rounded-xl shadow-md border border-[#E2E8F0]">
+            <div className="mb-8 overflow-hidden rounded-xl shadow-md border border-[#E2E8F0]">
               <img
                 src="/gary-beth-family.webp"
-                alt="Dr. Gary and Beth Kompothecras with their children including Bronson and Sarah Alice"
-                className="w-full object-cover object-top max-h-72"
+                alt="The Kompothecras family — Alex in the tree, Sarah Alice center, Bronson right in blue"
+                className="w-full object-cover object-top max-h-80"
               />
               <p className="text-xs text-[#475569] italic text-center px-4 py-2 bg-[#F8F9FA] border-t border-[#E2E8F0]">
-                Dr. Gary and Beth Kompothecras with their children — including Bronson (right, in blue) and Sarah Alice (center) — whose autism diagnoses set the entire Kompothecras family on a two-decade mission for answers and accountability.
+                The Kompothecras family — Alex (in the tree), Sarah Alice (center), and Bronson (right, in blue). Two of Gary and Beth&apos;s six children were diagnosed with severe autism as toddlers.
               </p>
             </div>
             <p className="text-[#475569] leading-relaxed">
-              Dr. Gary and Beth Kompothecras raised six children together on Siesta Key in Sarasota, Florida. Two of them — Bronson and Sarah Alice — were diagnosed with severe autism as toddlers. Bronson spent years in intensive therapy simply learning to say the name of his favorite toy: bottles. Sarah Alice still repeats back what people say to her. For this family, autism is not a policy position. It is Tuesday morning.
+              Dr. Gary and Beth Kompothecras have called Siesta Key home for over forty years. They raised six children here — and two of them, Bronson and Sarah Alice, were diagnosed with severe autism as toddlers. Bronson spent years in therapy just to learn the name of his favorite toy. Sarah Alice developed echolalia. For this family, autism is not a cause. It is Tuesday morning.
             </p>
             <p className="text-[#475569] leading-relaxed mt-4">
-              Dr. Gary — founder of 1-800-ASK-GARY, a $100M+ accident referral network spanning three states — turned his business network and political influence into an autism policy weapon. In 2008, Governor Charlie Crist appointed him to the <strong className="text-[#0a1628]">Florida Governor&apos;s Task Force on Autism Spectrum Disorders</strong>, where he served alongside former NFL quarterback Dan Marino. He lobbied the Florida legislature for the nation&apos;s strictest thimerosal vaccine restriction law. He commissioned research using Florida&apos;s Medicaid database. He personally funded screenings of the documentary <em>Vaxxed</em> across Sarasota. Both Bronson and Sarah Alice were petitioners in the federal Vaccine Court. In January 2026, Governor DeSantis appointed Dr. Gary to the <strong className="text-[#0a1628]">Florida Board of Chiropractic Medicine</strong>.
+              When the system refused to answer them, Gary turned the same drive that built 1-800-ASK-GARY from his first chiropractic clinic in 1995 into a twenty-year policy fight. He served on the <strong className="text-[#0a1628]">Florida Governor&apos;s Task Force on Autism Spectrum Disorders</strong> alongside Dan Marino. He championed the nation&apos;s strictest thimerosal restriction legislation. He produced a documentary of the 2008 Florida legislative hearing. He traveled to Washington for the <strong className="text-[#0a1628]">Congressional autism oversight hearing</strong>. He funded <em>Vaxxed</em> screenings across Sarasota. And he and Beth filed both Bronson and Sarah Alice as <strong className="text-[#0a1628]">petitioners in the federal Vaccine Court</strong>. Beth made her own political contributions to autism accountability legislators. This was never Gary&apos;s fight alone.
             </p>
             <p className="text-[#475569] leading-relaxed mt-4">
-              Beth has been there for all of it — as the mother who has lived every appointment, every therapy session, every institutional failure, and every small victory. Together, Gary and Beth have hosted autism fundraising galas, supported the Autism Society of Florida, and advocated alongside their congressional delegation for accountability and transparency. In September 2025, they co-founded the <strong className="text-[#0a1628]">Autism Justice Foundation</strong>. After more than twenty years of fighting, they knew precisely where the system was failing families — and they built something to fix it.
+              In January 2026, Governor DeSantis appointed Dr. Gary to the <strong className="text-[#0a1628]">Florida Board of Chiropractic Medicine</strong>. That same session, the Florida Legislature advanced the Medical Freedom Act — the kind of vaccine choice legislation Gary had championed fifteen years earlier, now a DeSantis administration priority. In September 2025, Gary and Beth co-founded the <strong className="text-[#0a1628]">Autism Justice Foundation</strong>. The moment the country finally caught up to them, they were ready.
             </p>
           </div>
         </section>
