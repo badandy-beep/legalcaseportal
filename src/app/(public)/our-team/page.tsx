@@ -35,25 +35,22 @@ export default function OurTeamPage() {
 
                 <div className="space-y-4 text-sm text-[#475569] leading-relaxed">
                   <p>
-                    Alex J. Kompothecras is the Managing Attorney of Alpha Law Group, a personal injury and civil litigation firm headquartered at 2101 S. Tamiami Trail in Sarasota, Florida, with offices in Miami and Minnesota. Licensed in Florida&apos;s 12th Judicial Circuit, Alex has built a reputation for aggressive, results-driven advocacy — combining sharp legal strategy with the kind of personal investment that only comes from having lived alongside the cause he fights for every day.
+                    Alex J. Kompothecras is the Managing Attorney of Alpha Law Group, a personal injury and civil litigation firm headquartered in Sarasota, Florida. Licensed in Florida&apos;s 12th Judicial Circuit, Alex handles the full spectrum of personal injury matters — automobile and truck accidents, catastrophic injury, wrongful death, medical malpractice, and product liability.
                   </p>
                   <p>
-                    Alex grew up alongside his two siblings, Bronson and Sarah Alice, both diagnosed with severe autism as toddlers. Watching his family fight for answers, for dignity, and for a system that consistently failed to accommodate them shaped everything about how he approaches the law. He did not choose personal injury work by accident. He chose it because he understands, firsthand, what it means when someone is harmed by a system that was supposed to protect them — and has no roadmap for justice.
+                    Alex grew up alongside his two siblings, Bronson and Sarah Alice, both diagnosed with severe autism as toddlers. That experience shaped everything. He did not choose autism advocacy. It chose him.
                   </p>
                   <p>
-                    That conviction was put on public display in September 2024, when Alex learned about the case of <strong className="text-[#111827]">Francisco Diaz-Burgos</strong>, a 30-year-old man with autism who was tased and arrested by Holmes Beach police during a traffic stop — while attempting to interpret for his father. Francisco was charged with two counts of battery on a law enforcement officer and two counts of resisting arrest with violence. He spent three weeks in Manatee County Jail among the general population before Alex stepped in. Alex personally paid Francisco&apos;s bail out of his own pocket. He then met Francisco face-to-face at Nathan Benderson Park shortly after his release. <em>&ldquo;The amount of PTSD that Mr. Diaz is struggling with is heartbreaking,&rdquo;</em> Alex later wrote to State Attorney Ed Brodsky. <em>&ldquo;He repeatedly asked me &lsquo;Am I going to prison?&rsquo; and &lsquo;Am I going to get deported?&rsquo; over and over again.&rdquo;</em>
+                    In September 2024, Alex learned about Francisco Diaz-Burgos — a 30-year-old man with autism who was tased and jailed for three weeks after trying to help his father during a police stop. Alex paid his bail out of his own pocket, wrote a letter to the State Attorney, and helped secure a full dismissal of all charges. He is now building ASD sensitivity training for Florida law enforcement and prosecutors.{' '}
+                    <a
+                      href="/our-story#francisco"
+                      className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium"
+                    >
+                      Read the full story &rarr;
+                    </a>
                   </p>
                   <p>
-                    Alex submitted a formal letter to State Attorney Brodsky and Assistant State Attorney Jose Miguel Herrero advocating for Francisco&apos;s release from prosecution. Working alongside Francisco&apos;s attorney CJ Czaia, Alex helped negotiate a resolution: in late December 2024, the case was officially closed with an administrative dismissal after Francisco completed a pretrial intervention program. State Attorney Brodsky subsequently invited Alex to develop and deliver ASD awareness training for his prosecutorial staff and local defense attorneys — a direct result of Alex&apos;s advocacy. Alex is now consulting with therapists who have worked with his own siblings to build that curriculum, with the goal of eventually requiring ASD interaction training at the Florida law enforcement academy level. The case was covered by the <em>Sarasota Herald-Tribune</em> in January 2025.
-                  </p>
-                  <p>
-                    At Alpha Law Group, Alex handles the full spectrum of personal injury matters — automobile and truck accidents, catastrophic injury, wrongful death, medical malpractice, product liability, and slip-and-fall — across Sarasota, Miami, and Minnesota. He is known for breaking down complex legal issues into plain language, keeping clients fully informed at every stage, and refusing to let insurance companies undervalue what families deserve.
-                  </p>
-                  <p>
-                    In September 2025, Alex co-founded the <strong className="text-[#111827]">Autism Justice Foundation</strong> alongside his father, Dr. Gary Kompothecras, serving on its Board of Directors. He leads VICP filings for autism families across Florida through this portal on a pure contingency basis — no fees, no costs, not a single dollar out of pocket unless compensation is recovered. The federal Vaccine Injury Compensation Program has paid out over <strong className="text-[#111827]">$5.4 billion</strong> since its inception. The vast majority of eligible families have never filed. Alex&apos;s mission is to change that.
-                  </p>
-                  <p>
-                    Alex also co-organized the <strong className="text-[#111827]">Alpha Law Group Autism 5K Run/Walk</strong> at Nathan Benderson Park in Sarasota, with proceeds benefiting The Haven in Sarasota and the Autism Society of Florida. The event is free for families to attend and includes activities tailored specifically for children and young adults with disabilities. For Alex, it is not a marketing event. It is a public declaration that this fight is personal — and it always will be.
+                    In September 2025, Alex co-founded the <strong className="text-[#111827]">Autism Justice Foundation</strong> alongside his father, Dr. Gary Kompothecras, and now leads VICP filings for autism families across Florida on a pure contingency basis — no fees unless compensation is recovered.
                   </p>
                 </div>
 

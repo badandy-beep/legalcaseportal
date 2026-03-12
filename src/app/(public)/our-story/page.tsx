@@ -65,7 +65,7 @@ export default function OurStoryPage() {
 
         {/* Section 3 — Justice in Action */}
         <section className="space-y-6 mb-10">
-          <h2 className="text-2xl font-bold text-[#111827]">Justice in Action: The Francisco Diaz-Burgos Case</h2>
+          <h2 id="francisco" className="text-2xl font-bold text-[#111827]">Justice in Action: The Francisco Diaz-Burgos Case</h2>
 
           <p className="text-[#475569] leading-relaxed">
             On September 10, 2024, a Holmes Beach police officer pulled over a car on Anna Maria Island after a license plate recognition system flagged the vehicle. Inside were Orlando Diaz — who had been driving without a valid license for more than 20 years — and his 30-year-old son, Francisco Diaz-Burgos, who has severe autism. When the officer moved to arrest Orlando, Francisco did what he always did: he stepped in to help. He reached for his father&rsquo;s arm, trying to keep the situation calm. He did not understand what he had done wrong. He never does.
