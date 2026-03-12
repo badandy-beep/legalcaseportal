@@ -361,20 +361,35 @@ export default function InTheFightPage() {
               {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[] }, i: number) => {
                 if (block.type === 'youtube' && block.videoId) {
                   return (
-                    <div key={i} className="my-8 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-md">
-                      <div className="bg-[#0a1628] px-4 py-3">
-                        <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans">Watch: {block.title || 'Video'}</p>
-                      </div>
-                      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                        <iframe
-                          className="absolute inset-0 w-full h-full"
-                          src={`https://www.youtube.com/embed/${block.videoId}`}
-                          title={block.title || 'Video'}
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      </div>
+                    <div key={i} className="my-8">
+                      <a
+                        href={`https://www.youtube.com/watch?v=${block.videoId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group block rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-md hover:shadow-lg transition-shadow"
+                      >
+                        <div className="bg-[#0a1628] px-4 py-3 flex items-center justify-between">
+                          <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans">
+                            ▶ Watch: {block.title || 'Video'}
+                          </p>
+                          <span className="text-[#94a3b8] text-xs font-sans">Opens on YouTube →</span>
+                        </div>
+                        <div className="relative bg-black">
+                          <img
+                            src={`https://img.youtube.com/vi/${block.videoId}/hqdefault.jpg`}
+                            alt={block.title || 'Watch video'}
+                            className="w-full object-cover"
+                            style={{ maxHeight: '400px' }}
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/20 transition-colors">
+                            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                              <svg className="w-7 h-7 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                   )
                 }
