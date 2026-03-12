@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Script from 'next/script'
 
 export default function OurStoryPage() {
   return (
@@ -74,6 +75,32 @@ export default function OurStoryPage() {
           <p className="text-[#475569] leading-relaxed">
             The officer used a taser. Francisco was arrested and charged with two counts of battery on a law enforcement officer, two counts of resisting arrest with violence, and additional obstruction charges. He was held in Manatee County Jail — in the general population — for three weeks, with no bond hearing scheduled. His attorney begged the court&rsquo;s judicial assistant to move the hearing up. The request was ignored. Francisco sat in a cell he could not understand, surrounded by people he could not communicate with, asking the same question over and over: <em>&ldquo;Am I going to prison? Am I going to get deported?&rdquo;</em>
           </p>
+
+          {/* Francisco Family Photos */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+            <figure className="rounded-lg overflow-hidden shadow-md">
+              <img
+                src="/francisco-and-dad.avif"
+                alt="Francisco Diaz-Burgos and his father Orlando"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="text-xs text-[#475569] italic px-3 py-2 bg-[#F8F9FA]">
+                Francisco Diaz-Burgos and his father Orlando — the family at the center of a case that
+                changed how Sarasota prosecutors and law enforcement approach autism.
+              </figcaption>
+            </figure>
+            <figure className="rounded-lg overflow-hidden shadow-md">
+              <img
+                src="/francisco-family.avif"
+                alt="The Diaz-Burgos family"
+                className="w-full h-auto object-cover"
+              />
+              <figcaption className="text-xs text-[#475569] italic px-3 py-2 bg-[#F8F9FA]">
+                The Diaz-Burgos family — Francisco&rsquo;s case became a catalyst for autism awareness reform
+                across Sarasota County.
+              </figcaption>
+            </figure>
+          </div>
 
           <p className="text-[#475569] leading-relaxed">
             When Alex Kompothecras read about the case, he did not call a press conference. He wrote a check. He paid Francisco&rsquo;s bail out of his own pocket, drove to Nathan Benderson Park, and met Francisco face to face after his release. What he saw stayed with him. He later wrote in a formal letter to{' '}
@@ -155,6 +182,26 @@ export default function OurStoryPage() {
             {' '}&mdash; two organizations providing direct support services to individuals and families living with autism and developmental disabilities in the region. This is not a marketing event. It is a public declaration, made every year, that this fight is personal.
           </p>
 
+          {/* Instagram 5K Reel */}
+          <div className="my-6 flex justify-center">
+            <blockquote
+              className="instagram-media"
+              data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/DURb_0fja9i/"
+              data-instgrm-version="14"
+              style={{ background: '#FFF', border: 0, borderRadius: '3px', boxShadow: '0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin: '1px', maxWidth: '540px', minWidth: '326px', padding: 0, width: '99.375%' }}
+            >
+              <a
+                href="https://www.instagram.com/reel/DURb_0fja9i/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium text-sm"
+              >
+                View the 2026 Alpha Law Group Autism 5K on Instagram
+              </a>
+            </blockquote>
+          </div>
+
           <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-5">
             <p className="text-sm font-semibold text-[#1E40AF] mb-1">Want to get involved?</p>
             <p className="text-sm text-[#475569]">
@@ -200,6 +247,7 @@ export default function OurStoryPage() {
           </Link>
         </div>
       </div>
+      <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
     </div>
   )
 }
