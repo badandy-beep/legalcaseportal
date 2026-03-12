@@ -7,7 +7,7 @@ export default function OurStoryPage() {
         {/* Page Title */}
         <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Our Foundation</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-3">Our Foundation</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
               Our Story
             </h1>
@@ -39,7 +39,7 @@ export default function OurStoryPage() {
           </div>
         </section>
 
-        <hr className="border-[#1E40AF]/30 my-10" />
+        <hr className="border-[#d4a843]/30 my-10" />
 
         {/* Section 2 — The Son */}
         <section className="mb-10">
@@ -50,18 +50,18 @@ export default function OurStoryPage() {
               founded Alpha Law Group in Sarasota, and wove autism advocacy into the firm&rsquo;s
               DNA from day one.
             </p>
-            <blockquote className="border-l-4 border-[#1E40AF] pl-6 my-6 italic text-[#111827]">
+            <blockquote className="border-l-4 border-[#d4a843] pl-6 my-6 italic text-[#111827]">
               &ldquo;Watching what my parents went through — what Bronson and Sarah Alice go through
               every day — that&rsquo;s what drives everything I do in this space. I didn&rsquo;t
               choose this cause. It chose me.&rdquo;
-              <span className="block mt-2 text-sm font-semibold not-italic text-[#1E40AF]">
+              <span className="block mt-2 text-sm font-semibold not-italic text-[#0a1628]">
                 — Alex Kompothecras
               </span>
             </blockquote>
           </div>
         </section>
 
-        <hr className="border-[#1E40AF]/30 my-10" />
+        <hr className="border-[#d4a843]/30 my-10" />
 
         {/* Section 3 — Justice in Action */}
         <section className="space-y-6 mb-10">
@@ -107,7 +107,7 @@ export default function OurStoryPage() {
               href="https://www.heraldtribune.com/story/news/courts/2025/01/23/florida-advocates-seek-better-autism-awareness-training-for-police/77690997007/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+              className="text-[#0a1628] underline hover:text-[#d4a843]"
             >
               State Attorney Ed Brodsky
             </a>
@@ -120,7 +120,7 @@ export default function OurStoryPage() {
               href="https://www.yahoo.com/news/holmes-beach-police-tased-autistic-100611110.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+              className="text-[#0a1628] underline hover:text-[#d4a843]"
             >
               The Sarasota Herald-Tribune covered the case in January 2025
             </a>
@@ -136,7 +136,7 @@ export default function OurStoryPage() {
           </p>
         </section>
 
-        <hr className="border-[#1E40AF]/30 my-10" />
+        <hr className="border-[#d4a843]/30 my-10" />
 
         {/* Section — The 5K */}
         <section className="space-y-6 mb-10">
@@ -148,7 +148,7 @@ export default function OurStoryPage() {
               href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium"
+              className="text-[#0a1628] underline hover:text-[#d4a843] font-medium"
             >
               Alpha Law Group Autism 5K
             </a>
@@ -165,7 +165,7 @@ export default function OurStoryPage() {
               href="https://www.autismsocietyfl.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+              className="text-[#0a1628] underline hover:text-[#d4a843]"
             >
               Autism Society of Florida
             </a>
@@ -174,7 +174,7 @@ export default function OurStoryPage() {
               href="https://www.havenofRRC.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+              className="text-[#0a1628] underline hover:text-[#d4a843]"
             >
               The Haven of Sarasota
             </a>
@@ -224,15 +224,15 @@ export default function OurStoryPage() {
             The 2026 Alpha Law Group Autism 5K at Nathan Benderson Park
           </p>
 
-          <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-5">
-            <p className="text-sm font-semibold text-[#1E40AF] mb-1">Want to get involved?</p>
+          <div className="bg-[#fdf8ee] border border-[#d4a843]/40 rounded-lg p-5">
+            <p className="text-sm font-semibold text-[#0a1628] mb-1">Want to get involved?</p>
             <p className="text-sm text-[#475569]">
               Follow the event, donate, or register for next year at{' '}
               <a
                 href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium"
+                className="text-[#0a1628] underline hover:text-[#d4a843] font-medium"
               >
                 runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K
               </a>
@@ -240,7 +240,7 @@ export default function OurStoryPage() {
           </div>
         </section>
 
-        <hr className="border-[#1E40AF]/30 my-10" />
+        <hr className="border-[#d4a843]/30 my-10" />
 
         {/* Section 4 — The Foundation */}
         <section className="mb-12">
@@ -263,7 +263,7 @@ export default function OurStoryPage() {
           <h3 className="text-xl font-bold text-[#111827] mb-4">Ready to take the first step?</h3>
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
+            className="inline-block bg-[#d4a843] text-[#0a1628] font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#b8902e] transition"
           >
             Start My Claim &rarr;
           </Link>

@@ -71,9 +71,9 @@ export default function Phase9Page() {
           <p className="text-gray-700">Upload supporting documents for your case. You can add more documents later.</p>
         </div>
 
-        <div className="bg-[#1E40AF]/10 border border-[#1E40AF]/30 rounded-lg p-4 mb-6">
+        <div className="bg-[#d4a843]/10 border border-[#d4a843]/30 rounded-lg p-4 mb-6">
           <h3 className="font-semibold text-[#111827] mb-2">Documents That Strengthen Your Case</h3>
-          <ul className="text-sm text-[#1E40AF] space-y-1">
+          <ul className="text-sm text-[#0a1628] space-y-1">
             <li>Vaccination records with dates and lot numbers</li>
             <li>Medical records documenting symptoms after vaccination</li>
             <li>Autism diagnosis and evaluation reports</li>
@@ -107,7 +107,7 @@ export default function Phase9Page() {
                   {files[docType.id].map(file => (
                     <div key={file.name} className="flex items-center justify-between bg-gray-50 rounded p-2">
                       <div className="flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-[#1E40AF]" />
+                        <FileText className="w-4 h-4 text-[#0a1628]" />
                         <span className="text-sm text-gray-700 truncate max-w-xs">{file.name}</span>
                         <span className="text-xs text-gray-700">{formatFileSize(file.size)}</span>
                       </div>
@@ -120,7 +120,7 @@ export default function Phase9Page() {
               )}
 
               {files[docType.id]?.length > 0 && (
-                <div className="flex items-center gap-1 mt-2 text-[#1E40AF]">
+                <div className="flex items-center gap-1 mt-2 text-[#0a1628]">
                   <CheckCircle className="w-4 h-4" />
                   <span className="text-sm">{files[docType.id].length} file(s) added</span>
                 </div>

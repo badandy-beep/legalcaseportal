@@ -173,7 +173,7 @@ export default function FAQPage() {
       {/* Header */}
       <section className="bg-white border-b border-[#E2E8F0] py-14">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Know Your Rights</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-3">Know Your Rights</p>
           <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
             Frequently Asked Questions
           </h1>
@@ -181,7 +181,7 @@ export default function FAQPage() {
             Answers for autism families navigating the federal vaccine injury compensation system.
           </p>
           <p className="text-base font-semibold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>
-            &ldquo;Justice for Your Child. Compensation for Your Family. <span className="text-[#1E40AF]">Zero Upfront.</span>&rdquo;
+            &ldquo;Justice for Your Child. Compensation for Your Family. <span className="text-[#0a1628]">Zero Upfront.</span>&rdquo;
           </p>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default function FAQPage() {
         {sections.map((section, sIdx) => (
           <div key={section.title} className={sIdx > 0 ? 'mt-12' : ''}>
             {/* Section Eyebrow */}
-            <p className="text-xs font-bold uppercase tracking-widest text-[#1E40AF] mb-6">
+            <p className="text-xs font-bold uppercase tracking-widest text-[#0a1628] mb-6">
               {section.title}
             </p>
 
@@ -209,7 +209,7 @@ export default function FAQPage() {
                       <span className="font-semibold text-[#111827]">
                         {item.question}
                       </span>
-                      <span className="text-[#1E40AF] text-xl font-bold shrink-0 mt-0.5">
+                      <span className="text-[#0a1628] text-xl font-bold shrink-0 mt-0.5">
                         {isOpen ? '−' : '+'}
                       </span>
                     </button>
@@ -229,7 +229,7 @@ export default function FAQPage() {
         <div className="mt-12 text-center">
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-[#1E40AF] text-white font-bold px-8 py-3 rounded hover:bg-[#1E3A8A] transition"
+            className="inline-block bg-[#d4a843] text-[#0a1628] font-bold px-8 py-3 rounded hover:bg-[#b8902e] transition"
           >
             Start My Free Case Evaluation
           </Link>
@@ -243,17 +243,17 @@ export default function FAQPage() {
         </p>
       </section>
 
-      <section className="bg-[#1E40AF] py-10 mt-12">
+      <section className="bg-[#d4a843] py-10 mt-12">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="text-white font-bold text-xl mb-2" style={{fontFamily:'Georgia,serif'}}>
             Still have questions? Let us review your case — free.
           </p>
-          <p className="text-blue-200 text-sm mb-6">No obligation. No upfront cost. Takes 3 minutes.</p>
+          <p className="text-[#d4a843] text-sm mb-6">No obligation. No upfront cost. Takes 3 minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/intake/phase-1" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition text-sm uppercase tracking-wide">
               Start My Claim →
             </a>
-            <a href={`https://wa.me/?text=${encodeURIComponent('Free legal help for autism families: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[#1E40AF] transition text-sm uppercase tracking-wide">
+            <a href={`https://wa.me/?text=${encodeURIComponent('Free legal help for autism families: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[#d4a843] transition text-sm uppercase tracking-wide">
               Share With a Family →
             </a>
           </div>

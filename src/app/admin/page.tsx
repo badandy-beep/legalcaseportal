@@ -48,7 +48,7 @@ export default function AdminLogin() {
               value={email}
               onChange={e => setEmail(e.target.value)}
               required
-              className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+              className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
               placeholder="attorney@alphalawgroup.com"
             />
           </div>
@@ -59,7 +59,7 @@ export default function AdminLogin() {
               value={password}
               onChange={e => setPassword(e.target.value)}
               required
-              className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+              className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
               placeholder="••••••••"
             />
           </div>
@@ -67,7 +67,7 @@ export default function AdminLogin() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#1E40AF] hover:bg-[#1E3A8A] text-white font-semibold py-3 rounded-lg transition text-sm disabled:opacity-60"
+            className="w-full bg-[#d4a843] hover:bg-[#b8902e] text-white font-semibold py-3 rounded-lg transition text-sm disabled:opacity-60"
           >
             {loading ? 'Authenticating...' : 'Sign In →'}
           </button>

@@ -49,12 +49,12 @@ export default function Phase7Page() {
         <form id="phase-7-form" onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-[#111827] flex items-center gap-2">
-              <FileHeart className="w-5 h-5 text-[#1E40AF]" /> Primary Diagnoses
+              <FileHeart className="w-5 h-5 text-[#0a1628]" /> Primary Diagnoses
             </h2>
             <p className="text-sm text-gray-700">Check all that apply:</p>
             <div className="grid gap-3">
               {DIAGNOSES.map(dx => (
-                <label key={dx.id} className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${diagnoses[dx.id] ? 'border-[#1E40AF] bg-[#1E40AF]/10' : 'border-gray-200 hover:border-gray-300'}`}>
+                <label key={dx.id} className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${diagnoses[dx.id] ? 'border-[#0a1628] bg-[#d4a843]/10' : 'border-gray-200 hover:border-gray-300'}`}>
                   <input type="checkbox" checked={diagnoses[dx.id] || false} onChange={() => toggleDiagnosis(dx.id)} className="checkbox-custom mt-0.5" />
                   <div>
                     <span className="font-medium text-gray-900">{dx.label}</span>

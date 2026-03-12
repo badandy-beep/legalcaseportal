@@ -29,7 +29,7 @@ const partners = [
     name: 'HRSA Vaccine Injury Compensation Program',
     mission: 'Federal program providing compensation for vaccine-related injuries — the pathway for autism families with encephalopathy claims.',
     link: 'https://www.hrsa.gov/vaccine-compensation',
-    logo: <span className="font-bold text-[#1E40AF] text-lg">HRSA</span>,
+    logo: <span className="font-bold text-[#0a1628] text-lg">HRSA</span>,
   },
   {
     name: 'Autism Science Foundation',
@@ -75,7 +75,7 @@ export default function ResourcesPage() {
         {/* Page Title */}
         <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Partner Network</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-3">Partner Network</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
               Resources &amp; Partners
             </h1>
@@ -95,10 +95,10 @@ export default function ResourcesPage() {
                   alt="Autism Justice Foundation"
                   className="w-64 h-auto object-contain hover:opacity-90 transition"
                 />
-                <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
+                <span className="text-xs font-medium text-[#475569] group-hover:text-[#d4a843] transition text-center">Autism Justice Foundation</span>
               </a>
             ) : (
-              <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
+              <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#0a1628] hover:shadow-md transition group">
                 {partner.logo && (
                   <div className="h-16 flex items-center mb-4">
                     {partner.logo}
@@ -106,7 +106,7 @@ export default function ResourcesPage() {
                 )}
                 <h3 className="font-semibold text-[#111827] mb-2">{partner.name}</h3>
                 <p className="text-sm text-[#475569] mb-4">{partner.mission}</p>
-                <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
+                <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0a1628] hover:text-[#d4a843] font-medium">
                   Visit Site &rarr;
                 </a>
               </div>
@@ -119,17 +119,17 @@ export default function ResourcesPage() {
           <h2 className="text-2xl font-bold text-[#111827] mb-6">Legal Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {legalResources.map((resource) => (
-              <div key={resource.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
+              <div key={resource.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#0a1628] hover:shadow-md transition group">
                 <div className="h-16 flex items-center mb-4">
-                  <div className="w-10 h-10 rounded bg-[#EFF6FF] flex items-center justify-center">
-                    <svg className="w-5 h-5 text-[#1E40AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="w-10 h-10 rounded bg-[#fdf8ee] flex items-center justify-center">
+                    <svg className="w-5 h-5 text-[#0a1628]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
                 </div>
                 <h3 className="font-semibold text-[#111827] mb-2">{resource.name}</h3>
                 <p className="text-sm text-[#475569] mb-4">{resource.description}</p>
-                <a href={resource.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
+                <a href={resource.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#0a1628] hover:text-[#d4a843] font-medium">
                   Visit Site &rarr;
                 </a>
               </div>
@@ -138,12 +138,12 @@ export default function ResourcesPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-gray-900 text-white py-12 px-8 rounded-2xl text-center mt-16">
+        <div className="bg-[#0a1628] text-white py-12 px-8 rounded-2xl text-center mt-16">
           <h2 className="text-2xl font-bold tracking-tight mb-4">Ready to take the first step?</h2>
           <p className="text-white/80 mb-6">Free consultation. No fees unless we win.</p>
           <Link
             href="/intake/phase-1"
-            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
+            className="inline-block bg-[#d4a843] text-[#0a1628] font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#b8902e] transition"
           >
             Begin Your Free Intake &rarr;
           </Link>

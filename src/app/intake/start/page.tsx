@@ -7,8 +7,8 @@ export default function IntakeStartPage() {
       {/* Welcome Card */}
       <div className="card mb-8">
         <div className="text-center mb-8">
-          <div className="w-16 h-16 bg-[#1E40AF]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <FileText className="w-8 h-8 text-[#1E40AF]" />
+          <div className="w-16 h-16 bg-[#d4a843]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <FileText className="w-8 h-8 text-[#0a1628]" />
           </div>
           <h1 className="text-3xl font-bold text-[#111827] mb-2">
             Free Case Evaluation
@@ -23,21 +23,21 @@ export default function IntakeStartPage() {
           <h2 className="font-semibold text-[#111827] mb-4">What to Expect</h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+              <Clock className="w-5 h-5 text-[#0a1628] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">15-20 minutes to complete</p>
                 <p className="text-sm text-gray-700">You can save and continue later</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Shield className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+              <Shield className="w-5 h-5 text-[#0a1628] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">100% Confidential & Secure</p>
                 <p className="text-sm text-gray-700">HIPAA compliant, encrypted data</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <FileText className="w-5 h-5 text-[#1E40AF] flex-shrink-0 mt-0.5" />
+              <FileText className="w-5 h-5 text-[#0a1628] flex-shrink-0 mt-0.5" />
               <div>
                 <p className="font-medium text-gray-900">Gather these if available</p>
                 <p className="text-sm text-gray-700">Birth certificate, vaccination records, diagnosis reports</p>
@@ -64,7 +64,7 @@ export default function IntakeStartPage() {
               '11. Review & Submit'
             ].map((phase, index) => (
               <div key={index} className="flex items-center gap-2 text-gray-700">
-                <div className="w-2 h-2 rounded-full bg-[#1E40AF]" />
+                <div className="w-2 h-2 rounded-full bg-[#d4a843]" />
                 {phase}
               </div>
             ))}
@@ -84,15 +84,15 @@ export default function IntakeStartPage() {
       {/* Trust Indicators */}
       <div className="grid grid-cols-3 gap-4 text-center">
         <div className="bg-white rounded-lg p-4 shadow-sm">
-          <Lock className="w-6 h-6 text-[#1E40AF] mx-auto mb-2" />
+          <Lock className="w-6 h-6 text-[#0a1628] mx-auto mb-2" />
           <p className="text-xs text-gray-700">256-bit SSL</p>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm">
-          <Shield className="w-6 h-6 text-[#1E40AF] mx-auto mb-2" />
+          <Shield className="w-6 h-6 text-[#0a1628] mx-auto mb-2" />
           <p className="text-xs text-gray-700">HIPAA Compliant</p>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm">
-          <CheckCircle className="w-6 h-6 text-[#1E40AF] mx-auto mb-2" />
+          <CheckCircle className="w-6 h-6 text-[#0a1628] mx-auto mb-2" />
           <p className="text-xs text-gray-700">No Obligation</p>
         </div>
       </div>

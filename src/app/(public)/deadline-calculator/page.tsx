@@ -36,7 +36,7 @@ export default function DeadlineCalculatorPage() {
       {/* Header */}
       <section className="bg-white border-b border-[#E2E8F0] py-14">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Free Deadline Assessment</p>
+          <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-3">Free Deadline Assessment</p>
           <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
             Has Your Family&rsquo;s Window Closed?
           </h1>
@@ -63,7 +63,7 @@ export default function DeadlineCalculatorPage() {
           />
           <button
             onClick={calculate}
-            className="w-full mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg hover:opacity-90 transition cursor-pointer"
+            className="w-full mt-4 bg-[#d4a843] text-[#0a1628] font-bold py-3 rounded-lg hover:opacity-90 transition cursor-pointer"
           >
             Calculate My Deadline
           </button>
@@ -84,7 +84,7 @@ export default function DeadlineCalculatorPage() {
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#d4a843] text-[#0a1628] font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Start My Free Case Evaluation &rarr;
             </Link>
@@ -114,7 +114,7 @@ export default function DeadlineCalculatorPage() {
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#d4a843] text-[#0a1628] font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Start My Intake Now — Time Is Critical &rarr;
             </Link>
@@ -150,7 +150,7 @@ export default function DeadlineCalculatorPage() {
             </p>
             <Link
               href="/intake/phase-1"
-              className="block mt-4 bg-[#1E40AF] text-white font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
+              className="block mt-4 bg-[#d4a843] text-[#0a1628] font-bold py-3 rounded-lg text-center hover:opacity-90 transition"
             >
               Document My Case Now — It&rsquo;s Free &rarr;
             </Link>

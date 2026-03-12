@@ -123,7 +123,7 @@ export default function Phase11Page() {
       onBack={handleBack}
       showBack={true}
       continueLabel={loading ? 'Submitting...' : 'Submit My Case Evaluation 🔒'}
-      continueStyle="w-full py-4 bg-gray-900 text-white font-black text-base rounded-2xl cursor-pointer disabled:opacity-50"
+      continueStyle="w-full py-4 bg-[#0a1628] text-white font-black text-base rounded-2xl cursor-pointer disabled:opacity-50"
     >
       {/* Signature Canvas */}
       <div className="relative">
@@ -168,7 +168,7 @@ export default function Phase11Page() {
         value={signedName}
         onChange={(e) => setSignedName(e.target.value)}
         placeholder="Your full legal name"
-        className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] placeholder:text-gray-400 focus:border-[#1E40AF] transition"
+        className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] placeholder:text-gray-400 focus:border-[#0a1628] transition"
         style={{ fontSize: '16px' }}
       />
 

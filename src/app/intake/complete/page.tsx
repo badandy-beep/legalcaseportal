@@ -9,8 +9,8 @@ export default function IntakeCompletePage() {
     <div className="max-w-2xl mx-auto text-center">
       {/* Success Animation */}
       <div className="mb-8">
-        <div className="w-24 h-24 bg-[#EFF6FF] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
-          <CheckCircle className="w-14 h-14 text-[#1E40AF]" />
+        <div className="w-24 h-24 bg-[#fdf8ee] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+          <CheckCircle className="w-14 h-14 text-[#0a1628]" />
         </div>
         <h1 className="text-3xl font-bold text-[#111827] mb-3">
           Case Submitted Successfully!
@@ -32,8 +32,8 @@ export default function IntakeCompletePage() {
           <h3 className="font-semibold text-[#111827]">What Happens Next</h3>
           
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-[#EFF6FF] rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-[#1E40AF] font-bold text-sm">1</span>
+            <div className="w-8 h-8 bg-[#fdf8ee] rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-[#0a1628] font-bold text-sm">1</span>
             </div>
             <div>
               <p className="font-medium text-gray-900">Confirmation Email</p>
@@ -42,8 +42,8 @@ export default function IntakeCompletePage() {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-[#EFF6FF] rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-[#1E40AF] font-bold text-sm">2</span>
+            <div className="w-8 h-8 bg-[#fdf8ee] rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-[#0a1628] font-bold text-sm">2</span>
             </div>
             <div>
               <p className="font-medium text-gray-900">Case Review (48 Hours)</p>
@@ -52,8 +52,8 @@ export default function IntakeCompletePage() {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-[#EFF6FF] rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-[#1E40AF] font-bold text-sm">3</span>
+            <div className="w-8 h-8 bg-[#fdf8ee] rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-[#0a1628] font-bold text-sm">3</span>
             </div>
             <div>
               <p className="font-medium text-gray-900">Legal Match</p>
@@ -62,8 +62,8 @@ export default function IntakeCompletePage() {
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 bg-[#EFF6FF] rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-[#1E40AF] font-bold text-sm">4</span>
+            <div className="w-8 h-8 bg-[#fdf8ee] rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-[#0a1628] font-bold text-sm">4</span>
             </div>
             <div>
               <p className="font-medium text-gray-900">File Your Claim</p>
@@ -76,11 +76,11 @@ export default function IntakeCompletePage() {
       {/* Additional Actions */}
       <div className="grid sm:grid-cols-2 gap-4 mb-8">
         <div className="card">
-          <Mail className="w-8 h-8 text-[#1E40AF] mx-auto mb-2" />
+          <Mail className="w-8 h-8 text-[#0a1628] mx-auto mb-2" />
           <p className="text-sm text-gray-700">Check your email for confirmation</p>
         </div>
         <div className="card">
-          <FileText className="w-8 h-8 text-[#1E40AF] mx-auto mb-2" />
+          <FileText className="w-8 h-8 text-[#0a1628] mx-auto mb-2" />
           <p className="text-sm text-gray-700">Login to upload additional documents</p>
         </div>
       </div>
@@ -89,11 +89,11 @@ export default function IntakeCompletePage() {
       <div className="bg-gray-100 rounded-lg p-6 mb-8">
         <h3 className="font-semibold text-[#111827] mb-3">Questions?</h3>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="tel:1-800-XXX-XXXX" className="flex items-center justify-center gap-2 text-[#1E40AF] hover:text-[#1E40AF]">
+          <a href="tel:1-800-XXX-XXXX" className="flex items-center justify-center gap-2 text-[#0a1628] hover:text-[#d4a843]">
             <Phone className="w-4 h-4" />
             1-800-XXX-XXXX
           </a>
-          <a href="mailto:support@legalcaseportal.com" className="flex items-center justify-center gap-2 text-[#1E40AF] hover:text-[#1E40AF]">
+          <a href="mailto:support@legalcaseportal.com" className="flex items-center justify-center gap-2 text-[#0a1628] hover:text-[#d4a843]">
             <Mail className="w-4 h-4" />
             support@legalcaseportal.com
           </a>

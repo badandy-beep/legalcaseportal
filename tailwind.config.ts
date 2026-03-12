@@ -17,16 +17,13 @@ const config: Config = {
         'accent': '#1E40AF',
         'accent-hover': '#1E3A8A',
         'accent-light': '#EFF6FF',
-        'alg-navy': 'rgb(var(--alg-navy-rgb) / <alpha-value>)',
-        'alg-gold': {
-          DEFAULT: 'rgb(var(--alg-gold-rgb) / <alpha-value>)',
-          light: 'rgb(var(--alg-gold-light-rgb) / <alpha-value>)',
-        },
-        'alg-white': '#ffffff',
-        'alg-gray': {
-          light: 'rgb(var(--alg-gray-light-rgb) / <alpha-value>)',
-          border: 'rgb(var(--alg-gray-border-rgb) / <alpha-value>)',
-        },
+        'alg-navy': '#0a1628',
+        'alg-navy-deep': '#060e1a',
+        'alg-gold': '#d4a843',
+        'alg-gold-dark': '#b8902e',
+        'alg-slate': '#475569',
+        'alg-surface': '#F8F9FA',
+        'alg-border': '#E2E8F0',
       },
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],

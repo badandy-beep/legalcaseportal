@@ -56,7 +56,7 @@ export default function Phase1Page() {
           type="date"
           value={dob}
           onChange={(e) => setDob(e.target.value)}
-          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] focus:border-[#1E40AF] transition"
+          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] focus:border-[#0a1628] transition"
           style={{ fontSize: '16px' }}
         />
       </QuestionScreen>
@@ -79,7 +79,7 @@ export default function Phase1Page() {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           placeholder="First name only is fine"
-          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] placeholder:text-gray-400 focus:border-[#1E40AF] transition"
+          className="w-full text-base p-4 border-2 rounded-2xl outline-none font-sans text-[#111827] placeholder:text-gray-400 focus:border-[#0a1628] transition"
           style={{ fontSize: '16px' }}
         />
       </QuestionScreen>

@@ -35,7 +35,7 @@ export default function HowVicpWorksPage() {
         {/* Page Title */}
         <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-14">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Federal Program</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-3">Federal Program</p>
             <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
               How the VICP Works
             </h1>
@@ -48,14 +48,14 @@ export default function HowVicpWorksPage() {
         {/* Timeline Steps */}
         <div className="relative">
           {/* Gold connector line */}
-          <div className="absolute left-[23px] top-4 bottom-4 w-[2px] bg-[#1E40AF]/30" />
+          <div className="absolute left-[23px] top-4 bottom-4 w-[2px] bg-[#d4a843]/30" />
 
           <div className="space-y-10">
             {steps.map((step, i) => (
               <div key={step.number} className="relative flex gap-6">
                 {/* Step number circle */}
-                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[#EFF6FF] border-2 border-[#1E40AF] flex items-center justify-center">
-                  <span className="text-[#1E40AF] font-bold text-lg">{step.number}</span>
+                <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-[#fdf8ee] border-2 border-[#0a1628] flex items-center justify-center">
+                  <span className="text-[#0a1628] font-bold text-lg">{step.number}</span>
                 </div>
 
                 {/* Content */}
@@ -69,7 +69,7 @@ export default function HowVicpWorksPage() {
         </div>
 
         {/* Callout Box */}
-        <div className="bg-gray-900 text-white p-8 rounded-xl mt-16">
+        <div className="bg-[#0a1628] text-white p-8 rounded-xl mt-16">
           <p className="text-lg leading-relaxed mb-6">
             <span className="font-bold">Important:</span> VICP filing deadlines are strict and
             unforgiving. If you believe your child may have been injured by a vaccine, contact
@@ -79,7 +79,7 @@ export default function HowVicpWorksPage() {
           <div className="text-center">
             <Link
               href="/intake/phase-1"
-              className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
+              className="inline-block bg-[#d4a843] text-[#0a1628] font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#b8902e] transition"
             >
               Get a Free Case Review &rarr;
             </Link>

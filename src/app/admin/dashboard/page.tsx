@@ -136,7 +136,7 @@ export default function AdminDashboard() {
 
   const statusColor = (status: string) => {
     const map: Record<string, string> = {
-      new: 'bg-blue-100 text-blue-800',
+      new: 'bg-[#0a1628] text-[#d4a843]',
       in_review: 'bg-yellow-100 text-yellow-800',
       qualified: 'bg-green-100 text-green-800',
       declined: 'bg-red-100 text-red-800',
@@ -173,7 +173,7 @@ export default function AdminDashboard() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-5 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition ${
                 activeTab === tab.id
-                  ? 'border-[#1E40AF] text-[#1E40AF]'
+                  ? 'border-[#0a1628] text-[#0a1628]'
                   : 'border-transparent text-[#475569] hover:text-[#111827]'
               }`}
             >
@@ -200,12 +200,12 @@ export default function AdminDashboard() {
                   placeholder="Search by name, email..."
                   value={searchTerm}
                   onChange={e => setSearchTerm(e.target.value)}
-                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
                 />
                 <select
                   value={statusFilter}
                   onChange={e => setStatusFilter(e.target.value)}
-                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
                 >
                   <option value="all">All Statuses</option>
                   <option value="new">New</option>
@@ -243,7 +243,7 @@ export default function AdminDashboard() {
                       <td className="px-4 py-3 text-[#475569]">{c.child_first_name} {c.child_last_name}</td>
                       <td className="px-4 py-3 text-[#475569]">{c.state}</td>
                       <td className="px-4 py-3 text-[#475569]">
-                        <a href={`mailto:${c.email}`} className="text-[#1E40AF] hover:underline">{c.email}</a>
+                        <a href={`mailto:${c.email}`} className="text-[#0a1628] hover:underline">{c.email}</a>
                       </td>
                       <td className="px-4 py-3">
                         <span className={`px-2 py-1 rounded-full text-xs font-semibold ${statusColor(c.status || 'new')}`}>
@@ -254,11 +254,11 @@ export default function AdminDashboard() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => downloadCasePDF(c)}
-                            className="bg-[#1E40AF] hover:bg-[#1E3A8A] text-white text-xs px-3 py-1.5 rounded-lg transition"
+                            className="bg-[#d4a843] hover:bg-[#b8902e] text-white text-xs px-3 py-1.5 rounded-lg transition"
                           >
                             PDF
                           </button>
-                          <button className="border border-[#E2E8F0] hover:border-[#1E40AF] text-[#475569] hover:text-[#1E40AF] text-xs px-3 py-1.5 rounded-lg transition">
+                          <button className="border border-[#E2E8F0] hover:border-[#0a1628] text-[#475569] hover:text-[#d4a843] text-xs px-3 py-1.5 rounded-lg transition">
                             View
                           </button>
                         </div>
@@ -296,7 +296,7 @@ export default function AdminDashboard() {
                       </div>
                       {item.dashboard_url && (
                         <a href={item.dashboard_url} target="_blank" rel="noopener noreferrer"
-                           className="text-xs text-[#1E40AF] hover:underline">Open Dashboard &rarr;</a>
+                           className="text-xs text-[#0a1628] hover:underline">Open Dashboard &rarr;</a>
                       )}
                     </div>
                   </div>
@@ -307,12 +307,12 @@ export default function AdminDashboard() {
                         {revealedKeys.has(item.id) ? item.api_key_encrypted : '••••••••••••••••••••••••••••••••'}
                       </code>
                       <button onClick={() => toggleRevealKey(item.id)}
-                              className="text-xs border border-[#E2E8F0] hover:border-[#1E40AF] px-3 py-1.5 rounded-lg text-[#475569] hover:text-[#1E40AF] transition">
+                              className="text-xs border border-[#E2E8F0] hover:border-[#0a1628] px-3 py-1.5 rounded-lg text-[#475569] hover:text-[#d4a843] transition">
                         {revealedKeys.has(item.id) ? 'Hide' : 'Reveal'}
                       </button>
                       {revealedKeys.has(item.id) && (
                         <button onClick={() => copyToClipboard(item.api_key_encrypted)}
-                                className="text-xs bg-[#1E40AF] text-white px-3 py-1.5 rounded-lg hover:bg-[#1E3A8A] transition">
+                                className="text-xs bg-[#d4a843] text-[#0a1628] px-3 py-1.5 rounded-lg hover:bg-[#b8902e] transition">
                           Copy
                         </button>
                       )}
@@ -347,7 +347,7 @@ export default function AdminDashboard() {
                 <tbody className="divide-y divide-[#E2E8F0]">
                   {domains.map(d => (
                     <tr key={d.id} className="hover:bg-[#F8F9FA] transition">
-                      <td className="px-4 py-3 font-mono text-sm font-semibold text-[#1E40AF]">{d.domain}</td>
+                      <td className="px-4 py-3 font-mono text-sm font-semibold text-[#0a1628]">{d.domain}</td>
                       <td className="px-4 py-3 text-[#475569]">{d.registrar}</td>
                       <td className="px-4 py-3 text-[#475569]">{d.expiry_date ? new Date(d.expiry_date).toLocaleDateString() : '—'}</td>
                       <td className="px-4 py-3 text-[#475569]">{d.pointed_to || '—'}</td>
@@ -436,7 +436,7 @@ export default function AdminDashboard() {
                   </div>
                   <div className="p-3">
                     <p className="text-xs font-medium text-[#111827] mb-2">{asset.label}</p>
-                    <a href={asset.src} download className="text-xs text-[#1E40AF] hover:underline">Download</a>
+                    <a href={asset.src} download className="text-xs text-[#0a1628] hover:underline">Download</a>
                   </div>
                 </div>
               ))}
@@ -455,10 +455,10 @@ export default function AdminDashboard() {
                 <dl className="space-y-2 text-sm">
                   <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Project ID:</dt><dd className="font-mono text-[#111827]">nyrarsaigsetyvinlpay</dd></div>
                   <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Region:</dt><dd className="text-[#111827]">us-east-1</dd></div>
-                  <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Total Cases:</dt><dd className="font-bold text-[#1E40AF]">{cases.length}</dd></div>
+                  <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Total Cases:</dt><dd className="font-bold text-[#0a1628]">{cases.length}</dd></div>
                 </dl>
                 <a href="https://supabase.com/dashboard/project/nyrarsaigsetyvinlpay" target="_blank" rel="noopener noreferrer"
-                   className="mt-4 inline-block text-sm text-[#1E40AF] font-semibold hover:underline">Open Supabase Dashboard &rarr;</a>
+                   className="mt-4 inline-block text-sm text-[#0a1628] font-semibold hover:underline">Open Supabase Dashboard &rarr;</a>
               </div>
               <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
                 <h3 className="font-bold text-[#111827] mb-4">Tables</h3>
@@ -494,7 +494,7 @@ export default function AdminDashboard() {
                 <h3 className="font-bold text-[#111827] mb-4">Admin Users</h3>
                 <p className="text-sm text-[#475569]">Manage user access in the Supabase Dashboard &rarr; admin_users table. Add users via Supabase Auth, then insert their user_id and role.</p>
                 <a href="https://supabase.com/dashboard/project/nyrarsaigsetyvinlpay/editor" target="_blank" rel="noopener noreferrer"
-                   className="mt-3 inline-block text-sm text-[#1E40AF] font-semibold hover:underline">Manage Users in Supabase &rarr;</a>
+                   className="mt-3 inline-block text-sm text-[#0a1628] font-semibold hover:underline">Manage Users in Supabase &rarr;</a>
               </div>
             </div>
           </div>
@@ -523,7 +523,7 @@ export default function AdminDashboard() {
                     <tr key={log.id} className="hover:bg-[#F8F9FA]">
                       <td className="px-4 py-3 text-[#475569] whitespace-nowrap text-xs">{new Date(log.created_at).toLocaleString()}</td>
                       <td className="px-4 py-3 text-[#111827] text-xs">{log.user_email}</td>
-                      <td className="px-4 py-3"><span className="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded font-mono">{log.action}</span></td>
+                      <td className="px-4 py-3"><span className="bg-[#0a1628] text-[#d4a843] text-xs px-2 py-1 rounded font-mono">{log.action}</span></td>
                       <td className="px-4 py-3 text-[#475569] text-xs">{log.resource}</td>
                       <td className="px-4 py-3 text-[#475569] font-mono text-xs">{log.resource_id?.slice(0,8) || '—'}</td>
                     </tr>

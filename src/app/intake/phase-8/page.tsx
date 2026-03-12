@@ -99,7 +99,7 @@ export default function Phase8Page() {
           {/* Diagnosis Info */}
           <div className="space-y-4">
             <h2 className="text-lg font-semibold text-[#111827] flex items-center gap-2">
-              <Brain className="w-5 h-5 text-[#1E40AF]" /> Diagnosis Information
+              <Brain className="w-5 h-5 text-[#0a1628]" /> Diagnosis Information
             </h2>
             <div><label className="input-label">Has your child received an official ASD diagnosis?</label>
               <select name="hasDiagnosis" value={formData.hasDiagnosis} onChange={handleChange} className="input-field">
@@ -154,7 +154,7 @@ export default function Phase8Page() {
             <h2 className="text-lg font-semibold text-[#111827]">Social Communication Symptoms</h2>
             <div className="grid gap-2">
               {SOCIAL_SYMPTOMS.map(s => (
-                <label key={s} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${socialSymptoms.includes(s) ? 'border-[#1E40AF] bg-[#1E40AF]/10' : 'border-gray-200'}`}>
+                <label key={s} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${socialSymptoms.includes(s) ? 'border-[#0a1628] bg-[#d4a843]/10' : 'border-gray-200'}`}>
                   <input type="checkbox" checked={socialSymptoms.includes(s)} onChange={() => toggleSymptom(socialSymptoms, setSocialSymptoms, s)} className="checkbox-custom" />
                   <span className="text-sm">{s}</span>
                 </label>
@@ -167,7 +167,7 @@ export default function Phase8Page() {
             <h2 className="text-lg font-semibold text-[#111827]">Repetitive/Restricted Behaviors</h2>
             <div className="grid gap-2">
               {REPETITIVE_BEHAVIORS.map(b => (
-                <label key={b} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${repetitiveBehaviors.includes(b) ? 'border-[#1E40AF] bg-[#1E40AF]/10' : 'border-gray-200'}`}>
+                <label key={b} className={`flex items-center gap-3 p-3 rounded-lg border-2 cursor-pointer ${repetitiveBehaviors.includes(b) ? 'border-[#0a1628] bg-[#d4a843]/10' : 'border-gray-200'}`}>
                   <input type="checkbox" checked={repetitiveBehaviors.includes(b)} onChange={() => toggleSymptom(repetitiveBehaviors, setRepetitiveBehaviors, b)} className="checkbox-custom" />
                   <span className="text-sm">{b}</span>
                 </label>
