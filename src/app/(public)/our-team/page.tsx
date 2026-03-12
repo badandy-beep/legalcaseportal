@@ -19,29 +19,89 @@ export default function OurTeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Alex J. Kompothecras */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="/Alex-Kompothecras.webp" alt="Alex J. Kompothecras" className="w-full h-72 object-cover object-top" />
+              <img src="/Alex-Kompothecras.webp" alt="Alex J. Kompothecras" className="w-full h-80 object-cover object-top" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Alex J. Kompothecras</h3>
-                <p className="text-[#1E40AF] font-semibold text-sm mt-1">Managing Attorney — Alpha Law Group</p>
-                <p className="text-xs text-[#475569] italic mb-4">Board of Directors — Autism Justice Foundation</p>
-                <p className="text-sm text-[#475569] leading-relaxed">
-                  Alex J. Kompothecras is the Managing Attorney of Alpha Law Group in Sarasota, Florida. Raised alongside two siblings — Bronson and Sarah Alice — who live with severe autism, Alex&rsquo;s commitment to this cause is deeply personal. He co-founded the Autism Justice Foundation in September 2025 alongside his father, Dr. Gary Kompothecras, and serves on its Board of Directors. Alex leads VICP claims for autism families across Florida, fighting to recover federal compensation that families are owed — and often don&rsquo;t even know exists.
-                </p>
-                <div className="border-t border-[#E2E8F0] pt-4 mt-4">
-                  <a href="tel:9413041500" className="text-[#1E40AF] font-semibold text-sm">(941) 304-1500</a>
+                <h2 className="text-xl font-bold text-[#111827] mb-1" style={{fontFamily:'Georgia,serif'}}>Alex J. Kompothecras</h2>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-1">Managing Attorney — Alpha Law Group</p>
+                <p className="text-xs text-[#475569] italic mb-5">Board of Directors — Autism Justice Foundation</p>
+
+                {/* Credential badges */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">Florida Bar Certified</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">12th Judicial Circuit</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">VICP Specialist</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">No Fee Unless We Win</span>
+                </div>
+
+                <div className="space-y-4 text-sm text-[#475569] leading-relaxed">
+                  <p>
+                    Alex J. Kompothecras is the Managing Attorney of Alpha Law Group, a personal injury and civil litigation firm headquartered in Sarasota, Florida, with offices in Miami and Minnesota. Licensed to practice in Florida&rsquo;s 12th Judicial Circuit, Alex has built a reputation for aggressive, results-driven advocacy on behalf of injury victims — combining sharp legal strategy with the kind of genuine compassion that only comes from having lived through the experience himself.
+                  </p>
+                  <p>
+                    Alex grew up alongside his two siblings, Bronson and Sarah Alice, both of whom were diagnosed with severe autism as toddlers. Watching his family navigate an overwhelmed system — fighting for answers, for resources, and for accountability — shaped everything about how Alex approaches the law. He did not choose personal injury work by accident. He chose it because he understands, at a visceral level, what it means when a family is injured by a system that was supposed to protect them and has no roadmap for what comes next.
+                  </p>
+                  <p>
+                    At Alpha Law Group, Alex handles the full spectrum of personal injury matters: automobile and truck accidents, catastrophic injury, wrongful death, medical malpractice, product liability, and slip-and-fall cases. He is known for breaking down complex legal issues in plain language, keeping clients informed and confident at every stage — and for refusing to let insurance companies lowball families who deserve full and fair compensation for medical expenses, lost wages, and long-term recovery.
+                  </p>
+                  <p>
+                    In September 2025, Alex co-founded the <strong className="text-[#111827]">Autism Justice Foundation</strong> alongside his father, Dr. Gary Kompothecras, channeling the family&rsquo;s decades of advocacy into a formal 501(c)(4) nonprofit organization. He serves on the Foundation&rsquo;s Board of Directors, working to expose the federal Vaccine Injury Compensation Program to the millions of autism families who qualify for compensation but have never been told it exists.
+                  </p>
+                  <p>
+                    That mission directly informs Alex&rsquo;s legal practice at the Case Portal. Through Alpha Law Group, Alex leads VICP claims for autism families across Florida — filing on their behalf in the U.S. Court of Federal Claims at zero upfront cost, on a pure contingency basis. The VICP has paid out over <strong className="text-[#111827]">$5.4 billion</strong> in compensation since its inception. Alex&rsquo;s goal is simple: make sure affected families collect every dollar they are owed.
+                  </p>
+                  <p>
+                    Beyond the courtroom, Alex is an active community advocate. He co-organized the <strong className="text-[#111827]">Alpha Law Group Autism 5K Run/Walk</strong> in Sarasota, bringing together hundreds of families, advocates, and community members in support of autism awareness and research. He maintains a client-first philosophy across every case he touches — treating each family&rsquo;s fight as if it were his own, because in many ways, it is.
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-[#E2E8F0] flex items-center justify-between">
+                  <a href="tel:9413041500" className="text-sm text-[#1E40AF] font-bold hover:text-[#1E3A8A] transition">(941) 304-1500</a>
+                  <a href="/intake/phase-1" className="bg-[#1E40AF] hover:bg-[#1E3A8A] text-white text-xs font-semibold px-4 py-2 rounded-lg transition">Start My Claim &rarr;</a>
                 </div>
               </div>
             </div>
 
-            {/* Chase Engelbrecht */}
+            {/* Chase J. Engelbrecht */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="/Chase-Engelbrecht.webp" alt="Chase Engelbrecht" className="w-full h-72 object-cover object-top" />
+              <img src="/Chase-Engelbrecht.webp" alt="Chase J. Engelbrecht" className="w-full h-80 object-cover object-top" />
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Chase Engelbrecht</h3>
-                <p className="text-[#1E40AF] font-semibold text-sm mb-4 mt-1">Attorney — Alpha Law Group</p>
-                <p className="text-sm text-[#475569] leading-relaxed">
-                  Chase Engelbrecht is an attorney at Alpha Law Group dedicated to representing vaccine-injured families in VICP proceedings. An active member of the autism advocacy community and co-organizer of the Autism 5K, Chase brings compassion, diligence, and legal expertise to every family he represents.
-                </p>
+                <h2 className="text-xl font-bold text-[#111827] mb-1" style={{fontFamily:'Georgia,serif'}}>Chase J. Engelbrecht</h2>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-5">Attorney — Alpha Law Group</p>
+
+                {/* Credential badges */}
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">Super Lawyers&reg; Rated</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">Florida Bar Certified</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">12th Judicial Circuit</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">VICP Advocate</span>
+                  <span className="text-xs bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE] px-2 py-1 rounded-full font-medium">No Fee Unless We Win</span>
+                </div>
+
+                <div className="space-y-4 text-sm text-[#475569] leading-relaxed">
+                  <p>
+                    Chase J. Engelbrecht is an attorney at Alpha Law Group and one of the Sarasota area&rsquo;s most dedicated advocates for injury victims and their families. Recognized by <strong className="text-[#111827]">Super Lawyers&reg;</strong> — an honor reserved for attorneys who have attained a high degree of peer recognition and professional achievement — Chase brings both courtroom rigor and genuine human compassion to every case he handles.
+                  </p>
+                  <p>
+                    Chase&rsquo;s practice spans the full range of personal injury law: car, truck, and motorcycle accidents; catastrophic and traumatic brain injuries; wrongful death; medical malpractice; product liability; slip-and-fall; and workers&rsquo; compensation. Practicing throughout Florida&rsquo;s 12th Judicial Circuit, Chase is known for building meticulously tailored legal strategies designed to protect his clients&rsquo; rights while maximizing recovery — whether at the negotiating table or in front of a jury.
+                  </p>
+                  <p>
+                    What sets Chase apart is that his professional commitment to justice extends well beyond the office. Chase has become a visible and passionate advocate in the autism community — co-organizing the <strong className="text-[#111827]">Alpha Law Group Autism 5K Run/Walk</strong> in Sarasota, an annual event that brings together hundreds of families, healthcare professionals, and community members to raise awareness and funds for autism research. For Chase, the 5K is not a marketing event — it is a personal expression of the firm&rsquo;s belief that advocacy must happen in the community, not just in court.
+                  </p>
+                  <p>
+                    That community commitment translates directly into Chase&rsquo;s work on VICP cases through the Legal Case Portal. Chase works alongside Alex to represent autism families in the federal Vaccine Injury Compensation Program — a no-fault, congressionally established system that has paid over <strong className="text-[#111827]">$5.4 billion</strong> in compensation to vaccine-injured individuals and their families. The vast majority of eligible families never file, either because they don&rsquo;t know the program exists or because they believe they cannot afford an attorney. Chase&rsquo;s role is to remove both barriers: he educates families on their rights, and he represents them on a pure contingency basis — no fees, no costs, unless compensation is recovered.
+                  </p>
+                  <p>
+                    Chase&rsquo;s approach to client service is rooted in the belief that families navigating a child&rsquo;s autism diagnosis are already carrying an enormous burden. His job is to lighten it — to handle every legal detail with diligence and care, so that parents can focus on what matters most: their child. He treats every family that walks through Alpha Law Group&rsquo;s doors with the same personal attention he would want for his own family, and he remains accessible, responsive, and transparent at every stage of the process.
+                  </p>
+                  <p>
+                    At Alpha Law Group, Chase upholds the firm&rsquo;s core promise: every client receives the personalized attention their case demands, and every fight is pursued with the full force of the firm&rsquo;s legal resources — because when a family has been harmed, half-measures are not an option.
+                  </p>
+                </div>
+
+                <div className="mt-6 pt-5 border-t border-[#E2E8F0] flex items-center justify-between">
+                  <a href="tel:9413041500" className="text-sm text-[#1E40AF] font-bold hover:text-[#1E3A8A] transition">(941) 304-1500</a>
+                  <a href="/intake/phase-1" className="bg-[#1E40AF] hover:bg-[#1E3A8A] text-white text-xs font-semibold px-4 py-2 rounded-lg transition">Start My Claim &rarr;</a>
+                </div>
               </div>
             </div>
           </div>
