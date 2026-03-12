@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Script from 'next/script'
 
 export default function OurStoryPage() {
   return (
@@ -182,25 +181,48 @@ export default function OurStoryPage() {
             {' '}&mdash; two organizations providing direct support services to individuals and families living with autism and developmental disabilities in the region. This is not a marketing event. It is a public declaration, made every year, that this fight is personal.
           </p>
 
-          {/* Instagram 5K Reel */}
-          <div className="my-6 flex justify-center">
-            <blockquote
-              className="instagram-media"
-              data-instgrm-captioned
-              data-instgrm-permalink="https://www.instagram.com/reel/DURb_0fja9i/"
-              data-instgrm-version="14"
-              style={{ background: '#FFF', border: 0, borderRadius: '3px', boxShadow: '0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15)', margin: '1px', maxWidth: '540px', minWidth: '326px', padding: 0, width: '99.375%' }}
+          {/* 5K Reel — Phone Frame */}
+          <div className="my-10 flex justify-center items-center">
+            <div
+              style={{
+                transform: 'rotate(-2deg)',
+                background: '#111827',
+                borderRadius: '2.5rem',
+                padding: '12px',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15)',
+                maxWidth: '300px',
+                width: '100%',
+                position: 'relative',
+              }}
             >
-              <a
-                href="https://www.instagram.com/reel/DURb_0fja9i/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium text-sm"
-              >
-                View the 2026 Alpha Law Group Autism 5K on Instagram
-              </a>
-            </blockquote>
+              {/* Notch */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '12px',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '80px',
+                  height: '24px',
+                  background: '#111827',
+                  borderRadius: '0 0 16px 16px',
+                  zIndex: 10,
+                }}
+              />
+              <video
+                src="/5k-reel-web.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                poster=""
+                className="w-full rounded-[2rem]"
+                style={{ aspectRatio: '9/16', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
           </div>
+          <p className="text-center text-xs text-[#475569] italic -mt-4 mb-6">
+            The 2026 Alpha Law Group Autism 5K at Nathan Benderson Park
+          </p>
 
           <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-5">
             <p className="text-sm font-semibold text-[#1E40AF] mb-1">Want to get involved?</p>
@@ -247,7 +269,6 @@ export default function OurStoryPage() {
           </Link>
         </div>
       </div>
-      <Script src="https://www.instagram.com/embed.js" strategy="lazyOnload" />
     </div>
   )
 }
