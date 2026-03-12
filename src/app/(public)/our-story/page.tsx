@@ -185,47 +185,41 @@ export default function OurStoryPage() {
             {' '}&mdash; two organizations providing direct support services to individuals and families living with autism and developmental disabilities in the region. This is not a marketing event. It is a public declaration, made every year, that this fight is personal.
           </p>
 
-          {/* 5K Reel — Landscape Phone Frame */}
-          <div className="my-10 flex justify-center items-center">
-            <div
-              style={{
-                transform: 'rotate(-1deg)',
-                background: '#111827',
-                borderRadius: '20px',
-                padding: '10px',
-                boxShadow: '0 25px 60px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15)',
-                width: '480px',
-                maxWidth: '100%',
-              }}
-            >
-              <video
-                src="/5k-reel-web.mp4"
-                controls
-                playsInline
-                preload="metadata"
-                poster=""
-                className="w-full rounded-[12px]"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-          </div>
-          <p className="text-center text-xs text-[#475569] italic -mt-4 mb-6">
-            The 2026 Alpha Law Group Autism 5K at Nathan Benderson Park
-          </p>
-
-          <div className="bg-[#fdf8ee] border border-[#d4a843]/40 rounded-lg p-5">
-            <p className="text-sm font-semibold text-[#0a1628] mb-1">Want to get involved?</p>
-            <p className="text-sm text-[#475569]">
-              Follow the event, donate, or register for next year at{' '}
+          <div className="mt-10 mb-4">
+            {/* 5K Banner Header */}
+            <div className="bg-[#0a1628] rounded-t-2xl px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div>
+                <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans mb-1">Annual Event</p>
+                <h3 className="text-white text-xl font-bold leading-tight" style={{fontFamily:'Georgia,serif'}}>
+                  Alpha Law Group Autism 5K Run
+                </h3>
+                <p className="text-[#94a3b8] text-sm font-sans mt-1">
+                  Nathan Benderson Park · Sarasota, FL · Benefiting Autism Society of Florida &amp; The Haven
+                </p>
+              </div>
               <a
                 href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#0a1628] underline hover:text-[#d4a843] font-medium"
+                className="flex-shrink-0 inline-block bg-[#d4a843] text-[#0a1628] font-sans font-bold text-xs tracking-widest uppercase px-5 py-3 rounded-lg hover:bg-[#b8902e] transition-colors text-center"
               >
-                runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K
+                Register →
               </a>
-            </p>
+            </div>
+            {/* Video — no poster, no feature image */}
+            <div className="rounded-b-2xl overflow-hidden border-x-2 border-b-2 border-[#0a1628] bg-black">
+              <video
+                className="w-full block"
+                style={{transform:'none', display:'block'}}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                <source src="/5k-reel-web.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </section>
 
