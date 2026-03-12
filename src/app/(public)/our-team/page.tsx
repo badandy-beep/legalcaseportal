@@ -79,22 +79,22 @@ export default function OurTeamPage() {
 
                 <div className="space-y-4 text-sm text-[#475569] leading-relaxed">
                   <p>
-                    Chase J. Engelbrecht is an attorney at Alpha Law Group and one of the Sarasota area&rsquo;s most dedicated advocates for injury victims and their families. Recognized by <strong className="text-[#111827]">Super Lawyers&reg;</strong> — an honor reserved for attorneys who have attained a high degree of peer recognition and professional achievement — Chase brings both courtroom rigor and genuine human compassion to every case he handles.
+                    Chase J. Engelbrecht is an attorney at Alpha Law Group, practicing personal injury and civil litigation in Sarasota, Florida&apos;s 12th Judicial Circuit. Recognized by Super Lawyers&reg; as a Rising Star, Chase handles automobile accidents, catastrophic injury, wrongful death, and premises liability matters — bringing the same client-first intensity to every case regardless of size.
                   </p>
                   <p>
-                    Chase&rsquo;s practice spans the full range of personal injury law: car, truck, and motorcycle accidents; catastrophic and traumatic brain injuries; wrongful death; medical malpractice; product liability; slip-and-fall; and workers&rsquo; compensation. Practicing throughout Florida&rsquo;s 12th Judicial Circuit, Chase is known for building meticulously tailored legal strategies designed to protect his clients&rsquo; rights while maximizing recovery — whether at the negotiating table or in front of a jury.
+                    Chase came to Alpha Law Group because he shares Alex&apos;s conviction that injured people deserve a lawyer who actually fights for them. He has become a core part of the firm&apos;s autism advocacy work — supporting VICP families through the intake and filing process and helping build the case that the federal compensation system has left too many families behind.
                   </p>
                   <p>
-                    What sets Chase apart is that his professional commitment to justice extends well beyond the office. Chase has become a visible and passionate advocate in the autism community — co-organizing the <strong className="text-[#111827]">Alpha Law Group Autism 5K Run/Walk</strong> in Sarasota, an annual event that brings together hundreds of families, healthcare professionals, and community members to raise awareness and funds for autism research. For Chase, the 5K is not a marketing event — it is a personal expression of the firm&rsquo;s belief that advocacy must happen in the community, not just in court.
-                  </p>
-                  <p>
-                    That community commitment translates directly into Chase&rsquo;s work on VICP cases through the Legal Case Portal. Chase works alongside Alex to represent autism families in the federal Vaccine Injury Compensation Program — a no-fault, congressionally established system that has paid over <strong className="text-[#111827]">$5.4 billion</strong> in compensation to vaccine-injured individuals and their families. The vast majority of eligible families never file, either because they don&rsquo;t know the program exists or because they believe they cannot afford an attorney. Chase&rsquo;s role is to remove both barriers: he educates families on their rights, and he represents them on a pure contingency basis — no fees, no costs, unless compensation is recovered.
-                  </p>
-                  <p>
-                    Chase&rsquo;s approach to client service is rooted in the belief that families navigating a child&rsquo;s autism diagnosis are already carrying an enormous burden. His job is to lighten it — to handle every legal detail with diligence and care, so that parents can focus on what matters most: their child. He treats every family that walks through Alpha Law Group&rsquo;s doors with the same personal attention he would want for his own family, and he remains accessible, responsive, and transparent at every stage of the process.
-                  </p>
-                  <p>
-                    At Alpha Law Group, Chase upholds the firm&rsquo;s core promise: every client receives the personalized attention their case demands, and every fight is pursued with the full force of the firm&rsquo;s legal resources — because when a family has been harmed, half-measures are not an option.
+                    Chase participates in the firm&apos;s ASD community outreach, including the{' '}
+                    <a
+                      href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+                    >
+                      Alpha Law Group Autism 5K
+                    </a>
+                    {' '}at Nathan Benderson Park — now in its second year — which benefits the Autism Society of Florida and The Haven of Sarasota.
                   </p>
                 </div>
 

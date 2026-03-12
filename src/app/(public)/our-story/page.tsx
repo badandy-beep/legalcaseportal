@@ -112,6 +112,67 @@ export default function OurStoryPage() {
 
         <hr className="border-[#1E40AF]/30 my-10" />
 
+        {/* Section — The 5K */}
+        <section className="space-y-6 mb-10">
+          <h2 className="text-2xl font-bold text-[#111827]">The 5K: Community in Action</h2>
+
+          <p className="text-[#475569] leading-relaxed">
+            Advocacy that stays inside a courtroom only goes so far. In 2025, Alex and the Alpha Law Group team took it to the streets — literally. The first{' '}
+            <a
+              href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium"
+            >
+              Alpha Law Group Autism 5K
+            </a>
+            {' '}was born out of the same conviction that drove Alex to pay Francisco Diaz-Burgos&apos;s bail: that autism families in Sarasota deserve a community that shows up for them.
+          </p>
+
+          <p className="text-[#475569] leading-relaxed">
+            The event — held at Nathan Benderson Park — came back for its second year on March 7, 2026, and grew into something far bigger than a race. Families, runners, and community members gathered for a 5K, an Autism Mile walk, three bouncy houses, food trucks, pony rides, and a free festival environment designed specifically with children and young adults with autism in mind. The tagline says it plainly: <em>&ldquo;1 in 36 — The Connection Is You.&rdquo;</em>
+          </p>
+
+          <p className="text-[#475569] leading-relaxed">
+            Proceeds benefit the{' '}
+            <a
+              href="https://www.autismsocietyfl.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+            >
+              Autism Society of Florida
+            </a>
+            {' '}and{' '}
+            <a
+              href="https://www.havenofRRC.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#1E40AF] underline hover:text-[#1E3A8A]"
+            >
+              The Haven of Sarasota
+            </a>
+            {' '}&mdash; two organizations providing direct support services to individuals and families living with autism and developmental disabilities in the region. This is not a marketing event. It is a public declaration, made every year, that this fight is personal.
+          </p>
+
+          <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-lg p-5">
+            <p className="text-sm font-semibold text-[#1E40AF] mb-1">Want to get involved?</p>
+            <p className="text-sm text-[#475569]">
+              Follow the event, donate, or register for next year at{' '}
+              <a
+                href="https://runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#1E40AF] underline hover:text-[#1E3A8A] font-medium"
+              >
+                runsignup.com/Race/FL/Sarasota/AlphaLawGroupAutism5K
+              </a>
+            </p>
+          </div>
+        </section>
+
+        <hr className="border-[#1E40AF]/30 my-10" />
+
         {/* Section 4 — The Foundation */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Foundation</h2>
