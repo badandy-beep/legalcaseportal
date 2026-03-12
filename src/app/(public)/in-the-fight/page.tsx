@@ -96,6 +96,37 @@ const articles = [
     ],
   },
   {
+    slug: 'andrew-wakefield-the-doctor-who-asked',
+    category: 'The Science Debate',
+    date: 'March 12, 2026',
+    title: 'The Doctor Who Asked the Question They Didn\'t Want Asked — and Paid Everything for It',
+    deck: 'Andrew Wakefield was a respected gastroenterologist at one of Britain\'s top hospitals when he published a study that changed the trajectory of autism science. What happened next became one of the most disputed chapters in modern medical history.',
+    image: '/gary-senate-sb1756-feb2026.jpg',
+    imageCaption: 'Dr. Gary Kompothecras — executive producer of VAXXED — at the Florida Senate Appropriations Committee hearing on medical freedom, February 24, 2026.',
+    author: 'AJF Editorial Staff',
+    body: [
+      { type: 'p', text: 'There is a version of Andrew Wakefield that the medical establishment wants you to know: a disgraced former doctor, struck off the British medical register, whose 1998 study linking the MMR vaccine to autism was retracted and whose claims were formally condemned by a General Medical Council tribunal. That version exists, and those are facts.' },
+      { type: 'p', text: 'There is another version — the one held by tens of thousands of autism families across the United States and United Kingdom — of a physician who listened to parents when no one else would, who documented what those parents were telling him, who asked a question the medical industrial complex was not prepared to answer, and who was systematically destroyed for asking it. That version also exists. Both are part of the record. The Autism Justice Foundation presents both, because the families we serve deserve the full picture — not the sanitized institutional one.' },
+      { type: 'h2', text: 'Who Andrew Wakefield Was Before 1998' },
+      { type: 'p', text: 'Andrew Jeremy Wakefield was born in 1957 in Britain. His father was a neurologist. His mother was a general practitioner. He studied medicine at St. Mary\'s Hospital Medical School, qualified in 1981, and became a Fellow of the Royal College of Surgeons in 1985. He spent time at the University of Toronto researching small intestine transplantation, then returned to the UK to work on the liver transplant programme at the Royal Free Hospital in London. By the mid-1990s he was a senior lecturer and honorary consultant in experimental gastroenterology — a serious academic physician with a legitimate research record. He was not a fringe figure. He was not an outsider. He was inside the institution, with a career built on peer-reviewed work, when a parent named Rosemary Kessick walked into his clinic in 1995.' },
+      { type: 'p', text: 'Kessick\'s son had autism and bowel disease. She believed the two were connected to his MMR vaccination. She was not the only one. In the years that followed, Wakefield began hearing the same story from parent after parent: a child who was developing normally, received the MMR vaccine at 12 to 15 months, and then regressed — losing language, losing eye contact, withdrawing from the world. The parents were not random conspiracy theorists. They were mothers and fathers watching something happen to their children that their pediatricians refused to acknowledge. Wakefield listened.' },
+      { type: 'h2', text: 'The 1998 Lancet Study' },
+      { type: 'p', text: 'In February 1998, Wakefield and twelve co-authors published a case series in The Lancet involving twelve children with developmental disorders, intestinal symptoms, and a reported temporal relationship between MMR vaccination and the onset of their symptoms. The paper carefully noted that it did not "prove" a causal connection between the vaccine and autism. What Wakefield stated at the press conference accompanying the publication — that he believed single vaccines should be used instead of the combined MMR until the question could be definitively resolved — was a recommendation that went beyond the paper itself, and it ignited a firestorm.' },
+      { type: 'p', text: 'MMR vaccination rates in the UK fell from over 90 percent to 79 percent. Measles outbreaks followed. The medical establishment mobilized. The study was scrutinized in a way that few papers in scientific history had been. Multiple subsequent large-scale studies found no link between MMR vaccination and autism. In 2004, journalist Brian Deer reported that Wakefield had undisclosed financial relationships with lawyers representing parents in lawsuits against vaccine manufacturers, and that he had received significant funding from the UK\'s Legal Aid Board that was not declared in the Lancet paper. Ten of the twelve co-authors withdrew their support for the paper\'s interpretation. The Lancet fully retracted the study in January 2010. In May 2010, the General Medical Council struck Wakefield off the UK medical register, citing dishonest conduct, ethical violations, and the deliberate mistreatment of developmentally delayed children in the course of his research.' },
+      { type: 'h2', text: 'What Wakefield Has Always Said' },
+      { type: 'p', text: 'Wakefield has never recanted. He has denied fraud, denied falsification, and denied that financial relationships drove his conclusions. He maintains that his clinical findings were real — that the children in his study had both gastrointestinal disease and autism, that the parental reports of post-vaccination regression were genuine, and that the institutional response to his work was a campaign of suppression rather than a refutation. "I don\'t put any of the blame on anybody else," he said in a 2024 Epoch Times interview with his colleagues. "I followed the science where it led." That position has not moved in twenty-five years.' },
+      { type: 'p', text: 'He moved to Austin, Texas after his resignation from Royal Free Hospital, co-founded the Thoughtful House research centre to study autism, and has continued working with autism families through advocacy, speaking, and film. In 2016, he directed VAXXED: From Cover-Up to Catastrophe, a documentary centered on CDC senior scientist William Thompson\'s recorded claims that he and his co-authors had omitted a correlation between the MMR vaccine and autism in African-American boys from a 2004 CDC study. Thompson later issued a statement insisting he believed vaccines saved lives and should not be avoided — but his admission that data had been handled in ways he found troubling was enough to reignite the debate in the autism community worldwide.' },
+      { type: 'vimeo', videoId: '194188493', title: 'VAXXED: From Cover-Up to Catastrophe — Gary Kompothecras Producer Version' },
+      { type: 'h2', text: 'Why This Film Matters to Autism Families' },
+      { type: 'p', text: 'The version of VAXXED embedded above is the producer version made available by Dr. Gary Kompothecras — a Sarasota physician, long-time autism advocate, and co-founder of the Autism Justice Foundation who has been fighting this battle since 2008. Gary was in those Florida legislative hearings, pressuring state health officials when no one in mainstream medicine would engage the question. He produced this film because he believed the story in it needed to reach more families. The medical establishment has a version of the Andrew Wakefield story that is neat, finalized, and designed to end the conversation. VAXXED is the other version — the one the parents tell.' },
+      { type: 'p', text: 'The Autism Justice Foundation takes no institutional position on the MMR-autism question as a matter of scientific consensus. The scientific establishment has reached its conclusion. We note, however, that the federal Vaccine Injury Compensation Program — the very legal mechanism through which we help families seek accountability — exists precisely because Congress acknowledged in 1986 that vaccines can and do cause injury in some individuals, and that those families deserve a path to compensation. The debate is not whether vaccines can injure. The VICP is proof that they can. The debate is always about which injuries, in which children, with which biological vulnerabilities.' },
+      { type: 'h2', text: 'The Question That Has Never Gone Away' },
+      { type: 'p', text: 'In the United States, autism now affects approximately 1 in 36 children — a figure that has risen steadily and dramatically since the early 1990s. The cause of that rise remains, officially, "largely unknown." The families who come to the Autism Justice Foundation are not asking us to resolve the science. They are asking us to help them navigate a legal system that Congress designed specifically to compensate vaccine-injured children — a system that the government funds and operates, and that exists because the question Andrew Wakefield asked in 1998 has an answer that some families already know.' },
+      { type: 'p', text: 'Whatever you believe about Andrew Wakefield — and thoughtful, informed people believe very different things — the question he raised has not been silenced. It has been amplified. The MAHA movement now operates at the federal level. The CDC\'s vaccine safety data is under formal review. The Medical Freedom Act passed the Florida Senate in March 2026. The families who were told for twenty-five years that their children\'s regression was coincidental are no longer being told to sit down and accept it. Whether Wakefield was right, wrong, or somewhere in between, the movement he helped catalyze has arrived at the center of American health policy. The children in his 1998 study are now adults. Their parents are still asking the same question.' },
+      { type: 'warning', text: 'If your child was diagnosed with autism and you believe vaccine injury played a role, the Vaccine Injury Compensation Program may provide a path to accountability. VICP claims must generally be filed within 3 years of the first symptom. Free consultation — no obligation.' },
+    ],
+  },
+  {
     slug: 'alex-5k-asf-honorary-board',
     category: 'Community Advocacy',
     date: 'March 12, 2026',
@@ -390,6 +421,28 @@ export default function InTheFightPage() {
                           </div>
                         </div>
                       </a>
+                    </div>
+                  )
+                }
+                if (block.type === 'vimeo' && block.videoId) {
+                  return (
+                    <div key={i} className="my-8 rounded-2xl overflow-hidden border border-[#E2E8F0] shadow-md">
+                      <div className="bg-[#0a1628] px-4 py-3 flex items-center justify-between">
+                        <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans">
+                          ▶ {block.title || 'Watch Documentary'}
+                        </p>
+                        <span className="text-[#94a3b8] text-xs font-sans italic">Producer Version</span>
+                      </div>
+                      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://player.vimeo.com/video/${block.videoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0`}
+                          title={block.title || 'Documentary'}
+                          frameBorder="0"
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                          allowFullScreen
+                        />
+                      </div>
                     </div>
                   )
                 }
