@@ -1,122 +1,236 @@
 import Link from 'next/link'
 
-const team = [
-  {
-    name: 'Alex J. Kompothecras',
-    title: 'Managing Attorney, Alpha Law Group',
-    badge: 'Justice for Autism — Lead Counsel',
-    image: '/Alex-Kompothecras.webp',
-    bio: 'Alex is the 28-year-old Managing Attorney of Alpha Law Group and the driving force behind the Justice for Autism initiative. A licensed attorney in Florida\u2019s 12th Judicial Circuit, Alex built Alpha Law Group with a client-first philosophy and a singular focus on fighting for the marginalized. His personal connection to autism \u2014 growing up with siblings Bronson and Sarah Alice \u2014 has shaped every aspect of his legal advocacy. Alex personally intervened in the Francisco Diaz-Burgos case, paying bail out of pocket and securing dismissal. He is now building autism sensitivity training programs for Florida law enforcement and prosecutors.',
-    contact: '(941) 304-1500',
-  },
-  {
-    name: 'Chase Engelbrecht',
-    title: 'Attorney, Alpha Law Group',
-    badge: 'Autism 5K Co-Organizer',
-    image: '/Chase-Engelbrecht.webp',
-    bio: 'Chase is an attorney at Alpha Law Group and Alex\u2019s partner in organizing the Annual Alpha Law Group Autism 5K at Nathan Benderson Park \u2014 a free, sensory-friendly event that has become a cornerstone of the Sarasota autism community. \u201cFamilies navigating autism often face real financial and logistical hurdles,\u201d Chase has said. \u201cWe remove those barriers.\u201d',
-    contact: '(941) 304-1500',
-  },
-  {
-    name: 'Dr. Gary Kompothecras',
-    title: 'Founder, Autism Justice Foundation',
-    badge: 'Advisor & Advocate',
-    image: null as string | null,
-    bio: 'Dr. Gary is a chiropractor, entrepreneur, and founder of 1-800-ASK-GARY, a nationally recognized medical and legal referral service. A member of the Florida Governor\u2019s Task Force on Autism Spectrum Disorders and appointed by Governor DeSantis to the Florida Board of Chiropractic Medicine (January 2026), Dr. Gary has spent 19 years lobbying in Tallahassee for autism families. In September 2025, he co-founded the Autism Justice Foundation with Alex. He works closely with Children\u2019s Health Defense and the Autism Society of Florida.',
-  },
-  {
-    name: 'Beth Kompothecras',
-    title: 'Co-Founder, Autism Justice Foundation',
-    badge: 'Family Advocate',
-    image: null as string | null,
-    bio: 'Beth Kompothecras is a businesswoman, event planner, and the backbone of the Kompothecras family. Raising six children \u2014 including Bronson and Sarah Alice, both severely affected by autism \u2014 Beth has been the quiet force behind two decades of advocacy. Her strength and dedication inspired both Dr. Gary\u2019s legislative work and Alex\u2019s legal career.',
-  },
-]
-
 export default function OurTeamPage() {
   return (
-    <div className="bg-white py-16">
-      <div className="max-w-4xl mx-auto px-4">
-        {/* Page Title */}
-        <section className="bg-white border-b border-[#E2E8F0] py-14 -mt-16 -mx-4 px-6 mb-12">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Meet the Team</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#111827] mb-4" style={{fontFamily:'Georgia,serif'}}>
-              Our Team
+    <>
+      {/* ── SECTION 1: ALPHA LAW GROUP LEGAL TEAM ── */}
+      <section className="bg-white py-16 border-b border-[#E2E8F0]">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-3">Legal Representation</p>
+            <h1 className="text-4xl font-bold text-[#111827] mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+              Alpha Law Group
             </h1>
-            <p className="text-lg text-[#475569] max-w-2xl mx-auto">
-              The attorneys, advocates, and advisors fighting for autism families nationwide.
+            <p className="text-lg text-[#475569] max-w-3xl mx-auto">
+              Our legal team fights exclusively for vaccine-injured families through the federal VICP process — on a contingency basis, with zero upfront cost to your family.
             </p>
           </div>
-        </section>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {team.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm flex flex-col items-center text-center"
-            >
-              {member.image ? (
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-24 h-24 rounded-full object-cover object-top mb-4 border-2 border-[#1E40AF]"
-                />
-              ) : (
-                <div className="w-24 h-24 rounded-full bg-[#EFF6FF] border-2 border-[#1E40AF] mb-4 flex items-center justify-center">
-                  <span className="text-[#475569] text-xs">Photo</span>
-                </div>
-              )}
-              <h3 className="text-lg font-bold text-[#111827]">{member.name}</h3>
-              <p className="text-sm text-[#475569] mt-0.5">{member.title}</p>
-              <span className="inline-block mt-2 bg-[#1E40AF] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-                {member.badge}
-              </span>
-              <p className="text-[#475569] text-sm leading-relaxed mt-4">{member.bio}</p>
-              {member.contact && (
-                <p className="mt-4 text-[#1E40AF] font-semibold text-sm">
-                  <a href={`tel:${member.contact.replace(/\D/g, '')}`}>{member.contact}</a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Alex J. Kompothecras */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="/Alex-Kompothecras.webp" alt="Alex J. Kompothecras" className="w-full h-72 object-cover object-top" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Alex J. Kompothecras</h3>
+                <p className="text-[#1E40AF] font-semibold text-sm mt-1">Managing Attorney — Alpha Law Group</p>
+                <p className="text-xs text-[#475569] italic mb-4">Board of Directors — Autism Justice Foundation</p>
+                <p className="text-sm text-[#475569] leading-relaxed">
+                  Alex J. Kompothecras is the Managing Attorney of Alpha Law Group in Sarasota, Florida. Raised alongside two siblings — Bronson and Sarah Alice — who live with severe autism, Alex&rsquo;s commitment to this cause is deeply personal. He co-founded the Autism Justice Foundation in September 2025 alongside his father, Dr. Gary Kompothecras, and serves on its Board of Directors. Alex leads VICP claims for autism families across Florida, fighting to recover federal compensation that families are owed — and often don&rsquo;t even know exists.
                 </p>
-              )}
+                <div className="border-t border-[#E2E8F0] pt-4 mt-4">
+                  <a href="tel:9413041500" className="text-[#1E40AF] font-semibold text-sm">(941) 304-1500</a>
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* Advisory Board Section */}
-        <h2 className="text-xl font-bold text-[#111827] mt-16 mb-8 pb-3 border-b border-[#E2E8F0]">Advisory Board</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#F8F9FA] border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm flex flex-col items-center text-center">
-            <img
-              src="/nicolas-hulscher.webp"
-              alt="Nicolas Hulscher, MPH"
-              className="w-full h-64 object-cover object-top"
-            />
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-[#111827]">Nicolas Hulscher, MPH</h3>
-              <p className="text-sm text-[#475569] mt-0.5">Epidemiologist &amp; Administrator, McCullough Foundation</p>
-              <span className="inline-block mt-2 bg-[#1E40AF] text-white text-xs font-semibold px-2 py-0.5 rounded-full">
-                Advisory Board
-              </span>
-              <p className="text-[#475569] text-sm leading-relaxed mt-4">
-                A Michigan native, Nicolas earned his Bachelor of Science in Pre-Health Professional Studies from Oakland University (2020) and his Master of Public Health in Epidemiology from the University of Michigan School of Public Health (2024). He has contributed to more than 20 scientific publications advancing understanding of COVID-19 vaccine injury syndromes, SARS-CoV-2, H5N1 avian influenza, and the multifactorial determinants of autism spectrum disorder.
-              </p>
+            {/* Chase Engelbrecht */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="/Chase-Engelbrecht.webp" alt="Chase Engelbrecht" className="w-full h-72 object-cover object-top" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Chase Engelbrecht</h3>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-4 mt-1">Attorney — Alpha Law Group</p>
+                <p className="text-sm text-[#475569] leading-relaxed">
+                  Chase Engelbrecht is an attorney at Alpha Law Group dedicated to representing vaccine-injured families in VICP proceedings. An active member of the autism advocacy community and co-organizer of the Autism 5K, Chase brings compassion, diligence, and legal expertise to every family he represents.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 pt-8 border-t border-[#E2E8F0]">
-          <h3 className="text-xl font-bold text-[#111827] mb-4">Ready to take the first step?</h3>
-          <Link
-            href="/intake/phase-1"
-            className="inline-block bg-[#1E40AF] text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#1E3A8A] transition"
-          >
-            Start My Claim &rarr;
-          </Link>
+      {/* ── SECTION 2: ENTITY SEPARATION NOTICE ── */}
+      <section className="bg-[#F8F9FA] border-b border-[#E2E8F0] py-8">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="border-l-4 border-[#1E40AF] pl-6">
+            <p className="text-xs font-bold tracking-widest uppercase text-[#1E40AF] mb-2">Important Legal Distinction</p>
+            <p className="text-sm text-[#475569] leading-relaxed">
+              Alpha Law Group is a private law firm providing legal representation for VICP claims. The Autism Justice Foundation is a separate and distinct 501(c)(4) nonprofit advocacy organization. While our founders share a common mission, the two entities operate independently. Alex J. Kompothecras serves on the Autism Justice Foundation Board of Directors in a personal advocacy capacity, entirely separate from his role as Managing Attorney of Alpha Law Group.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ── SECTION 3: AJF TEAM HEADER ── */}
+      <section className="bg-white pt-16 pb-8">
+        <div className="max-w-5xl mx-auto px-4 text-center">
+          <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-16 w-auto object-contain mb-4 mx-auto" />
+          <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-3">
+            501(c)(4) Nonprofit Advocacy Organization — autismjusticefoundation.org
+          </p>
+          <h2 className="text-3xl font-bold text-[#111827] mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+            Autism Justice Foundation Team
+          </h2>
+          <p className="text-lg text-[#475569] max-w-3xl mx-auto">
+            The Autism Justice Foundation is an independent 501(c)(4) nonprofit organization. Its team, leadership, and advisory board operate separately from Alpha Law Group. The Foundation is dedicated to exposing vaccine risks, advocating for children&rsquo;s health, and supporting autism families nationwide.
+          </p>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: AJF CO-FOUNDERS & BOARD ── */}
+      <section className="bg-white pb-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <h3 className="text-lg font-bold text-[#111827] pb-3 border-b border-[#E2E8F0] mb-8">Co-Founders &amp; Board of Directors</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Dr. Gary Kompothecras */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/DrGAry.jpg" alt="Dr. Gary Kompothecras" className="w-full h-64 object-cover object-top" />
+              <div className="p-5">
+                <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Dr. Gary Kompothecras</h4>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-3">Co-Founder &amp; Chairman</p>
+                <p className="text-sm text-[#475569] leading-relaxed">
+                  Widely known as &lsquo;Dr. Gary,&rsquo; he is a pioneering medical industry entrepreneur and decades-long autism advocate. Founder of 1-800-ASK-GARY and Physician&rsquo;s Group LLC, a nationwide medical clinic network based in Sarasota, Florida. Dr. Gary&rsquo;s professional success extends to media production, including producing the MTV reality series &lsquo;Siesta Key,&rsquo; which ran for five seasons. His deepest commitment lies in combating autism — a cause profoundly personal due to his two children, Bronson and Sarah Alice, who live with the condition. Dr. Gary has funded screenings of &lsquo;VAXXED: From Cover-Up to Catastrophe,&rsquo; lobbied for legislation to limit thimerosal in vaccines, and channeled his resources into building a unified advocacy platform for autism families.
+                </p>
+              </div>
+            </div>
+
+            {/* William Collier Jr. */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/Screenshot-2025-09-12-130448.png" alt="William Collier Jr." className="w-full h-64 object-cover object-top" />
+              <div className="p-5">
+                <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>William Collier Jr.</h4>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-3">Board of Directors · Co-Founder · Digital Media &amp; Marketing</p>
+                <p className="text-sm text-[#475569] leading-relaxed">
+                  William R. Collier Jr. is a distinguished political consultant, researcher, and digital strategist with over three decades of experience in intelligence gathering, media, and conservative activism. A U.S. Navy veteran specializing in intelligence analysis, Collier founded Kross Publishing in 1992, was a key early organizer of the Tea Party movement, and is a principal in Intellz (opposition research), Freedomist LLC (center-right activism platform), and Mindful Intelligence (private intelligence). He co-authored The Capitalist Manifesto (2020) with Ralph Benko, endorsed by Dr. Art Laffer and Steve Forbes. As co-founder of the Autism Justice Foundation, Collier serves on its Board of Directors, overseeing digital and marketing strategy and driving the Foundation&rsquo;s public advocacy campaigns. His clients have included the RNC, NRCC, NRSC, Conservative Party of Great Britain, and numerous PACs.
+                </p>
+              </div>
+            </div>
+
+            {/* Alex J. Kompothecras — Board rep */}
+            <div className="bg-[#F8F9FA] border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-center">
+              <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Alex J. Kompothecras</h4>
+              <p className="text-[#1E40AF] font-semibold text-sm mb-4">Board of Directors</p>
+              <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                Alex J. Kompothecras serves on the Autism Justice Foundation Board of Directors in a personal advocacy capacity. As the son of Dr. Gary Kompothecras and brother of Bronson and Sarah Alice, Alex brings firsthand family experience to the Foundation&rsquo;s mission. His Board role is entirely separate from his position as Managing Attorney of Alpha Law Group.
+              </p>
+              <p className="text-xs text-[#94A3B8] italic">For legal representation, see Alpha Law Group above.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 5: SCIENTIFIC & MEDICAL ADVISORY BOARD ── */}
+      <section className="bg-[#F8F9FA] py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h3 className="text-lg font-bold text-[#111827] pb-3 border-b border-[#E2E8F0] mb-8">Scientific &amp; Medical Advisory Board</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Dr. Andrew Wakefield */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/wakefield.jpg" alt="Dr. Andrew Wakefield" className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Dr. Andrew Wakefield</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Medical Advisory Board Chairman</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  A graduate of St. Mary&rsquo;s Hospital Medical School in London, Dr. Wakefield served as a consultant in experimental gastroenterology at the Royal Free Hospital, publishing over 140 peer-reviewed papers on inflammatory bowel disease. His 1998 research highlighted potential associations between the MMR vaccine, gastrointestinal issues, and autism spectrum disorders. Despite retraction of his paper in 2010 and removal from the UK medical register — which he has consistently disputed — Dr. Wakefield continued his global advocacy through the documentary &lsquo;Vaxxed: From Cover-Up to Catastrophe&rsquo; and public engagements. Recent whistleblower testimonies and the CDC&rsquo;s planned vaccine-autism study under HHS Secretary Robert F. Kennedy Jr. have renewed attention to his findings.
+                </p>
+              </div>
+            </div>
+
+            {/* Mary Holland, J.D. */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2025/09/B1-nE0WDyS-768x1137.jpg" alt="Mary Holland, J.D." className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Mary Holland, J.D.</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Advisory Board · Speakers Panel</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  Educated at Harvard University (undergraduate) and Columbia University (J.D.), Mary Holland served on the faculty of NYU School of Law from 2002–2019 as Director of the Graduate Lawyering Program and Research Scholar. She co-founded the Elizabeth Birt Center for Autism Law and Advocacy. As CEO and General Counsel of Children&rsquo;s Health Defense, Holland has led federal and state lawsuits challenging vaccine mandates, testified before state legislatures on vaccine exemptions, and co-authored influential books including &lsquo;Vaccine Epidemic&rsquo; (2011), &lsquo;The HPV Vaccine on Trial&rsquo; (2018), and &lsquo;Turtles All the Way Down&rsquo; (2022). She contributed as a strategist and director of volunteers for RFK Jr.&rsquo;s 2023 presidential campaign and is a recognized leader in the Make America Healthy Again movement.
+                </p>
+              </div>
+            </div>
+
+            {/* Dr. David J. Weldon */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/David_Weldon.jpg" alt="Dr. David J. Weldon" className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Dr. David J. Weldon</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Advisory Board · Speakers Panel</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  A graduate of Stony Brook University (B.S. Biochemistry, 1978) and University at Buffalo School of Medicine (M.D., 1981), Dr. Weldon served as a U.S. Army physician from 1981–1987. He represented Florida&rsquo;s 15th congressional district from 1995–2009, founding the Congressional Autism Caucus and introducing the Mercury-Free Vaccines Act in 2004 to ban thimerosal. In 2007 he co-sponsored the Vaccine Safety and Public Confidence Assurance Act. In November 2024, President Trump nominated Dr. Weldon to serve as CDC Director; the nomination was withdrawn in March 2025. He continues to advocate for rigorous, independent vaccine safety evaluations and serves on the Autism Justice Foundation Scientific Panel.
+                </p>
+              </div>
+            </div>
+
+            {/* Dr. Anthony R. Mawson */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2025/09/signal-2025-09-25-082454_002.jpg.png" alt="Dr. Anthony R. Mawson" className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Dr. Anthony R. Mawson</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Scientific Advisory Board</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  Dr. Mawson holds a B.A. in Sociology and Psychology from McGill University (1971), an M.A. in Sociology from University of Essex (1972), and both an MPH and DrPH in Epidemiology from Tulane University. His career spans academia and public health, including positions at Louisiana State University Medical Center, Des Moines University, and Jackson State University, where he secured multimillion-dollar NIH and USDA grants. Since 2011, he has been Visiting Professor at Jackson State and President of the Chalfont Research Institute. His landmark 2017, 2020, and 2025 studies — including a Medicaid-based study in Florida — suggest links between vaccination schedules and autism. He has served as Special Issue Editor for the International Journal of Environmental Research and Public Health.
+                </p>
+              </div>
+            </div>
+
+            {/* J.B. Handley */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2025/09/EC1EB0E0-2713-4419-A3CB-F142868593AD.jpg.png" alt="J.B. Handley" className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>J.B. Handley</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Scientific Advisory Board</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  A graduate of Stanford University (B.A. Economics &amp; East Asian Studies, 1987, with honors), Handley co-founded Swander Pace Capital in 1996, overseeing multimillion-dollar consumer product investments. Following his son&rsquo;s autism diagnosis in 2004, he shifted to advocacy — co-founding Generation Rescue in 2005, a nonprofit dedicated to autism recovery and vaccine safety. His seminal 2018 book &lsquo;How to End the Autism Epidemic&rsquo; argues that aluminum adjuvants in the childhood vaccine schedule trigger autism. In 2021, he co-authored &lsquo;Underestimated: An Autism Miracle&rsquo; with his son Jamison and co-produced the documentary &lsquo;Spellers.&rsquo; A pioneer in the MAHA movement, Handley continues to demand accountability in public health.
+                </p>
+              </div>
+            </div>
+
+            {/* Nicolas Hulscher, MPH */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="/nicolas-hulscher.webp" alt="Nicolas Hulscher, MPH" className="w-full h-52 object-cover object-top" />
+              <div className="p-4">
+                <h4 className="text-base font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Nicolas Hulscher, MPH</h4>
+                <p className="text-[#1E40AF] font-semibold text-xs mb-2">Advisory Board · Epidemiologist</p>
+                <p className="text-xs text-[#475569] leading-relaxed">
+                  Epidemiologist and Administrator at the McCullough Foundation. Holds an MPH in Epidemiology from the University of Michigan School of Public Health (2024). Author of more than 20 peer-reviewed scientific publications on vaccine injury syndromes, SARS-CoV-2 pathophysiology, and the determinants of autism spectrum disorder. A rising voice in the MAHA movement, Hulscher&rsquo;s research has been cited by prominent public health reform advocates and contributes foundational evidence to the Autism Justice Foundation&rsquo;s scientific framework.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 6: SPEAKERS PANEL ── */}
+      <section className="bg-white py-16">
+        <div className="max-w-5xl mx-auto px-4">
+          <h3 className="text-lg font-bold text-[#111827] pb-3 border-b border-[#E2E8F0] mb-8">Speakers Panel &amp; Advocates</h3>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* David "Nino" Rodriguez */}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+              <img src="https://autismjusticefoundation.org/wp-content/uploads/2025/09/1384805716.jpg" alt='David "Nino" Rodriguez' className="w-full h-64 object-cover object-top" />
+              <div className="p-6">
+                <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>David &ldquo;Nino&rdquo; Rodriguez</h4>
+                <p className="text-[#1E40AF] font-semibold text-sm mb-3">Speakers Panel &amp; Advisory Board</p>
+                <p className="text-sm text-[#475569] leading-relaxed">
+                  A former undefeated heavyweight boxing contender from El Paso, Texas, David compiled a professional record of 37-2 with 35 knockouts — including 24 first-round knockouts, surpassing Mike Tyson&rsquo;s career total. His titles include the Texas, New Mexico, and NABO Heavyweight Championships. In his post-boxing career, David hosts the &lsquo;Nino&rsquo;s Corner Podcast,&rsquo; consistently ranking among the top-rated shows on Apple Podcasts with a 4.9-star rating. An anti-bullying keynote speaker, founder of the KO Bullying project, and author of &lsquo;When the Lights Go Out: From Survivor to Champion,&rsquo; David has spoken at schools nationwide. Having recently become a father, he is fully committed to the Autism Justice Foundation&rsquo;s mission — leveraging his massive platform to expose vaccine-related harms and protect children&rsquo;s neurological health.
+                </p>
+              </div>
+            </div>
+
+            {/* AJF Info Card */}
+            <div className="bg-[#F8F9FA] border border-[#E2E8F0] rounded-xl p-8 flex flex-col justify-center">
+              <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-12 w-auto object-contain mb-4" />
+              <p className="text-sm text-[#475569] leading-relaxed mb-4">
+                The Autism Justice Foundation is a DBA of Justice for Autism, a registered 501(c)(4) nonprofit advocacy organization. All Foundation activities, staff, and advisory board members operate independently of Alpha Law Group&rsquo;s legal practice. To learn more or support the Foundation&rsquo;s mission, visit autismjusticefoundation.org.
+              </p>
+              <a href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="text-[#1E40AF] font-semibold text-sm hover:underline">
+                Visit autismjusticefoundation.org &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
