@@ -1,119 +1,157 @@
-# Justice for Autism Intake Portal
-### Powered by Alpha Law Group × LegalCasePortal™
-### A Noetic Dharma Group Technology
+# Justice for Autism — Legal Case Portal
+### Alpha Law Group, PLLC | Powered by LegalCasePortal™ | A Noetic Dharma Group Technology
+
+**Live URL:** https://legalcaseportal.vercel.app
+**Target Domain:** https://gethelpforautism.com
+**GitHub Org:** nd-media-group
+**Repo:** badandy-beep/legalcaseportal
+
+---
 
 ## Overview
-A private-label VICP case intake platform built for Alex Kompothecras and Alpha Law Group (alphainjurylaw.com), operating under the Justice for Autism initiative. Families submit a structured 11-phase intake questionnaire covering contact info, child details, vaccine history, medical history, autism diagnosis, prior legal history, financial impact, documentation, witnesses, consents, and digital signature.
 
-## Live URLs
-- Production: https://legalcaseportal.vercel.app
-- GitHub: https://github.com/badandy-beep/legalcaseportal
-- Target Domain: justiceforautism.org (GoDaddy → Cloudflare → Vercel)
+A professional, mission-driven intake portal for the Justice for Autism initiative under Alpha Law Group, PLLC — connecting autism families to the federal Vaccine Injury Compensation Program (VICP). The portal combines a public-facing advocacy site with a secure multi-phase intake questionnaire and a HIPAA-aware admin dashboard.
+
+Built and maintained by [Noetic Dharma Group](https://noeticdharma.com).
+
+---
 
 ## Tech Stack
-- Framework: Next.js 14.1.0 (App Router)
-- Styling: Tailwind CSS with Alpha Law Group brand tokens (alg-navy, alg-gold)
-- Database: Supabase (schema defined in docs/supabase-schema.sql — NOT YET WIRED)
-- Email: Resend (NOT YET WIRED)
-- SMS: Twilio (NOT YET WIRED)
-- DNS: Cloudflare (PENDING — domain transfer from GoDaddy)
-- Deployment: Vercel (auto-deploy on push to main)
-- Auth: Supabase Auth + 2FA via Resend/Twilio (NOT YET WIRED)
 
-## Brand
-- Primary: Alpha Law Group / Justice for Autism
-- Intel Inside: LegalCasePortal™ by Noetic Dharma Group
-- Colors: --alg-navy #0a1628 | --alg-gold #d4a843
-- Phone: (941) 304-1500
-- Attorney: Alex Kompothecras (Managing Attorney) | Chase Engelbrecht
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 14.1.0 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Database | Supabase (PostgreSQL + Auth + Storage) |
+| Hosting | Vercel (nd-media-group org, auto-deploy on push) |
+| Email | Resend (transactional) + Klaviyo (marketing) |
+| SMS / 2FA | Twilio |
+| Analytics | Google Analytics 4 (pending activation) |
+| Error Monitoring | Sentry (pending) |
+
+---
+
+## Brand Tokens
+```js
+// Colors
+primary: '#1E40AF'    // Royal blue — buttons, links, nav accents
+dark:    '#111827'     // Near-black — headings, nav background
+muted:   '#475569'     // Slate — body text, secondary labels
+border:  '#E2E8F0'     // Light gray — card borders, dividers
+surface: '#F8F9FA'     // Off-white — section backgrounds
+white:   '#FFFFFF'     // Cards, nav, page background
+
+// Typography
+heading: 'Georgia, serif'
+body:    'system-ui, -apple-system, sans-serif'
+
+// Contact
+phone: '(941) 304-1500'
+email: 'alex@alphalawgroup.com'
+```
+
+---
 
 ## Public Pages
-| Route | Status | Description |
-|-------|--------|-------------|
-| / | ✅ Live | Home — hero, trust bar, Dr. Gary quote, CHD photo grid, CTA |
-| /our-story | ✅ Live | Kompothecras family narrative |
-| /our-team | ✅ Live | Alex, Chase, Dr. Gary, Beth cards |
-| /how-vicp-works | ✅ Live | 5-step VICP explainer |
-| /resources | ✅ Live | Coalition partners, VICP links, autism orgs, legal rights |
-| /contact | ✅ Live | Contact form (Supabase not yet wired) |
 
-## Intake Phases
-| Phase | Topic | Status |
-|-------|-------|--------|
-| 1 | Account Setup / Contact Info | ✅ UI Complete |
-| 2 | Child Information | ✅ UI Complete |
-| 3 | Vaccine History | ✅ UI Complete |
-| 4 | Medical History | ✅ UI Complete |
-| 5 | Autism Diagnosis | ✅ UI Complete |
-| 6 | Prior Legal / VICP History | ✅ UI Complete |
-| 7 | Financial Impact | ✅ UI Complete |
-| 8 | Supporting Documents | ✅ UI Complete |
-| 9 | Witness / Family Info | ✅ UI Complete |
-| 10 | HIPAA + Medical Release + Consents | ✅ UI Complete |
-| 11 | Digital Signature + Submit | ✅ UI Complete |
+| Route | Description |
+|---|---|
+| `/` | Home — hero, trust bar, VICP stats, video row, coalition partners, referral CTAs |
+| `/our-story` | Kompothecras family narrative, Francisco Diaz-Burgos case, 5K section |
+| `/our-team` | ALG attorneys (Alex, Chase) + full AJF team, advisory board, speakers panel |
+| `/how-vicp-works` | 5-step VICP explainer |
+| `/faq` | Frequently asked questions with bottom CTA |
+| `/resources` | Coalition partners, VICP links, legal resources |
+| `/deadline-calculator` | Statute of limitations calculator |
+| `/contact` | Contact form |
+| `/admin` | Staff login (Supabase Auth) |
+| `/admin/dashboard` | 10-tab admin portal (role-based access) |
 
-## ✅ COMPLETED
-- Full Alpha Law Group white-label branding (navy/gold)
-- 7-tab public navigation
-- All public content pages
-- HIPAA consent forms on Phase 10
-- Digital signature canvas on Phase 11
-- Medical release authorization
-- CHD conference photo grid on homepage
-- Legal footer with attorney advertising disclaimer on all pages
-- Advisory board section with named captions
-- Resources page with coalition partners and VICP links
-- Contact page (UI only)
-- Supabase schema documented (docs/supabase-schema.sql)
-- .gitignore (node_modules, .next excluded)
-- Typography antialiasing fixes
+---
 
-## 🔴 TODO — PHASE 2 (Backend & Auth)
-- [ ] Wire Supabase — create tables, enable RLS policies
-- [ ] Supabase Auth — user registration and login
-- [ ] Two-factor authentication (email via Resend OR SMS via Twilio) on account creation
-- [ ] Two-factor re-entry when returning to saved application
-- [ ] Wire all 11 intake phases to Supabase (save each phase on Continue)
-- [ ] On final submission: trigger Resend email to alex@alphainjurylaw.com with PDF attachment
-- [ ] On final submission: trigger Twilio SMS to (941) 304-1500 with case summary
-- [ ] PDF generation of full intake — react-pdf/renderer (already installed)
-- [ ] Auto-generate case number (ALG-2026-XXXX format)
-- [ ] Admin dashboard — secure behind Supabase auth, view/manage submissions
-- [ ] Fix admin dashboard route — currently publicly accessible (security issue)
-- [ ] DOMPurify XSS fix (pending via Copilot)
+## Intake Phases (11-phase questionnaire)
 
-## 🔴 TODO — DOMAIN & INFRASTRUCTURE
-- [ ] Transfer justiceforautism.org from GoDaddy to Cloudflare DNS
-- [ ] Add Cloudflare as DNS provider
-- [ ] Point justiceforautism.org to Vercel (CNAME record)
-- [ ] Configure Cloudflare email routing for alex@justiceforautism.org
-- [ ] Set custom domain in Vercel project settings
-- [ ] SSL auto-provisioned by Vercel on domain connection
+| Phase | Topic |
+|---|---|
+| 1 | Account Setup / Contact Info |
+| 2 | Child Information |
+| 3 | Vaccine History |
+| 4 | Medical History |
+| 5 | Autism Diagnosis |
+| 6 | Prior Legal / VICP History |
+| 7 | Financial Impact |
+| 8 | Supporting Documents (upload) |
+| 9 | Witness / Family Info |
+| 10 | HIPAA + Medical Release + Consents |
+| 11 | Digital Signature + Submit |
 
-## 🔴 TODO — UX & FEATURES
-- [ ] Add Dr. Gary and Beth headshots to Our Team page (photos TBD)
-- [ ] Resources page — add Vaccine Veritas link when site is live
-- [ ] Homepage — add testimonials section
-- [ ] Mobile nav — test hamburger menu on iOS Safari
-- [ ] Add Google Analytics or Plausible for traffic tracking
-- [ ] Add Sentry for error monitoring
+---
+
+## Admin Portal (`/admin/dashboard`)
+
+10-tab dashboard behind Supabase Auth with role-based access control:
+
+| Tab | Access | Description |
+|---|---|---|
+| Cases | All staff | Intake submissions table with search, filter, PDF export |
+| Emails | Admin, Attorney, Paralegal | Transactional email log (Resend webhook) |
+| Analytics | Admin, Developer | Site traffic + conversion metrics |
+| Infrastructure | Admin, Developer | Partner registry with masked API keys |
+| Domains | Admin, Developer | Domain registry with status tracking |
+| Landing Pages | Admin, Developer | Campaign + UTM tracking (coming soon) |
+| Media Library | All staff | Logo, headshot, and asset management |
+| Database | Admin, Developer | Supabase schema reference + direct links |
+| Settings | Admin only | 2FA config, user management |
+| Audit Log | Admin only | HIPAA-required access event log |
+
+Roles: `admin`, `attorney`, `paralegal`, `developer`
+
+---
+
+## Database Schema
+
+SQL setup file: `supabase/admin-setup.sql`
+
+| Table | Purpose |
+|---|---|
+| `intake_submissions` | 11-phase intake questionnaire data |
+| `admin_users` | Role-based access control |
+| `audit_log` | HIPAA compliance — all access events |
+| `infrastructure` | Partner/vendor registry with API keys |
+| `domains` | Domain registry |
+
+All tables have Row Level Security (RLS) enabled.
+
+---
 
 ## Dev Commands
-```
+
+```bash
 npm install --legacy-peer-deps --ignore-scripts
-.\node_modules\.bin\next dev   (dev server — run in separate PowerShell window)
+node node_modules/next/dist/bin/next dev      # Dev server
+node node_modules/next/dist/bin/next build    # Production build
 git add -A && git commit -m "message" && git push origin main
 ```
 
-## Workflow
-Claude (web) → architect prompts → Claude Code (PowerShell) → executes → GitHub → Vercel auto-deploy
-Golden Rule: Never mix functional and aesthetic changes in the same session.
+---
 
-## Security Notes
-- PII currently stored in localStorage only — NOT production ready
-- No authentication on /admin/dashboard — must be secured before launch
-- All backend wiring requires Supabase RLS policies before going live
+## Deployment
+
+Push to `main` → GitHub → Vercel auto-deploy (nd-media-group org)
+
+Environment variables required on Vercel:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
 
 ---
+
+## Workflow
+
+Claude Code (CLI) → executes → GitHub → Vercel auto-deploy
+
+---
+
 *LegalCasePortal™ is a proprietary technology platform developed by Noetic Dharma Group, LLC*
 *© 2026 Alpha Law Group, PLLC | Justice for Autism Initiative*
