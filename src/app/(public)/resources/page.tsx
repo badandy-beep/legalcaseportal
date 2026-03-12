@@ -23,7 +23,7 @@ const partners = [
     name: 'Autism Justice Foundation',
     mission: 'Advocating for autism families through legal action, public awareness, and coalition building to secure justice and accountability.',
     link: 'https://autismjusticefoundation.org',
-    logo: null,
+    logo: 'ajf',
   },
   {
     name: 'HRSA Vaccine Injury Compensation Program',
@@ -87,20 +87,29 @@ export default function ResourcesPage() {
 
         {/* Partner Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {partners.map((partner) => (
-            <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
-              {partner.logo && (
-                <div className="h-16 flex items-center mb-4">
-                  {partner.logo}
+          {partners.map((partner) =>
+            partner.logo === 'ajf' ? (
+              <a key={partner.name} href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+                <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                  <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-24 w-auto object-contain" />
                 </div>
-              )}
-              <h3 className="font-semibold text-[#111827] mb-2">{partner.name}</h3>
-              <p className="text-sm text-[#475569] mb-4">{partner.mission}</p>
-              <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
-                Visit Site &rarr;
+                <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
               </a>
-            </div>
-          ))}
+            ) : (
+              <div key={partner.name} className="bg-white border border-[#E2E8F0] rounded-lg p-6 hover:border-[#1E40AF] hover:shadow-md transition group">
+                {partner.logo && (
+                  <div className="h-16 flex items-center mb-4">
+                    {partner.logo}
+                  </div>
+                )}
+                <h3 className="font-semibold text-[#111827] mb-2">{partner.name}</h3>
+                <p className="text-sm text-[#475569] mb-4">{partner.mission}</p>
+                <a href={partner.link} target="_blank" rel="noopener noreferrer" className="text-sm text-[#1E40AF] hover:text-[#1E3A8A] font-medium">
+                  Visit Site &rarr;
+                </a>
+              </div>
+            )
+          )}
         </div>
 
         {/* Legal Resources Section */}

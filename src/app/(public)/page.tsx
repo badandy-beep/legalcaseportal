@@ -424,7 +424,12 @@ export default function HomePage() {
             <span className="text-[#E2E8F0]">|</span>
             <span className="text-base font-semibold text-[#111827]">McCullough Foundation</span>
             <span className="text-[#E2E8F0]">|</span>
-            <span className="text-base font-semibold text-[#111827]">Autism Justice Foundation</span>
+            <a href="https://autismjusticefoundation.org" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-3 group">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-4 h-32 w-64 flex items-center justify-center shadow-sm hover:shadow-md hover:border-[#1E40AF] transition-all">
+                <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-24 w-auto object-contain" />
+              </div>
+              <span className="text-xs font-medium text-[#475569] group-hover:text-[#1E40AF] transition text-center">Autism Justice Foundation</span>
+            </a>
           </div>
         </div>
       </section>
