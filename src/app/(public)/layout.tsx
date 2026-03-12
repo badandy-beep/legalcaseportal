@@ -171,6 +171,9 @@ export default function PublicLayout({
           <p className="text-xs text-gray-400 text-center mt-2">
             &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
           </p>
+          <div className="border-t border-[#E2E8F0] mt-8 pt-4 text-center">
+            <a href="/admin" className="text-xs text-[#94a3b8] hover:text-[#475569] transition">Staff Login</a>
+          </div>
         </footer>
       </div>
     </div>

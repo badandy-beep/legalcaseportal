@@ -1,218 +1,540 @@
 'use client'
-import { useState } from 'react'
-import Link from 'next/link'
-import { Shield, LayoutDashboard, FileText, Settings, Users, TrendingUp, Clock, CheckCircle, AlertCircle, Search, Filter, ChevronRight } from 'lucide-react'
 
-// Demo data - in production this comes from Supabase
-const demoCases = [
-  { id: 1, caseNumber: 'AJF-2024-000001', clientName: 'Sarah Johnson', childName: 'Michael Johnson', status: 'New', createdAt: '2024-01-15', priority: 'High' },
-  { id: 2, caseNumber: 'AJF-2024-000002', clientName: 'Robert Smith', childName: 'Emma Smith', status: 'Under Review', createdAt: '2024-01-14', priority: 'Normal' },
-  { id: 3, caseNumber: 'AJF-2024-000003', clientName: 'Jennifer Davis', childName: 'Liam Davis', status: 'Documents Pending', createdAt: '2024-01-13', priority: 'Normal' },
-  { id: 4, caseNumber: 'AJF-2024-000004', clientName: 'Michael Brown', childName: 'Olivia Brown', status: 'Assigned', createdAt: '2024-01-12', priority: 'High' },
-  { id: 5, caseNumber: 'AJF-2024-000005', clientName: 'Emily Wilson', childName: 'Noah Wilson', status: 'New', createdAt: '2024-01-11', priority: 'Urgent' },
+import { useState, useEffect } from 'react'
+import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
+
+const TABS = [
+  { id: 'cases', label: 'Cases', roles: ['admin','attorney','paralegal','developer'] },
+  { id: 'emails', label: 'Emails', roles: ['admin','attorney','paralegal'] },
+  { id: 'analytics', label: 'Analytics', roles: ['admin','developer'] },
+  { id: 'infrastructure', label: 'Infrastructure', roles: ['admin','developer'] },
+  { id: 'domains', label: 'Domains', roles: ['admin','developer'] },
+  { id: 'landing', label: 'Landing Pages', roles: ['admin','developer'] },
+  { id: 'media', label: 'Media Library', roles: ['admin','attorney','paralegal','developer'] },
+  { id: 'database', label: 'Database', roles: ['admin','developer'] },
+  { id: 'settings', label: 'Settings', roles: ['admin'] },
+  { id: 'audit', label: 'Audit Log', roles: ['admin'] },
 ]
 
-const statusColors: Record<string, string> = {
-  'New': 'bg-blue-100 text-blue-800',
-  'Under Review': 'bg-yellow-100 text-yellow-800',
-  'Documents Pending': 'bg-orange-100 text-orange-800',
-  'Assigned': 'bg-green-100 text-green-800',
-  'Closed': 'bg-gray-100 text-gray-800',
-}
-
-const priorityColors: Record<string, string> = {
-  'Urgent': 'text-red-600',
-  'High': 'text-orange-600',
-  'Normal': 'text-gray-600',
-}
-
 export default function AdminDashboard() {
+  const [activeTab, setActiveTab] = useState('cases')
+  const [user, setUser] = useState<any>(null)
+  const [adminUser, setAdminUser] = useState<any>(null)
+  const [cases, setCases] = useState<any[]>([])
+  const [infrastructure, setInfrastructure] = useState<any[]>([])
+  const [domains, setDomains] = useState<any[]>([])
+  const [auditLog, setAuditLog] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
-  const [statusFilter, setStatusFilter] = useState('All')
+  const [statusFilter, setStatusFilter] = useState('all')
+  const [revealedKeys, setRevealedKeys] = useState<Set<string>>(new Set())
 
-  const filteredCases = demoCases.filter(c => {
-    const matchesSearch = c.clientName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          c.caseNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          c.childName.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesStatus = statusFilter === 'All' || c.status === statusFilter
-    return matchesSearch && matchesStatus
+  const supabase = createClient()
+  const router = useRouter()
+
+  useEffect(() => {
+    const init = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) { router.push('/admin'); return }
+      setUser(user)
+
+      // Get admin role
+      const { data: adminData } = await supabase
+        .from('admin_users')
+        .select('*')
+        .eq('user_id', user.id)
+        .single()
+
+      if (!adminData) { await supabase.auth.signOut(); router.push('/admin'); return }
+      const admin = adminData as any
+      setAdminUser(admin)
+
+      // Load cases from intake_submissions
+      const { data: casesData } = await supabase
+        .from('intake_submissions')
+        .select('*')
+        .order('created_at', { ascending: false })
+      setCases(casesData || [])
+
+      // Load infrastructure
+      const { data: infraData } = await supabase
+        .from('infrastructure')
+        .select('*')
+        .order('sort_order')
+      setInfrastructure(infraData || [])
+
+      // Load domains
+      const { data: domainsData } = await supabase
+        .from('domains')
+        .select('*')
+        .order('created_at')
+      setDomains(domainsData || [])
+
+      // Load audit log (admin only)
+      if (admin.role === 'admin') {
+        const { data: auditData } = await supabase
+          .from('audit_log')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(200)
+        setAuditLog(auditData || [])
+      }
+
+      setLoading(false)
+    }
+    init()
+  }, [])
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut()
+    router.push('/admin')
+  }
+
+  const downloadCasePDF = async (caseData: any) => {
+    const response = await fetch('/api/admin/cases/pdf', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ caseData })
+    })
+    const blob = await response.blob()
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `ALG-Case-${caseData.id?.slice(0,8)}-${caseData.child_first_name || 'Unknown'}.pdf`
+    a.click()
+
+    // Log the download
+    await fetch('/api/admin/audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'DOWNLOAD_PDF', resource: 'case', resource_id: caseData.id })
+    })
+  }
+
+  const toggleRevealKey = (id: string) => {
+    setRevealedKeys(prev => {
+      const next = new Set(prev)
+      next.has(id) ? next.delete(id) : next.add(id)
+      return next
+    })
+  }
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text)
+  }
+
+  const filteredCases = cases.filter(c => {
+    const matchSearch = !searchTerm ||
+      (c.first_name + ' ' + c.last_name + ' ' + c.child_first_name + ' ' + c.email)
+        .toLowerCase().includes(searchTerm.toLowerCase())
+    const matchStatus = statusFilter === 'all' || c.status === statusFilter
+    return matchSearch && matchStatus
   })
 
+  const availableTabs = TABS.filter(t => !adminUser || t.roles.includes(adminUser.role))
+
+  const statusColor = (status: string) => {
+    const map: Record<string, string> = {
+      new: 'bg-blue-100 text-blue-800',
+      in_review: 'bg-yellow-100 text-yellow-800',
+      qualified: 'bg-green-100 text-green-800',
+      declined: 'bg-red-100 text-red-800',
+    }
+    return map[status] || 'bg-gray-100 text-gray-800'
+  }
+
+  if (loading) return (
+    <div className="min-h-screen bg-[#111827] flex items-center justify-center">
+      <div className="text-white text-lg">Loading secure portal...</div>
+    </div>
+  )
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-gray-900 text-white">
-        <div className="p-6">
-          <div className="flex items-center gap-2 mb-8">
-            <Shield className="w-8 h-8 text-[#1E40AF]" />
-            <span className="text-xl font-bold">LegalCasePortal</span>
-          </div>
-          <nav className="space-y-2">
-            <Link href="/admin/dashboard" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-900/90 text-white">
-              <LayoutDashboard className="w-5 h-5" />
-              Dashboard
-            </Link>
-            <Link href="/admin/cases" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-900/90 hover:text-white">
-              <FileText className="w-5 h-5" />
-              Cases
-            </Link>
-            <Link href="/admin/settings" className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:bg-gray-900/90 hover:text-white">
-              <Settings className="w-5 h-5" />
-              Settings
-            </Link>
-          </nav>
+    <div className="min-h-screen bg-[#F8F9FA]">
+      {/* Top Nav */}
+      <div className="bg-[#111827] text-white px-6 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <img src="/alg-logo.png" alt="ALG" className="h-9 w-auto brightness-0 invert" />
+          <span className="text-xs text-gray-400 border-l border-gray-600 pl-4">Staff Portal — {adminUser?.role?.toUpperCase()}</span>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-700">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#1E40AF] rounded-full flex items-center justify-center">
-              <Users className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="font-medium text-sm">Admin User</p>
-              <p className="text-xs text-gray-400">admin@ajf.org</p>
-            </div>
-          </div>
+        <div className="flex items-center gap-4">
+          <span className="text-xs text-gray-400">{user?.email}</span>
+          <button onClick={handleSignOut} className="text-xs bg-gray-700 hover:bg-gray-600 px-3 py-1.5 rounded transition">Sign Out</button>
         </div>
-      </aside>
+      </div>
 
-      {/* Main Content */}
-      <main className="ml-64 p-8">
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#111827] mb-2">Dashboard</h1>
-          <p className="text-gray-600">Welcome back. Here's an overview of your cases.</p>
+      {/* Tab Navigation */}
+      <div className="bg-white border-b border-[#E2E8F0] px-6 overflow-x-auto">
+        <div className="flex gap-0 min-w-max">
+          {availableTabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-5 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition ${
+                activeTab === tab.id
+                  ? 'border-[#1E40AF] text-[#1E40AF]'
+                  : 'border-transparent text-[#475569] hover:text-[#111827]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
+      </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <FileText className="w-6 h-6 text-blue-600" />
+      {/* Tab Content */}
+      <div className="p-6 max-w-7xl mx-auto">
+
+        {/* ── CASES TAB ── */}
+        {activeTab === 'cases' && (
+          <div>
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>Case Intake</h2>
+                <p className="text-sm text-[#475569]">{filteredCases.length} of {cases.length} cases</p>
               </div>
-              <span className="text-sm text-green-600 flex items-center gap-1">
-                <TrendingUp className="w-4 h-4" /> +12%
-              </span>
-            </div>
-            <p className="text-3xl font-bold text-[#111827]">247</p>
-            <p className="text-gray-600">Total Cases</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center">
-                <Clock className="w-6 h-6 text-yellow-600" />
-              </div>
-            </div>
-            <p className="text-3xl font-bold text-[#111827]">18</p>
-            <p className="text-gray-600">Pending Review</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-green-600" />
-              </div>
-            </div>
-            <p className="text-3xl font-bold text-[#111827]">156</p>
-            <p className="text-gray-600">Assigned</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                <AlertCircle className="w-6 h-6 text-red-600" />
-              </div>
-            </div>
-            <p className="text-3xl font-bold text-[#111827]">5</p>
-            <p className="text-gray-600">Urgent</p>
-          </div>
-        </div>
-
-        {/* Recent Cases Table */}
-        <div className="bg-white rounded-xl shadow-sm">
-          <div className="p-6 border-b border-gray-200">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-bold text-[#111827]">Recent Cases</h2>
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <Search className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-                  <input
-                    type="text"
-                    placeholder="Search cases..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E40AF] focus:border-[#1E40AF] outline-none"
-                  />
-                </div>
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  placeholder="Search by name, email..."
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+                />
                 <select
                   value={statusFilter}
-                  onChange={(e) => setStatusFilter(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E40AF] focus:border-[#1E40AF] outline-none"
+                  onChange={e => setStatusFilter(e.target.value)}
+                  className="border border-[#E2E8F0] rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
                 >
-                  <option value="All">All Status</option>
-                  <option value="New">New</option>
-                  <option value="Under Review">Under Review</option>
-                  <option value="Documents Pending">Documents Pending</option>
-                  <option value="Assigned">Assigned</option>
+                  <option value="all">All Statuses</option>
+                  <option value="new">New</option>
+                  <option value="in_review">In Review</option>
+                  <option value="qualified">Qualified</option>
+                  <option value="declined">Declined</option>
                 </select>
               </div>
             </div>
-          </div>
 
-          <table className="w-full">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Case #</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Client</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Child</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Status</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Priority</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Date</th>
-                <th className="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"></th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              {filteredCases.map(caseItem => (
-                <tr key={caseItem.id} className="hover:bg-gray-50">
-                  <td className="px-6 py-4">
-                    <span className="font-mono text-sm text-[#1E40AF]">{caseItem.caseNumber}</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="font-medium text-gray-900">{caseItem.clientName}</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="text-gray-600">{caseItem.childName}</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${statusColors[caseItem.status]}`}>
-                      {caseItem.status}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className={`font-medium text-sm ${priorityColors[caseItem.priority]}`}>
-                      {caseItem.priority}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span className="text-gray-600 text-sm">{caseItem.createdAt}</span>
-                  </td>
-                  <td className="px-6 py-4">
-                    <button className="text-[#1E40AF] hover:text-[#1E40AF]">
-                      <ChevronRight className="w-5 h-5" />
-                    </button>
-                  </td>
-                </tr>
+            <div className="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+              <table className="w-full text-sm">
+                <thead className="bg-[#F8F9FA] border-b border-[#E2E8F0]">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Date</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Parent Name</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Child Name</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">State</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Email</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E2E8F0]">
+                  {filteredCases.length === 0 ? (
+                    <tr><td colSpan={7} className="px-4 py-12 text-center text-[#475569]">No cases found.</td></tr>
+                  ) : filteredCases.map(c => (
+                    <tr key={c.id} className="hover:bg-[#F8F9FA] transition">
+                      <td className="px-4 py-3 text-[#475569] whitespace-nowrap">
+                        {new Date(c.created_at).toLocaleDateString()}
+                      </td>
+                      <td className="px-4 py-3 font-medium text-[#111827]">
+                        {c.first_name} {c.last_name}
+                      </td>
+                      <td className="px-4 py-3 text-[#475569]">{c.child_first_name} {c.child_last_name}</td>
+                      <td className="px-4 py-3 text-[#475569]">{c.state}</td>
+                      <td className="px-4 py-3 text-[#475569]">
+                        <a href={`mailto:${c.email}`} className="text-[#1E40AF] hover:underline">{c.email}</a>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${statusColor(c.status || 'new')}`}>
+                          {(c.status || 'new').replace('_', ' ').toUpperCase()}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => downloadCasePDF(c)}
+                            className="bg-[#1E40AF] hover:bg-[#1E3A8A] text-white text-xs px-3 py-1.5 rounded-lg transition"
+                          >
+                            PDF
+                          </button>
+                          <button className="border border-[#E2E8F0] hover:border-[#1E40AF] text-[#475569] hover:text-[#1E40AF] text-xs px-3 py-1.5 rounded-lg transition">
+                            View
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* ── INFRASTRUCTURE TAB ── */}
+        {activeTab === 'infrastructure' && (
+          <div>
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>Infrastructure &amp; API Keys</h2>
+              <p className="text-sm text-[#475569]">Full-stack partner registry. API keys are masked — click to reveal. All views are logged.</p>
+            </div>
+            <div className="grid gap-4">
+              {infrastructure.map(item => (
+                <div key={item.id} className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-1">
+                        <h3 className="font-bold text-[#111827] text-lg">{item.partner_name}</h3>
+                        <span className="text-xs bg-[#F8F9FA] border border-[#E2E8F0] px-2 py-0.5 rounded text-[#475569] uppercase tracking-wider">{item.category}</span>
+                      </div>
+                      <p className="text-sm text-[#475569] mb-3">{item.purpose}</p>
+                      {item.notes && <p className="text-xs text-[#94a3b8] italic">{item.notes}</p>}
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <div className="text-xl font-bold text-[#111827]">
+                        {item.monthly_cost > 0 ? `$${item.monthly_cost}/mo` : 'Free'}
+                      </div>
+                      {item.dashboard_url && (
+                        <a href={item.dashboard_url} target="_blank" rel="noopener noreferrer"
+                           className="text-xs text-[#1E40AF] hover:underline">Open Dashboard &rarr;</a>
+                      )}
+                    </div>
+                  </div>
+                  {item.api_key_encrypted && (
+                    <div className="mt-4 pt-4 border-t border-[#E2E8F0] flex items-center gap-3">
+                      <span className="text-xs font-semibold text-[#475569] uppercase tracking-wider">API Key:</span>
+                      <code className="flex-1 bg-[#F8F9FA] border border-[#E2E8F0] rounded px-3 py-1.5 text-sm font-mono text-[#111827]">
+                        {revealedKeys.has(item.id) ? item.api_key_encrypted : '••••••••••••••••••••••••••••••••'}
+                      </code>
+                      <button onClick={() => toggleRevealKey(item.id)}
+                              className="text-xs border border-[#E2E8F0] hover:border-[#1E40AF] px-3 py-1.5 rounded-lg text-[#475569] hover:text-[#1E40AF] transition">
+                        {revealedKeys.has(item.id) ? 'Hide' : 'Reveal'}
+                      </button>
+                      {revealedKeys.has(item.id) && (
+                        <button onClick={() => copyToClipboard(item.api_key_encrypted)}
+                                className="text-xs bg-[#1E40AF] text-white px-3 py-1.5 rounded-lg hover:bg-[#1E3A8A] transition">
+                          Copy
+                        </button>
+                      )}
+                    </div>
+                  )}
+                </div>
               ))}
-            </tbody>
-          </table>
-
-          <div className="p-4 border-t border-gray-200 text-center">
-            <Link href="/admin/cases" className="text-[#1E40AF] hover:text-[#1E40AF] font-medium">
-              View All Cases →
-            </Link>
+            </div>
           </div>
-        </div>
-      </main>
+        )}
+
+        {/* ── DOMAINS TAB ── */}
+        {activeTab === 'domains' && (
+          <div>
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>Domain Registry</h2>
+              <p className="text-sm text-[#475569]">All owned domains, where they point, and their current status.</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+              <table className="w-full text-sm">
+                <thead className="bg-[#F8F9FA] border-b border-[#E2E8F0]">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Domain</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Registrar</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Expiry</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Points To</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Purpose</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Status</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Notes</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E2E8F0]">
+                  {domains.map(d => (
+                    <tr key={d.id} className="hover:bg-[#F8F9FA] transition">
+                      <td className="px-4 py-3 font-mono text-sm font-semibold text-[#1E40AF]">{d.domain}</td>
+                      <td className="px-4 py-3 text-[#475569]">{d.registrar}</td>
+                      <td className="px-4 py-3 text-[#475569]">{d.expiry_date ? new Date(d.expiry_date).toLocaleDateString() : '—'}</td>
+                      <td className="px-4 py-3 text-[#475569]">{d.pointed_to || '—'}</td>
+                      <td className="px-4 py-3 text-[#475569]">{d.purpose}</td>
+                      <td className="px-4 py-3">
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
+                          d.status === 'active' ? 'bg-green-100 text-green-800' :
+                          d.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                          'bg-gray-100 text-gray-800'
+                        }`}>{d.status?.toUpperCase()}</span>
+                      </td>
+                      <td className="px-4 py-3 text-xs text-[#94a3b8] italic">{d.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* ── ANALYTICS TAB ── */}
+        {activeTab === 'analytics' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-2" style={{fontFamily:'Georgia,serif'}}>Analytics</h2>
+            <p className="text-sm text-[#475569] mb-6">Site traffic, conversion rates, and campaign performance. Connect Google Analytics or Plausible below.</p>
+            <div className="bg-white border border-[#E2E8F0] rounded-xl p-12 text-center shadow-sm">
+              <h3 className="text-lg font-bold text-[#111827] mb-2">Analytics Integration Pending</h3>
+              <p className="text-sm text-[#475569] mb-6">Embed your Google Analytics 4 or Plausible dashboard here. Add your Measurement ID to .env to activate.</p>
+              <div className="grid grid-cols-3 gap-4 max-w-lg mx-auto">
+                <div className="bg-[#F8F9FA] rounded-xl p-4 border border-[#E2E8F0]">
+                  <div className="text-2xl font-bold text-[#111827]">{cases.length}</div>
+                  <div className="text-xs text-[#475569]">Total Submissions</div>
+                </div>
+                <div className="bg-[#F8F9FA] rounded-xl p-4 border border-[#E2E8F0]">
+                  <div className="text-2xl font-bold text-green-600">{cases.filter(c=>c.status==='qualified').length}</div>
+                  <div className="text-xs text-[#475569]">Qualified</div>
+                </div>
+                <div className="bg-[#F8F9FA] rounded-xl p-4 border border-[#E2E8F0]">
+                  <div className="text-2xl font-bold text-blue-600">{cases.filter(c=>c.status==='new'||!c.status).length}</div>
+                  <div className="text-xs text-[#475569]">New / Pending</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── EMAILS TAB ── */}
+        {activeTab === 'emails' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-2" style={{fontFamily:'Georgia,serif'}}>Email Activity</h2>
+            <p className="text-sm text-[#475569] mb-6">Transactional email log via Resend. Connect Resend webhook to populate this log.</p>
+            <div className="bg-white border border-[#E2E8F0] rounded-xl p-12 text-center shadow-sm">
+              <h3 className="text-lg font-bold text-[#111827] mb-2">Email Log Integration Pending</h3>
+              <p className="text-sm text-[#475569]">Add RESEND_WEBHOOK_SECRET to .env and configure webhook in Resend dashboard to activate email logging.</p>
+            </div>
+          </div>
+        )}
+
+        {/* ── LANDING PAGES TAB ── */}
+        {activeTab === 'landing' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-2" style={{fontFamily:'Georgia,serif'}}>Landing Pages &amp; Campaigns</h2>
+            <p className="text-sm text-[#475569] mb-6">Track all landing pages, UTM campaigns, ad spend, and conversion rates.</p>
+            <div className="bg-white border border-[#E2E8F0] rounded-xl p-12 text-center shadow-sm">
+              <h3 className="text-lg font-bold text-[#111827] mb-2">Landing Pages — Coming Soon</h3>
+              <p className="text-sm text-[#475569]">Add your first landing page campaign to begin tracking performance.</p>
+            </div>
+          </div>
+        )}
+
+        {/* ── MEDIA LIBRARY TAB ── */}
+        {activeTab === 'media' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{fontFamily:'Georgia,serif'}}>Media Library</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { src: '/alg-logo.png', label: 'ALG Logo (Primary)' },
+                { src: '/ajf-logo.png', label: 'AJF Logo (Transparent)' },
+                { src: '/Alex-Kompothecras.webp', label: 'Alex Kompothecras' },
+                { src: '/Chase-Engelbrecht.webp', label: 'Chase Engelbrecht' },
+                { src: '/nicolas-hulscher.webp', label: 'Nicolas Hulscher' },
+              ].map(asset => (
+                <div key={asset.src} className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
+                  <div className="h-36 bg-[#F8F9FA] flex items-center justify-center p-4">
+                    <img src={asset.src} alt={asset.label} className="max-h-28 max-w-full object-contain" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-xs font-medium text-[#111827] mb-2">{asset.label}</p>
+                    <a href={asset.src} download className="text-xs text-[#1E40AF] hover:underline">Download</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── DATABASE TAB ── */}
+        {activeTab === 'database' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-2" style={{fontFamily:'Georgia,serif'}}>Database</h2>
+            <p className="text-sm text-[#475569] mb-6">Supabase schema reference and direct links.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-[#111827] mb-4">Connection Info</h3>
+                <dl className="space-y-2 text-sm">
+                  <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Project ID:</dt><dd className="font-mono text-[#111827]">nyrarsaigsetyvinlpay</dd></div>
+                  <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Region:</dt><dd className="text-[#111827]">us-east-1</dd></div>
+                  <div className="flex gap-2"><dt className="text-[#475569] w-32 flex-shrink-0">Total Cases:</dt><dd className="font-bold text-[#1E40AF]">{cases.length}</dd></div>
+                </dl>
+                <a href="https://supabase.com/dashboard/project/nyrarsaigsetyvinlpay" target="_blank" rel="noopener noreferrer"
+                   className="mt-4 inline-block text-sm text-[#1E40AF] font-semibold hover:underline">Open Supabase Dashboard &rarr;</a>
+              </div>
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-[#111827] mb-4">Tables</h3>
+                <ul className="space-y-2 text-sm font-mono text-[#475569]">
+                  {['intake_submissions','admin_users','audit_log','infrastructure','domains','authors','links'].map(t => (
+                    <li key={t} className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── SETTINGS TAB ── */}
+        {activeTab === 'settings' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{fontFamily:'Georgia,serif'}}>Settings</h2>
+            <div className="grid gap-6">
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-[#111827] mb-1">Two-Factor Authentication</h3>
+                <p className="text-sm text-[#475569] mb-4">SMS-based 2FA via Twilio. Requires TWILIO_AUTH_TOKEN in .env.</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-6 bg-gray-200 rounded-full relative cursor-not-allowed opacity-60">
+                    <div className="w-4 h-4 bg-white rounded-full absolute left-1 top-1 shadow"></div>
+                  </div>
+                  <span className="text-sm text-[#475569]">Disabled — configure Twilio env vars to enable</span>
+                </div>
+              </div>
+              <div className="bg-white border border-[#E2E8F0] rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-[#111827] mb-4">Admin Users</h3>
+                <p className="text-sm text-[#475569]">Manage user access in the Supabase Dashboard &rarr; admin_users table. Add users via Supabase Auth, then insert their user_id and role.</p>
+                <a href="https://supabase.com/dashboard/project/nyrarsaigsetyvinlpay/editor" target="_blank" rel="noopener noreferrer"
+                   className="mt-3 inline-block text-sm text-[#1E40AF] font-semibold hover:underline">Manage Users in Supabase &rarr;</a>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── AUDIT LOG TAB ── */}
+        {activeTab === 'audit' && (
+          <div>
+            <h2 className="text-2xl font-bold text-[#111827] mb-2" style={{fontFamily:'Georgia,serif'}}>Audit Log</h2>
+            <p className="text-sm text-[#475569] mb-6">HIPAA-required log of all access events. Every login, case view, and PDF download is recorded.</p>
+            <div className="bg-white rounded-xl border border-[#E2E8F0] overflow-hidden shadow-sm">
+              <table className="w-full text-sm">
+                <thead className="bg-[#F8F9FA] border-b border-[#E2E8F0]">
+                  <tr>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Timestamp</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">User</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Action</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Resource</th>
+                    <th className="px-4 py-3 text-left text-xs font-bold text-[#475569] uppercase tracking-wider">Record ID</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E2E8F0]">
+                  {auditLog.length === 0 ? (
+                    <tr><td colSpan={5} className="px-4 py-12 text-center text-[#475569]">No audit events yet.</td></tr>
+                  ) : auditLog.map(log => (
+                    <tr key={log.id} className="hover:bg-[#F8F9FA]">
+                      <td className="px-4 py-3 text-[#475569] whitespace-nowrap text-xs">{new Date(log.created_at).toLocaleString()}</td>
+                      <td className="px-4 py-3 text-[#111827] text-xs">{log.user_email}</td>
+                      <td className="px-4 py-3"><span className="bg-blue-50 text-blue-800 text-xs px-2 py-1 rounded font-mono">{log.action}</span></td>
+                      <td className="px-4 py-3 text-[#475569] text-xs">{log.resource}</td>
+                      <td className="px-4 py-3 text-[#475569] font-mono text-xs">{log.resource_id?.slice(0,8) || '—'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+      </div>
     </div>
   )
 }
