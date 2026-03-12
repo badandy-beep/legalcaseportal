@@ -181,42 +181,27 @@ export default function OurStoryPage() {
             {' '}&mdash; two organizations providing direct support services to individuals and families living with autism and developmental disabilities in the region. This is not a marketing event. It is a public declaration, made every year, that this fight is personal.
           </p>
 
-          {/* 5K Reel — Phone Frame */}
+          {/* 5K Reel — Landscape Phone Frame */}
           <div className="my-10 flex justify-center items-center">
             <div
               style={{
-                transform: 'rotate(-2deg)',
+                transform: 'rotate(-1deg)',
                 background: '#111827',
-                borderRadius: '2.5rem',
-                padding: '12px',
+                borderRadius: '20px',
+                padding: '10px',
                 boxShadow: '0 25px 60px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.15)',
-                maxWidth: '300px',
-                width: '100%',
-                position: 'relative',
+                width: '480px',
+                maxWidth: '100%',
               }}
             >
-              {/* Notch */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: '80px',
-                  height: '24px',
-                  background: '#111827',
-                  borderRadius: '0 0 16px 16px',
-                  zIndex: 10,
-                }}
-              />
               <video
                 src="/5k-reel-web.mp4"
                 controls
                 playsInline
                 preload="metadata"
                 poster=""
-                className="w-full rounded-[2rem]"
-                style={{ aspectRatio: '9/16', objectFit: 'cover', display: 'block' }}
+                className="w-full rounded-[12px]"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             </div>
           </div>
