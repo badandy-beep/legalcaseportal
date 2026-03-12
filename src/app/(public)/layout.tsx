@@ -15,12 +15,14 @@ const navLinks = [
 const aboutLinks = [
   { label: 'Our Story', href: '/our-story' },
   { label: 'Our Team', href: '/our-team' },
+  { label: 'In The Fight', href: '/in-the-fight' },
 ]
 
 const allLinks = [
   { label: 'Home', href: '/' },
   { label: 'Our Story', href: '/our-story' },
   { label: 'Our Team', href: '/our-team' },
+  { label: 'In The Fight', href: '/in-the-fight' },
   { label: 'How VICP Works', href: '/how-vicp-works' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Deadline Calculator', href: '/deadline-calculator' },
@@ -33,6 +35,7 @@ const footerLinks = [
   { label: 'Home', href: '/' },
   { label: 'Our Story', href: '/our-story' },
   { label: 'Our Team', href: '/our-team' },
+  { label: 'In The Fight', href: '/in-the-fight' },
   { label: 'How VICP Works', href: '/how-vicp-works' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Deadline Calculator', href: '/deadline-calculator' },
