@@ -20,21 +20,25 @@ export default function OurStoryPage() {
         {/* Section 1 — The Family */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-4">The Family</h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p>
-              Dr. Gary and Beth Kompothecras raised six children in Sarasota. Two of them —
-              Bronson and Sarah Alice — are severely affected by autism spectrum disorder. What
-              began as a private family struggle became a very public mission.
+          <div className="text-gray-700 leading-relaxed">
+            <div className="mb-6 overflow-hidden rounded-xl shadow-md border border-[#E2E8F0]">
+              <img
+                src="/gary-beth-family.webp"
+                alt="Dr. Gary and Beth Kompothecras with their children including Bronson and Sarah Alice"
+                className="w-full object-cover object-top max-h-72"
+              />
+              <p className="text-xs text-[#475569] italic text-center px-4 py-2 bg-[#F8F9FA] border-t border-[#E2E8F0]">
+                Dr. Gary and Beth Kompothecras with their children — including Bronson (right, in blue) and Sarah Alice (center) — whose autism diagnoses set the entire Kompothecras family on a two-decade mission for answers and accountability.
+              </p>
+            </div>
+            <p className="text-[#475569] leading-relaxed">
+              Dr. Gary and Beth Kompothecras raised six children together on Siesta Key in Sarasota, Florida. Two of them — Bronson and Sarah Alice — were diagnosed with severe autism as toddlers. Bronson spent years in intensive therapy simply learning to say the name of his favorite toy: bottles. Sarah Alice still repeats back what people say to her. For this family, autism is not a policy position. It is Tuesday morning.
             </p>
-            <p>
-              Dr. Gary joined the Florida Governor&rsquo;s Task Force on Autism Spectrum Disorders,
-              lobbied legislators, pushed for stricter vaccine ingredient standards in Florida, and
-              financed research. In January 2026, Governor DeSantis appointed Dr. Gary to the
-              Florida Board of Chiropractic Medicine.
+            <p className="text-[#475569] leading-relaxed mt-4">
+              Dr. Gary — founder of 1-800-ASK-GARY, a $100M+ accident referral network spanning three states — turned his business network and political influence into an autism policy weapon. In 2008, Governor Charlie Crist appointed him to the <strong className="text-[#0a1628]">Florida Governor&apos;s Task Force on Autism Spectrum Disorders</strong>, where he served alongside former NFL quarterback Dan Marino. He lobbied the Florida legislature for the nation&apos;s strictest thimerosal vaccine restriction law. He commissioned research using Florida&apos;s Medicaid database. He personally funded screenings of the documentary <em>Vaxxed</em> across Sarasota. Both Bronson and Sarah Alice were petitioners in the federal Vaccine Court. In January 2026, Governor DeSantis appointed Dr. Gary to the <strong className="text-[#0a1628]">Florida Board of Chiropractic Medicine</strong>.
             </p>
-            <p>
-              In September 2025, he formally launched the Autism Justice Foundation, a 501(c)(4)
-              nonprofit working alongside Children&rsquo;s Health Defense.
+            <p className="text-[#475569] leading-relaxed mt-4">
+              Beth has been there for all of it — as the mother who has lived every appointment, every therapy session, every institutional failure, and every small victory. Together, Gary and Beth have hosted autism fundraising galas, supported the Autism Society of Florida, and advocated alongside their congressional delegation for accountability and transparency. In September 2025, they co-founded the <strong className="text-[#0a1628]">Autism Justice Foundation</strong>. After more than twenty years of fighting, they knew precisely where the system was failing families — and they built something to fix it.
             </p>
           </div>
         </section>

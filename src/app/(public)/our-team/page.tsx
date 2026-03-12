@@ -137,44 +137,89 @@ export default function OurTeamPage() {
       </section>
 
       {/* ── SECTION 4: AJF CO-FOUNDERS & BOARD ── */}
-      <section className="bg-white pb-16">
-        <div className="max-w-5xl mx-auto px-4">
-          <h3 className="text-lg font-bold text-[#111827] pb-3 border-b border-[#E2E8F0] mb-8">Co-Founders &amp; Board of Directors</h3>
+      <section className="py-20 bg-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Dr. Gary Kompothecras */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/DrGAry.jpg" alt="Dr. Gary Kompothecras" className="w-full h-64 object-cover object-top" />
-              <div className="p-5">
-                <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Dr. Gary Kompothecras</h4>
-                <p className="text-[#0a1628] font-semibold text-sm mb-3">Co-Founder &amp; Chairman</p>
+          {/* Section Header */}
+          <div className="text-center mb-14">
+            <div className="inline-block bg-[#0a1628] text-[#d4a843] text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full mb-4">
+              Co-Founders &amp; Board of Directors
+            </div>
+            <h2 className="text-3xl font-bold text-[#0a1628]" style={{fontFamily:'Georgia,serif'}}>
+              The People Behind the Mission
+            </h2>
+            <p className="mt-3 text-[#475569] max-w-2xl mx-auto text-base">
+              The Autism Justice Foundation was built by a family that lived it — and the professionals who answered the call.
+            </p>
+          </div>
+
+          {/* Board Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* GARY & BETH KOMPOTHECRAS — JOINT CARD */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-[#E2E8F0] flex flex-col">
+              <div className="relative">
+                <img
+                  src="/gary-and-beth-kompothecras.webp"
+                  alt="Dr. Gary and Beth Kompothecras, Co-Founders of the Autism Justice Foundation"
+                  className="w-full h-72 object-cover object-top"
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#d4a843]" />
+                <div className="absolute top-3 left-3 bg-[#0a1628]/85 text-[#d4a843] text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm tracking-wide">
+                  Co-Founders
+                </div>
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-xl font-bold text-[#0a1628] mb-0.5" style={{fontFamily:'Georgia,serif'}}>
+                  Dr. Gary &amp; Beth Kompothecras
+                </h3>
+                <p className="text-[#d4a843] font-semibold text-sm mb-1">Co-Founders — Autism Justice Foundation</p>
+                <p className="text-xs text-[#475569] italic mb-4">Siesta Key, Florida</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">FL Governor&apos;s Autism Task Force</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">1-800-ASK-GARY Founder</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">DeSantis Appointee 2026</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">20+ Years of Autism Advocacy</span>
+                </div>
+                <div className="space-y-3 text-base text-[#475569] leading-relaxed">
+                  <p>
+                    Dr. Gary and Beth Kompothecras raised six children on Siesta Key in Sarasota, Florida. Two of them — Bronson and Sarah Alice — were diagnosed with severe autism as toddlers. Bronson spent years in intensive therapy simply learning to say the name of his favorite toy. Sarah Alice still repeats back what people say to her, a form of echolalia common in nonverbal autism. For Gary and Beth, autism is not a cause they discovered. It is the daily reality of their family.
+                  </p>
+                  <p>
+                    Dr. Gary — who built 1-800-ASK-GARY from a single Sarasota clinic in 1996 into a $100M+ referral network spanning 28 offices across three states — channeled that same relentless drive into the autism policy arena. In 2008, Governor Charlie Crist appointed him to the <strong className="text-[#0a1628]">Florida Governor&apos;s Task Force on Autism Spectrum Disorders</strong>, where he served alongside former NFL quarterback Dan Marino. He personally lobbied the Florida legislature for what would have been the nation&apos;s strictest thimerosal restriction law, pledging every political relationship and dollar he had to get it passed. He commissioned independent research using Florida&apos;s Medicaid database to study vaccine-autism connections. He brought the documentary <em>Vaxxed</em> to Sarasota at his own expense. Both Bronson and Sarah Alice were petitioners in the federal Vaccine Court.
+                  </p>
+                  <p>
+                    Beth has been beside him for all of it — and in many ways ahead of it. As the mother who has navigated the daily weight of raising two severely autistic adults through a system that was never designed for families like theirs, Beth is the emotional backbone of everything the Kompothecras family has built. She and Gary have hosted autism fundraising galas at their Siesta Key estate for years, and she has worked alongside him in advocating to Florida&apos;s congressional delegation and supporting the Autism Society of Florida. In January 2026, Governor DeSantis appointed Dr. Gary to the <strong className="text-[#0a1628]">Florida Board of Chiropractic Medicine</strong>. In September 2025, Gary and Beth co-founded the <strong className="text-[#0a1628]">Autism Justice Foundation</strong> — because after twenty years of fighting the system, they knew exactly where families were being left behind.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* WILLIAM COLLIER JR. */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-[#E2E8F0] flex flex-col">
+              <div className="relative">
+                <div className="w-full h-72 bg-[#0a1628] flex items-center justify-center">
+                  <span className="text-[#d4a843] text-5xl font-bold" style={{fontFamily:'Georgia,serif'}}>WC</span>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#d4a843]" />
+              </div>
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-xl font-bold text-[#0a1628] mb-0.5" style={{fontFamily:'Georgia,serif'}}>
+                  William Collier Jr.
+                </h3>
+                <p className="text-[#d4a843] font-semibold text-sm mb-1">Board of Directors — Autism Justice Foundation</p>
+                <p className="text-xs text-[#475569] italic mb-4">Digital Media &amp; Technology | Noetic Dharma Group</p>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">U.S. Navy Veteran</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Publisher &amp; Media Strategist</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Freedomist Network</span>
+                </div>
                 <p className="text-base text-[#475569] leading-relaxed">
-                  Widely known as &lsquo;Dr. Gary,&rsquo; he is a pioneering medical industry entrepreneur and decades-long autism advocate. Founder of 1-800-ASK-GARY and Physician&rsquo;s Group LLC, a nationwide medical clinic network based in Sarasota, Florida. Dr. Gary&rsquo;s professional success extends to media production, including producing the MTV reality series &lsquo;Siesta Key,&rsquo; which ran for five seasons. His deepest commitment lies in combating autism — a cause profoundly personal due to his two children, Bronson and Sarah Alice, who live with the condition. Dr. Gary has funded screenings of &lsquo;VAXXED: From Cover-Up to Catastrophe,&rsquo; lobbied for legislation to limit thimerosal in vaccines, and channeled his resources into building a unified advocacy platform for autism families.
+                  William Collier Jr. is a U.S. Navy veteran, publisher, and digital media strategist with over two decades building advocacy platforms and independent media networks. As publisher of the Freedomist Network and founder of Regal Blue Media, Bill has spent his career amplifying voices that institutional media ignores. At Noetic Dharma Group, he leads digital strategy and technology development for the MAHA reform ecosystem — including this portal. He joined the Autism Justice Foundation Board because the mission is exactly what he has always built toward: technology and media in the direct service of justice for families the system forgot.
                 </p>
               </div>
             </div>
 
-            {/* William Collier Jr. */}
-            <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="https://autismjusticefoundation.org/wp-content/uploads/2021/05/Screenshot-2025-09-12-130448.png" alt="William Collier Jr." className="w-full h-64 object-cover object-top" />
-              <div className="p-5">
-                <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>William Collier Jr.</h4>
-                <p className="text-[#0a1628] font-semibold text-sm mb-3">Board of Directors · Co-Founder · Digital Media &amp; Marketing</p>
-                <p className="text-base text-[#475569] leading-relaxed">
-                  William R. Collier Jr. is a distinguished political consultant, researcher, and digital strategist with over three decades of experience in intelligence gathering, media, and conservative activism. A U.S. Navy veteran specializing in intelligence analysis, Collier founded Kross Publishing in 1992, was a key early organizer of the Tea Party movement, and is a principal in Intellz (opposition research), Freedomist LLC (center-right activism platform), and Mindful Intelligence (private intelligence). He co-authored The Capitalist Manifesto (2020) with Ralph Benko, endorsed by Dr. Art Laffer and Steve Forbes. As co-founder of the Autism Justice Foundation, Collier serves on its Board of Directors, overseeing digital and marketing strategy and driving the Foundation&rsquo;s public advocacy campaigns. His clients have included the RNC, NRCC, NRSC, Conservative Party of Great Britain, and numerous PACs.
-                </p>
-              </div>
-            </div>
-
-            {/* Alex J. Kompothecras — Board rep */}
-            <div className="bg-[#F8F9FA] border border-[#E2E8F0] rounded-xl p-6 flex flex-col justify-center">
-              <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>Alex J. Kompothecras</h4>
-              <p className="text-[#0a1628] font-semibold text-sm mb-4">Board of Directors</p>
-              <p className="text-base text-[#475569] leading-relaxed mb-4">
-                Alex J. Kompothecras serves on the Autism Justice Foundation Board of Directors in a personal advocacy capacity. As the son of Dr. Gary Kompothecras and brother of Bronson and Sarah Alice, Alex brings firsthand family experience to the Foundation&rsquo;s mission. His Board role is entirely separate from his position as Managing Attorney of Alpha Law Group.
-              </p>
-              <p className="text-xs text-[#94A3B8] italic">For legal representation, see Alpha Law Group above.</p>
-            </div>
           </div>
         </div>
       </section>
