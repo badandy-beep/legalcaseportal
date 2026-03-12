@@ -53,11 +53,16 @@ export default function PublicLayout({
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#E2E8F0]" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/">
-              <img src="/alg-logo.png" alt="Alpha Law Group" className="h-8 w-auto" />
-            </Link>
+            <a href="/" className="flex items-center no-underline flex-shrink-0">
+              <img
+                src="/alg-logo.png"
+                alt="Alpha Law Group — Justice for Autism"
+                className="h-14 md:h-16 w-auto object-contain object-left"
+                style={{ maxWidth: '320px' }}
+              />
+            </a>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-0.5">
@@ -114,6 +119,16 @@ export default function PublicLayout({
         {/* Mobile dropdown */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-[#E2E8F0] z-50 flex flex-col shadow-lg">
+            <div className="px-4 py-3 border-b border-[#E2E8F0]">
+              <a href="/" className="flex items-center no-underline">
+                <img
+                  src="/alg-logo.png"
+                  alt="Alpha Law Group — Justice for Autism"
+                  className="h-10 w-auto object-contain object-left"
+                  style={{ maxWidth: '220px' }}
+                />
+              </a>
+            </div>
             {allLinks.map((link) => (
               <Link
                 key={link.label}
@@ -133,7 +148,7 @@ export default function PublicLayout({
       </nav>
 
       {/* Content offset for fixed nav */}
-      <div className="pt-16">
+      <div className="pt-20">
         {children}
 
         {/* Footer */}
