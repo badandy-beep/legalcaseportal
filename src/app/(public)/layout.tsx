@@ -56,22 +56,26 @@ export default function PublicLayout({
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a1628]" aria-label="Main navigation">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="/" className="flex items-center no-underline flex-shrink-0">
+          <div className="flex items-center justify-between h-14">
+            {/* Logo — shield + text */}
+            <a href="/" className="flex items-center gap-2.5 no-underline flex-shrink-0">
               <img
-                src="/alg-logo.png"
-                alt="Alpha Law Group — Justice for Autism"
-                className="h-14 md:h-16 w-auto object-contain object-left"
-                style={{ maxWidth: '320px' }}
+                src="/alg-shield.png"
+                alt="Alpha Law Group"
+                className="h-10 w-10 object-contain"
               />
+              <div className="hidden sm:block leading-tight">
+                <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW</span>
+                <br />
+                <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>GROUP</span>
+              </div>
             </a>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-0.5">
+            <div className="hidden md:flex items-center gap-1">
               {/* About dropdown */}
               <div className="relative group">
-                <button className="text-white hover:text-[#d4a843] transition-colors px-2 py-1.5 text-sm font-medium flex items-center gap-1" style={{ fontFamily: 'system-ui', fontSize: '14px', fontWeight: 500, letterSpacing: '0.01em' }}>
+                <button className="text-white hover:text-[#d4a843] transition-colors px-2 py-1.5 text-sm font-medium flex items-center gap-1" style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}>
                   About
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
@@ -81,7 +85,7 @@ export default function PublicLayout({
                       key={link.label}
                       href={link.href}
                       className="block px-4 py-2.5 text-sm text-white hover:text-[#d4a843] hover:bg-[#0a1628]/80 transition"
-                      style={{ fontFamily: 'system-ui', fontSize: '14px', fontWeight: 500 }}
+                      style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500 }}
                     >
                       {link.label}
                     </Link>
@@ -93,8 +97,8 @@ export default function PublicLayout({
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-white hover:text-[#d4a843] transition-colors px-2 py-1.5 text-sm font-medium"
-                  style={{ fontFamily: 'system-ui', fontSize: '14px', fontWeight: 500, letterSpacing: '0.01em' }}
+                  className="text-white hover:text-[#d4a843] transition-colors px-1.5 py-1.5 text-sm font-medium"
+                  style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}
                 >
                   {link.label}
                 </Link>
@@ -102,7 +106,7 @@ export default function PublicLayout({
 
               <a
                 href="/intake/phase-1"
-                className="inline-block px-5 py-2 text-sm font-bold uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90 ml-2"
+                className="inline-block px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90 ml-2"
                 style={{ background: '#d4a843', color: '#0a1628' }}
               >
                 Check Your Eligibility →
@@ -124,13 +128,15 @@ export default function PublicLayout({
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 w-full bg-[#0a1628] border-t border-[#d4a843]/20 z-50 flex flex-col shadow-lg">
             <div className="px-4 py-3 border-b border-[#d4a843]/20">
-              <a href="/" className="flex items-center no-underline">
+              <a href="/" className="flex items-center gap-2.5 no-underline">
                 <img
-                  src="/alg-logo.png"
-                  alt="Alpha Law Group — Justice for Autism"
-                  className="h-10 w-auto object-contain object-left"
-                  style={{ maxWidth: '220px' }}
+                  src="/alg-shield.png"
+                  alt="Alpha Law Group"
+                  className="h-9 w-9 object-contain"
                 />
+                <div className="leading-tight">
+                  <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW GROUP</span>
+                </div>
               </a>
             </div>
             {allLinks.map((link) => (
@@ -153,7 +159,7 @@ export default function PublicLayout({
       </nav>
 
       {/* Content offset for fixed nav */}
-      <div className="pt-20">
+      <div className="pt-14">
         {children}
 
         {/* Footer */}
