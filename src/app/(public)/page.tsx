@@ -132,28 +132,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* MOBILE: poster + tap to watch */}
-          <div className="md:hidden relative w-full" style={{ aspectRatio: '16/9' }}>
-            <img
-              src="https://img.youtube.com/vi/1AY8WskmioE/maxresdefault.jpg"
-              alt="Watch: Alpha Law Group VICP Commercial"
-              className="absolute inset-0 w-full h-full object-cover"
+          {/* MOBILE: inline YouTube player — never leaves the page */}
+          <div className="md:hidden relative w-full bg-black" style={{ aspectRatio: '16/9' }}>
+            <iframe
+              src="https://www.youtube.com/embed/1AY8WskmioE?controls=1&playsinline=1&modestbranding=1&rel=0"
+              title="Alpha Law Group — VICP Commercial"
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 'none' }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
             />
-            <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.5)' }} />
-            <a
-              href="https://www.youtube.com/watch?v=1AY8WskmioE"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10"
-            >
-              <div className="flex items-center justify-center w-16 h-16 rounded-full"
-                style={{ background: '#d4a843' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#0a1628" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <p className="text-white font-bold text-base">Watch Our Story</p>
-            </a>
           </div>
 
         </div>
