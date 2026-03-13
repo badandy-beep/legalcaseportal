@@ -250,38 +250,64 @@ export default function OurTeamPage() {
               </div>
             </div>
 
-            {/* WILLIAM COLLIER JR. */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-[#E2E8F0] flex flex-col">
-              <div className="relative">
-                <div className="w-full h-64 bg-[#0a1628] flex items-center justify-center">
-                  <span className="text-[#d4a843] text-6xl font-bold" style={{fontFamily:'Georgia,serif'}}>WC</span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#d4a843]" />
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="text-xl font-bold text-[#0a1628] mb-0.5" style={{fontFamily:'Georgia,serif'}}>
-                  William Collier Jr.
-                </h3>
-                <p className="text-[#d4a843] font-semibold text-sm mb-1">Board of Directors — Autism Justice Foundation</p>
-                <p className="text-xs text-[#475569] italic mb-5">Digital Media &amp; Technology | Noetic Dharma Group</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">U.S. Navy Veteran</span>
-                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Publisher &amp; Media Strategist</span>
-                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Freedomist Network</span>
-                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">MAHA Technology Lead</span>
-                </div>
-                <div className="space-y-3 text-base text-[#475569] leading-relaxed">
-                  <p>
-                    William Collier Jr. is a U.S. Navy veteran, independent publisher, and digital media strategist who has spent over two decades building advocacy platforms and independent media networks. As publisher of the Freedomist Network and founder of Regal Blue Media, Bill has spent his career amplifying the voices institutional media ignores.
-                  </p>
-                  <p>
-                    At Noetic Dharma Group, Bill leads digital strategy and technology for the MAHA reform ecosystem — including the platform you are using right now. He joined the AJF Board to ensure that the Foundation&apos;s message reaches every family that needs it, and that the path to federal compensation is as clear and accessible as it can be.
-                  </p>
-                </div>
-              </div>
-            </div>
 
           </div>
+
+          {/* WILLIAM R. COLLIER JR. — Full-width horizontal card */}
+          <div className="mt-10 bg-white rounded-2xl overflow-hidden shadow-md border border-[#E2E8F0]">
+            <div className="flex flex-col lg:flex-row">
+
+              {/* Photo column */}
+              <div className="lg:w-1/3 flex-shrink-0">
+                <div className="relative">
+                  <img
+                    src="/william-collier-jr.jpg"
+                    alt="William R. Collier Jr., Board of Directors, Autism Justice Foundation"
+                    className="w-full h-72 lg:h-full object-cover object-top"
+                    style={{minHeight:'320px'}}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#d4a843]" />
+                </div>
+              </div>
+
+              {/* Bio column */}
+              <div className="lg:w-2/3 p-8 lg:p-10 flex flex-col justify-start">
+                <h3 className="text-2xl font-bold text-[#0a1628] mb-0.5" style={{fontFamily:'Georgia,serif'}}>
+                  William R. Collier Jr.
+                </h3>
+                <p className="text-[#d4a843] font-semibold text-base mb-1">Board of Directors — Autism Justice Foundation</p>
+                <p className="text-xs text-[#475569] italic mb-5">Digital Strategy &amp; Platform Architecture | Co-Founder, Vaccine Veritas</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">U.S. Navy Veteran — Intelligence Analysis</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">RNC · NRCC · NRSC</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Endorsed by Steve Forbes · Sen. Rand Paul</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Co-Author, The Capitalist Manifesto (2020)</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">30+ Years · 20+ Congressional Clients</span>
+                </div>
+
+                <div className="space-y-4 text-base text-[#475569] leading-relaxed">
+                  <p>
+                    William R. Collier Jr. is a U.S. Navy veteran who served during the Cold War with a specialty in intelligence analysis. That discipline — systematic research, pattern identification, and targeted communication — has defined three decades of work in political consulting, digital strategy, and opposition research.
+                  </p>
+                  <p>
+                    In 1992, Collier founded Kross Publishing and launched a community newspaper in New Mexico. In 2008, he served as Community Governance Adviser for Team Sarah — at the time the largest conservative online platform supporting a national campaign — and applied intelligence-methodology research to expose a coordinated smear operation, resulting in a public apology from David Letterman to Sarah Palin. He was among the earliest organizers of the Tea Party movement. He served as associate producer on <em>The Undefeated</em> (2011) and was a contributor to the &ldquo;Build the Wall&rdquo; initiative.
+                  </p>
+                  <p>
+                    In 2015, he founded Regal Blue Media LLC (Pennsylvania), specializing in web strategy, digital communications, and censorship navigation for advocacy organizations. He is a principal in Intellz, an opposition research firm whose partner managed Glenn Youngkin&apos;s 2021 Virginia gubernatorial campaign. He operates Freedomist LLC, a center-right issue advocacy platform, and Mindful Intelligence, a private intelligence service. In 2020, he co-authored <em>The Capitalist Manifesto</em> with Ralph Benko — endorsed by Dr. Art Laffer and Steve Forbes. Forbes has publicly described Collier as a <strong className="text-[#0a1628]">&ldquo;web genius.&rdquo;</strong> Senator Rand Paul has offered similar recognition.
+                  </p>
+                  <p>
+                    His client record spans the <strong className="text-[#0a1628]">RNC, NRCC, NRSC, International Republican Institute, and the Conservative Party of Great Britain</strong>. Presidential campaigns include Bush-Cheney, Bush-Quayle, Giuliani for President, and Ted Cruz for President. Gubernatorial campaigns include Glenn Youngkin (Virginia), Doug Burgum (North Dakota), and Tommy Thompson (Wisconsin). He has served more than 20 congressional members across 15 states. As President of the Samaritan Medal Foundation, he secured a <strong className="text-[#0a1628]">$1.5 million grant</strong> through direct diplomatic advocacy for the Samaritan community in Israel.
+                  </p>
+                  <p>
+                    Collier co-founded <strong className="text-[#0a1628]">Vaccine Veritas</strong> alongside Dr. Gary Kompothecras and serves on its Board of Directors. At the Autism Justice Foundation, he oversees the digital strategy and platform infrastructure powering this portal.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
