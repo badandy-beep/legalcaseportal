@@ -5,89 +5,157 @@ import Link from 'next/link'
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section — YouTube Video */}
-      <section className="relative w-full bg-black" style={{ aspectRatio: '16/9', maxHeight: '85vh' }}>
+      {/* Split Hero — Full Viewport Height */}
+      <section
+        className="relative w-full flex flex-col md:flex-row"
+        style={{ minHeight: '100vh', background: '#0a1628' }}
+      >
 
-        {/* ── DESKTOP: autoplay iframe ── */}
-        <div className="hidden md:block absolute inset-0 w-full h-full overflow-hidden">
-          <iframe
-            id="hero-video"
-            src="https://www.youtube.com/embed/1AY8WskmioE?autoplay=1&mute=1&loop=1&playlist=1AY8WskmioE&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
-            title="Alpha Law Group — VICP Commercial"
-            className="absolute w-full h-full"
-            style={{
-              border: 'none',
-              pointerEvents: 'none',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '100%',
-              height: '100%',
-            }}
-            allow="autoplay; encrypted-media"
-            allowFullScreen={false}
-          />
-          {/* Overlay to block YouTube UI clicks on desktop */}
-          <div className="absolute inset-0" style={{ background: 'transparent', zIndex: 1 }} />
-          {/* Unmute button — desktop only */}
-          <div className="absolute bottom-6 right-6 z-10">
-            <button
-              id="unmute-btn"
-              onClick={() => {
-                const iframe = document.getElementById('hero-video') as HTMLIFrameElement;
-                if (iframe) {
-                  const isMuted = iframe.src.includes('mute=1');
-                  iframe.src = iframe.src.replace(
-                    isMuted ? 'mute=1' : 'mute=0',
-                    isMuted ? 'mute=0' : 'mute=1'
-                  );
-                  const btn = document.getElementById('unmute-btn');
-                  if (btn) {
-                    btn.innerHTML = isMuted
-                      ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg><span>Sound On</span>`
-                      : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><span>Mute</span>`;
-                  }
-                }
-              }}
-              className="flex items-center gap-2 px-4 py-2 text-white text-sm font-semibold rounded-full"
-              style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(8px)', zIndex: 10, position: 'relative' }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 24 24">
-                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-              </svg>
-              <span>Tap for Sound</span>
-            </button>
+        {/* ══ LEFT — CONTENT PANEL ══ */}
+        <div className="relative z-10 flex flex-col justify-center px-8 md:px-14 py-16 md:py-0 w-full md:w-[42%]"
+          style={{ background: '#0a1628' }}>
+
+          {/* Top label */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-px" style={{ background: '#d4a843' }} />
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#d4a843' }}>
+              Vaccine Injury Compensation Program
+            </span>
           </div>
+
+          {/* Headline */}
+          <h1 className="font-black leading-tight mb-5 text-white"
+            style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)', lineHeight: 1.1 }}>
+            Your Child May Be<br />
+            <span style={{ color: '#d4a843' }}>Entitled to Federal<br />Compensation.</span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="mb-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: '380px' }}>
+            Congress created the VICP to compensate families of vaccine-injured children.
+            Thousands of autism families qualify — and most never know it exists.
+            Alpha Law Group fights for you at <strong style={{ color: 'white' }}>no cost unless we win.</strong>
+          </p>
+
+          {/* Primary CTA */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <a href="/intake/phase-1"
+              className="inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
+              style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)' }}>
+              Check Your Eligibility — Free →
+            </a>
+            <a href="/intake/phase-1"
+              className="inline-flex items-center justify-center px-6 py-4 font-bold uppercase tracking-widest text-xs rounded-sm transition-opacity hover:opacity-80"
+              style={{ background: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
+              Refer Someone You Know
+            </a>
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {[
+              '✓ No Cost Unless We Win',
+              '✓ Florida Bar Licensed',
+              '✓ HIPAA Compliant',
+              '✓ Free Case Review',
+            ].map((badge) => (
+              <span key={badge} className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                {badge}
+              </span>
+            ))}
+          </div>
+
+          {/* Bottom — AJF logo mark */}
+          <div className="mt-12 pt-8 flex items-center gap-3"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+            <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-8 opacity-70" />
+            <div>
+              <p className="text-xs font-bold text-white opacity-60">Autism Justice Foundation</p>
+              <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>Alpha Law Group · Sarasota, FL</p>
+            </div>
+          </div>
+
         </div>
 
-        {/* ── MOBILE: poster + tap to watch ── */}
-        <div className="md:hidden absolute inset-0 w-full h-full">
-          {/* Poster image */}
-          <img
-            src="https://img.youtube.com/vi/1AY8WskmioE/maxresdefault.jpg"
-            alt="Watch: Alpha Law Group VICP Commercial"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          {/* Dark overlay */}
-          <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.55)' }} />
-          {/* Play button + text */}
-          <a
-            href="https://www.youtube.com/watch?v=1AY8WskmioE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10"
-          >
-            <div className="flex items-center justify-center w-20 h-20 rounded-full"
-              style={{ background: '#d4a843' }}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#0a1628" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
+        {/* ══ RIGHT — VIDEO PANEL ══ */}
+        <div className="relative w-full md:w-[58%]" style={{ minHeight: '50vh' }}>
+
+          {/* Gold accent border on left edge — connects the two panels */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"
+            style={{ background: 'linear-gradient(to bottom, transparent, #d4a843 20%, #d4a843 80%, transparent)' }} />
+
+          {/* DESKTOP: autoplay iframe */}
+          <div className="hidden md:block absolute inset-0 overflow-hidden">
+            <iframe
+              id="hero-video"
+              src="https://www.youtube.com/embed/1AY8WskmioE?autoplay=1&mute=1&loop=1&playlist=1AY8WskmioE&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
+              title="Alpha Law Group — VICP Commercial"
+              className="absolute w-full h-full"
+              style={{
+                border: 'none',
+                pointerEvents: 'none',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%) scale(1.05)',
+                width: '100%',
+                height: '100%',
+              }}
+              allow="autoplay; encrypted-media"
+              allowFullScreen={false}
+            />
+            {/* Dark vignette on left edge to blend with content panel */}
+            <div className="absolute inset-y-0 left-0 w-24 pointer-events-none"
+              style={{ background: 'linear-gradient(to right, #0a1628, transparent)' }} />
+            {/* Unmute button */}
+            <div className="absolute bottom-6 right-6 z-10">
+              <button
+                id="unmute-btn"
+                onClick={() => {
+                  const iframe = document.getElementById('hero-video') as HTMLIFrameElement;
+                  if (iframe) {
+                    const muted = iframe.src.includes('mute=1');
+                    iframe.src = iframe.src.replace(muted ? 'mute=1' : 'mute=0', muted ? 'mute=0' : 'mute=1');
+                    const btn = document.getElementById('unmute-btn');
+                    if (btn) btn.innerHTML = muted
+                      ? `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg><span>Sound On</span>`
+                      : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><span>Mute</span>`;
+                  }
+                }}
+                className="flex items-center gap-2 px-3 py-1.5 text-white text-xs font-semibold rounded-full"
+                style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', position: 'relative', zIndex: 10 }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+                </svg>
+                <span>Tap for Sound</span>
+              </button>
             </div>
-            <div className="text-center px-6">
-              <p className="text-white font-bold text-lg leading-tight">Watch Our Story</p>
-              <p className="text-white opacity-70 text-sm mt-1">Alpha Law Group · VICP Autism Claims</p>
-            </div>
-          </a>
+          </div>
+
+          {/* MOBILE: poster + tap to watch */}
+          <div className="md:hidden relative w-full" style={{ aspectRatio: '16/9' }}>
+            <img
+              src="https://img.youtube.com/vi/1AY8WskmioE/maxresdefault.jpg"
+              alt="Watch: Alpha Law Group VICP Commercial"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0" style={{ background: 'rgba(10,22,40,0.5)' }} />
+            <a
+              href="https://www.youtube.com/watch?v=1AY8WskmioE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-10"
+            >
+              <div className="flex items-center justify-center w-16 h-16 rounded-full"
+                style={{ background: '#d4a843' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#0a1628" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <p className="text-white font-bold text-base">Watch Our Story</p>
+            </a>
+          </div>
+
         </div>
 
       </section>
