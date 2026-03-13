@@ -101,8 +101,8 @@ const articles = [
     date: 'March 12, 2026',
     title: 'The Doctor Who Asked the Question They Didn\'t Want Asked — and Paid Everything for It',
     deck: 'Andrew Wakefield was a respected gastroenterologist at one of Britain\'s top hospitals when he published a study that changed the trajectory of autism science. What happened next became one of the most disputed chapters in modern medical history.',
-    image: '/gary-senate-sb1756-feb2026.jpg',
-    imageCaption: 'Dr. Gary Kompothecras — executive producer of VAXXED — at the Florida Senate Appropriations Committee hearing on medical freedom, February 24, 2026.',
+    image: '/andrew-wakefield.webp',
+    imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and author of the 1998 Lancet study on bowel disease and autism. Director of VAXXED: From Cover-Up to Catastrophe (2016).',
     author: 'AJF Editorial Staff',
     body: [
       { type: 'p', text: 'There is a version of Andrew Wakefield that the medical establishment wants you to know: a disgraced former doctor, struck off the British medical register, whose 1998 study linking the MMR vaccine to autism was retracted and whose claims were formally condemned by a General Medical Council tribunal. That version exists, and those are facts.' },
@@ -116,6 +116,7 @@ const articles = [
       { type: 'h2', text: 'What Wakefield Has Always Said' },
       { type: 'p', text: 'Wakefield has never recanted. He has denied fraud, denied falsification, and denied that financial relationships drove his conclusions. He maintains that his clinical findings were real — that the children in his study had both gastrointestinal disease and autism, that the parental reports of post-vaccination regression were genuine, and that the institutional response to his work was a campaign of suppression rather than a refutation. "I don\'t put any of the blame on anybody else," he said in a 2024 Epoch Times interview with his colleagues. "I followed the science where it led." That position has not moved in twenty-five years.' },
       { type: 'p', text: 'He moved to Austin, Texas after his resignation from Royal Free Hospital, co-founded the Thoughtful House research centre to study autism, and has continued working with autism families through advocacy, speaking, and film. In 2016, he directed VAXXED: From Cover-Up to Catastrophe, a documentary centered on CDC senior scientist William Thompson\'s recorded claims that he and his co-authors had omitted a correlation between the MMR vaccine and autism in African-American boys from a 2004 CDC study. Thompson later issued a statement insisting he believed vaccines saved lives and should not be avoided — but his admission that data had been handled in ways he found troubling was enough to reignite the debate in the autism community worldwide.' },
+      { type: 'vaxxedpromo', posterSrc: '/vaxxed-poster.jpg' },
       { type: 'vimeo', videoId: '194188493', title: 'VAXXED: From Cover-Up to Catastrophe — Gary Kompothecras Producer Version' },
       { type: 'h2', text: 'Why This Film Matters to Autism Families' },
       { type: 'p', text: 'The version of VAXXED embedded above is the producer version made available by Dr. Gary Kompothecras — a Sarasota physician, long-time autism advocate, and co-founder of the Autism Justice Foundation who has been fighting this battle since 2008. Gary was in those Florida legislative hearings, pressuring state health officials when no one in mainstream medicine would engage the question. He produced this film because he believed the story in it needed to reach more families. The medical establishment has a version of the Andrew Wakefield story that is neat, finalized, and designed to end the conversation. VAXXED is the other version — the one the parents tell.' },
@@ -389,7 +390,7 @@ export default function InTheFightPage() {
 
             {/* Body */}
             <div className="space-y-5">
-              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[] }, i: number) => {
+              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string }, i: number) => {
                 if (block.type === 'youtube' && block.videoId) {
                   return (
                     <div key={i} className="my-8">
@@ -493,6 +494,61 @@ export default function InTheFightPage() {
                         </span>
                       )}
                     </blockquote>
+                  )
+                }
+                if (block.type === 'vaxxedpromo') {
+                  return (
+                    <div key={i} className="my-10 rounded-2xl overflow-hidden border-2 border-[#d4a843] shadow-xl">
+                      {/* Dark cinematic header */}
+                      <div className="bg-black px-8 py-5 flex flex-col sm:flex-row sm:items-center gap-4">
+                        <div className="flex-1">
+                          <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans mb-1">
+                            The Film That Started It All
+                          </p>
+                          <h3 className="text-white text-2xl font-bold leading-tight" style={{fontFamily:'Georgia,serif'}}>
+                            VAXXED: From Cover-Up to Catastrophe
+                          </h3>
+                          <p className="text-[#94a3b8] text-sm font-sans mt-1">
+                            Award-Winning Documentary · Directed by Dr. Andrew Wakefield · 2016
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Poster + CTA row */}
+                      <div className="bg-[#0a1628] flex flex-col sm:flex-row items-stretch">
+                        {/* Movie poster */}
+                        <div className="sm:w-48 flex-shrink-0">
+                          <img
+                            src={block.posterSrc}
+                            alt="VAXXED: From Cover-Up to Catastrophe — Official Movie Poster"
+                            className="w-full h-full object-cover"
+                            style={{minHeight:'200px', maxHeight:'300px'}}
+                          />
+                        </div>
+                        {/* CTA copy */}
+                        <div className="flex-1 p-6 flex flex-col justify-center">
+                          <p className="text-white font-sans text-lg font-bold mb-3 leading-snug">
+                            &ldquo;The film they don&rsquo;t want you to see.&rdquo;
+                          </p>
+                          <p className="text-[#94a3b8] font-sans text-sm leading-relaxed mb-5">
+                            When CDC whistleblower Dr. William Thompson came forward with evidence that the agency had concealed data linking the MMR vaccine to autism in African American boys, filmmaker Del Bigtree and Dr. Wakefield documented it. The result was VAXXED — banned from film festivals, attacked by the press, and seen by millions. Watch the full-length documentary below, presented in the producer version made possible by Dr. Gary Kompothecras.
+                          </p>
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-full bg-[#d4a843] flex items-center justify-center flex-shrink-0">
+                              <svg className="w-4 h-4 text-[#0a1628] ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z"/>
+                              </svg>
+                            </div>
+                            <p className="text-[#d4a843] font-bold font-sans text-sm tracking-wide uppercase">
+                              Full Documentary — Streaming Below ↓
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Gold bottom rule */}
+                      <div className="h-1 bg-[#d4a843]" />
+                    </div>
                   )
                 }
                 return (
