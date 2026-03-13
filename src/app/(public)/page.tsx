@@ -1,31 +1,42 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <span className="inline-block bg-[#0a1628] text-[#d4a843] text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full mb-6">
-            GetHelpForAutism.com
-          </span>
-          <h1 className="text-4xl font-bold tracking-tight text-[#111827] mb-6">
-            Your Child Deserves Justice.<br />We&rsquo;ll Fight to Get It.
-          </h1>
-          <p className="text-lg text-[#475569] mb-8 max-w-2xl mx-auto leading-relaxed">
-            If your child was diagnosed with autism after a vaccine injury, you may be entitled
-            to compensation through the federal Vaccine Injury Compensation Program. Our
-            family-founded firm has one mission: getting autism families the justice they deserve.
-          </p>
-          <Link
-            href="/intake/phase-1"
-            className="inline-block bg-[#d4a843] text-[#0a1628] font-bold text-lg px-8 py-4 rounded-lg hover:bg-[#b8902e] transition"
+      {/* Hero Section — YouTube Autoplay */}
+      <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '16/9', maxHeight: '85vh' }}>
+        <iframe
+          id="hero-video"
+          src="https://www.youtube.com/embed/1AY8WskmioE?autoplay=1&mute=1&loop=1&playlist=1AY8WskmioE&controls=0&modestbranding=1&rel=0&playsinline=1"
+          title="Alpha Law Group — VICP Commercial"
+          className="absolute inset-0 w-full h-full"
+          style={{ border: 'none', pointerEvents: 'none' }}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+
+        {/* Unmute button overlay */}
+        <div className="absolute bottom-6 right-6 z-10">
+          <button
+            id="unmute-btn"
+            onClick={() => {
+              const iframe = document.getElementById('hero-video') as HTMLIFrameElement;
+              if (iframe && iframe.src.includes('mute=1')) {
+                iframe.src = iframe.src.replace('mute=1', 'mute=0');
+                const btn = document.getElementById('unmute-btn');
+                if (btn) btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>`;
+              }
+            }}
+            className="flex items-center gap-2 px-4 py-2 text-white text-sm font-semibold rounded-full"
+            style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(8px)' }}
           >
-            Start My Free Case Review &rarr;
-          </Link>
-          <p className="mt-4 text-[#475569] text-sm">
-            Free consultation. No fees unless we win. Reviewed within 24 hours.
-          </p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+              <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
+            </svg>
+            <span>Tap for Sound</span>
+          </button>
         </div>
       </section>
 
