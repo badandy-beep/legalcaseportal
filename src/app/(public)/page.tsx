@@ -84,69 +84,15 @@ export default function HomePage() {
           <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"
             style={{ background: 'linear-gradient(to bottom, transparent, #d4a843 20%, #d4a843 80%, transparent)' }} />
 
-          {/* DESKTOP: autoplay iframe */}
-          <div className="hidden md:block absolute inset-0 overflow-hidden">
+          {/* Vimeo background autoplay — desktop & mobile */}
+          <div style={{ padding: '56.25% 0 0 0', position: 'relative', width: '100%' }}>
             <iframe
-              id="hero-video"
-              src="https://www.youtube.com/embed/1AY8WskmioE?autoplay=1&mute=1&loop=1&playlist=1AY8WskmioE&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0&iv_load_policy=3&disablekb=1&fs=0"
-              title="Alpha Law Group — VICP Commercial"
-              className="absolute w-full h-full"
-              style={{
-                border: 'none',
-                pointerEvents: 'none',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%) scale(1.05)',
-                width: '100%',
-                height: '100%',
-              }}
-              allow="autoplay; encrypted-media"
-              allowFullScreen={false}
-            />
-            {/* Dark vignette on left edge to blend with content panel */}
-            <div className="absolute inset-y-0 left-0 w-24 pointer-events-none"
-              style={{ background: 'linear-gradient(to right, #0a1628, transparent)' }} />
-            {/* Unmute button */}
-            <div className="absolute bottom-6 right-6 z-10">
-              <button
-                id="unmute-btn"
-                onClick={() => {
-                  const iframe = document.getElementById('hero-video') as HTMLIFrameElement;
-                  if (iframe) {
-                    const muted = iframe.src.includes('mute=1');
-                    iframe.src = iframe.src.replace(muted ? 'mute=1' : 'mute=0', muted ? 'mute=0' : 'mute=1');
-                    const btn = document.getElementById('unmute-btn');
-                    if (btn) btn.innerHTML = muted
-                      ? `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg><span>Sound On</span>`
-                      : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg><span>Mute</span>`;
-                  }
-                }}
-                className="flex items-center gap-2 px-3 py-1.5 text-white text-xs font-semibold rounded-full"
-                style={{ background: 'rgba(0,0,0,0.55)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', position: 'relative', zIndex: 10 }}
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" viewBox="0 0 24 24">
-                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
-                </svg>
-                <span>Tap for Sound</span>
-              </button>
-            </div>
-          </div>
-
-          {/* MOBILE: inline YouTube player */}
-          <div className="md:hidden w-full" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-            <iframe
-              src="https://www.youtube.com/embed/1AY8WskmioE?controls=1&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
-              title="Alpha Law Group — VICP Commercial"
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                border: 'none',
-              }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
+              src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              title="The 3-Minute Call That Changed Everything"
             />
           </div>
 
