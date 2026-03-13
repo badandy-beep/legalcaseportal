@@ -376,6 +376,42 @@ export default function OurTeamPage() {
               </div>
             </div>
           </div>
+
+          {/* DAN FLEUETTE — Full-width horizontal card */}
+          <div className="mt-10 bg-white rounded-2xl overflow-hidden shadow-md border border-[#E2E8F0]">
+            <div className="flex flex-col lg:flex-row">
+              <div className="lg:w-1/3 flex-shrink-0">
+                <div className="relative h-full" style={{minHeight:'320px'}}>
+                  <img
+                    src="/dan-fleuette.webp"
+                    alt="Dan Fleuette, Media Advisor & Documentary Filmmaker, Autism Justice Foundation"
+                    className="w-full h-full object-cover object-top"
+                    style={{minHeight:'320px'}}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#d4a843]" />
+                </div>
+              </div>
+              <div className="lg:w-2/3 p-8 lg:p-10 flex flex-col justify-start">
+                <h3 className="text-2xl font-bold text-[#0a1628] mb-0.5" style={{fontFamily:'Georgia,serif'}}>
+                  Dan Fleuette
+                </h3>
+                <p className="text-[#d4a843] font-semibold text-base mb-1">Media Advisor &amp; Documentary Filmmaker</p>
+                <p className="text-xs text-[#475569] italic mb-5">Advisory Board &mdash; Media &amp; Production</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Inaugural Producer, War Room (2019)</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Clinton Cash (2016)</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Government Gangsters (2024)</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">The Sleeping Giant (2026)</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Author, Rebels, Rogues &amp; Outlaws</span>
+                  <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">20+ Documentary Films</span>
+                </div>
+                <div className="space-y-4 text-base text-[#475569] leading-relaxed">
+                  <p>Dan Fleuette is a documentary filmmaker, portrait photographer, and writer whose two-decade body of work chronicles the American populist movement. The inaugural producer of Bannon&rsquo;s War Room and producer of more than a dozen award-winning political documentaries &mdash; including Clinton Cash, Government Gangsters, and The Sleeping Giant &mdash; Fleuette attended the CHD Moment of Truth Conference in Austin in November 2025 and emerged as a committed advocate for autism justice. He brings his full production and media capabilities to the Autism Justice Foundation as ongoing documentary collaborator and media advisor.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
