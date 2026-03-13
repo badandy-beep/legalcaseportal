@@ -387,7 +387,7 @@ export default function OurTeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* David "Nino" Rodriguez */}
             <div className="bg-white border border-[#E2E8F0] rounded-xl overflow-hidden shadow-sm">
-              <img src="/david-nino-rodriguez-thumb.png" alt='David "Nino" Rodriguez' className="w-full h-64 object-cover object-top" />
+              <img src="/nino-red-carpet-hd.webp" alt='David "Nino" Rodriguez' className="w-full h-64 object-cover object-top" />
               <div className="p-6">
                 <h4 className="text-lg font-bold text-[#111827]" style={{ fontFamily: 'Georgia, serif' }}>David &ldquo;Nino&rdquo; Rodriguez</h4>
                 <p className="text-[#0a1628] font-semibold text-sm mb-1">Advisory Board Member</p>

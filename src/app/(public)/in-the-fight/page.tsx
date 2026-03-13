@@ -101,10 +101,11 @@ const articles = [
     date: 'March 12, 2026',
     title: 'The Doctor Who Asked the Question They Didn\'t Want Asked — and Paid Everything for It',
     deck: 'Andrew Wakefield was a respected gastroenterologist at one of Britain\'s top hospitals when he published a study that changed the trajectory of autism science. What happened next became one of the most disputed chapters in modern medical history.',
-    image: '/andrew-wakefield-hd.webp',
+    image: '/andrew-wakefield-portrait.webp',
     imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and director of VAXXED: From Cover-Up to Catastrophe (2016).',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'photogallery', photos: [{ src: '/andrew-wakefield-hd.webp', caption: 'Dr. Andrew Wakefield speaking about his research. He has maintained since 1998 that the questions his team raised deserve a full, transparent scientific answer.' }] },
       { type: 'p', text: 'There is a version of Andrew Wakefield that the medical establishment wants you to know: a disgraced former doctor, struck off the British medical register, whose 1998 study linking the MMR vaccine to autism was retracted and whose claims were formally condemned by a General Medical Council tribunal. That version exists, and those are facts.' },
       { type: 'p', text: 'There is another version — the one held by tens of thousands of autism families across the United States and United Kingdom — of a physician who listened to parents when no one else would, who documented what those parents were telling him, who asked a question the medical industrial complex was not prepared to answer, and who was systematically destroyed for asking it. That version also exists. Both are part of the record. The Autism Justice Foundation presents both, because the families we serve deserve the full picture — not the sanitized institutional one.' },
       { type: 'h2', text: 'Who Andrew Wakefield Was Before 1998' },
@@ -236,8 +237,8 @@ const articles = [
     date: 'January 2026',
     title: 'Governor DeSantis Appoints Dr. Gary Kompothecras to the Florida Board of Chiropractic Medicine',
     deck: "The same man who spent fifteen years fighting Florida's public health bureaucracy for autism accountability has now been appointed by Governor DeSantis to oversee one of the state's key medical licensing boards. It is not a coincidence.",
-    image: '/gary-beth-gala.webp',
-    imageCaption: 'Dr. Gary and Beth Kompothecras at the Sarasota Arts gala. In January 2026, Governor DeSantis appointed Dr. Gary to the Florida Board of Chiropractic Medicine.',
+    image: '/gary-kompothecras-formal.webp',
+    imageCaption: 'Dr. Gary Kompothecras, founder of 1-800-ASK-GARY and co-founder of the Autism Justice Foundation. Appointed by Governor DeSantis to the Florida Board of Chiropractic Medicine, January 2026.',
     author: 'AJF Editorial Staff',
     body: [
       {
@@ -430,6 +431,7 @@ export default function InTheFightPage() {
                   src={article.image}
                   alt={article.imageCaption}
                   className="w-full object-cover max-h-[480px]"
+                  style={article.image === '/nino-red-carpet-hd.webp' ? { objectPosition: 'center 15%' } : undefined}
                 />
                 <figcaption className="text-xs text-[#475569] italic text-center px-4 py-3 bg-[#F8F9FA] border-t border-[#E2E8F0]">
                   {article.imageCaption}
