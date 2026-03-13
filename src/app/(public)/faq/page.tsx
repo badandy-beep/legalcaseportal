@@ -250,7 +250,7 @@ export default function FAQPage() {
           </p>
           <p className="text-[#d4a843] text-sm mb-6">No obligation. No upfront cost. Takes 3 minutes.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/intake/phase-1" className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-full transition text-sm uppercase tracking-wide">
+            <a href="/intake/phase-1" className="font-bold px-8 py-3 rounded-full transition text-sm uppercase tracking-wide hover:opacity-90" style={{ background: '#d4a843', color: '#0a1628' }}>
               Start My Claim →
             </a>
             <a href={`https://wa.me/?text=${encodeURIComponent('Free legal help for autism families: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[#d4a843] transition text-sm uppercase tracking-wide">

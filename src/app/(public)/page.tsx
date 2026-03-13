@@ -66,7 +66,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom — AJF logo mark */}
-          <div className="mt-12 pt-8 flex items-center gap-3"
+          <div className="mt-8 md:mt-12 pt-8 flex items-center gap-3"
             style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
             <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-8 opacity-70" />
             <div>
@@ -132,14 +132,20 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* MOBILE: inline YouTube player — never leaves the page */}
-          <div className="md:hidden relative w-full bg-black" style={{ aspectRatio: '16/9' }}>
+          {/* MOBILE: inline YouTube player */}
+          <div className="md:hidden w-full" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
             <iframe
-              src="https://www.youtube.com/embed/1AY8WskmioE?controls=1&playsinline=1&modestbranding=1&rel=0"
+              src="https://www.youtube.com/embed/1AY8WskmioE?controls=1&playsinline=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3"
               title="Alpha Law Group — VICP Commercial"
-              className="absolute inset-0 w-full h-full"
-              style={{ border: 'none' }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </div>
@@ -161,7 +167,7 @@ export default function HomePage() {
       <div className="bg-white py-4 border-b border-[#E2E8F0]">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">Attorney fees paid by the program — even in losing cases.</p>
-          <a href="/intake/phase-1" className="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+          <a href="/intake/phase-1" className="flex-shrink-0 font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap hover:opacity-90" style={{ background: '#d4a843', color: '#0a1628' }}>
             See If You Qualify →
           </a>
         </div>
@@ -181,10 +187,10 @@ export default function HomePage() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-8 md:py-16">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-8 text-center">Why We Do This</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Pull quote card */}
             <div className="bg-white border-l-4 border-[#d4a843] p-8 rounded-xl shadow-sm">
               <p className="text-lg leading-relaxed italic mb-4 text-[#111827]">
@@ -215,7 +221,7 @@ export default function HomePage() {
       </section>
 
       {/* Advisory Board Photo Grid */}
-      <section className="bg-white border-b border-[#E2E8F0] py-16 px-4">
+      <section className="bg-white border-b border-[#E2E8F0] py-8 md:py-16 px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
           <p className="text-[#0a1628] text-xs font-bold tracking-widest uppercase mb-2">
@@ -291,7 +297,7 @@ export default function HomePage() {
       </div>
 
       {/* Voices & Impact Video Row */}
-      <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-16">
+      <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-8 md:py-16">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#0a1628] text-center mb-3">
             Voices &amp; Impact
@@ -299,7 +305,7 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-[#111827] text-center mb-3" style={{fontFamily:'Georgia,serif'}}>
             The Fight for Truth &amp; Justice
           </h2>
-          <p className="text-[#475569] text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-[#475569] text-center mb-6 md:mb-12 max-w-2xl mx-auto">
             Soundbites from the Children&rsquo;s Health Defense Conference — Austin, TX &middot; November 2025
           </p>
 
@@ -371,7 +377,7 @@ export default function HomePage() {
           </div>
 
           {/* Bottom CTA under videos */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-6 md:mt-12">
             <p className="text-[#475569] mb-4 text-base">Ready to start your family&rsquo;s claim?</p>
             <a
               href="/intake/phase-1"
@@ -384,7 +390,7 @@ export default function HomePage() {
       </section>
 
       {/* VICP Stats Section */}
-      <section className="bg-[#0a1628] py-16">
+      <section className="bg-[#0a1628] py-8 md:py-16">
         <div className="max-w-5xl mx-auto px-4">
           <p className="text-[#d4a843] text-xs font-bold uppercase tracking-widest text-center mb-3">
             VICP BY THE NUMBERS
@@ -440,7 +446,7 @@ export default function HomePage() {
       <div className="bg-white border-t border-[#E2E8F0] py-4">
         <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">$5.4 billion paid out. <span className="text-[#0a1628]">Is your family&rsquo;s share waiting?</span></p>
-          <a href="/intake/phase-1" className="flex-shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
+          <a href="/intake/phase-1" className="flex-shrink-0 font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap hover:opacity-90" style={{ background: '#d4a843', color: '#0a1628' }}>
             Start Free Review →
           </a>
         </div>
@@ -470,7 +476,7 @@ export default function HomePage() {
       </div>
 
       {/* Bottom CTA Strip */}
-      <section className="bg-[#0a1628] text-white py-12">
+      <section className="bg-[#0a1628] text-white py-6 md:py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold tracking-tight mb-6">Ready to be heard?</h2>
           <Link
@@ -486,7 +492,7 @@ export default function HomePage() {
       </section>
 
       {/* Referral Section */}
-      <section className="bg-white border-t-4 border-[#0a1628] py-16">
+      <section className="bg-white border-t-4 border-[#0a1628] py-8 md:py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
           {/* Icon */}

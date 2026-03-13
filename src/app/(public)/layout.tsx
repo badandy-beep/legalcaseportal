@@ -64,10 +64,10 @@ export default function PublicLayout({
                 alt="Alpha Law Group"
                 className="h-10 w-10 object-contain"
               />
-              <div className="hidden sm:block leading-tight">
-                <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW</span>
+              <div className="leading-tight">
+                <span className="text-white font-bold text-xs sm:text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW</span>
                 <br />
-                <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>GROUP</span>
+                <span className="text-white font-bold text-xs sm:text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>GROUP</span>
               </div>
             </a>
 
