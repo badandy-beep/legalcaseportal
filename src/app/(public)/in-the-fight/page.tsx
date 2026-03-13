@@ -101,7 +101,7 @@ const articles = [
     date: 'March 12, 2026',
     title: 'The Doctor Who Asked the Question They Didn\'t Want Asked — and Paid Everything for It',
     deck: 'Andrew Wakefield was a respected gastroenterologist at one of Britain\'s top hospitals when he published a study that changed the trajectory of autism science. What happened next became one of the most disputed chapters in modern medical history.',
-    image: '/andrew-wakefield.webp',
+    image: '/andrew-wakefield-hd.webp',
     imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and author of the 1998 Lancet study on bowel disease and autism. Director of VAXXED: From Cover-Up to Catastrophe (2016).',
     author: 'AJF Editorial Staff',
     body: [
@@ -302,16 +302,18 @@ const articles = [
     date: 'March 12, 2026',
     title: 'He Beat Mike Tyson\'s Record, Survived Having His Throat Slit, and Built a Media Empire From the Wreckage. Meet David "Nino" Rodriguez.',
     deck: 'Before he became one of the most trusted independent voices in American media, Nino Rodriguez went 36–0 with a knockout record that rewrote heavyweight history — and then survived an attempted murder that should have ended everything.',
-    image: '/david-nino-rodriguez-main.webp',
+    image: '/nino-red-carpet-hd.webp',
     imageCaption: 'David "Nino" Rodriguez at the 2012 NCLR ALMA Awards, Pasadena, California. Photo: Kevin Winter/Getty Images for NCLR.',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'knockout', tysonSrc: '/nino-tyson-hd.webp' },
       { type: 'p', text: 'There is a phrase that David "Nino" Rodriguez has used in front of thousands of school kids, in detention facilities, in gymnasiums, and on his podcast: "Never give up and always show up." It sounds simple. Coming from Nino, it lands like a fist, because the man saying it has been tested at levels that most motivational speakers have not.' },
       { type: 'p', text: 'Born September 18, 1977 in El Paso, Texas, Nino grew up being bullied. He got into boxing at around six years old, didn\'t truly commit to it until he was thirteen or fourteen, and when he did, what followed was historic. He turned professional in 1998 and the results were immediate — 18 straight knockouts to open his career, 17 of them in the first round. By the time his record reached 36–0 with 34 knockouts, boxing historians had to acknowledge what the numbers said plainly: his 24 first-round knockouts had surpassed the legendary first-round KO record of Mike Tyson. He was ranked #10 in the world by the WBC and #12 by the WBA, listed among ESPN\'s top 25 pound-for-pound prospects, and widely believed to be on trajectory to become the first Mexican Heavyweight Champion of the World.' },
       { type: 'youtube', videoId: 'ZPRZS0UELnk', title: 'David "Nino" Rodriguez — Full Interview' },
       {
         type: 'photogallery',
         photos: [
+          { src: '/nino-ring-punch-hd.webp', caption: 'Nino Rodriguez in the ring — 36 professional fights, 34 KOs, 24 first-round knockouts.' },
           { src: '/david-nino-rodriguez-main.webp', caption: 'At the 2012 NCLR ALMA Awards — Photo: Kevin Winter/Getty Images for NCLR' },
           { src: '/david-nino-rodriguez-bullying.jpg', caption: 'David "Nino" Rodriguez — anti-bullying campaign. Courtesy of David Nino Rodriguez.' },
           { src: '/david-nino-rodriguez-ring.jpg', caption: 'Rodriguez raises his fist in victory — a pose the ring knew well for 36 consecutive wins.' },
@@ -390,7 +392,7 @@ export default function InTheFightPage() {
 
             {/* Body */}
             <div className="space-y-5">
-              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string }, i: number) => {
+              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string; tysonSrc?: string }, i: number) => {
                 if (block.type === 'youtube' && block.videoId) {
                   return (
                     <div key={i} className="my-8">
@@ -494,6 +496,44 @@ export default function InTheFightPage() {
                         </span>
                       )}
                     </blockquote>
+                  )
+                }
+                if (block.type === 'knockout') {
+                  return (
+                    <div key={i} className="my-10 rounded-2xl overflow-hidden border-2 border-[#d4a843] shadow-xl">
+                      {/* Navy header — KO headline */}
+                      <div className="bg-[#0a1628] px-8 py-6 text-center">
+                        <p className="text-[#d4a843] text-xs font-bold tracking-widest uppercase font-sans mb-2">
+                          Advisory Board · Autism Justice Foundation
+                        </p>
+                        <h3 className="text-white text-3xl md:text-4xl font-bold leading-tight" style={{fontFamily:'Georgia,serif'}}>
+                          Nino Joins the Fight to<br />
+                          <span className="text-[#d4a843]">Knock Out Autism.</span>
+                        </h3>
+                        <p className="text-[#94a3b8] text-sm font-sans mt-3 max-w-xl mx-auto">
+                          36–0. 34 KOs. WBC &amp; WBA Ranked. Now fighting the most important battle of his life — for autism families who need a champion in their corner.
+                        </p>
+                      </div>
+
+                      {/* Tyson photo — full width cinematic */}
+                      <div className="relative">
+                        <img
+                          src={block.tysonSrc}
+                          alt="David 'Nino' Rodriguez with Mike Tyson — two heavyweight legends"
+                          className="w-full object-cover"
+                          style={{maxHeight:'480px', objectPosition:'center top'}}
+                        />
+                        {/* Gold caption bar */}
+                        <div className="absolute bottom-0 left-0 right-0 bg-[#0a1628]/85 px-6 py-3">
+                          <p className="text-[#d4a843] text-xs font-bold font-sans tracking-wide">
+                            David &ldquo;Nino&rdquo; Rodriguez with Mike Tyson — two champions who know what it means to fight through the impossible.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Gold bottom rule */}
+                      <div className="h-1 bg-[#d4a843]" />
+                    </div>
                   )
                 }
                 if (block.type === 'vaxxedpromo') {

@@ -70,6 +70,10 @@ export default function OurTeamPage() {
 
                 {/* Credential badges */}
                 <div className="flex flex-wrap gap-2 mb-5">
+                  <span className="inline-flex items-center gap-2 bg-[#0a1628] text-[#d4a843] border border-[#d4a843]/60 px-3 py-1.5 rounded-full text-xs font-bold">
+                    <img src="/chase-elite-lawyer-2026.png" alt="Elite Lawyer 2026" className="h-5 w-auto" />
+                    Elite Lawyer&reg; 2026 — Personal Injury
+                  </span>
                   <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Super Lawyers&reg; Rated</span>
                   <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">Florida Bar Certified</span>
                   <span className="text-xs bg-[#fdf8ee] text-[#0a1628] border border-[#d4a843]/40 px-2 py-1 rounded-full font-medium">12th Judicial Circuit</span>
