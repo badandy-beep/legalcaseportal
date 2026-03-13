@@ -102,7 +102,7 @@ const articles = [
     title: 'The Doctor Who Asked the Question They Didn\'t Want Asked — and Paid Everything for It',
     deck: 'Andrew Wakefield was a respected gastroenterologist at one of Britain\'s top hospitals when he published a study that changed the trajectory of autism science. What happened next became one of the most disputed chapters in modern medical history.',
     image: '/andrew-wakefield-hd.webp',
-    imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and author of the 1998 Lancet study on bowel disease and autism. Director of VAXXED: From Cover-Up to Catastrophe (2016).',
+    imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and director of VAXXED: From Cover-Up to Catastrophe (2016).',
     author: 'AJF Editorial Staff',
     body: [
       { type: 'p', text: 'There is a version of Andrew Wakefield that the medical establishment wants you to know: a disgraced former doctor, struck off the British medical register, whose 1998 study linking the MMR vaccine to autism was retracted and whose claims were formally condemned by a General Medical Council tribunal. That version exists, and those are facts.' },
@@ -181,6 +181,53 @@ const articles = [
         type: 'warning',
         text: "VICP claims for vaccine-related autism injuries must generally be filed within 3 years of the first symptom or diagnosis. The window does not pause. If you are unsure whether your family's window is still open, a free consultation will tell you exactly where you stand.",
       },
+      {
+        type: 'instagram',
+        shortcode: 'DVesjeoAOkg',
+        caption: 'Alex Kompothecras on the Alpha Law Group Autism 5K and the mission behind it.',
+      },
+    ],
+  },
+  {
+    slug: 'alex-kompothecras-hb365-florida-house-testimony',
+    title: 'Alex Kompothecras Testifies Before Florida House on HB365 — Passes Unanimously',
+    deck: 'Representing the Autism Society of Florida before the Florida House of Representatives, Alex Kompothecras delivered a direct message: in-person officer training for autism interactions is non-negotiable. The committee agreed unanimously.',
+    date: 'March 2026',
+    author: 'Autism Justice Foundation',
+    image: '/Alex-Kompothecras.webp',
+    imageCaption: 'Alex Kompothecras, Managing Attorney at Alpha Law Group and Honorary Board Member of the Autism Society of Florida.',
+    category: 'Advocacy',
+    body: [
+      {
+        type: 'p',
+        text: 'Alex Kompothecras appeared before the Florida House of Representatives on behalf of the Autism Society of Florida to testify in support of HB365 — legislation mandating in-person law enforcement training for interactions with individuals on the autism spectrum.',
+      },
+      {
+        type: 'quote',
+        text: '"In-person" officer training is a non-negotiable requirement for the safety of our loved ones.',
+        cite: '— Alex Kompothecras, Florida House Committee testimony, March 2026',
+      },
+      {
+        type: 'p',
+        text: 'The committee passed HB365 by a unanimous vote. For Alex, this was not a professional milestone — it was personal. He grew up protecting younger siblings on the autism spectrum, and that experience shapes both his legal practice at Alpha Law Group and his advocacy at the state level.',
+      },
+      {
+        type: 'p',
+        text: 'HB365 addresses a documented gap: law enforcement agencies across Florida have inconsistently implemented autism awareness training, with much of existing training delivered online. The bill mandates in-person interaction — ensuring officers build the situational awareness needed when responding to autism-related calls. Mishandled encounters have resulted in injury, trauma, and worse for autism families who had every reason to expect protection.',
+      },
+      {
+        type: 'p',
+        text: 'Alpha Law Group has made legislative advocacy a core part of its mission alongside direct legal representation for autism families. The unanimous vote on HB365 is among the most significant autism-related legislative wins in Florida in recent years.',
+      },
+      {
+        type: 'instagram',
+        shortcode: 'DVMn_tpFEYS',
+        caption: 'Alex Kompothecras addresses the Florida House Committee on HB365. The bill passed unanimously.',
+      },
+      {
+        type: 'warning',
+        text: 'If your family has experienced harm due to inadequate law enforcement training in an autism-related incident, Alpha Law Group may be able to help.',
+      },
     ],
   },
   {
@@ -189,8 +236,8 @@ const articles = [
     date: 'January 2026',
     title: 'Governor DeSantis Appoints Dr. Gary Kompothecras to the Florida Board of Chiropractic Medicine',
     deck: "The same man who spent fifteen years fighting Florida's public health bureaucracy for autism accountability has now been appointed by Governor DeSantis to oversee one of the state's key medical licensing boards. It is not a coincidence.",
-    image: '/gary-senate-sb1756-feb2026.jpg',
-    imageCaption: 'Dr. Gary Kompothecras at the Florida Senate Appropriations Committee, February 24, 2026. Photo: Florida Phoenix.',
+    image: '/gary-beth-gala.webp',
+    imageCaption: 'Dr. Gary and Beth Kompothecras at the Sarasota Arts gala. In January 2026, Governor DeSantis appointed Dr. Gary to the Florida Board of Chiropractic Medicine.',
     author: 'AJF Editorial Staff',
     body: [
       {
@@ -392,7 +439,7 @@ export default function InTheFightPage() {
 
             {/* Body */}
             <div className="space-y-5">
-              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string; tysonSrc?: string }, i: number) => {
+              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string; tysonSrc?: string; shortcode?: string; caption?: string }, i: number) => {
                 if (block.type === 'youtube' && block.videoId) {
                   return (
                     <div key={i} className="my-8">
@@ -496,6 +543,33 @@ export default function InTheFightPage() {
                         </span>
                       )}
                     </blockquote>
+                  )
+                }
+                if (block.type === 'instagram') {
+                  return (
+                    <div key={i} className="my-8 flex justify-center">
+                      <div className="w-full max-w-xl">
+                        {block.caption && (
+                          <p className="text-sm font-semibold text-[#0a1628] font-sans mb-3 text-center italic">
+                            {block.caption}
+                          </p>
+                        )}
+                        <div className="rounded-xl overflow-hidden border border-[#E2E8F0] shadow-sm bg-white p-4 text-center">
+                          <p className="text-[#475569] text-sm mb-3">Watch on Instagram</p>
+                          <a
+                            href={`https://www.instagram.com/reel/${block.shortcode}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-[#0a1628] text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-[#d4a843] hover:text-[#0a1628] transition-colors"
+                          >
+                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                            Watch Video on Instagram
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   )
                 }
                 if (block.type === 'knockout') {
