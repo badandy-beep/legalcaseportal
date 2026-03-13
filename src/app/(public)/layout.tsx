@@ -26,7 +26,7 @@ const allLinks = [
   { label: 'How VICP Works', href: '/how-vicp-works' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Deadline Calculator', href: '/deadline-calculator' },
-  { label: 'Start My Claim', href: '/intake/phase-1', isCta: true },
+  { label: 'Check Your Eligibility →', href: '/intake/phase-1', isCta: true },
   { label: 'Resources', href: '/resources' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -100,12 +100,13 @@ export default function PublicLayout({
                 </Link>
               ))}
 
-              <Link
+              <a
                 href="/intake/phase-1"
-                className="bg-[#d4a843] text-[#0a1628] font-bold px-4 py-2 rounded-lg hover:bg-[#b8902e] transition ml-2 text-sm"
+                className="inline-block px-5 py-2 text-sm font-bold uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90 ml-2"
+                style={{ background: '#d4a843', color: '#0a1628' }}
               >
-                Start My Claim
-              </Link>
+                Check Your Eligibility →
+              </a>
             </div>
 
             {/* Mobile hamburger */}
@@ -139,9 +140,10 @@ export default function PublicLayout({
                 onClick={() => setIsMenuOpen(false)}
                 className={
                   link.isCta
-                    ? 'block px-6 py-4 bg-[#d4a843] text-[#0a1628] font-bold text-base border-b border-[#d4a843]/20'
+                    ? 'block w-full text-center px-6 py-4 font-bold text-sm uppercase tracking-widest border-b border-[#d4a843]/20'
                     : 'block px-6 py-4 text-white text-base font-medium border-b border-[#d4a843]/20 hover:text-[#d4a843]'
                 }
+                style={link.isCta ? { background: '#d4a843', color: '#0a1628' } : undefined}
               >
                 {link.label}
               </Link>

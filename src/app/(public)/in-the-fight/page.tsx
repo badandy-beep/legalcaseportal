@@ -2,8 +2,30 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://gethelpforautism.com'),
   title: 'In The Fight Before You Called | Autism Justice Foundation',
   description: 'A documented record of the Kompothecras family and AJF legal team advocacy — decades of fighting for autism families before they ever opened a law firm.',
+  openGraph: {
+    title: 'In The Fight Before You Called | Autism Justice Foundation',
+    description: 'Alpha Law Group · VICP Autism Compensation Claims · No Cost Unless We Win',
+    url: 'https://gethelpforautism.com/in-the-fight',
+    siteName: 'Autism Justice Foundation',
+    images: [
+      {
+        url: 'https://gethelpforautism.com/gary-beth-gala.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Autism Justice Foundation — In The Fight',
+      },
+    ],
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'In The Fight Before You Called | Autism Justice Foundation',
+    description: 'Alpha Law Group · VICP Autism Compensation Claims · No Cost Unless We Win',
+    images: ['https://gethelpforautism.com/gary-beth-gala.webp'],
+  },
 }
 
 const articles = [
@@ -17,6 +39,7 @@ const articles = [
     imageCaption: 'Dr. Gary Kompothecras (left, blue suit) at the Florida Senate Appropriations Committee hearing on SB 1756, February 24, 2026, Tallahassee. Photo: Florida Phoenix.',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       {
         type: 'p',
         text: 'There is a specific kind of vindication that only comes after a very long time. It does not arrive with fanfare or an apology from the people who called you wrong. It arrives quietly — in the form of a Senate roll call vote in Tallahassee, on a Tuesday, fifteen years after everyone told you to sit down.',
@@ -25,6 +48,7 @@ const articles = [
         type: 'p',
         text: 'That is where Dr. Gary Kompothecras stands today.',
       },
+      { type: 'vicp_mid' },
       {
         type: 'p',
         text: 'On March 10, 2026, the Florida Senate passed SB 1756 — the Medical Freedom Act — a Governor DeSantis priority bill that gives Florida parents a conscience-based right to opt their children out of school vaccine mandates, and requires health care practitioners to provide full CDC disclosure before vaccinating a child. This is, in its essential form, what Dr. Gary Kompothecras has been fighting for since 2008.',
@@ -93,6 +117,7 @@ const articles = [
         type: 'p',
         text: "The Kompothecras family did not start this fight last year. They started it when Bronson couldn't say the name of his favorite toy. Everything since then — the task force, the legislation, the documentary, the foundation, the legal team — has been building toward this moment. The question is whether you'll let them fight for your family too.",
       },
+      { type: 'vicp_close', personName: 'Dr. Gary Kompothecras' },
     ],
   },
   {
@@ -105,8 +130,10 @@ const articles = [
     imageCaption: 'Dr. Andrew Wakefield, gastroenterologist and director of VAXXED: From Cover-Up to Catastrophe (2016).',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       { type: 'photogallery', photos: [{ src: '/andrew-wakefield-hd.webp', caption: 'Dr. Andrew Wakefield speaking about his research. He has maintained since 1998 that the questions his team raised deserve a full, transparent scientific answer.' }] },
       { type: 'p', text: 'There is a version of Andrew Wakefield that the medical establishment wants you to know: a disgraced former doctor, struck off the British medical register, whose 1998 study linking the MMR vaccine to autism was retracted and whose claims were formally condemned by a General Medical Council tribunal. That version exists, and those are facts.' },
+      { type: 'vicp_mid' },
       { type: 'p', text: 'There is another version — the one held by tens of thousands of autism families across the United States and United Kingdom — of a physician who listened to parents when no one else would, who documented what those parents were telling him, who asked a question the medical industrial complex was not prepared to answer, and who was systematically destroyed for asking it. That version also exists. Both are part of the record. The Autism Justice Foundation presents both, because the families we serve deserve the full picture — not the sanitized institutional one.' },
       { type: 'h2', text: 'Who Andrew Wakefield Was Before 1998' },
       { type: 'p', text: 'Andrew Jeremy Wakefield was born in 1957 in Britain. His father was a neurologist. His mother was a general practitioner. He studied medicine at St. Mary\'s Hospital Medical School, qualified in 1981, and became a Fellow of the Royal College of Surgeons in 1985. He spent time at the University of Toronto researching small intestine transplantation, then returned to the UK to work on the liver transplant programme at the Royal Free Hospital in London. By the mid-1990s he was a senior lecturer and honorary consultant in experimental gastroenterology — a serious academic physician with a legitimate research record. He was not a fringe figure. He was not an outsider. He was inside the institution, with a career built on peer-reviewed work, when a parent named Rosemary Kessick walked into his clinic in 1995.' },
@@ -126,6 +153,7 @@ const articles = [
       { type: 'p', text: 'In the United States, autism now affects approximately 1 in 36 children — a figure that has risen steadily and dramatically since the early 1990s. The cause of that rise remains, officially, "largely unknown." The families who come to the Autism Justice Foundation are not asking us to resolve the science. They are asking us to help them navigate a legal system that Congress designed specifically to compensate vaccine-injured children — a system that the government funds and operates, and that exists because the question Andrew Wakefield asked in 1998 has an answer that some families already know.' },
       { type: 'p', text: 'Whatever you believe about Andrew Wakefield — and thoughtful, informed people believe very different things — the question he raised has not been silenced. It has been amplified. The MAHA movement now operates at the federal level. The CDC\'s vaccine safety data is under formal review. The Medical Freedom Act passed the Florida Senate in March 2026. The families who were told for twenty-five years that their children\'s regression was coincidental are no longer being told to sit down and accept it. Whether Wakefield was right, wrong, or somewhere in between, the movement he helped catalyze has arrived at the center of American health policy. The children in his 1998 study are now adults. Their parents are still asking the same question.' },
       { type: 'warning', text: 'If your child was diagnosed with autism and you believe vaccine injury played a role, the Vaccine Injury Compensation Program may provide a path to accountability. VICP claims must generally be filed within 3 years of the first symptom. Free consultation — no obligation.' },
+      { type: 'vicp_close', personName: 'Dr. Andrew Wakefield' },
     ],
   },
   {
@@ -138,6 +166,7 @@ const articles = [
     imageCaption: 'Alex J. Kompothecras, Managing Attorney, Alpha Law Group. Honorary Board Member, Autism Society of Florida.',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       {
         type: 'p',
         text: 'There is a phrase attorneys in mass-tort and personal injury work know well: any lawyer can file the paperwork. What separates the ones worth hiring is what they knew before you called them. For Alex Kompothecras, that knowledge was not acquired in a law school classroom or a continuing legal education seminar on vaccine injury. It was acquired at home — watching his younger siblings Bronson and Sarah Alice navigate a world that was not built for them.',
@@ -146,6 +175,7 @@ const articles = [
         type: 'p',
         text: "Alex grew up as the older brother of two children with severe autism. He watched his parents, Gary and Beth Kompothecras, fight legislative battles in Tallahassee, travel to congressional hearings in Washington, and file his siblings as petitioners in the federal Vaccine Injury Compensation Program. By the time Alex graduated from law school and opened Alpha Law Group in Sarasota, autism advocacy was not a practice area he chose. It was the air he had breathed for twenty years.",
       },
+      { type: 'vicp_mid' },
       {
         type: 'h2',
         text: 'Building the 5K From Scratch',
@@ -187,6 +217,7 @@ const articles = [
         shortcode: 'DVesjeoAOkg',
         caption: 'Alex Kompothecras on the Alpha Law Group Autism 5K and the mission behind it.',
       },
+      { type: 'vicp_close', personName: 'Alex Kompothecras' },
     ],
   },
   {
@@ -199,6 +230,7 @@ const articles = [
     imageCaption: 'Alex Kompothecras, Managing Attorney at Alpha Law Group and Honorary Board Member of the Autism Society of Florida.',
     category: 'Advocacy',
     body: [
+      { type: 'vicp_banner' },
       {
         type: 'p',
         text: 'Alex Kompothecras appeared before the Florida House of Representatives on behalf of the Autism Society of Florida to testify in support of HB365 — legislation mandating in-person law enforcement training for interactions with individuals on the autism spectrum.',
@@ -208,6 +240,7 @@ const articles = [
         text: '"In-person" officer training is a non-negotiable requirement for the safety of our loved ones.',
         cite: '— Alex Kompothecras, Florida House Committee testimony, March 2026',
       },
+      { type: 'vicp_mid' },
       {
         type: 'p',
         text: 'The committee passed HB365 by a unanimous vote. For Alex, this was not a professional milestone — it was personal. He grew up protecting younger siblings on the autism spectrum, and that experience shapes both his legal practice at Alpha Law Group and his advocacy at the state level.',
@@ -229,6 +262,7 @@ const articles = [
         type: 'warning',
         text: 'If your family has experienced harm due to inadequate law enforcement training in an autism-related incident, Alpha Law Group may be able to help.',
       },
+      { type: 'vicp_close', personName: 'Alex Kompothecras' },
     ],
   },
   {
@@ -241,6 +275,7 @@ const articles = [
     imageCaption: 'Dr. Gary Kompothecras, founder of 1-800-ASK-GARY and co-founder of the Autism Justice Foundation. Appointed by Governor DeSantis to the Florida Board of Chiropractic Medicine, January 2026.',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       {
         type: 'p',
         text: "In January 2026, Governor Ron DeSantis appointed Dr. Gary Kompothecras to the Florida Board of Chiropractic Medicine — the state regulatory body that oversees licensure, discipline, and professional standards for chiropractic practitioners across Florida. It is a formal position. It carries real authority. And for anyone who has followed Gary Kompothecras's history with Florida state government, the appointment carries a particular weight.",
@@ -249,6 +284,7 @@ const articles = [
         type: 'p',
         text: "This is the same man who, beginning in 2008, used every political and financial tool at his disposal to pressure Florida's public health establishment into investigating the connection between thimerosal-containing vaccines and autism. He was appointed to the Governor's Task Force on Autism Spectrum Disorders by Governor Charlie Crist. He championed legislation the Florida Department of Health resisted at every turn. He emailed agency directors demanding accountability and signed those emails with the phrase: \"Govern yourselves accordingly.\" He was called a bully. He was called politically motivated. The system stonewalled him for years. And he kept going.",
       },
+      { type: 'vicp_mid' },
       {
         type: 'h2',
         text: 'Why the Appointment Matters',
@@ -282,6 +318,7 @@ const articles = [
         type: 'warning',
         text: "The VICP 3-year statute of limitations is strict and rarely waived. Whether the political moment is favorable or not has no bearing on whether your family's filing window is open. Find out now — before it isn't.",
       },
+      { type: 'vicp_close', personName: 'Dr. Gary Kompothecras' },
     ],
   },
   {
@@ -294,6 +331,7 @@ const articles = [
     imageCaption: "The Kompothecras family — Alex (in the tree), Sarah Alice (center), and Bronson (right, in blue). Two of Gary and Beth's six children were diagnosed with severe autism as toddlers.",
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       {
         type: 'p',
         text: "There is no credential more relevant to navigating the federal Vaccine Injury Compensation Program than having personally filed a claim in it — and having that claim denied. Gary and Beth Kompothecras know the VICP system not from law review articles or expert witnesses. They know it because they put their own children's names on the petition, hired attorneys, waited through the administrative process, and received a denial.",
@@ -302,6 +340,7 @@ const articles = [
         type: 'p',
         text: "Bronson and Sarah Alice Kompothecras were filed as petitioners in the federal Vaccine Injury Compensation Program — the so-called Vaccine Court — by their parents, who believed their children's severe autism was connected to thimerosal-containing vaccines administered in infancy. Both cases were ultimately closed without compensation.",
       },
+      { type: 'vicp_mid' },
       {
         type: 'h2',
         text: 'What the VICP System Actually Is',
@@ -342,6 +381,7 @@ const articles = [
         type: 'warning',
         text: 'VICP petitions must generally be filed within 3 years of the first symptom or autism diagnosis. If your child was diagnosed years ago and you have not yet filed, your window may be narrowing or already closed. A free consultation is the only way to know for certain.',
       },
+      { type: 'vicp_close', personName: 'The Bronson Family' },
     ],
   },
   {
@@ -354,8 +394,10 @@ const articles = [
     imageCaption: 'David "Nino" Rodriguez at the 2012 NCLR ALMA Awards, Pasadena, California. Photo: Kevin Winter/Getty Images for NCLR.',
     author: 'AJF Editorial Staff',
     body: [
+      { type: 'vicp_banner' },
       { type: 'knockout', tysonSrc: '/nino-tyson-hd.webp' },
       { type: 'p', text: 'There is a phrase that David "Nino" Rodriguez has used in front of thousands of school kids, in detention facilities, in gymnasiums, and on his podcast: "Never give up and always show up." It sounds simple. Coming from Nino, it lands like a fist, because the man saying it has been tested at levels that most motivational speakers have not.' },
+      { type: 'vicp_mid' },
       { type: 'p', text: 'Born September 18, 1977 in El Paso, Texas, Nino grew up being bullied. He got into boxing at around six years old, didn\'t truly commit to it until he was thirteen or fourteen, and when he did, what followed was historic. He turned professional in 1998 and the results were immediate — 18 straight knockouts to open his career, 17 of them in the first round. By the time his record reached 36–0 with 34 knockouts, boxing historians had to acknowledge what the numbers said plainly: his 24 first-round knockouts had surpassed the legendary first-round KO record of Mike Tyson. He was ranked #10 in the world by the WBC and #12 by the WBA, listed among ESPN\'s top 25 pound-for-pound prospects, and widely believed to be on trajectory to become the first Mexican Heavyweight Champion of the World.' },
       { type: 'youtube', videoId: 'ZPRZS0UELnk', title: 'David "Nino" Rodriguez — Full Interview' },
       {
@@ -381,6 +423,7 @@ const articles = [
       { type: 'p', text: 'Today, David "Nino" Rodriguez is the founder and CEO of Nino\'s Corner TV — a subscription media platform and podcast that airs live Monday, Wednesday, and Friday, reaching upwards of 50 million people per month across all platforms, with 510,000 YouTube subscribers as of December 2025. He has appeared on national television as a boxing commentator, he runs a clothing line called Patriot Wear, and he has built one of the most loyal independent media audiences in the country — not because of a network deal or a PR firm, but because the man on screen is exactly who he says he is.' },
       { type: 'p', text: '"I don\'t worry about it," he said when asked about his future. "I know God\'s got my back. I\'m following God, and I\'m growing organically." That is not a talking point. For Nino Rodriguez, it is a documented, hard-won truth — one purchased at considerable cost, and shared freely with anyone willing to listen.' },
       { type: 'warning', text: 'The Autism Justice Foundation exists because every family dealing with a vaccine-injured child deserves someone in their corner who has been tested and didn\'t quit. Learn whether your family has a VICP claim — free consultation, no obligation.' },
+      { type: 'vicp_close', personName: 'Nino Rodriguez' },
     ],
   },
 ]
@@ -441,7 +484,7 @@ export default function InTheFightPage() {
 
             {/* Body */}
             <div className="space-y-5">
-              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string; tysonSrc?: string; shortcode?: string; caption?: string }, i: number) => {
+              {article.body.map((block: { type: string; text?: string; cite?: string; videoId?: string; title?: string; photos?: { src: string; caption: string }[]; posterSrc?: string; tysonSrc?: string; shortcode?: string; caption?: string; personName?: string }, i: number) => {
                 if (block.type === 'youtube' && block.videoId) {
                   return (
                     <div key={i} className="my-8">
@@ -664,6 +707,78 @@ export default function InTheFightPage() {
 
                       {/* Gold bottom rule */}
                       <div className="h-1 bg-[#d4a843]" />
+                    </div>
+                  )
+                }
+                if (block.type === 'vicp_banner') {
+                  return (
+                    <div key={i} className="my-6 flex items-center justify-between gap-4 px-5 py-4 rounded-sm"
+                      style={{ background: '#0a1628', borderLeft: '4px solid #d4a843' }}>
+                      <p className="text-sm text-white opacity-90 leading-snug">
+                        Alpha Law Group represents VICP autism compensation claims — <strong className="text-white">at no upfront cost.</strong>
+                      </p>
+                      <a href="/intake/phase-1"
+                        className="flex-shrink-0 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90"
+                        style={{ background: '#d4a843', color: '#0a1628', whiteSpace: 'nowrap' }}>
+                        See If You Qualify →
+                      </a>
+                    </div>
+                  )
+                }
+                if (block.type === 'vicp_mid') {
+                  return (
+                    <div key={i} className="my-10 mx-auto max-w-2xl rounded-sm overflow-hidden"
+                      style={{ border: '2px solid #d4a843' }}>
+                      <div className="px-8 py-6" style={{ background: '#fdf8ee' }}>
+                        <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#d4a843' }}>
+                          Did You Know?
+                        </p>
+                        <p className="text-lg font-semibold leading-snug mb-4" style={{ color: '#0a1628' }}>
+                          If your child was diagnosed with autism after receiving childhood vaccines, you may have a federal compensation claim. Most families don&rsquo;t know they qualify.
+                        </p>
+                        <p className="text-sm mb-5" style={{ color: '#475569' }}>
+                          The Vaccine Injury Compensation Program (VICP) is a federal fund created by Congress. Thousands of families may be eligible — and the process costs you nothing unless we win.
+                        </p>
+                        <a href="/intake/phase-1"
+                          className="inline-block px-6 py-3 text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-90 rounded-sm"
+                          style={{ background: '#0a1628', color: '#d4a843' }}>
+                          Check Eligibility — It&rsquo;s Free →
+                        </a>
+                      </div>
+                    </div>
+                  )
+                }
+                if (block.type === 'vicp_close') {
+                  return (
+                    <div key={i} className="mt-12 rounded-sm overflow-hidden"
+                      style={{ background: '#0a1628' }}>
+                      <div className="px-8 py-10 text-center">
+                        <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: '#d4a843' }}>
+                          Autism Justice Foundation · Alpha Law Group
+                        </p>
+                        <h3 className="text-2xl font-bold text-white mb-3 leading-snug">
+                          {block.personName ? `${block.personName} joined the fight.` : 'They joined the fight.'} <br />
+                          <span style={{ color: '#d4a843' }}>Now it&rsquo;s your turn.</span>
+                        </h3>
+                        <p className="text-sm text-white opacity-70 mb-6 max-w-lg mx-auto leading-relaxed">
+                          Alpha Law Group handles VICP autism compensation claims exclusively on contingency — no cost unless we win. Start your free case review today.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                          <a href="/intake/phase-1"
+                            className="px-8 py-4 font-bold uppercase tracking-widest text-sm transition-opacity hover:opacity-90 rounded-sm"
+                            style={{ background: '#d4a843', color: '#0a1628' }}>
+                            Begin Your VICP Application →
+                          </a>
+                          <a href="/intake/phase-1"
+                            className="px-8 py-4 font-bold uppercase tracking-widest text-sm rounded-sm transition-opacity hover:opacity-80"
+                            style={{ background: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.3)' }}>
+                            Refer Someone You Know →
+                          </a>
+                        </div>
+                        <p className="mt-4 text-xs opacity-40 text-white">
+                          No cost unless we win · Florida Bar licensed · HIPAA compliant
+                        </p>
+                      </div>
                     </div>
                   )
                 }
