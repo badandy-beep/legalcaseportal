@@ -78,7 +78,7 @@ export default function HomePage() {
         </div>
 
         {/* ══ RIGHT — VIDEO PANEL ══ */}
-        <div className="relative w-full md:w-[58%]" style={{ minHeight: '50vh' }}>
+        <div className="relative w-full md:w-[58%]" style={{ minHeight: '0' }}>
 
           {/* Gold accent border on left edge — connects the two panels */}
           <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"

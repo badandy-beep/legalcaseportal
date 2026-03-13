@@ -58,16 +58,35 @@ export default function PublicLayout({
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             {/* Logo — shield + text */}
-            <a href="/" className="flex items-center gap-2.5 no-underline flex-shrink-0">
+            <a href="/" className="flex items-center gap-2 no-underline flex-shrink-0">
               <img
                 src="/alg-shield.png"
                 alt="Alpha Law Group"
                 className="h-10 w-10 object-contain"
               />
-              <div className="leading-tight">
-                <span className="text-white font-bold text-xs sm:text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW</span>
-                <br />
-                <span className="text-white font-bold text-xs sm:text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>GROUP</span>
+              <div>
+                <div style={{
+                  fontFamily: 'Georgia, serif',
+                  fontSize: '15px',
+                  fontWeight: '700',
+                  letterSpacing: '0.1em',
+                  color: 'white',
+                  textTransform: 'uppercase' as const,
+                  whiteSpace: 'nowrap' as const,
+                  lineHeight: 1.2,
+                }}>
+                  Alpha Law Group
+                </div>
+                <div style={{
+                  fontSize: '8px',
+                  fontWeight: '600',
+                  letterSpacing: '0.3em',
+                  color: '#d4a843',
+                  textTransform: 'uppercase' as const,
+                  whiteSpace: 'nowrap' as const,
+                }}>
+                  Vaccine · Autism Justice
+                </div>
               </div>
             </a>
 
