@@ -44,7 +44,7 @@ export default function HomePage() {
               style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)' }}>
               Check Your Eligibility — Free →
             </a>
-            <a href="/intake/phase-1"
+            <a href="/refer"
               className="inline-flex items-center justify-center px-6 py-4 font-bold uppercase tracking-widest text-xs rounded-sm transition-opacity hover:opacity-80"
               style={{ background: 'transparent', color: 'white', border: '1px solid rgba(255,255,255,0.25)' }}>
               Refer Someone You Know
