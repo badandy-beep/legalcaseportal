@@ -60,8 +60,8 @@ export default function HomePage() {
         className="relative w-full"
         style={{ background: '#0a1628' }}
       >
-        <div className="hidden md:grid" style={{ minHeight: '600px', display: 'grid', gridTemplateColumns: '1fr 1.1fr' }}>
-          <div className="flex flex-col justify-center py-12 px-16" style={{ maxWidth: '600px' }}>
+        <div className="hidden md:grid" style={{ minHeight: '600px', display: 'grid', gridTemplateColumns: '45% 55%' }}>
+          <div className="flex flex-col justify-center py-12 pl-12 pr-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px" style={{ background: '#d4a843' }} />
               <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
@@ -81,12 +81,12 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
               <a href="/intake/phase-1"
                 className="inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
-                style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif' }}>
+                style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>
                 Check Your Eligibility — Free →
               </a>
               <a href="/refer"
                 className="inline-flex items-center justify-center px-6 py-4 font-black uppercase tracking-widest text-sm rounded-sm transition-opacity hover:opacity-80"
-                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif' }}>
+                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>
                 Refer Someone You Know
               </a>
             </div>
@@ -98,20 +98,20 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="relative overflow-hidden" style={{ margin: '24px 32px 24px 24px', borderRadius: '12px', position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.45)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
+          <div className="relative overflow-hidden" style={{ margin: '24px 32px 24px 0', borderRadius: '12px' }}>
+            <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
               <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#d4a843', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '9px solid #0a1628', marginLeft: '2px' }} />
               </div>
               <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '11px', fontWeight: 700, color: '#ffffff', letterSpacing: '.1em', textTransform: 'uppercase' as const }}>Watch Our Story</span>
             </div>
-            <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
+            <div className="relative w-full h-full" style={{ minHeight: '500px' }}>
               <iframe
                 src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 title="The 3-Minute Call That Changed Everything"
               />
             </div>
