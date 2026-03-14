@@ -332,6 +332,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ═══ VOICES & IMPACT — CHD Conference Videos ═══ */}
+      <section className="bg-[#0a1628] py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-bold tracking-widest uppercase text-center mb-3" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>Voices & Impact</p>
+          <h2 className="text-3xl md:text-4xl font-black text-white text-center mb-3" style={{ fontFamily: 'Montserrat,sans-serif' }}>The Fight for Truth & Justice</h2>
+          <p className="text-base text-center mb-12" style={{ color: '#94a3b8', fontFamily: 'Roboto,sans-serif' }}>Soundbites from the Children&apos;s Health Defense Conference — Austin, TX · November 2025</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="rounded-xl overflow-hidden border border-white/10">
+              <video
+                controls
+                poster="/poster-moment-of-truth.jpg"
+                className="w-full"
+                style={{ display: 'block' }}
+                preload="none"
+              >
+                <source src="/video-moment-of-truth.mp4" type="video/mp4" />
+              </video>
+              <div className="p-4" style={{ background: '#112240' }}>
+                <p className="font-bold text-white text-sm mb-1" style={{ fontFamily: 'Montserrat,sans-serif' }}>The Moment of Truth</p>
+                <p className="text-xs" style={{ color: '#94a3b8', fontFamily: 'Roboto,sans-serif' }}>Why Everything Is Changing Now · CHD Conference · Austin, TX</p>
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-white/10">
+              <video
+                controls
+                poster="/poster-fight-for-justice.jpg"
+                className="w-full"
+                style={{ display: 'block' }}
+                preload="none"
+              >
+                <source src="/video-fight-for-justice.mp4" type="video/mp4" />
+              </video>
+              <div className="p-4" style={{ background: '#112240' }}>
+                <p className="font-bold text-white text-sm mb-1" style={{ fontFamily: 'Montserrat,sans-serif' }}>The Fight for True Justice</p>
+                <p className="text-xs" style={{ color: '#94a3b8', fontFamily: 'Roboto,sans-serif' }}>What Happens to the Children? · CHD Conference · Austin, TX</p>
+              </div>
+            </div>
+            <div className="rounded-xl overflow-hidden border border-white/10">
+              <video
+                controls
+                poster="/poster-fathers-journey.jpg"
+                className="w-full"
+                style={{ display: 'block' }}
+                preload="none"
+              >
+                <source src="/video-fathers-journey.mp4" type="video/mp4" />
+              </video>
+              <div className="p-4" style={{ background: '#112240' }}>
+                <p className="font-bold text-white text-sm mb-1" style={{ fontFamily: 'Montserrat,sans-serif' }}>A Father&apos;s Journey</p>
+                <p className="text-xs" style={{ color: '#94a3b8', fontFamily: 'Roboto,sans-serif' }}>Dr. Gary & Beth Kompothecras · 25 Years Fighting for Their Children</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ SECTION 8 — ELIGIBILITY CAPTURE ═══ */}
       <EligibilityCapture />
 
