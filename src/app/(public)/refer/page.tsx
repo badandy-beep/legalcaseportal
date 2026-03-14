@@ -30,15 +30,15 @@ export default function ReferPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-8 h-px" style={{ background: '#d4a843' }} />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#d4a843' }}>
+            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
               Referral Program
             </span>
             <div className="w-8 h-px" style={{ background: '#d4a843' }} />
           </div>
-          <h1 className="text-3xl md:text-4xl font-black text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-black text-white mb-4" style={{fontFamily:'Montserrat,sans-serif'}}>
             Refer a Family
           </h1>
-          <p className="text-white/65 text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-white/65 text-lg leading-relaxed max-w-2xl mx-auto" style={{fontFamily:'Roboto,sans-serif'}}>
             Know a family with a vaccine-injured child? Enter their information below and we&rsquo;ll reach out with a free case review.
           </p>
         </div>
@@ -54,13 +54,14 @@ export default function ReferPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-[#111827] mb-3">Thank you!</h2>
-              <p className="text-[#475569] text-lg leading-relaxed max-w-md mx-auto">
+              <h2 className="text-2xl font-bold text-[#111827] mb-3" style={{fontFamily:'Montserrat,sans-serif'}}>Thank you!</h2>
+              <p className="text-[#475569] text-lg leading-relaxed max-w-md mx-auto" style={{fontFamily:'Roboto,sans-serif'}}>
                 We&rsquo;ll reach out to the family you referred within 1 business day.
               </p>
               <a
                 href="/"
-                className="inline-block mt-8 bg-[#d4a843] text-[#0a1628] font-bold px-8 py-3 rounded hover:bg-[#b8902e] transition text-sm uppercase tracking-wide"
+                className="inline-block mt-8 font-black px-8 py-3 rounded hover:opacity-90 transition text-sm uppercase tracking-wide"
+                style={{background:'#d4a843', color:'#0a1628', fontFamily:'Montserrat,sans-serif'}}
               >
                 Back to Home
               </a>
@@ -69,10 +70,10 @@ export default function ReferPage() {
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Your Info */}
               <div>
-                <h2 className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-4">Your Information</h2>
+                <h2 className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-4" style={{fontFamily:'Montserrat,sans-serif'}}>Your Information</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                       Your Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -82,10 +83,11 @@ export default function ReferPage() {
                       value={form.yourName}
                       onChange={handleChange}
                       className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                      style={{fontFamily:'Roboto,sans-serif'}}
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                       Your Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -95,11 +97,12 @@ export default function ReferPage() {
                       value={form.yourEmail}
                       onChange={handleChange}
                       className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                      style={{fontFamily:'Roboto,sans-serif'}}
                     />
                   </div>
                 </div>
                 <div className="mt-4">
-                  <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                     Your Phone
                   </label>
                   <input
@@ -108,16 +111,17 @@ export default function ReferPage() {
                     value={form.yourPhone}
                     onChange={handleChange}
                     className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                    style={{fontFamily:'Roboto,sans-serif'}}
                   />
                 </div>
               </div>
 
               {/* Family Info */}
               <div>
-                <h2 className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-4">Referred Family&rsquo;s Information</h2>
+                <h2 className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-4" style={{fontFamily:'Montserrat,sans-serif'}}>Referred Family&rsquo;s Information</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                       Family&rsquo;s Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -127,10 +131,11 @@ export default function ReferPage() {
                       value={form.familyName}
                       onChange={handleChange}
                       className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                      style={{fontFamily:'Roboto,sans-serif'}}
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                       Family&rsquo;s Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -140,11 +145,12 @@ export default function ReferPage() {
                       value={form.familyEmail}
                       onChange={handleChange}
                       className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                      style={{fontFamily:'Roboto,sans-serif'}}
                     />
                   </div>
                 </div>
                 <div className="mt-4">
-                  <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                  <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                     Family&rsquo;s Phone <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -154,13 +160,14 @@ export default function ReferPage() {
                     value={form.familyPhone}
                     onChange={handleChange}
                     className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent"
+                    style={{fontFamily:'Roboto,sans-serif'}}
                   />
                 </div>
               </div>
 
               {/* Note */}
               <div>
-                <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1.5" style={{fontFamily:'Roboto,sans-serif'}}>
                   Brief Note
                 </label>
                 <textarea
@@ -170,19 +177,20 @@ export default function ReferPage() {
                   onChange={handleChange}
                   placeholder="Anything helpful we should know before reaching out?"
                   className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843] focus:border-transparent resize-none"
+                  style={{fontFamily:'Roboto,sans-serif'}}
                 />
               </div>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full font-bold uppercase tracking-widest text-sm py-4 rounded transition-all hover:opacity-90"
-                style={{ background: '#d4a843', color: '#0a1628' }}
+                className="w-full font-black uppercase tracking-widest text-sm py-4 rounded transition-all hover:opacity-90"
+                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif' }}
               >
                 Send Referral &rarr;
               </button>
 
-              <p className="text-[#475569] text-xs text-center">
+              <p className="text-[#475569] text-xs text-center" style={{fontFamily:'Roboto,sans-serif'}}>
                 There is no cost, no obligation, and no risk. We&rsquo;ll handle the rest.
               </p>
             </form>

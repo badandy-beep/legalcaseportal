@@ -28,6 +28,8 @@ const config: Config = {
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
         serif: ['Georgia', 'Times New Roman', 'serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       spacing: {
         'golden-sm': '0.618rem',

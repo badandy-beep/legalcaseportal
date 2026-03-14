@@ -66,7 +66,7 @@ export default function PublicLayout({
               />
               <div>
                 <div style={{
-                  fontFamily: 'Georgia, serif',
+                  fontFamily: 'Montserrat, sans-serif',
                   fontSize: '15px',
                   fontWeight: '700',
                   letterSpacing: '0.1em',
@@ -78,6 +78,7 @@ export default function PublicLayout({
                   Alpha Law Group
                 </div>
                 <div style={{
+                  fontFamily: 'Roboto, sans-serif',
                   fontSize: '8px',
                   fontWeight: '600',
                   letterSpacing: '0.3em',
@@ -94,7 +95,7 @@ export default function PublicLayout({
             <div className="hidden md:flex items-center gap-1">
               {/* About dropdown */}
               <div className="relative group">
-                <button className="text-white hover:text-[#d4a843] transition-colors px-2 py-1.5 text-sm font-medium flex items-center gap-1" style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}>
+                <button className="text-white hover:text-[#d4a843] transition-colors px-2 py-1.5 text-sm font-medium flex items-center gap-1" style={{ fontFamily: 'Roboto, sans-serif', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}>
                   About
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </button>
@@ -104,7 +105,7 @@ export default function PublicLayout({
                       key={link.label}
                       href={link.href}
                       className="block px-4 py-2.5 text-sm text-white hover:text-[#d4a843] hover:bg-[#0a1628]/80 transition"
-                      style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500 }}
+                      style={{ fontFamily: 'Roboto, sans-serif', fontSize: '13px', fontWeight: 500 }}
                     >
                       {link.label}
                     </Link>
@@ -117,7 +118,7 @@ export default function PublicLayout({
                   key={link.label}
                   href={link.href}
                   className="text-white hover:text-[#d4a843] transition-colors px-1.5 py-1.5 text-sm font-medium"
-                  style={{ fontFamily: 'system-ui', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}
+                  style={{ fontFamily: 'Roboto, sans-serif', fontSize: '13px', fontWeight: 500, letterSpacing: '0.01em' }}
                 >
                   {link.label}
                 </Link>
@@ -125,8 +126,8 @@ export default function PublicLayout({
 
               <a
                 href="/intake/phase-1"
-                className="inline-block px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90 ml-2"
-                style={{ background: '#d4a843', color: '#0a1628' }}
+                className="inline-block px-5 py-2 text-xs font-black uppercase tracking-widest rounded-sm transition-opacity hover:opacity-90 ml-2"
+                style={{ background: '#d4a843', color: '#0a1628', fontFamily: 'Montserrat, sans-serif' }}
               >
                 Check Your Eligibility →
               </a>
@@ -154,7 +155,7 @@ export default function PublicLayout({
                   className="h-9 w-9 object-contain"
                 />
                 <div className="leading-tight">
-                  <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'system-ui' }}>ALPHA LAW GROUP</span>
+                  <span className="text-white font-bold text-sm tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>ALPHA LAW GROUP</span>
                 </div>
               </a>
             </div>
@@ -165,10 +166,10 @@ export default function PublicLayout({
                 onClick={() => setIsMenuOpen(false)}
                 className={
                   link.isCta
-                    ? 'block w-full text-center px-6 py-4 font-bold text-sm uppercase tracking-widest border-b border-[#d4a843]/20'
+                    ? 'block w-full text-center px-6 py-4 font-black text-sm uppercase tracking-widest border-b border-[#d4a843]/20'
                     : 'block px-6 py-4 text-white text-base font-medium border-b border-[#d4a843]/20 hover:text-[#d4a843]'
                 }
-                style={link.isCta ? { background: '#d4a843', color: '#0a1628' } : undefined}
+                style={link.isCta ? { background: '#d4a843', color: '#0a1628', fontFamily: 'Montserrat, sans-serif' } : { fontFamily: 'Roboto, sans-serif' }}
               >
                 {link.label}
               </Link>
@@ -184,25 +185,25 @@ export default function PublicLayout({
         {/* Footer */}
         <footer className="bg-[#060e1a] py-8 px-4">
           {/* Footer Navigation */}
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-[#94a3b8] mb-6">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs mb-6">
             {footerLinks.map((link) => (
-              <Link key={link.label} href={link.href} className="text-[#d4a843] hover:text-white transition">
+              <Link key={link.label} href={link.href} className="text-white hover:text-[#d4a843] transition" style={{fontFamily:'Roboto, sans-serif'}}>
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <p className="text-sm text-[#94a3b8] text-center">
-            Alpha Law Group, PLLC | Justice for Autism Initiative | Sarasota, Florida | (941) 304-1500
+          <p className="text-sm text-white text-center" style={{fontFamily:'Roboto, sans-serif'}}>
+            Alpha Law Group, PLLC | Justice for Autism Initiative | Sarasota, Florida | <span className="font-bold">(941) 304-1500</span>
           </p>
-          <p className="text-xs text-[#94a3b8] text-center max-w-4xl mx-auto mt-2">
+          <p className="text-xs text-[#94a3b8] text-center max-w-4xl mx-auto mt-2" style={{fontFamily:'Roboto, sans-serif'}}>
             ATTORNEY ADVERTISING: Completion of this intake form does not create an attorney-client relationship. No legal advice is provided herein. Alpha Law Group represents clients on a contingency fee basis — no fees charged unless a recovery is obtained. VICP NOTICE: Strict filing deadlines apply. Contact an attorney immediately to protect your rights. PRIVACY: All information submitted is confidential and subject to attorney-client privilege.
           </p>
-          <p className="text-xs text-[#94a3b8]/60 text-center mt-2">
+          <p className="text-xs text-[#94a3b8] text-center mt-2" style={{fontFamily:'Roboto, sans-serif'}}>
             &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
           </p>
           <div className="border-t border-[#d4a843]/20 mt-8 pt-4 text-center">
-            <a href="/admin" className="text-xs text-[#d4a843]/60 hover:text-[#d4a843] transition">Staff Login</a>
+            <a href="/admin" className="text-xs text-[#d4a843]/60 hover:text-[#d4a843] transition" style={{fontFamily:'Roboto, sans-serif'}}>Staff Login</a>
           </div>
         </footer>
       </div>
