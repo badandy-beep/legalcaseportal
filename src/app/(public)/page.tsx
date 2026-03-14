@@ -98,18 +98,20 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="relative overflow-hidden" style={{ minHeight: '300px', borderRadius: '0 0 0 0', margin: '0' }}>
-            <div className="hidden md:block" style={{ margin: '24px 32px 24px 0', borderRadius: '12px', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
-                <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#d4a843', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '9px solid #0a1628', marginLeft: '2px' }} />
-                </div>
-                <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '11px', fontWeight: 700, color: '#ffffff', letterSpacing: '.1em', textTransform: 'uppercase' as const }}>Watch Our Story</span>
+          <div className="relative overflow-hidden" style={{ margin: '24px 32px 24px 0', borderRadius: '12px', minHeight: '300px' }}>
+
+            {/* Watch Our Story label — desktop only */}
+            <div className="hidden md:flex" style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#d4a843', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '9px solid #0a1628', marginLeft: '2px' }} />
               </div>
+              <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '11px', fontWeight: 700, color: '#ffffff', letterSpacing: '.1em', textTransform: 'uppercase' as const }}>Watch Our Story</span>
             </div>
-            <div className="relative w-full h-full" style={{ minHeight: '300px' }}>
+
+            {/* Desktop — 1080p 16:9 */}
+            <div className="hidden md:block" style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
               <iframe
-                src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&quality=540p"
+                src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -117,7 +119,19 @@ export default function HomePage() {
                 title="The 3-Minute Call That Changed Everything"
               />
             </div>
-            <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
+
+            {/* Mobile — 540p lightweight 4:3 */}
+            <div className="block md:hidden" style={{ padding: '75% 0 0 0', position: 'relative' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1173564984?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                title="The 3-Minute Call That Changed Everything"
+              />
+            </div>
+
           </div>
         </div>
       </section>
