@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Script from 'next/script'
 
 export default function HomePage() {
   return (
@@ -84,17 +85,19 @@ export default function HomePage() {
           <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"
             style={{ background: 'linear-gradient(to bottom, transparent, #d4a843 20%, #d4a843 80%, transparent)' }} />
 
-          {/* Vimeo background autoplay — desktop & mobile */}
-          <div style={{ padding: '56.25% 0 0 0', position: 'relative', width: '100%' }}>
-            <iframe
-              src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              referrerPolicy="strict-origin-when-cross-origin"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              title="The 3-Minute Call That Changed Everything"
-            />
+          <div className="w-full max-w-4xl mx-auto">
+            <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                title="The 3-Minute Call That Changed Everything"
+              />
+            </div>
           </div>
+          <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
 
         </div>
 
