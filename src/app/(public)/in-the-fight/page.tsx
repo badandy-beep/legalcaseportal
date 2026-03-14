@@ -1,8 +1,7 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { articles } from '@/data/articles'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'In The Fight',
   description: 'Before the foundation. Before the law firm. Before the phone rang. The Kompothecras family and their allies were already fighting for autism families.',
   openGraph: {
