@@ -60,8 +60,8 @@ export default function HomePage() {
         className="relative w-full"
         style={{ background: '#0a1628' }}
       >
-        <div className="w-full" style={{ minHeight: '600px', display: 'grid', gridTemplateColumns: '42% 58%', columnGap: '0' }}>
-          <div className="flex flex-col justify-center py-12 pl-16 pr-6 md:pl-20 md:pr-8">
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '600px' }}>
+          <div className="flex flex-col justify-center py-10 px-6 md:py-12 md:pl-16 md:pr-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px" style={{ background: '#d4a843' }} />
               <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
