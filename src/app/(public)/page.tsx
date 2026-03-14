@@ -196,7 +196,7 @@ export default function HomePage() {
             <div className="p-4">
               <p className="text-[#0a1628] font-semibold text-sm mb-1">Dr. David Weldon &amp; Del Bigtree</p>
               <p className="text-[#475569] text-xs leading-relaxed">
-                Dr. David Weldon &mdash; President Trump&rsquo;s nominee for CDC Director &mdash; with Del Bigtree, producer of the landmark VAXXED documentary series. Interviewed by Dan Fluette at the Vaccine Veritas table.
+                Dr. David Weldon &mdash; Champion of vaccine safety accountability and President Trump&rsquo;s pick for CDC Director &mdash; with Del Bigtree, producer of the landmark VAXXED documentary series. Interviewed by Dan Fluette at the Vaccine Veritas table.
               </p>
             </div>
           </div>
