@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 
 const TABS = [
@@ -30,64 +29,19 @@ export default function AdminDashboard() {
   const [statusFilter, setStatusFilter] = useState('all')
   const [revealedKeys, setRevealedKeys] = useState<Set<string>>(new Set())
 
-  const supabase = createClient()
   const router = useRouter()
 
   useEffect(() => {
-    const init = async () => {
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) { router.push('/admin'); return }
-      setUser(user)
+    const isAuth = typeof window !== 'undefined' && sessionStorage.getItem('alg-admin-auth') === 'true'
+    if (!isAuth) { router.push('/admin'); return }
 
-      // Get admin role
-      const { data: adminData } = await supabase
-        .from('admin_users')
-        .select('*')
-        .eq('user_id', user.id)
-        .single()
-
-      if (!adminData) { await supabase.auth.signOut(); router.push('/admin'); return }
-      const admin = adminData as any
-      setAdminUser(admin)
-
-      // Load cases from intake_submissions
-      const { data: casesData } = await supabase
-        .from('intake_submissions')
-        .select('*')
-        .order('created_at', { ascending: false })
-      setCases(casesData || [])
-
-      // Load infrastructure
-      const { data: infraData } = await supabase
-        .from('infrastructure')
-        .select('*')
-        .order('sort_order')
-      setInfrastructure(infraData || [])
-
-      // Load domains
-      const { data: domainsData } = await supabase
-        .from('domains')
-        .select('*')
-        .order('created_at')
-      setDomains(domainsData || [])
-
-      // Load audit log (admin only)
-      if (admin.role === 'admin') {
-        const { data: auditData } = await supabase
-          .from('audit_log')
-          .select('*')
-          .order('created_at', { ascending: false })
-          .limit(200)
-        setAuditLog(auditData || [])
-      }
-
-      setLoading(false)
-    }
-    init()
+    setUser({ email: 'admin@alphalawgroup.com' })
+    setAdminUser({ role: 'admin' })
+    setLoading(false)
   }, [])
 
-  const handleSignOut = async () => {
-    await supabase.auth.signOut()
+  const handleSignOut = () => {
+    sessionStorage.removeItem('alg-admin-auth')
     router.push('/admin')
   }
 

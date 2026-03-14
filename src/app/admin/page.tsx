@@ -1,34 +1,25 @@
 'use client'
 
 import { useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [pin, setPin] = useState('')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const supabase = createClient()
   const router = useRouter()
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     setError('')
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
-    if (error) {
-      setError('Invalid credentials. Access denied.')
+    if (pin === '12345') {
+      sessionStorage.setItem('alg-admin-auth', 'true')
+      router.push('/admin/dashboard')
+    } else {
+      setError('Incorrect PIN')
       setLoading(false)
-      return
     }
-    // Log the login event
-    await fetch('/api/admin/audit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'LOGIN', resource: 'admin_portal' })
-    })
-    router.push('/admin/dashboard')
   }
 
   return (
@@ -42,25 +33,14 @@ export default function AdminLogin() {
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              required
-              className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
-              placeholder="attorney@alphalawgroup.com"
-            />
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1">Password</label>
+            <label className="block text-xs font-semibold text-[#475569] uppercase tracking-wider mb-1">PIN</label>
             <input
               type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
+              value={pin}
+              onChange={e => setPin(e.target.value)}
               required
               className="w-full border border-[#E2E8F0] rounded-lg px-4 py-3 text-sm text-[#111827] focus:outline-none focus:ring-2 focus:ring-[#d4a843]"
-              placeholder="••••••••"
+              placeholder="Enter PIN"
             />
           </div>
           {error && <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-2">{error}</p>}
