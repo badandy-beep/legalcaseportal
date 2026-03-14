@@ -2,6 +2,8 @@
 
 import Link from 'next/link'
 import Script from 'next/script'
+import TestimonialBlock from '@/components/TestimonialBlock'
+import EligibilityCapture from '@/components/EligibilityCapture'
 
 export default function HomePage() {
   return (
@@ -206,6 +208,12 @@ export default function HomePage() {
         </p>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialBlock />
+
+      {/* Eligibility Capture */}
+      <EligibilityCapture />
 
       {/* Slogan Block 2 */}
       <section className="bg-white border-t border-b border-[#E2E8F0] py-10">
