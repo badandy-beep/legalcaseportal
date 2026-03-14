@@ -8,12 +8,12 @@ export default function HomePage() {
     <>
       {/* Split Hero — Full Viewport Height */}
       <section
-        className="relative w-full flex flex-col md:flex-row"
-        style={{ minHeight: '100vh', background: '#0a1628' }}
+        className="relative w-full grid grid-cols-1 md:grid-cols-2"
+        style={{ minHeight: '100vh', background: '#0a1628', alignItems: 'stretch' }}
       >
 
         {/* ══ LEFT — CONTENT PANEL ══ */}
-        <div className="relative z-10 flex flex-col justify-center px-8 md:px-14 py-16 md:py-0 w-full md:w-[42%]"
+        <div className="relative z-10 flex flex-col justify-center py-16 px-12"
           style={{ background: '#0a1628' }}>
 
           {/* Top label */}
@@ -70,23 +70,21 @@ export default function HomePage() {
         </div>
 
         {/* ══ RIGHT — VIDEO PANEL ══ */}
-        <div className="relative w-full md:w-[58%]" style={{ minHeight: '0' }}>
+        <div className="relative overflow-hidden" style={{ minHeight: '100%' }}>
 
           {/* Gold accent border on left edge — connects the two panels */}
           <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"
             style={{ background: 'linear-gradient(to bottom, transparent, #d4a843 20%, #d4a843 80%, transparent)' }} />
 
-          <div className="w-full">
-            <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
-              <iframe
-                src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                title="The 3-Minute Call That Changed Everything"
-              />
-            </div>
+          <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
+            <iframe
+              src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+              title="The 3-Minute Call That Changed Everything"
+            />
           </div>
           <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
 
