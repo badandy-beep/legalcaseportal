@@ -105,7 +105,7 @@ export default function HomePage() {
 
       {/* Trust Bar */}
       <section className="bg-[#0a1628] py-4">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-center font-semibold text-sm text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center font-semibold text-sm text-white">
           <div><span className="text-[#d4a843] mr-1">&#10003;</span>Contingency Fee — No Win, No Fee</div>
           <div><span className="text-[#d4a843] mr-1">&#10003;</span>Florida Statewide Representation</div>
           <div><span className="text-[#d4a843] mr-1">&#10003;</span>Family-Founded. Mission-Driven.</div>
@@ -114,7 +114,7 @@ export default function HomePage() {
 
       {/* Orange CTA Strip 1 */}
       <div className="bg-white py-4 border-b border-[#E2E8F0]">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">Attorney fees paid by the program — even in losing cases.</p>
           <a href="/intake/phase-1" className="flex-shrink-0 font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap hover:opacity-90" style={{ background: '#d4a843', color: '#0a1628' }}>
             See If You Qualify →
@@ -124,7 +124,7 @@ export default function HomePage() {
 
       {/* Slogan Block 1 */}
       <section className="bg-[#0a1628] py-10">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-2xl md:text-3xl font-bold text-white text-center md:text-left" style={{fontFamily:'Georgia,serif'}}>
             Federal Compensation Exists.<br />
             <span className="text-[#d4a843]">Your Family Deserves It.</span>
@@ -136,10 +136,10 @@ export default function HomePage() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-white py-8 md:py-16">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="w-full bg-white py-8 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-[#111827] mb-8 text-center">Why We Do This</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Pull quote card */}
             <div className="bg-white border-l-4 border-[#d4a843] p-8 rounded-xl shadow-sm">
               <p className="text-lg leading-relaxed italic mb-4 text-[#111827]">
@@ -170,7 +170,8 @@ export default function HomePage() {
       </section>
 
       {/* Advisory Board Photo Grid */}
-      <section className="bg-white border-b border-[#E2E8F0] py-8 md:py-16 px-4">
+      <section className="bg-white border-b border-[#E2E8F0] py-8 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10">
           <p className="text-[#0a1628] text-xs font-bold tracking-widest uppercase mb-2">
@@ -183,7 +184,7 @@ export default function HomePage() {
         </div>
 
         {/* Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl overflow-hidden border border-[#E2E8F0] shadow-sm">
             <img src="/ajf-group.jpg" alt="The Autism Justice Foundation Team" className="w-full h-56 object-cover object-top" />
             <div className="p-4">
@@ -218,11 +219,12 @@ export default function HomePage() {
         <p className="text-[#475569] text-xs text-center mt-8 max-w-2xl mx-auto">
           The Justice for Autism Advisory Board includes the nation&rsquo;s foremost voices in vaccine safety, medical freedom, and children&rsquo;s health advocacy.
         </p>
+        </div>
       </section>
 
       {/* Slogan Block 2 */}
       <section className="bg-white border-t border-b border-[#E2E8F0] py-10">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-xs font-bold tracking-widest uppercase text-[#0a1628] mb-2">Zero Cost To You</p>
             <p className="text-2xl md:text-3xl font-bold text-[#111827]" style={{fontFamily:'Georgia,serif'}}>
@@ -237,7 +239,7 @@ export default function HomePage() {
 
       {/* Green CTA Strip 1 */}
       <div className="bg-[#F0FDF4] border-t border-b border-green-100 py-4">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">Know a family with an autistic child? They may have benefits they don&rsquo;t know about.</p>
           <a href="/intake/phase-1" className="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
             Help a Family Today →
@@ -247,7 +249,7 @@ export default function HomePage() {
 
       {/* Voices & Impact Video Row */}
       <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-8 md:py-16">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#0a1628] text-center mb-3">
             Voices &amp; Impact
           </p>
@@ -340,7 +342,7 @@ export default function HomePage() {
 
       {/* VICP Stats Section */}
       <section className="bg-[#0a1628] py-8 md:py-16">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-[#d4a843] text-xs font-bold uppercase tracking-widest text-center mb-3">
             VICP BY THE NUMBERS
           </p>
@@ -393,7 +395,7 @@ export default function HomePage() {
 
       {/* Orange CTA Strip 2 */}
       <div className="bg-white border-t border-[#E2E8F0] py-4">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">$5.4 billion paid out. <span className="text-[#0a1628]">Is your family&rsquo;s share waiting?</span></p>
           <a href="/intake/phase-1" className="flex-shrink-0 font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap hover:opacity-90" style={{ background: '#d4a843', color: '#0a1628' }}>
             Start Free Review →
@@ -403,7 +405,7 @@ export default function HomePage() {
 
       {/* Slogan Block 3 */}
       <section className="bg-[#F8F9FA] border-t border-[#E2E8F0] py-10">
-        <div className="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-2xl md:text-3xl font-bold text-[#111827] text-center md:text-left" style={{fontFamily:'Georgia,serif'}}>
             They Were Injured. The System Owes Them.{' '}
             <span className="text-[#d4a843]">We Collect.</span>
@@ -416,7 +418,7 @@ export default function HomePage() {
 
       {/* Green CTA Strip 2 */}
       <div className="bg-[#F0FDF4] border-t border-b border-green-100 py-4">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
           <p className="text-sm font-semibold text-[#111827]">Refer someone you know — <span className="text-green-700">sharing this page could change a family&rsquo;s life.</span></p>
           <a href={`https://wa.me/?text=${encodeURIComponent('This law firm helps autism families get federal compensation — free review, no cost unless they win: https://gethelpforautism.com')}`} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white font-bold px-5 py-2 rounded-full text-sm transition whitespace-nowrap">
             Share With a Family →
@@ -426,7 +428,7 @@ export default function HomePage() {
 
       {/* Bottom CTA Strip */}
       <section className="bg-[#0a1628] text-white py-6 md:py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold tracking-tight mb-6">Ready to be heard?</h2>
           <Link
             href="/intake/phase-1"
@@ -442,7 +444,7 @@ export default function HomePage() {
 
       {/* Referral Section */}
       <section className="bg-white border-t-4 border-[#0a1628] py-8 md:py-16">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
           {/* Icon */}
           <div className="w-14 h-14 rounded-full bg-[#fdf8ee] flex items-center justify-center mx-auto mb-6">
@@ -487,7 +489,7 @@ export default function HomePage() {
 
       {/* Coalition & Advisory Partners — text only */}
       <section className="bg-white border-t border-[#E2E8F0] py-10">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-xs font-bold tracking-widest uppercase text-[#475569] mb-6">
             Coalition &amp; Advisory Partners
           </p>
