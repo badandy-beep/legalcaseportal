@@ -160,16 +160,16 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col justify-center space-y-8">
               <div className="flex items-start gap-4">
-                <span className="text-4xl md:text-5xl font-black text-[#0a1628] leading-none" style={{ fontFamily: 'Montserrat,sans-serif' }}>1 in 36</span>
-                <p className="text-base text-[#475569] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>children in the US diagnosed with autism</p>
+                <span className="text-3xl md:text-4xl font-black text-[#0a1628] leading-none" style={{ fontFamily: 'Montserrat,sans-serif' }}>1 in 36</span>
+                <p className="text-lg font-semibold text-[#1e293b] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>children in the US diagnosed with autism</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-4xl md:text-5xl font-black text-[#0a1628] leading-none" style={{ fontFamily: 'Montserrat,sans-serif' }}>$5.4B+</span>
-                <p className="text-base text-[#475569] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>paid to vaccine-injured families since 1988</p>
+                <span className="text-3xl md:text-4xl font-black text-[#0a1628] leading-none" style={{ fontFamily: 'Montserrat,sans-serif' }}>$5.4B+</span>
+                <p className="text-lg font-semibold text-[#1e293b] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>paid to vaccine-injured families since 1988</p>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-3xl font-black leading-none" style={{ color: '#ea580c', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>Act Now</span>
-                <p className="text-base text-[#475569] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>Strict filing deadlines apply — don&rsquo;t wait</p>
+                <p className="text-lg font-semibold text-[#1e293b] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>Strict filing deadlines apply — don&rsquo;t wait</p>
               </div>
             </div>
           </div>
