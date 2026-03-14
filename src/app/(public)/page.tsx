@@ -60,8 +60,8 @@ export default function HomePage() {
         className="relative w-full"
         style={{ background: '#0a1628' }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '600px' }}>
-          <div className="flex flex-col justify-center py-10 px-6 md:pl-12 md:pr-8">
+        <div className="w-full" style={{ minHeight: '600px', display: 'grid', gridTemplateColumns: '42% 58%', columnGap: '0' }}>
+          <div className="flex flex-col justify-center py-12 pl-16 pr-6 md:pl-20 md:pr-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px" style={{ background: '#d4a843' }} />
               <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
@@ -98,7 +98,7 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <div className="relative overflow-hidden" style={{ margin: '24px 32px 24px 0', borderRadius: '12px', minHeight: '300px' }}>
+          <div className="relative overflow-hidden" style={{ margin: '0', padding: '0', minHeight: '100%' }}>
 
             {/* Watch Our Story label — desktop only */}
             <div className="hidden md:flex" style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
