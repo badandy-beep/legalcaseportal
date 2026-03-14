@@ -1,5 +1,19 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'How VICP Works',
+  description: 'The Vaccine Injury Compensation Program is a federal no-fault system that has paid $5.4 billion to injured families since 1988. Learn how to file, what to expect, and what deadlines apply.',
+  openGraph: {
+    title: 'How the Federal Vaccine Injury Compensation Program Works',
+    description: '$5.4 billion paid to families since 1988. No fees. No upfront costs. Attorney fees paid by the program. Learn if your family qualifies and what deadlines apply.',
+    images: [{ url: '/ajf-group.jpg', width: 1200, height: 630, alt: 'Autism Justice Foundation team' }],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    images: ['/ajf-group.jpg'],
+  },
+}
+
 const steps = [
   {
     number: 1,

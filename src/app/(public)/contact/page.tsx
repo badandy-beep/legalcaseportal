@@ -1,4 +1,5 @@
 'use client'
+// OG metadata handled by root layout — client component cannot export metadata
 
 import { useState } from 'react'
 

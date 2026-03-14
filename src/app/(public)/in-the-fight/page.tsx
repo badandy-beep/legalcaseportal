@@ -1,31 +1,17 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 import { articles } from '@/data/articles'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gethelpforautism.com'),
-  title: 'In The Fight Before You Called | Autism Justice Foundation',
-  description: 'A documented record of the Kompothecras family and AJF legal team advocacy — decades of fighting for autism families before they ever opened a law firm.',
+  title: 'In The Fight',
+  description: 'Before the foundation. Before the law firm. Before the phone rang. The Kompothecras family and their allies were already fighting for autism families.',
   openGraph: {
     title: 'In The Fight Before You Called | Autism Justice Foundation',
-    description: 'Alpha Law Group · VICP Autism Compensation Claims · No Cost Unless We Win',
-    url: 'https://gethelpforautism.com/in-the-fight',
-    siteName: 'Autism Justice Foundation',
-    images: [
-      {
-        url: 'https://gethelpforautism.com/gary-beth-gala.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Autism Justice Foundation — In The Fight',
-      },
-    ],
-    type: 'article',
+    description: 'From the Florida Legislature to the CHD Conference — read the stories of the people fighting for vaccine-injured families before you ever picked up the phone.',
+    images: [{ url: '/gary-beth-family-group.webp', width: 1200, height: 630, alt: 'The Autism Justice Foundation team in the fight' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'In The Fight Before You Called | Autism Justice Foundation',
-    description: 'Alpha Law Group · VICP Autism Compensation Claims · No Cost Unless We Win',
-    images: ['https://gethelpforautism.com/gary-beth-gala.webp'],
+    images: ['/gary-beth-family-group.webp'],
   },
 }
 

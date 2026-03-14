@@ -10,34 +10,70 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const article = articles.find((a) => a.slug === slug)
-  if (!article) return {}
+
+  const slugMetaMap: Record<string, { title: string; description: string; image: string }> = {
+    'david-nino-rodriguez-never-give-up': {
+      title: 'He Beat Mike Tyson\'s Record. Now He\'s Fighting for Your Child.',
+      description: 'Undefeated boxer David "Nino" Rodriguez survived everything the world threw at him — including having his throat slit. Now he\'s standing with autism families who deserve federal compensation.',
+      image: '/nino-red-carpet-hd.webp',
+    },
+    'bronson-sarah-alice-vicp-petitioners': {
+      title: 'Before They Built the Autism Justice Foundation, Gary and Beth Filed Their Own Children in Vaccine Court',
+      description: 'Sarah, Alice, and Bronson Kompothecras represent thousands of families who filed VICP petitions. Their story is a window into the federal compensation system.',
+      image: '/gary-beth-family.webp',
+    },
+    'alex-kompothecras-hb365-florida-house-testimony': {
+      title: 'Alex Kompothecras Testifies Before Florida House on HB365 — Passes Unanimously',
+      description: 'Alpha Law Group managing attorney Alex Kompothecras took his fight to the Florida House of Representatives. The bill passed without a single dissenting vote.',
+      image: '/Alex-Kompothecras.webp',
+    },
+    'dan-fleuette-autism-justice-documentary-filmmaker': {
+      title: 'The Man Behind the Camera Who Is Now Fighting for Your Child',
+      description: 'Award-winning filmmaker and Bannon War Room producer Dan Fleuette has turned his full creative arsenal toward autism justice and the families who need it most.',
+      image: '/dan-fleuette.webp',
+    },
+    'andrew-wakefield-the-doctor-who-asked': {
+      title: 'The Doctor Who Asked the Question They Didn\'t Want Asked',
+      description: 'Dr. Andrew Wakefield published a question in 1998 that the medical establishment has never fully answered. Twenty-eight years later, families are still waiting for justice.',
+      image: '/andrew-wakefield-portrait.webp',
+    },
+    'medical-freedom-act-2026': {
+      title: 'Florida Just Passed What Dr. Gary Fought For in 2008. He Was Right All Along.',
+      description: 'Florida SB 1756 prohibits vaccine mandates. Dr. Gary Kompothecras testified in support, bringing two decades of autism advocacy to the Capitol steps.',
+      image: '/gary-senate-sb1756-feb2026.jpg',
+    },
+    'alex-5k-asf-honorary-board': {
+      title: 'He Founded a 5K, Joined the Autism Society Board, and Calls Himself a Big Brother.',
+      description: 'The Alpha Law Group Autism 5K brought together hundreds of supporters in Sarasota. Alex Kompothecras was named Honorary Board Member of the Autism Society of Florida.',
+      image: '/Alex-Kompothecras.webp',
+    },
+    'desantis-appoints-gary-chiropractic-board-2026': {
+      title: 'Governor DeSantis Appoints Dr. Gary Kompothecras to the Florida Board of Chiropractic Medicine',
+      description: 'Governor Ron DeSantis appointed Dr. Gary Kompothecras in January 2026, recognizing decades of healthcare leadership and community advocacy.',
+      image: '/gary-kompothecras-formal.webp',
+    },
+  }
+
+  const meta = slugMetaMap[slug] ?? {
+    title: article ? `${article.title} | Alpha Law Group` : 'In The Fight | Alpha Law Group',
+    description: article?.excerpt ?? 'Stories from the front lines of autism justice and vaccine injury advocacy.',
+    image: article?.image ?? '/ajf-group.jpg',
+  }
 
   return {
-    metadataBase: new URL('https://gethelpforautism.com'),
-    title: `${article.title} | Autism Justice Foundation`,
-    description: article.excerpt,
+    title: meta.title,
+    description: meta.description,
     openGraph: {
-      title: `${article.title} | Autism Justice Foundation`,
-      description: article.excerpt,
-      url: `https://gethelpforautism.com/in-the-fight/${article.slug}`,
-      siteName: 'Autism Justice Foundation',
-      images: article.image
-        ? [
-            {
-              url: `https://gethelpforautism.com${article.image}`,
-              width: 1200,
-              height: 630,
-              alt: article.imageCaption,
-            },
-          ]
-        : [],
+      title: meta.title,
+      description: meta.description,
+      images: [{ url: meta.image, width: 1200, height: 630, alt: meta.title }],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article.title} | Autism Justice Foundation`,
-      description: article.excerpt,
-      images: article.image ? [`https://gethelpforautism.com${article.image}`] : [],
+      title: meta.title,
+      description: meta.description,
+      images: [meta.image],
     },
   }
 }

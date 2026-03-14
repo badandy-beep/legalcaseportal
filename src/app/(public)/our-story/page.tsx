@@ -1,5 +1,19 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Our Story',
+  description: 'Dr. Gary Kompothecras and his family founded the Autism Justice Foundation after two of their six children were diagnosed with severe autism. This is the story behind the fight.',
+  openGraph: {
+    title: 'Before They Built This Foundation, They Lived It | Alpha Law Group',
+    description: 'Dr. Gary and Beth Kompothecras filed their own children in vaccine court. Two of their six children have severe autism. Their fight became a mission for thousands of families.',
+    images: [{ url: '/gary-beth-family.webp', width: 1200, height: 630, alt: 'Gary and Beth Kompothecras with their family' }],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    images: ['/gary-beth-family.webp'],
+  },
+}
+
 export default function OurStoryPage() {
   return (
     <div className="bg-white py-16">

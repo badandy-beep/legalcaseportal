@@ -1,5 +1,19 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Our Team',
+  description: 'Meet Alex Kompothecras and the Alpha Law Group legal team dedicated to fighting for vaccine-injured families in federal compensation proceedings.',
+  openGraph: {
+    title: 'Meet the Attorneys Fighting for Your Family | Alpha Law Group',
+    description: 'Alex Kompothecras testified before the Florida House on vaccine injury protections. Chase Engelbrecht guides families through every phase of VICP claims. Meet your legal team.',
+    images: [{ url: '/Alex-Kompothecras.webp', width: 1200, height: 630, alt: 'Alex Kompothecras, Managing Attorney at Alpha Law Group' }],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    images: ['/Alex-Kompothecras.webp'],
+  },
+}
+
 const badge = "inline-block text-xs bg-[#0a1628]/5 text-[#0a1628] border border-[#0a1628]/10 rounded-full px-2 py-0.5 mr-1 mb-1"
 
 export default function OurTeamPage() {

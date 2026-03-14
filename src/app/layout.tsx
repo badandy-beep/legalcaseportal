@@ -1,10 +1,50 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+const siteUrl = 'https://legalcaseportal.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'LegalCasePortal - Autism & Vaccine Injury Case Evaluation',
-  description: 'Free case evaluation for families affected by vaccine injuries. Connect with experienced legal representation through the National Vaccine Injury Compensation Program.',
-  keywords: 'vaccine injury, autism, NVICP, legal help, case evaluation, vaccine compensation',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Alpha Law Group — Vaccine Injury Compensation for Autism Families',
+    template: '%s | Alpha Law Group'
+  },
+  description: 'Alpha Law Group helps autism families file for federal compensation through the Vaccine Injury Compensation Program. Free case review. No fees unless we win. Attorney fees paid by the program.',
+  keywords: 'vaccine injury compensation, autism VICP, vaccine court, autism legal help, VICP attorney, vaccine injury lawyer Florida, autism compensation federal',
+  authors: [{ name: 'Alpha Law Group' }],
+  creator: 'Alpha Law Group',
+  publisher: 'Alpha Law Group',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: 'Alpha Law Group — Justice for Autism',
+    title: 'Your Child May Be Entitled to Federal Compensation',
+    description: 'The federal government has paid $5.4 billion to vaccine-injured families. Thousands of autism families qualify — and most never know it exists. Free case review. No fees unless we win.',
+    images: [
+      {
+        url: '/ajf-group.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'The Autism Justice Foundation team at the CHD Moment of Truth Conference',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your Child May Be Entitled to Federal Compensation',
+    description: 'The federal government has paid $5.4 billion to vaccine-injured families. Free case review. No fees unless we win.',
+    images: ['/ajf-group.jpg'],
+    creator: '@alphalawgroup',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 }
 
 export default function RootLayout({

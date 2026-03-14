@@ -1,5 +1,19 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Resources',
+  description: 'VICP resources for autism families — official HRSA data, filing guides, vaccine injury information, and legal resources for navigating the federal compensation program.',
+  openGraph: {
+    title: 'VICP Resources for Autism Families | Alpha Law Group',
+    description: 'Official HRSA data, filing guides, and legal resources to help autism families understand and navigate the federal Vaccine Injury Compensation Program.',
+    images: [{ url: '/ajf-group.jpg', width: 1200, height: 630, alt: 'Autism Justice Foundation resources' }],
+  },
+  twitter: {
+    card: 'summary_large_image' as const,
+    images: ['/ajf-group.jpg'],
+  },
+}
+
 const partners = [
   {
     name: "Children's Health Defense",
