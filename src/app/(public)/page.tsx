@@ -154,7 +154,7 @@ export default function HomePage() {
                 <p className="text-[#475569] text-sm">children in the US diagnosed with autism</p>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-[#0a1628] font-bold text-2xl leading-none">$5B+</span>
+                <span className="text-[#0a1628] font-bold text-2xl leading-none">$5.4B+</span>
                 <p className="text-[#475569] text-sm">in the VICP trust fund available for families</p>
               </div>
               <div className="flex items-start gap-3">
@@ -345,7 +345,7 @@ export default function HomePage() {
             The Fund Is Solvent. Your Deadline Isn&rsquo;t.
           </h2>
           <p className="text-[#94a3b8] text-sm text-center mb-10">
-            Source: HRSA/HHS &middot; Updated June 2025
+            Source: HRSA &middot; Updated March 2026
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -365,9 +365,9 @@ export default function HomePage() {
               <p className="text-[#94a3b8] text-xs mt-1">48% success rate</p>
             </div>
             <div className="rounded-lg bg-[#0a1628] border border-[#d4a843]/30 p-6 text-center">
-              <p className="text-[#d4a843] text-4xl font-black">$4.8B</p>
-              <p className="text-white text-sm mt-1">In trust fund today</p>
-              <p className="text-[#94a3b8] text-xs mt-1">actively paying claims</p>
+              <p className="text-[#d4a843] text-4xl font-black">$5.4B</p>
+              <p className="text-white text-sm mt-1">Paid to families since 1988</p>
+              <p className="text-[#94a3b8] text-xs mt-1">and growing</p>
             </div>
           </div>
 
