@@ -66,15 +66,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Bottom — AJF logo mark */}
-          <div className="mt-8 md:mt-12 pt-8 hidden md:flex items-center gap-3"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-            <img src="/ajf-logo.png" alt="Autism Justice Foundation" className="h-8 opacity-70" />
-            <div>
-              <p className="text-xs font-bold text-white opacity-60">Autism Justice Foundation</p>
-              <p className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>Alpha Law Group · Sarasota, FL</p>
-            </div>
-          </div>
 
         </div>
 
