@@ -183,27 +183,50 @@ export default function PublicLayout({
         {children}
 
         {/* Footer */}
-        <footer className="bg-[#060e1a] py-8 px-4">
-          {/* Footer Navigation */}
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs mb-6">
-            {footerLinks.map((link) => (
-              <Link key={link.label} href={link.href} className="text-white hover:text-[#d4a843] transition" style={{fontFamily:'Roboto, sans-serif'}}>
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <p className="text-sm text-white text-center" style={{fontFamily:'Roboto, sans-serif'}}>
-            Alpha Law Group, PLLC | Justice for Autism Initiative | Sarasota, Florida | <span className="font-bold">(941) 304-1500</span>
-          </p>
-          <p className="text-xs text-[#94a3b8] text-center max-w-4xl mx-auto mt-2" style={{fontFamily:'Roboto, sans-serif'}}>
-            ATTORNEY ADVERTISING: Completion of this intake form does not create an attorney-client relationship. No legal advice is provided herein. Alpha Law Group represents clients on a contingency fee basis — no fees charged unless a recovery is obtained. VICP NOTICE: Strict filing deadlines apply. Contact an attorney immediately to protect your rights. PRIVACY: All information submitted is confidential and subject to attorney-client privilege.
-          </p>
-          <p className="text-xs text-[#94a3b8] text-center mt-2" style={{fontFamily:'Roboto, sans-serif'}}>
-            &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
-          </p>
-          <div className="border-t border-[#d4a843]/20 mt-8 pt-4 text-center">
-            <a href="/admin" className="text-xs text-[#d4a843]/60 hover:text-[#d4a843] transition" style={{fontFamily:'Roboto, sans-serif'}}>Staff Login</a>
+        <footer className="bg-[#0a1628] pt-16 pb-8">
+          <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+              <div className="md:col-span-2">
+                <p className="text-xl font-black text-white mb-1" style={{fontFamily:'Montserrat, sans-serif'}}>Alpha Law Group</p>
+                <p className="text-sm tracking-widest uppercase text-[#d4a843] mb-4" style={{fontFamily:'Montserrat, sans-serif'}}>Vaccine · Autism Justice</p>
+                <p className="text-base text-[#94a3b8] leading-relaxed mb-4" style={{fontFamily:'Roboto, sans-serif'}}>Representing families in VICP claims statewide. No fees unless we win. Attorney fees paid by the program even in losing cases.</p>
+                <p className="text-lg font-black text-white mb-1" style={{fontFamily:'Montserrat, sans-serif'}}>(941) 304-1500</p>
+                <p className="text-sm text-[#94a3b8]" style={{fontFamily:'Roboto, sans-serif'}}>Sarasota, Florida · Statewide Representation</p>
+              </div>
+              <div>
+                <p className="text-sm font-bold uppercase tracking-widest text-[#475569] mb-4" style={{fontFamily:'Montserrat, sans-serif'}}>Quick Links</p>
+                <div className="space-y-2">
+                  {footerLinks.map((link) => (
+                    <Link key={link.label} href={link.href} className="block text-base text-white hover:text-[#d4a843] transition" style={{fontFamily:'Roboto, sans-serif'}}>
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-bold uppercase tracking-widest text-[#475569] mb-4" style={{fontFamily:'Montserrat, sans-serif'}}>Coalition Partners</p>
+                <div className="space-y-2">
+                  {["Children's Health Defense", "The HighWire with Del Bigtree", "McCullough Foundation", "Autism Justice Foundation"].map(p => (
+                    <p key={p} className="text-base text-white" style={{fontFamily:'Roboto, sans-serif'}}>{p}</p>
+                  ))}
+                </div>
+                <div className="mt-6">
+                  <p className="text-sm font-bold uppercase tracking-widest text-[#475569] mb-4" style={{fontFamily:'Montserrat, sans-serif'}}>Contact</p>
+                  <p className="text-base text-white" style={{fontFamily:'Roboto, sans-serif'}}>(941) 304-1500</p>
+                  <p className="text-sm text-[#94a3b8]" style={{fontFamily:'Roboto, sans-serif'}}>Sarasota, Florida</p>
+                  <p className="text-sm text-[#94a3b8]" style={{fontFamily:'Roboto, sans-serif'}}>Florida Statewide Representation</p>
+                  <a href="/admin" className="block text-sm text-[#475569] hover:text-white transition mt-2" style={{fontFamily:'Roboto, sans-serif'}}>Staff Login</a>
+                </div>
+              </div>
+            </div>
+            <div className="border-t border-white/5 pt-6">
+              <p className="text-sm text-[#475569] leading-relaxed mb-3" style={{fontFamily:'Roboto, sans-serif'}}>
+                ATTORNEY ADVERTISING: Completion of this intake form does not create an attorney-client relationship. No legal advice is provided herein. Alpha Law Group represents clients on a contingency fee basis — no fees charged unless a recovery is obtained. VICP NOTICE: Strict filing deadlines apply. Contact an attorney immediately to protect your rights. PRIVACY: All information submitted is confidential and subject to attorney-client privilege.
+              </p>
+              <p className="text-sm text-[#94a3b8]" style={{fontFamily:'Roboto, sans-serif'}}>
+                &copy; 2026 Alpha Law Group, PLLC. All Rights Reserved. | Powered by LegalCasePortal&trade; &mdash; A Noetic Dharma Group Technology
+              </p>
+            </div>
           </div>
         </footer>
       </div>
