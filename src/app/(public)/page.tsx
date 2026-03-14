@@ -57,10 +57,11 @@ export default function HomePage() {
     <>
       {/* ═══ SECTION 1 — HERO ═══ */}
       <section
-        className="relative w-full grid grid-cols-1 md:grid-cols-2"
-        style={{ minHeight: '100vh', background: '#0a1628', alignItems: 'stretch' }}
+        className="relative w-full"
+        style={{ minHeight: '600px', background: '#0a1628' }}
       >
-        <div className="relative z-10 flex flex-col justify-center py-16 pl-12 pr-10"
+        <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '600px' }}>
+        <div className="relative z-10 flex flex-col justify-center py-12 pl-12 pr-10"
           style={{ background: '#0a1628' }}>
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px" style={{ background: '#d4a843' }} />
@@ -98,7 +99,13 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <div className="relative overflow-hidden" style={{ minHeight: '100%' }}>
+        <div className="relative overflow-hidden" style={{ minHeight: '100%', position: 'relative' }}>
+          <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(212,168,67,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: 0, height: 0, borderTop: '6px solid transparent', borderBottom: '6px solid transparent', borderLeft: '10px solid #0a1628', marginLeft: '2px' }} />
+            </div>
+            <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '12px', fontWeight: 700, color: '#ffffff', letterSpacing: '.08em', textTransform: 'uppercase' as const, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>Watch Our Story</span>
+          </div>
           <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
             <iframe
               src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
@@ -110,6 +117,7 @@ export default function HomePage() {
             />
           </div>
           <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
+        </div>
         </div>
       </section>
 
@@ -145,7 +153,7 @@ export default function HomePage() {
                 <p className="text-base text-[#475569] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>paid to vaccine-injured families since 1988</p>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-4xl md:text-5xl font-black leading-none" style={{ fontFamily: 'Montserrat,sans-serif', color: '#ea580c' }}>Act Now</span>
+                <span className="text-3xl font-black leading-none" style={{ color: '#ea580c', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>Act Now</span>
                 <p className="text-base text-[#475569] pt-2" style={{ fontFamily: 'Roboto,sans-serif' }}>Strict filing deadlines apply — don&rsquo;t wait</p>
               </div>
             </div>
@@ -321,7 +329,6 @@ export default function HomePage() {
               { num: '$5.4B+', label: 'Paid to injured families', sub: 'since 1988' },
               { num: '28,673', label: 'Petitions filed', sub: 'since program began' },
               { num: '12,019', label: 'Families compensated', sub: '48% success rate' },
-              { num: '3 Years', label: 'Your filing window', sub: 'from first symptom' },
             ].map((stat, i) => (
               <div key={i} className="bg-white border border-[#E2E8F0] rounded-xl p-8 text-center">
                 <p className="text-5xl font-black text-[#0a1628] mb-2" style={{ fontFamily: 'Montserrat,sans-serif' }}>{stat.num}</p>
@@ -329,6 +336,12 @@ export default function HomePage() {
                 <p className="text-sm text-[#94a3b8] mt-1" style={{ fontFamily: 'Roboto,sans-serif' }}>{stat.sub}</p>
               </div>
             ))}
+            <div className="bg-white border border-[#E2E8F0] rounded-xl p-8 text-center">
+              <p className="text-5xl font-black text-[#0a1628] mb-2" style={{ fontFamily: 'Montserrat,sans-serif' }}>3</p>
+              <p className="text-xl font-bold text-[#0a1628]" style={{ fontFamily: 'Montserrat,sans-serif' }}>Years</p>
+              <p className="text-base text-[#475569]" style={{ fontFamily: 'Roboto,sans-serif' }}>Your filing window</p>
+              <p className="text-sm text-[#475569] mt-1" style={{ fontFamily: 'Roboto,sans-serif' }}>from first symptom</p>
+            </div>
           </div>
           <div className="mt-10 rounded-xl p-6 text-center max-w-3xl mx-auto" style={{ background: '#ea580c' }}>
             <p className="text-lg font-black text-white" style={{ fontFamily: 'Montserrat,sans-serif' }}>
