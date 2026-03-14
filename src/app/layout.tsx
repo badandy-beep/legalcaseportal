@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'The federal government has paid $5.4 billion to vaccine-injured families. Thousands of autism families qualify — and most never know it exists. Free case review. No fees unless we win.',
     images: [
       {
-        url: '/ajf-group.jpg',
+        url: '/og-default.jpg',
         width: 1200,
         height: 630,
         alt: 'The Autism Justice Foundation team at the CHD Moment of Truth Conference',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Your Child May Be Entitled to Federal Compensation',
     description: 'The federal government has paid $5.4 billion to vaccine-injured families. Free case review. No fees unless we win.',
-    images: ['/ajf-group.jpg'],
+    images: ['/og-default.jpg'],
     creator: '@alphalawgroup',
   },
   robots: {
