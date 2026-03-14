@@ -13,26 +13,26 @@ export default function HomePage() {
       >
 
         {/* ══ LEFT — CONTENT PANEL ══ */}
-        <div className="relative z-10 flex flex-col justify-center py-16 px-12"
+        <div className="relative z-10 flex flex-col justify-center py-16 pl-12 pr-10"
           style={{ background: '#0a1628' }}>
 
           {/* Top label */}
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px" style={{ background: '#d4a843' }} />
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
               Vaccine Injury Compensation Program
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="font-black leading-tight mb-5 text-white"
-            style={{ fontSize: 'clamp(2rem, 3.5vw, 3.25rem)', lineHeight: 1.1, fontFamily: 'Montserrat,sans-serif' }}>
+          <h1 className="text-5xl md:text-6xl font-black leading-tight mb-5 text-white"
+            style={{ lineHeight: 1.1, fontFamily: 'Montserrat,sans-serif' }}>
             Your Child May Be<br />
             <span style={{ color: '#d4a843' }}>Entitled to Federal<br />Compensation.</span>
           </h1>
 
           {/* Subtext */}
-          <p className="mb-8 leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', maxWidth: '380px', fontFamily: 'Roboto,sans-serif' }}>
+          <p className="text-base md:text-lg mb-8" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '440px', fontFamily: 'Roboto,sans-serif' }}>
             Congress created the VICP to compensate families of vaccine-injured children.
             Thousands of autism families qualify — and most never know it exists.
             Alpha Law Group fights for you at <strong style={{ color: 'white' }}>no cost unless we win.</strong>
@@ -60,7 +60,7 @@ export default function HomePage() {
               '✓ HIPAA Compliant',
               '✓ Free Case Review',
             ].map((badge) => (
-              <span key={badge} className="text-xs font-semibold" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Roboto,sans-serif' }}>
+              <span key={badge} className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Roboto,sans-serif' }}>
                 {badge}
               </span>
             ))}
@@ -71,10 +71,6 @@ export default function HomePage() {
 
         {/* ══ RIGHT — VIDEO PANEL ══ */}
         <div className="relative overflow-hidden" style={{ minHeight: '100%' }}>
-
-          {/* Gold accent border on left edge — connects the two panels */}
-          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 z-10"
-            style={{ background: 'linear-gradient(to bottom, transparent, #d4a843 20%, #d4a843 80%, transparent)' }} />
 
           <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
             <iframe
