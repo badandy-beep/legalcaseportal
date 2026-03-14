@@ -58,28 +58,85 @@ export default function HomePage() {
       {/* ═══ SECTION 1 — HERO ═══ */}
       <section
         className="relative w-full"
-        style={{ minHeight: '600px', background: '#0a1628' }}
+        style={{ background: '#0a1628' }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2" style={{ minHeight: '600px' }}>
-        <div className="relative z-10 flex flex-col justify-center py-12 pl-12 pr-10"
-          style={{ background: '#0a1628' }}>
+        <div className="hidden md:grid" style={{ minHeight: '600px', display: 'grid', gridTemplateColumns: '1fr 1.1fr' }}>
+          <div className="flex flex-col justify-center py-12 px-16" style={{ maxWidth: '600px' }}>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-px" style={{ background: '#d4a843' }} />
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
+                Vaccine Injury Compensation Program
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-5 text-white"
+              style={{ lineHeight: 1.1, fontFamily: 'Montserrat,sans-serif' }}>
+              Your Child May Be<br />
+              <span style={{ color: '#d4a843' }}>Entitled to Federal<br />Compensation.</span>
+            </h1>
+            <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '440px', fontFamily: 'Roboto,sans-serif' }}>
+              Congress created the VICP to compensate families of vaccine-injured children.
+              Thousands of autism families qualify — and most never know it exists.
+              Alpha Law Group fights for you at <strong style={{ color: 'white' }}>no cost unless we win.</strong>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+              <a href="/intake/phase-1"
+                className="inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
+                style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif' }}>
+                Check Your Eligibility — Free →
+              </a>
+              <a href="/refer"
+                className="inline-flex items-center justify-center px-6 py-4 font-black uppercase tracking-widest text-sm rounded-sm transition-opacity hover:opacity-80"
+                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif' }}>
+                Refer Someone You Know
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {['✓ No Cost Unless We Win', '✓ Florida Bar Licensed', '✓ HIPAA Compliant', '✓ Free Case Review'].map((badge) => (
+                <span key={badge} className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Roboto,sans-serif' }}>
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="relative overflow-hidden" style={{ margin: '24px 32px 24px 24px', borderRadius: '12px', position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 20, display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.45)', borderRadius: '20px', padding: '6px 12px 6px 6px' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: '#d4a843', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '9px solid #0a1628', marginLeft: '2px' }} />
+              </div>
+              <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '11px', fontWeight: 700, color: '#ffffff', letterSpacing: '.1em', textTransform: 'uppercase' as const }}>Watch Our Story</span>
+            </div>
+            <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                title="The 3-Minute Call That Changed Everything"
+              />
+            </div>
+            <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
+          </div>
+        </div>
+        {/* Mobile hero fallback */}
+        <div className="md:hidden px-6 py-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-8 h-px" style={{ background: '#d4a843' }} />
             <span className="text-sm font-bold uppercase tracking-widest" style={{ color: '#d4a843', fontFamily: 'Montserrat,sans-serif' }}>
               Vaccine Injury Compensation Program
             </span>
           </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-5 text-white"
+          <h1 className="text-4xl font-black leading-tight mb-5 text-white"
             style={{ lineHeight: 1.1, fontFamily: 'Montserrat,sans-serif' }}>
-            Your Child May Be<br />
-            <span style={{ color: '#d4a843' }}>Entitled to Federal<br />Compensation.</span>
+            Your Child May Be{' '}
+            <span style={{ color: '#d4a843' }}>Entitled to Federal Compensation.</span>
           </h1>
-          <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, maxWidth: '440px', fontFamily: 'Roboto,sans-serif' }}>
+          <p className="text-lg mb-8" style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, fontFamily: 'Roboto,sans-serif' }}>
             Congress created the VICP to compensate families of vaccine-injured children.
             Thousands of autism families qualify — and most never know it exists.
             Alpha Law Group fights for you at <strong style={{ color: 'white' }}>no cost unless we win.</strong>
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 mb-10">
+          <div className="flex flex-col gap-3 mb-8">
             <a href="/intake/phase-1"
               className="inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
               style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif' }}>
@@ -91,22 +148,7 @@ export default function HomePage() {
               Refer Someone You Know
             </a>
           </div>
-          <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {['✓ No Cost Unless We Win', '✓ Florida Bar Licensed', '✓ HIPAA Compliant', '✓ Free Case Review'].map((badge) => (
-              <span key={badge} className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Roboto,sans-serif' }}>
-                {badge}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="relative overflow-hidden" style={{ minHeight: '100%', position: 'relative' }}>
-          <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 10, display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(212,168,67,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: 0, height: 0, borderTop: '6px solid transparent', borderBottom: '6px solid transparent', borderLeft: '10px solid #0a1628', marginLeft: '2px' }} />
-            </div>
-            <span style={{ fontFamily: 'Montserrat,sans-serif', fontSize: '12px', fontWeight: 700, color: '#ffffff', letterSpacing: '.08em', textTransform: 'uppercase' as const, textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>Watch Our Story</span>
-          </div>
-          <div className="relative w-full h-full" style={{ minHeight: '400px' }}>
+          <div className="relative overflow-hidden rounded-xl" style={{ height: '240px' }}>
             <iframe
               src="https://player.vimeo.com/video/1173327689?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
               frameBorder="0"
@@ -116,8 +158,13 @@ export default function HomePage() {
               title="The 3-Minute Call That Changed Everything"
             />
           </div>
-          <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
-        </div>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 mt-8">
+            {['✓ No Cost Unless We Win', '✓ Florida Bar Licensed', '✓ HIPAA Compliant', '✓ Free Case Review'].map((badge) => (
+              <span key={badge} className="text-sm font-semibold" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Roboto,sans-serif' }}>
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
