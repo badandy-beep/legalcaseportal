@@ -68,7 +68,7 @@ export default function HomePage() {
                 Vaccine Injury Compensation Program
               </span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-5 text-white"
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-5 text-white"
               style={{ lineHeight: 1.1, fontFamily: 'Montserrat,sans-serif' }}>
               Your Child May Be<br />
               <span style={{ color: '#d4a843' }}>Entitled to Federal<br />Compensation.</span>
@@ -78,15 +78,15 @@ export default function HomePage() {
               Thousands of autism families qualify — and most never know it exists.
               Alpha Law Group fights for you at <strong style={{ color: 'white' }}>no cost unless we win.</strong>
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a href="/intake/phase-1"
-                className="inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
-                style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 font-black uppercase tracking-widest text-sm transition-all hover:scale-105 hover:shadow-lg rounded-sm"
+                style={{ background: '#d4a843', color: '#0a1628', boxShadow: '0 4px 24px rgba(212,168,67,0.35)', fontFamily: 'Montserrat,sans-serif' }}>
                 Check Your Eligibility — Free →
               </a>
               <a href="/refer"
-                className="inline-flex items-center justify-center px-6 py-4 font-black uppercase tracking-widest text-sm rounded-sm transition-opacity hover:opacity-80"
-                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif', whiteSpace: 'nowrap' }}>
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-4 font-black uppercase tracking-widest text-sm rounded-sm transition-opacity hover:opacity-80"
+                style={{ background: '#16a34a', color: '#ffffff', fontFamily: 'Montserrat,sans-serif' }}>
                 Refer Someone You Know
               </a>
             </div>
@@ -300,7 +300,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
           <p className="text-sm font-bold tracking-widest uppercase text-[#475569] text-center mb-3" style={{ fontFamily: 'Montserrat,sans-serif' }}>Your Legal Team</p>
           <h2 className="text-3xl md:text-4xl font-black text-[#0a1628] text-center mb-16" style={{ fontFamily: 'Montserrat,sans-serif' }}>The Attorneys Fighting for Your Family</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 img: '/Alex-Kompothecras.webp',
@@ -315,8 +315,10 @@ export default function HomePage() {
                 bio: 'Chase works alongside Alex on VICP petitions, guiding families through every phase of the federal claims process. His approachable style and thorough preparation have made him a trusted advocate for autism families across Florida.',
               },
             ].map((person, i) => (
-              <div key={i} className="flex flex-col md:flex-row gap-6 items-start">
-                <img src={person.img} alt={person.name} className="w-40 h-40 rounded-xl object-cover object-top flex-shrink-0" />
+              <div key={i} className="flex flex-col md:flex-row gap-6 bg-white rounded-2xl p-6 border border-[#E2E8F0]">
+                <div className="w-full md:w-48 flex-shrink-0 mb-4 md:mb-0">
+                  <img src={person.img} alt={person.name} className="w-full md:w-48 h-64 object-cover object-top rounded-xl" />
+                </div>
                 <div>
                   <h3 className="font-black text-2xl text-[#0a1628] mb-1" style={{ fontFamily: 'Montserrat,sans-serif' }}>{person.name}</h3>
                   <p className="text-base font-semibold text-[#d4a843] mb-3" style={{ fontFamily: 'Roboto,sans-serif' }}>{person.title}</p>
